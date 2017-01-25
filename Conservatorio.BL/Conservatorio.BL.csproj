@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Clases\ClaseBL.cs" />
     <Compile Include="Clases\Clase_EstudianteBL.cs" />
+    <Compile Include="Clases\CursoBL.cs" />
     <Compile Include="Clases\EncargadoBL.cs" />
     <Compile Include="Clases\EstudianteBL.cs" />
     <Compile Include="Clases\Estudiante_InstrumentoBL.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Clases\Profesor_InstrumentoBL.cs" />
     <Compile Include="Interfaces\IClase.cs" />
     <Compile Include="Interfaces\IClase_Estudiante.cs" />
+    <Compile Include="Interfaces\ICurso.cs" />
     <Compile Include="Interfaces\IEncargado.cs" />
     <Compile Include="Interfaces\IEstudiante.cs" />
     <Compile Include="Interfaces\IEstudiante_Instrumento.cs" />

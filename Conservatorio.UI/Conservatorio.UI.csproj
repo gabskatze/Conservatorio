@@ -64,6 +64,12 @@
     <Compile Include="Forms\V_AgregarInstrumento.Designer.cs">
       <DependentUpon>V_AgregarInstrumento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\V_AgregarProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\V_AgregarProfesor.Designer.cs">
+      <DependentUpon>V_AgregarProfesor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\V_Estudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,11 +82,29 @@
     <Compile Include="Forms\V_Instrumentos.Designer.cs">
       <DependentUpon>V_Instrumentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\V_Matricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\V_Matricula.Designer.cs">
+      <DependentUpon>V_Matricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\V_Mensualidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\V_Mensualidad.Designer.cs">
+      <DependentUpon>V_Mensualidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\V_ModificarEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\V_ModificarEstudiante.Designer.cs">
       <DependentUpon>V_ModificarEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\V_ModificarProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\V_ModificarProfesor.Designer.cs">
+      <DependentUpon>V_ModificarProfesor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\V_Profesores.cs">
       <SubType>Form</SubType>
@@ -99,17 +123,29 @@
     <EmbeddedResource Include="Forms\V_AgregarInstrumento.resx">
       <DependentUpon>V_AgregarInstrumento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\V_AgregarProfesor.resx">
+      <DependentUpon>V_AgregarProfesor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_Estudiantes.resx">
       <DependentUpon>V_Estudiantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_Instrumentos.resx">
       <DependentUpon>V_Instrumentos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\V_Matricula.resx">
+      <DependentUpon>V_Matricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\V_Mensualidad.resx">
+      <DependentUpon>V_Mensualidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_ModificarEstudiante.dje.resx">
       <DependentUpon>V_ModificarEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_ModificarEstudiante.resx">
       <DependentUpon>V_ModificarEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\V_ModificarProfesor.resx">
+      <DependentUpon>V_ModificarProfesor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_Profesores.resx">
       <DependentUpon>V_Profesores.cs</DependentUpon>

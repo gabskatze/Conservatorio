@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="Clases\ClaseDS.cs" />
     <Compile Include="Clases\Clase_EstudianteDS.cs" />
+    <Compile Include="Clases\CursoDS.cs" />
     <Compile Include="Clases\EncargadoDS.cs" />
     <Compile Include="Clases\EstudianteDS.cs" />
     <Compile Include="Clases\Estudiante_InstrumentoDS.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="Interfaces\IClase.cs" />
     <Compile Include="Interfaces\IClase_Estudiante.cs" />
+    <Compile Include="Interfaces\ICurso.cs" />
     <Compile Include="Interfaces\IEncargado.cs" />
     <Compile Include="Interfaces\IEstudiante.cs" />
     <Compile Include="Interfaces\IEstudiante_Instrumento.cs" />

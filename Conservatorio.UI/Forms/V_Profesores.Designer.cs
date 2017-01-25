@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Profesores));
             this.dgvProfesores = new System.Windows.Forms.DataGridView();
             this.btnAgregarProfesores = new System.Windows.Forms.Button();
             this.tbxBuscarProfesor = new System.Windows.Forms.TextBox();
             this.lblBuscarProfesor = new System.Windows.Forms.Label();
+            this.btnModProfesor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfesores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +47,8 @@
             // 
             // btnAgregarProfesores
             // 
-            this.btnAgregarProfesores.Location = new System.Drawing.Point(330, 408);
+            this.btnAgregarProfesores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProfesores.Location = new System.Drawing.Point(168, 410);
             this.btnAgregarProfesores.Name = "btnAgregarProfesores";
             this.btnAgregarProfesores.Size = new System.Drawing.Size(121, 29);
             this.btnAgregarProfesores.TabIndex = 2;
@@ -54,31 +57,46 @@
             // 
             // tbxBuscarProfesor
             // 
+            this.tbxBuscarProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxBuscarProfesor.Location = new System.Drawing.Point(126, 28);
             this.tbxBuscarProfesor.Name = "tbxBuscarProfesor";
-            this.tbxBuscarProfesor.Size = new System.Drawing.Size(192, 20);
+            this.tbxBuscarProfesor.Size = new System.Drawing.Size(209, 26);
             this.tbxBuscarProfesor.TabIndex = 5;
             // 
             // lblBuscarProfesor
             // 
             this.lblBuscarProfesor.AutoSize = true;
+            this.lblBuscarProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuscarProfesor.Location = new System.Drawing.Point(36, 31);
             this.lblBuscarProfesor.Name = "lblBuscarProfesor";
-            this.lblBuscarProfesor.Size = new System.Drawing.Size(43, 13);
+            this.lblBuscarProfesor.Size = new System.Drawing.Size(63, 20);
             this.lblBuscarProfesor.TabIndex = 4;
             this.lblBuscarProfesor.Text = "Buscar:";
+            // 
+            // btnModProfesor
+            // 
+            this.btnModProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModProfesor.Location = new System.Drawing.Point(474, 410);
+            this.btnModProfesor.Name = "btnModProfesor";
+            this.btnModProfesor.Size = new System.Drawing.Size(121, 29);
+            this.btnModProfesor.TabIndex = 6;
+            this.btnModProfesor.Text = "Modificar";
+            this.btnModProfesor.UseVisualStyleBackColor = true;
             // 
             // V_Profesores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 468);
+            this.Controls.Add(this.btnModProfesor);
             this.Controls.Add(this.tbxBuscarProfesor);
             this.Controls.Add(this.lblBuscarProfesor);
             this.Controls.Add(this.btnAgregarProfesores);
             this.Controls.Add(this.dgvProfesores);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "V_Profesores";
-            this.Text = "V_Profesores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Profesores";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfesores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -91,5 +109,6 @@
         private System.Windows.Forms.Button btnAgregarProfesores;
         private System.Windows.Forms.TextBox tbxBuscarProfesor;
         private System.Windows.Forms.Label lblBuscarProfesor;
+        private System.Windows.Forms.Button btnModProfesor;
     }
 }

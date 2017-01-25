@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="Clase.cs" />
     <Compile Include="Clase_Estudiante.cs" />
+    <Compile Include="Curso.cs" />
     <Compile Include="Encargado.cs" />
     <Compile Include="Estudiante.cs" />
     <Compile Include="Estudiante_Instrumento.cs" />
