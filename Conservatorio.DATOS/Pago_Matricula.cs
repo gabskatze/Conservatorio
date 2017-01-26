@@ -9,7 +9,7 @@ namespace Conservatorio.DATOS
         public int Año { get; set; }
         public decimal Monto { get; set; }
         public DateTime FechaPago { get; set; }
-        public int IdEstudiante { get; set; }
+        public Estudiante Estudiante { get; set; }
         public string Comentario { get; set; }
         public string TipoPago { get; set; }
     }

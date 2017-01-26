@@ -1,23 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using Conservatorio.DATOS;
-using Conservatorio.DS.Interfaces;
+﻿using Conservatorio.DS.Interfaces;
 using System.Data;
-using ServiceStack.OrmLite;
-using System.Linq;
 
 namespace Conservatorio.DS.Clases
 {
     public class Clase_EstudianteDS : IClase_Estudiante
     {
-        private IDbConnection db;
-
-        public Clase_EstudianteDS()
-        {
-            var conexion = Conexion.EstablecerConexion();
-            db = conexion.Open();
-        }
-
         //public void CrearClase_Estudiante(List<Clase_Estudiante> clase_estudiante)
         //{
         //    db.Insert(clase_estudiante, true);

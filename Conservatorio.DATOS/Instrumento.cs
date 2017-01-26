@@ -1,11 +1,8 @@
-﻿using ServiceStack.DataAnnotations;
-
-namespace Conservatorio.DATOS
+﻿namespace Conservatorio.DATOS
 {
     public class Instrumento
     {
-        [AutoIncrement]
-        public int IdInstrumento { get; set; }
-        public string NombreInstrumento { get; set; }
+        public virtual int IdInstrumento { get; set; }
+        public virtual string NombreInstrumento { get; set; }
     }
 }

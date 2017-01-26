@@ -1,14 +1,8 @@
-﻿
-
-using ServiceStack.DataAnnotations;
-
-namespace Conservatorio.DATOS
+﻿namespace Conservatorio.DATOS
 {
     public class Estudiante : Persona
     {
-        //[AutoIncrement]
-        public int IdEstudiante { get; set; }
-        public int IdEncargado { get; set; }
+        public Encargado Encargado { get; set; }
         public string Tipo { get; set; }
     }
 }

@@ -1,11 +1,10 @@
-﻿using ServiceStack.DataAnnotations;
-using System;
+﻿using System;
 
 namespace Conservatorio.DATOS
 {
     public abstract class Persona
     {
-        public int IdPersona { get; set; }
+        public long IdPersona { get; set; }
         public string Nombre { get; set; }
         public int Cedula { get; set; }
         public bool Estado { get; set; }
@@ -14,8 +13,8 @@ namespace Conservatorio.DATOS
         public string Ocupacion { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public int Telefono1 { get; set; }
-        public int Telefono2 { get; set; }
-        public int Telefono3 { get; set; }
+        public int? Telefono2 { get; set; }
+        public int? Telefono3 { get; set; }
 
     }
 }

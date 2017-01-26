@@ -1,6 +1,8 @@
 ﻿using Conservatorio.UI.Forms;
 using System;
 using System.Windows.Forms;
+using Conservatorio.BL.Clases;
+using Conservatorio.DATOS;
 
 namespace Conservatorio.UI
 {
@@ -13,7 +15,13 @@ namespace Conservatorio.UI
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            var instrumentoBL = new InstrumentoBL();
 
+            var instrumento = new Instrumento
+            {
+                NombreInstrumento = "Guitarra"
+            };
+            instrumentoBL.CrearInstrumento(instrumento);
         }
 
         private void miEstudiantes_Click(object sender, EventArgs e)

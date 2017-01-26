@@ -2,7 +2,7 @@
 {
     public class Estudiante_Instrumento
     {
-        public int IdEstudiante { get; set; }
-        public int IdInstrumento { get; set; }
+        public Estudiante Estudiante { get; set; }
+        public Instrumento Instrumento { get; set; }
     }
 }
