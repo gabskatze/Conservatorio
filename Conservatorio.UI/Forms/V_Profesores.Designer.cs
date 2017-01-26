@@ -51,9 +51,9 @@
             // 
             this.btnAgregarProfesores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarProfesores.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProfesores.Image")));
-            this.btnAgregarProfesores.Location = new System.Drawing.Point(210, 410);
+            this.btnAgregarProfesores.Location = new System.Drawing.Point(93, 410);
             this.btnAgregarProfesores.Name = "btnAgregarProfesores";
-            this.btnAgregarProfesores.Size = new System.Drawing.Size(67, 65);
+            this.btnAgregarProfesores.Size = new System.Drawing.Size(77, 77);
             this.btnAgregarProfesores.TabIndex = 2;
             this.btnAgregarProfesores.UseVisualStyleBackColor = true;
             // 
@@ -69,9 +69,9 @@
             // 
             this.btnModProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModProfesor.Image = ((System.Drawing.Image)(resources.GetObject("btnModProfesor.Image")));
-            this.btnModProfesor.Location = new System.Drawing.Point(336, 410);
+            this.btnModProfesor.Location = new System.Drawing.Point(343, 410);
             this.btnModProfesor.Name = "btnModProfesor";
-            this.btnModProfesor.Size = new System.Drawing.Size(69, 65);
+            this.btnModProfesor.Size = new System.Drawing.Size(80, 77);
             this.btnModProfesor.TabIndex = 6;
             this.btnModProfesor.UseVisualStyleBackColor = true;
             // 
@@ -87,9 +87,9 @@
             // btnBorrar
             // 
             this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
-            this.btnBorrar.Location = new System.Drawing.Point(463, 410);
+            this.btnBorrar.Location = new System.Drawing.Point(612, 410);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(68, 65);
+            this.btnBorrar.Size = new System.Drawing.Size(85, 77);
             this.btnBorrar.TabIndex = 20;
             this.btnBorrar.UseVisualStyleBackColor = true;
             // 

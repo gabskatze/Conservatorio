@@ -34,6 +34,7 @@
             this.miEstudiantes = new System.Windows.Forms.ToolStripMenuItem();
             this.miProfesores = new System.Windows.Forms.ToolStripMenuItem();
             this.miInstrumentos = new System.Windows.Forms.ToolStripMenuItem();
+            this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mensualidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +57,8 @@
             this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miEstudiantes,
             this.miProfesores,
-            this.miInstrumentos});
+            this.miInstrumentos,
+            this.cursosToolStripMenuItem});
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
@@ -81,6 +83,12 @@
             this.miInstrumentos.Size = new System.Drawing.Size(152, 22);
             this.miInstrumentos.Text = "Instrumentos";
             this.miInstrumentos.Click += new System.EventHandler(this.miInstrumentos_Click);
+            // 
+            // cursosToolStripMenuItem
+            // 
+            this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cursosToolStripMenuItem.Text = "Cursos";
             // 
             // facturaciónToolStripMenuItem
             // 
@@ -135,5 +143,6 @@
         private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matriculaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mensualidadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
     }
 }
