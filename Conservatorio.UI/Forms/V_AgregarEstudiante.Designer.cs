@@ -230,11 +230,11 @@
             // btnAgregarEst
             // 
             this.btnAgregarEst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarEst.Location = new System.Drawing.Point(346, 387);
+            this.btnAgregarEst.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarEst.Image")));
+            this.btnAgregarEst.Location = new System.Drawing.Point(346, 361);
             this.btnAgregarEst.Name = "btnAgregarEst";
-            this.btnAgregarEst.Size = new System.Drawing.Size(103, 34);
+            this.btnAgregarEst.Size = new System.Drawing.Size(71, 70);
             this.btnAgregarEst.TabIndex = 19;
-            this.btnAgregarEst.Text = "Agregar";
             this.btnAgregarEst.UseVisualStyleBackColor = true;
             // 
             // V_AgregarEstudiante

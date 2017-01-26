@@ -57,12 +57,12 @@
             // btnModificarProf
             // 
             this.btnModificarProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnModificarProf.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarProf.Image")));
             this.btnModificarProf.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnModificarProf.Location = new System.Drawing.Point(343, 355);
+            this.btnModificarProf.Location = new System.Drawing.Point(343, 317);
             this.btnModificarProf.Name = "btnModificarProf";
-            this.btnModificarProf.Size = new System.Drawing.Size(105, 34);
+            this.btnModificarProf.Size = new System.Drawing.Size(80, 78);
             this.btnModificarProf.TabIndex = 55;
-            this.btnModificarProf.Text = "Modificar";
             this.btnModificarProf.UseVisualStyleBackColor = true;
             // 
             // tbxMod_Tel3Prof
@@ -278,7 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 407);
+            this.ClientSize = new System.Drawing.Size(799, 422);
             this.Controls.Add(this.cbModClase4);
             this.Controls.Add(this.cbModClase3);
             this.Controls.Add(this.cbModClase1);

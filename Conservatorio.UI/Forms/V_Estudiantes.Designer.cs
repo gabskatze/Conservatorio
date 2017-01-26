@@ -31,10 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Estudiantes));
             this.dgvEstudiantes = new System.Windows.Forms.DataGridView();
             this.btnAgregarV_Est = new System.Windows.Forms.Button();
-            this.lblBuscarEstudiante = new System.Windows.Forms.Label();
             this.tbxBuscarEstudiante = new System.Windows.Forms.TextBox();
             this.btnModificarV_Est = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvEstudiantes
@@ -48,23 +49,13 @@
             // btnAgregarV_Est
             // 
             this.btnAgregarV_Est.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarV_Est.Location = new System.Drawing.Point(163, 408);
+            this.btnAgregarV_Est.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarV_Est.Image")));
+            this.btnAgregarV_Est.Location = new System.Drawing.Point(227, 396);
             this.btnAgregarV_Est.Name = "btnAgregarV_Est";
-            this.btnAgregarV_Est.Size = new System.Drawing.Size(121, 29);
+            this.btnAgregarV_Est.Size = new System.Drawing.Size(73, 73);
             this.btnAgregarV_Est.TabIndex = 1;
-            this.btnAgregarV_Est.Text = "Agregar";
             this.btnAgregarV_Est.UseVisualStyleBackColor = true;
             this.btnAgregarV_Est.Click += new System.EventHandler(this.btnAgregarV_Est_Click);
-            // 
-            // lblBuscarEstudiante
-            // 
-            this.lblBuscarEstudiante.AutoSize = true;
-            this.lblBuscarEstudiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscarEstudiante.Location = new System.Drawing.Point(26, 30);
-            this.lblBuscarEstudiante.Name = "lblBuscarEstudiante";
-            this.lblBuscarEstudiante.Size = new System.Drawing.Size(63, 20);
-            this.lblBuscarEstudiante.TabIndex = 2;
-            this.lblBuscarEstudiante.Text = "Buscar:";
             // 
             // tbxBuscarEstudiante
             // 
@@ -77,21 +68,30 @@
             // btnModificarV_Est
             // 
             this.btnModificarV_Est.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarV_Est.Location = new System.Drawing.Point(489, 408);
+            this.btnModificarV_Est.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarV_Est.Image")));
+            this.btnModificarV_Est.Location = new System.Drawing.Point(489, 396);
             this.btnModificarV_Est.Name = "btnModificarV_Est";
-            this.btnModificarV_Est.Size = new System.Drawing.Size(121, 29);
+            this.btnModificarV_Est.Size = new System.Drawing.Size(78, 73);
             this.btnModificarV_Est.TabIndex = 4;
-            this.btnModificarV_Est.Text = "Modificar";
             this.btnModificarV_Est.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(79, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
             // 
             // V_Estudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 468);
+            this.ClientSize = new System.Drawing.Size(802, 479);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnModificarV_Est);
             this.Controls.Add(this.tbxBuscarEstudiante);
-            this.Controls.Add(this.lblBuscarEstudiante);
             this.Controls.Add(this.btnAgregarV_Est);
             this.Controls.Add(this.dgvEstudiantes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -100,6 +100,7 @@
             this.Text = "Registro Estudiantes";
             this.Load += new System.EventHandler(this.V_Estudiantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,8 +110,8 @@
 
         private System.Windows.Forms.DataGridView dgvEstudiantes;
         private System.Windows.Forms.Button btnAgregarV_Est;
-        private System.Windows.Forms.Label lblBuscarEstudiante;
         private System.Windows.Forms.TextBox tbxBuscarEstudiante;
         private System.Windows.Forms.Button btnModificarV_Est;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

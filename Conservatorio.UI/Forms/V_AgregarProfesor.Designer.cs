@@ -61,11 +61,11 @@
             // btnAgregarProf
             // 
             this.btnAgregarProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarProf.Location = new System.Drawing.Point(324, 469);
+            this.btnAgregarProf.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProf.Image")));
+            this.btnAgregarProf.Location = new System.Drawing.Point(337, 448);
             this.btnAgregarProf.Name = "btnAgregarProf";
-            this.btnAgregarProf.Size = new System.Drawing.Size(103, 34);
+            this.btnAgregarProf.Size = new System.Drawing.Size(70, 67);
             this.btnAgregarProf.TabIndex = 38;
-            this.btnAgregarProf.Text = "Agregar";
             this.btnAgregarProf.UseVisualStyleBackColor = true;
             // 
             // tbxAg_Tel3Prof

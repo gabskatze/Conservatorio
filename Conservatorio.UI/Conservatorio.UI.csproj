@@ -70,6 +70,12 @@
     <Compile Include="Forms\V_AgregarProfesor.Designer.cs">
       <DependentUpon>V_AgregarProfesor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\V_CrearCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\V_CrearCurso.Designer.cs">
+      <DependentUpon>V_CrearCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\V_Estudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\V_AgregarCurso_Matricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\V_AgregarCurso_Matricula.Designer.cs">
+      <DependentUpon>V_AgregarCurso_Matricula.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_AgregarProfesor.resx">
       <DependentUpon>V_AgregarProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\V_CrearCurso.resx">
+      <DependentUpon>V_CrearCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_Estudiantes.resx">
       <DependentUpon>V_Estudiantes.cs</DependentUpon>
@@ -159,6 +174,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\V_AgregarCurso_Matricula.resx">
+      <DependentUpon>V_AgregarCurso_Matricula.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -174,9 +192,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\agrega.jpg" />
+    <Content Include="Images\borra.jpg" />
     <Content Include="Images\icon.ico" />
+    <Content Include="Images\lupa.jpg" />
     <Content Include="Images\music.jpg" />
-    <Content Include="Images\music1.jpg" />
+    <Content Include="Images\salva.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Conservatorio.BL\Conservatorio.BL.csproj">
