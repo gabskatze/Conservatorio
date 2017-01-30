@@ -1,8 +1,11 @@
-﻿namespace Conservatorio.DATOS
+﻿using System.Collections.Generic;
+
+namespace Conservatorio.DATOS
 {
     public class Estudiante : Persona
     {
-        public Encargado Encargado { get; set; }
-        public string Tipo { get; set; }
+        public virtual Encargado Encargado { get; set; }
+        public virtual string Tipo { get; set; }
+        public virtual List<Instrumento> Instrumentos { get; set; }
     }
 }

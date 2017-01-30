@@ -2,7 +2,7 @@
 
 namespace Conservatorio.BL.Clases
 {
-    public class Pago_MensualidadBL : IPago_Mensualidad
+    public class PagoMatriculaBL : IPagoMatricula
     {
     }
 }

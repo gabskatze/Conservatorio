@@ -2,7 +2,7 @@
 
 namespace Conservatorio.BL.Clases
 {
-    public class Estudiante_InstrumentoBL : IEstudiante_Instrumento
+    public class RegistroNotaBL : IRegistroNota
     {
     }
 }

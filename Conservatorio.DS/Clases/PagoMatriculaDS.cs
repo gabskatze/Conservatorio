@@ -1,8 +1,9 @@
 ﻿using Conservatorio.DS.Interfaces;
+using System.Data;
 
 namespace Conservatorio.DS.Clases
 {
-    public class Pago_MensualidadDS : IPago_Mensualidad
+    public class PagoMatriculaDS : IPagoMatricula
     {
         
     }

@@ -57,17 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clase.cs" />
-    <Compile Include="Clase_Estudiante.cs" />
+    <Compile Include="RegistroNota.cs" />
     <Compile Include="Curso.cs" />
     <Compile Include="Encargado.cs" />
     <Compile Include="Estudiante.cs" />
-    <Compile Include="Estudiante_Instrumento.cs" />
     <Compile Include="Instrumento.cs" />
-    <Compile Include="Pago_Matricula.cs" />
-    <Compile Include="Pago_Mensualidad.cs" />
+    <Compile Include="PagoMatricula.cs" />
+    <Compile Include="PagoMensualidad.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Profesor.cs" />
-    <Compile Include="Profesor_Instrumento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

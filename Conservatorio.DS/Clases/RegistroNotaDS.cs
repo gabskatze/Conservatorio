@@ -3,7 +3,7 @@ using System.Data;
 
 namespace Conservatorio.DS.Clases
 {
-    public class Clase_EstudianteDS : IClase_Estudiante
+    public class RegistroNotaDS : IRegistroNota
     {
         //public void CrearClase_Estudiante(List<Clase_Estudiante> clase_estudiante)
         //{

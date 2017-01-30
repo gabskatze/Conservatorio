@@ -1,6 +1,6 @@
 ﻿namespace Conservatorio.DS.Interfaces
 {
-    public interface IClase_Estudiante
+    public interface IRegistroNota
     {
         //List<Clase_Estudiante> ObtenerClase_Estudiante(int idClase);
 

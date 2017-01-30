@@ -9,7 +9,6 @@ namespace Conservatorio.DS
 {
     public class Conexion
     {
-        private static string connString = "Data Source=(local);Initial Catalog=ConservatorioNHibernate;Persist Security Info=True;User ID=sa;Password=.";
         private static readonly ISessionFactory Factory;
 
         static Conexion()
@@ -18,9 +17,17 @@ namespace Conservatorio.DS
             Factory = CrearSessionFactory();
         }
 
+        private static string ConnectionString
+        {
+            get
+            {
+                return System.Configuration.ConfigurationManager.ConnectionStrings["Conservatorio"].ConnectionString;
+            }
+        }
+
         private static void CrearConfiguracion()
         {
-            Fluently.Configure().Database(MsSqlConfiguration.MsSql2012.ConnectionString(connString))
+            Fluently.Configure().Database(MsSqlConfiguration.MsSql2012.ConnectionString(ConnectionString))
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<InstrumentoMap>())
                 .ExposeConfiguration(CrearSchema)
                 .BuildConfiguration();
@@ -40,7 +47,7 @@ namespace Conservatorio.DS
 
         private static ISessionFactory CrearSessionFactory()
         {
-            return Fluently.Configure().Database(MsSqlConfiguration.MsSql2008.ConnectionString(connString))
+            return Fluently.Configure().Database(MsSqlConfiguration.MsSql2008.ConnectionString(ConnectionString))
               .Mappings(m => m.FluentMappings.AddFromAssemblyOf<InstrumentoMap>())
               .BuildSessionFactory();
         }

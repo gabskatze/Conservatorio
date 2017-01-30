@@ -11,7 +11,7 @@ namespace Conservatorio.BL.Clases
 
         public List<Estudiante> ObtenerEstudiantes(string keyword)
         {
-            return iEstudiante.ObtenerEstudiantes(x => true, x => x.Nombre.Contains(keyword));
+            return iEstudiante.ObtenerEstudiantes(x => x.Nombre.Contains(keyword));
         }
 
         public List<Estudiante> ObtenerEstudiantes()

@@ -47,6 +47,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,29 +58,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ClaseDS.cs" />
-    <Compile Include="Clases\Clase_EstudianteDS.cs" />
+    <Compile Include="Clases\RegistroNotaDS.cs" />
     <Compile Include="Clases\CursoDS.cs" />
     <Compile Include="Clases\EncargadoDS.cs" />
     <Compile Include="Clases\EstudianteDS.cs" />
-    <Compile Include="Clases\Estudiante_InstrumentoDS.cs" />
     <Compile Include="Clases\InstrumentoDS.cs" />
-    <Compile Include="Clases\Pago_MatriculaDS.cs" />
-    <Compile Include="Clases\Pago_MensualidadDS.cs" />
+    <Compile Include="Clases\PagoMatriculaDS.cs" />
+    <Compile Include="Clases\PagoMensualidadDS.cs" />
     <Compile Include="Clases\ProfesorDS.cs" />
-    <Compile Include="Clases\Profesor_InstrumentoDS.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Interfaces\IClase.cs" />
-    <Compile Include="Interfaces\IClase_Estudiante.cs" />
+    <Compile Include="Interfaces\IRegistroNota.cs" />
     <Compile Include="Interfaces\ICurso.cs" />
     <Compile Include="Interfaces\IEncargado.cs" />
     <Compile Include="Interfaces\IEstudiante.cs" />
-    <Compile Include="Interfaces\IEstudiante_Instrumento.cs" />
     <Compile Include="Interfaces\IInstrumento.cs" />
-    <Compile Include="Interfaces\IPago_Matricula.cs" />
-    <Compile Include="Interfaces\IPago_Mensualidad.cs" />
+    <Compile Include="Interfaces\IPagoMatricula.cs" />
+    <Compile Include="Interfaces\IPagoMensualidad.cs" />
     <Compile Include="Interfaces\IProfesor.cs" />
-    <Compile Include="Interfaces\IProfesor_Instrumento.cs" />
+    <Compile Include="Mappings\ClaseMap.cs" />
+    <Compile Include="Mappings\CursoMap.cs" />
+    <Compile Include="Mappings\EncargadoMap.cs" />
+    <Compile Include="Mappings\EstudianteMap.cs" />
     <Compile Include="Mappings\InstrumentoMap.cs" />
+    <Compile Include="Mappings\PagoMatriculaMap.cs" />
+    <Compile Include="Mappings\PagoMensualidadMap.cs" />
+    <Compile Include="Mappings\PersonaMap.cs" />
+    <Compile Include="Mappings\ProfesorMap.cs" />
+    <Compile Include="Mappings\RegistroNotaMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

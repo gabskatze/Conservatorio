@@ -2,6 +2,6 @@
 {
     public class Encargado : Persona
     {
-        public string Parentesco { get; set; }
+        public virtual string Parentesco { get; set; }
     }
 }

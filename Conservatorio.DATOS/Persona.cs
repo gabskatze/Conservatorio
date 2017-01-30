@@ -4,17 +4,17 @@ namespace Conservatorio.DATOS
 {
     public abstract class Persona
     {
-        public long IdPersona { get; set; }
-        public string Nombre { get; set; }
-        public int Cedula { get; set; }
-        public bool Estado { get; set; }
-        public string Email { get; set; }
-        public string Direccion { get; set; }
-        public string Ocupacion { get; set; }
-        public DateTime FechaNacimiento { get; set; }
-        public int Telefono1 { get; set; }
-        public int? Telefono2 { get; set; }
-        public int? Telefono3 { get; set; }
+        public virtual int IdPersona { get; set; }
+        public virtual string Nombre { get; set; }
+        public virtual int? Cedula { get; set; }
+        public virtual bool Estado { get; set; }
+        public virtual string Email { get; set; }
+        public virtual string Direccion { get; set; }
+        public virtual string Ocupacion { get; set; }
+        public virtual DateTime FechaNacimiento { get; set; }
+        public virtual int Telefono1 { get; set; }
+        public virtual int? Telefono2 { get; set; }
+        public virtual int? Telefono3 { get; set; }
 
     }
 }

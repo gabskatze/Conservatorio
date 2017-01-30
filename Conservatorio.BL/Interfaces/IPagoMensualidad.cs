@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Conservatorio.BL.Interfaces
 {
-    public interface IPago_Mensualidad
+    public interface IPagoMensualidad
     {
     }
 }

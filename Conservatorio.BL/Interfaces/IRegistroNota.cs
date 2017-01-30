@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Conservatorio.BL.Interfaces
 {
-    public interface IClase_Estudiante
+    public interface IRegistroNota
     {
     }
 }
