@@ -12,22 +12,36 @@ namespace Conservatorio.DS.Clases
     {
         public void CrearEstudiante(Estudiante nuevoEstudiante)
         {
-            throw new NotImplementedException();
+            using (var conn = Conexion.EstablecerConexion())
+            {
+                conn.Save(nuevoEstudiante);
+            }
         }
 
-        public void EliminarEstudiante(long idEstudiante)
+        public void EliminarEstudiante(int idEstudiante)
         {
-            throw new NotImplementedException();
+            using (var conn = Conexion.EstablecerConexion())
+            {
+                var miEstudiante = ObtenerEstudiante(idEstudiante);
+                miEstudiante.Estado = false;
+                ModificarEstudiante(miEstudiante);
+            }
         }
 
         public void ModificarEstudiante(Estudiante estudiante)
         {
-            throw new NotImplementedException();
+            using (var conn = Conexion.EstablecerConexion())
+            {
+                conn.Update(estudiante);
+            }
         }
 
-        public Estudiante ObtenerEstudiante(long idEstudiante)
+        public Estudiante ObtenerEstudiante(int idEstudiante)
         {
-            throw new NotImplementedException();
+            using (var conn = Conexion.EstablecerConexion())
+            {
+                return conn.Get<Estudiante>(idEstudiante);
+            }
         }
 
         public List<Estudiante> ObtenerEstudiantes(Expression<Func<Estudiante, bool>> exp)

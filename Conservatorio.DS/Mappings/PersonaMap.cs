@@ -12,7 +12,7 @@ namespace Conservatorio.DS.Mappings
             Map(x => x.Direccion);
             Map(x => x.Email);
             Map(x => x.Estado).Not.Nullable();
-            Map(x => x.FechaNacimiento).Not.Nullable();
+            Map(x => x.FechaNacimiento);
             Map(x => x.Nombre).Not.Nullable();
             Map(x => x.Ocupacion);
             Map(x => x.Telefono1).Not.Nullable();

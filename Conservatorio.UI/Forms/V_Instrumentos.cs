@@ -1,6 +1,8 @@
 ﻿using Conservatorio.BL.Clases;
 using Conservatorio.BL.Interfaces;
+using Conservatorio.UI.FormModels;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Conservatorio.UI.Forms
@@ -19,7 +21,7 @@ namespace Conservatorio.UI.Forms
         {
             var keyword = tbxBuscarInstrumento.Text;
             var list = misInstrumentos.ObtenerInstrumentos(keyword);
-            dgvInstrumentos.DataSource = list;
+            dgvInstrumentos.DataSource = list.Select(x => new InstrumentoModel{ IdInstrumento = x.IdInstrumento, NombreInstrumento = x.NombreInstrumento }).ToList();
 
         }
 

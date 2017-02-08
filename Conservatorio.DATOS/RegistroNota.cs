@@ -2,9 +2,9 @@
 {
     public class RegistroNota
     {
-        public int IdRegistroNota { get; set; }
-        public Clase Clase { get; set; }
-        public Estudiante Estudiante { get; set; }
-        public float Nota { get; set; }
+        public virtual int IdRegistroNota { get; set; }
+        public virtual Clase Clase { get; set; }
+        public virtual Estudiante Estudiante { get; set; }
+        public virtual float Nota { get; set; }
     }
 }

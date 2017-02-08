@@ -34,6 +34,7 @@
             this.tbxBuscarEstudiante = new System.Windows.Forms.TextBox();
             this.btnModificarV_Est = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnBorrarEst = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -42,15 +43,17 @@
             // 
             this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstudiantes.Location = new System.Drawing.Point(29, 64);
+            this.dgvEstudiantes.MultiSelect = false;
             this.dgvEstudiantes.Name = "dgvEstudiantes";
             this.dgvEstudiantes.Size = new System.Drawing.Size(731, 324);
             this.dgvEstudiantes.TabIndex = 0;
+            this.dgvEstudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstudiantes_CellContentClick);
             // 
             // btnAgregarV_Est
             // 
             this.btnAgregarV_Est.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarV_Est.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarV_Est.Image")));
-            this.btnAgregarV_Est.Location = new System.Drawing.Point(227, 396);
+            this.btnAgregarV_Est.Location = new System.Drawing.Point(164, 396);
             this.btnAgregarV_Est.Name = "btnAgregarV_Est";
             this.btnAgregarV_Est.Size = new System.Drawing.Size(73, 73);
             this.btnAgregarV_Est.TabIndex = 1;
@@ -64,12 +67,13 @@
             this.tbxBuscarEstudiante.Name = "tbxBuscarEstudiante";
             this.tbxBuscarEstudiante.Size = new System.Drawing.Size(232, 26);
             this.tbxBuscarEstudiante.TabIndex = 3;
+            this.tbxBuscarEstudiante.TextChanged += new System.EventHandler(this.tbxBuscarEstudiante_TextChanged);
             // 
             // btnModificarV_Est
             // 
             this.btnModificarV_Est.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarV_Est.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarV_Est.Image")));
-            this.btnModificarV_Est.Location = new System.Drawing.Point(489, 396);
+            this.btnModificarV_Est.Location = new System.Drawing.Point(360, 396);
             this.btnModificarV_Est.Name = "btnModificarV_Est";
             this.btnModificarV_Est.Size = new System.Drawing.Size(78, 73);
             this.btnModificarV_Est.TabIndex = 4;
@@ -84,11 +88,23 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // btnBorrarEst
+            // 
+            this.btnBorrarEst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarEst.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrarEst.Image")));
+            this.btnBorrarEst.Location = new System.Drawing.Point(541, 396);
+            this.btnBorrarEst.Name = "btnBorrarEst";
+            this.btnBorrarEst.Size = new System.Drawing.Size(78, 73);
+            this.btnBorrarEst.TabIndex = 18;
+            this.btnBorrarEst.UseVisualStyleBackColor = true;
+            this.btnBorrarEst.Click += new System.EventHandler(this.btnBorrarEst_Click);
+            // 
             // V_Estudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 479);
+            this.Controls.Add(this.btnBorrarEst);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnModificarV_Est);
             this.Controls.Add(this.tbxBuscarEstudiante);
@@ -113,5 +129,6 @@
         private System.Windows.Forms.TextBox tbxBuscarEstudiante;
         private System.Windows.Forms.Button btnModificarV_Est;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnBorrarEst;
     }
 }

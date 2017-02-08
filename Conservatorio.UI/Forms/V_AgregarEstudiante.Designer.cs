@@ -46,11 +46,14 @@
             this.tbxAg_DireccionEst = new System.Windows.Forms.TextBox();
             this.tbxAg_OcupacionEst = new System.Windows.Forms.TextBox();
             this.tbxAg_EmailEst = new System.Windows.Forms.TextBox();
-            this.mcFechNacEst = new System.Windows.Forms.MonthCalendar();
             this.tbxAg_Tel1Est = new System.Windows.Forms.TextBox();
             this.tbxAg_Tel2Est = new System.Windows.Forms.TextBox();
             this.tbxAg_Tel3Est = new System.Windows.Forms.TextBox();
             this.btnAgregarEst = new System.Windows.Forms.Button();
+            this.dtpFechNac = new System.Windows.Forms.DateTimePicker();
+            this.cbxTipo = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEncargado = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -197,12 +200,6 @@
             this.tbxAg_EmailEst.Size = new System.Drawing.Size(239, 26);
             this.tbxAg_EmailEst.TabIndex = 14;
             // 
-            // mcFechNacEst
-            // 
-            this.mcFechNacEst.Location = new System.Drawing.Point(182, 173);
-            this.mcFechNacEst.Name = "mcFechNacEst";
-            this.mcFechNacEst.TabIndex = 15;
-            // 
             // tbxAg_Tel1Est
             // 
             this.tbxAg_Tel1Est.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -236,17 +233,63 @@
             this.btnAgregarEst.Size = new System.Drawing.Size(71, 70);
             this.btnAgregarEst.TabIndex = 19;
             this.btnAgregarEst.UseVisualStyleBackColor = true;
+            this.btnAgregarEst.Click += new System.EventHandler(this.btnAgregarEst_Click);
+            // 
+            // dtpFechNac
+            // 
+            this.dtpFechNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechNac.Location = new System.Drawing.Point(181, 173);
+            this.dtpFechNac.Name = "dtpFechNac";
+            this.dtpFechNac.Size = new System.Drawing.Size(197, 26);
+            this.dtpFechNac.TabIndex = 20;
+            // 
+            // cbxTipo
+            // 
+            this.cbxTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxTipo.FormattingEnabled = true;
+            this.cbxTipo.Items.AddRange(new object[] {
+            "Regular",
+            "Becado"});
+            this.cbxTipo.Location = new System.Drawing.Point(87, 234);
+            this.cbxTipo.Name = "cbxTipo";
+            this.cbxTipo.Size = new System.Drawing.Size(142, 28);
+            this.cbxTipo.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 231);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 20);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Tipo:";
+            // 
+            // btnEncargado
+            // 
+            this.btnEncargado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncargado.Location = new System.Drawing.Point(87, 305);
+            this.btnEncargado.Name = "btnEncargado";
+            this.btnEncargado.Size = new System.Drawing.Size(130, 39);
+            this.btnEncargado.TabIndex = 23;
+            this.btnEncargado.Text = "Encargado";
+            this.btnEncargado.UseVisualStyleBackColor = true;
+            this.btnEncargado.Click += new System.EventHandler(this.btnEncargado_Click);
             // 
             // V_AgregarEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 443);
+            this.Controls.Add(this.btnEncargado);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbxTipo);
+            this.Controls.Add(this.dtpFechNac);
             this.Controls.Add(this.btnAgregarEst);
             this.Controls.Add(this.tbxAg_Tel3Est);
             this.Controls.Add(this.tbxAg_Tel2Est);
             this.Controls.Add(this.tbxAg_Tel1Est);
-            this.Controls.Add(this.mcFechNacEst);
             this.Controls.Add(this.tbxAg_EmailEst);
             this.Controls.Add(this.tbxAg_OcupacionEst);
             this.Controls.Add(this.tbxAg_DireccionEst);
@@ -289,10 +332,13 @@
         private System.Windows.Forms.TextBox tbxAg_DireccionEst;
         private System.Windows.Forms.TextBox tbxAg_OcupacionEst;
         private System.Windows.Forms.TextBox tbxAg_EmailEst;
-        private System.Windows.Forms.MonthCalendar mcFechNacEst;
         private System.Windows.Forms.TextBox tbxAg_Tel1Est;
         private System.Windows.Forms.TextBox tbxAg_Tel2Est;
         private System.Windows.Forms.TextBox tbxAg_Tel3Est;
         private System.Windows.Forms.Button btnAgregarEst;
+        private System.Windows.Forms.DateTimePicker dtpFechNac;
+        private System.Windows.Forms.ComboBox cbxTipo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEncargado;
     }
 }

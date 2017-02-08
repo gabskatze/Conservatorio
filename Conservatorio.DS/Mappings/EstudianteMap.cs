@@ -9,7 +9,7 @@ namespace Conservatorio.DS.Mappings
         {
             KeyColumn("IdEstudiante");
             Map(x => x.Tipo).Not.Nullable();
-            References(x => x.Encargado).Column("IdEncargado");
+            References(x => x.Encargado).Column("IdEncargado").Cascade.All().Not.LazyLoad();
             HasManyToMany(x => x.Instrumentos).Cascade.All().Table("EstudianteInstrumento").ParentKeyColumn("IdEstudiante").ChildKeyColumn("IdInstrumento");
         }
     }

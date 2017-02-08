@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormModels\EstudianteModel.cs" />
+    <Compile Include="FormModels\InstrumentoModel.cs" />
     <Compile Include="Forms\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +123,12 @@
     <Compile Include="Forms\V_AgregarCurso_Matricula.Designer.cs">
       <DependentUpon>V_AgregarCurso_Matricula.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\V_AgregarEncargado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\V_AgregarEncargado.Designer.cs">
+      <DependentUpon>V_AgregarEncargado.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +176,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\V_AgregarCurso_Matricula.resx">
       <DependentUpon>V_AgregarCurso_Matricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\V_AgregarEncargado.resx">
+      <DependentUpon>V_AgregarEncargado.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

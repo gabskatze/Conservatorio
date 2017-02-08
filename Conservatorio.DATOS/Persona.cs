@@ -11,7 +11,7 @@ namespace Conservatorio.DATOS
         public virtual string Email { get; set; }
         public virtual string Direccion { get; set; }
         public virtual string Ocupacion { get; set; }
-        public virtual DateTime FechaNacimiento { get; set; }
+        public virtual DateTime? FechaNacimiento { get; set; }
         public virtual int Telefono1 { get; set; }
         public virtual int? Telefono2 { get; set; }
         public virtual int? Telefono3 { get; set; }

@@ -24,7 +24,7 @@ namespace Conservatorio.BL.Clases
             iEstudiante.CrearEstudiante(estudiante);
         }
 
-        public void EliminarEstudiante(long idEstudiante)
+        public void EliminarEstudiante(int idEstudiante)
         {
             iEstudiante.EliminarEstudiante(idEstudiante);
         }

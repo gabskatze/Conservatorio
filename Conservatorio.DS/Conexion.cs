@@ -29,7 +29,7 @@ namespace Conservatorio.DS
         {
             Fluently.Configure().Database(MsSqlConfiguration.MsSql2012.ConnectionString(ConnectionString))
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<InstrumentoMap>())
-                .ExposeConfiguration(CrearSchema)
+                .ExposeConfiguration(ActualizarSchema)
                 .BuildConfiguration();
         }
 

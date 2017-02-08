@@ -9,6 +9,6 @@ namespace Conservatorio.DATOS
         public virtual Curso CursoRequisito { get; set; }
         public virtual Instrumento Instrumento { get; set; }
         public virtual int Nivel { get; set; }
-        public virtual List<Clase> Clases { get; set; }
+        public virtual IList<Clase> Clases { get; set; }
     }
 }

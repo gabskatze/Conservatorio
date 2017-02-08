@@ -37,5 +37,10 @@ namespace Conservatorio.UI.Forms
             this.Close();
             vInst.RefrescarInstrumentos();
         }
+
+        private void V_AgregarInstrumento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

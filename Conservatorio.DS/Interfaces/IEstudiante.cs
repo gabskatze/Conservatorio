@@ -9,11 +9,11 @@ namespace Conservatorio.DS.Interfaces
     {
         void CrearEstudiante(Estudiante nuevoEstudiante);
 
-        void EliminarEstudiante(long idEstudiante);
+        void EliminarEstudiante(int idEstudiante);
 
         void ModificarEstudiante(Estudiante estudiante);
 
-        Estudiante ObtenerEstudiante(long idEstudiante);
+        Estudiante ObtenerEstudiante(int idEstudiante);
 
         List<Estudiante> ObtenerEstudiantes(Expression<Func<Estudiante, bool>> exp);
 

@@ -48,7 +48,7 @@
             this.facturaciónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1052, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1052, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -59,35 +59,36 @@
             this.miProfesores,
             this.miInstrumentos,
             this.cursosToolStripMenuItem});
+            this.mantenimientoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
-            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(128, 25);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
             // 
             // miEstudiantes
             // 
             this.miEstudiantes.Name = "miEstudiantes";
-            this.miEstudiantes.Size = new System.Drawing.Size(152, 22);
+            this.miEstudiantes.Size = new System.Drawing.Size(172, 26);
             this.miEstudiantes.Text = "Estudiantes";
             this.miEstudiantes.Click += new System.EventHandler(this.miEstudiantes_Click);
             // 
             // miProfesores
             // 
             this.miProfesores.Name = "miProfesores";
-            this.miProfesores.Size = new System.Drawing.Size(152, 22);
+            this.miProfesores.Size = new System.Drawing.Size(172, 26);
             this.miProfesores.Text = "Profesores";
             this.miProfesores.Click += new System.EventHandler(this.miProfesores_Click);
             // 
             // miInstrumentos
             // 
             this.miInstrumentos.Name = "miInstrumentos";
-            this.miInstrumentos.Size = new System.Drawing.Size(152, 22);
+            this.miInstrumentos.Size = new System.Drawing.Size(172, 26);
             this.miInstrumentos.Text = "Instrumentos";
             this.miInstrumentos.Click += new System.EventHandler(this.miInstrumentos_Click);
             // 
             // cursosToolStripMenuItem
             // 
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
-            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
             this.cursosToolStripMenuItem.Text = "Cursos";
             // 
             // facturaciónToolStripMenuItem
@@ -95,20 +96,21 @@
             this.facturaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.matriculaToolStripMenuItem,
             this.mensualidadToolStripMenuItem});
+            this.facturaciónToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.facturaciónToolStripMenuItem.Name = "facturaciónToolStripMenuItem";
-            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(101, 25);
             this.facturaciónToolStripMenuItem.Text = "Facturación";
             // 
             // matriculaToolStripMenuItem
             // 
             this.matriculaToolStripMenuItem.Name = "matriculaToolStripMenuItem";
-            this.matriculaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.matriculaToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.matriculaToolStripMenuItem.Text = "Matricula";
             // 
             // mensualidadToolStripMenuItem
             // 
             this.mensualidadToolStripMenuItem.Name = "mensualidadToolStripMenuItem";
-            this.mensualidadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mensualidadToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.mensualidadToolStripMenuItem.Text = "Mensualidad";
             // 
             // Inicio
