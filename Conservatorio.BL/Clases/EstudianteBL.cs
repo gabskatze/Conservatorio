@@ -28,5 +28,10 @@ namespace Conservatorio.BL.Clases
         {
             iEstudiante.EliminarEstudiante(idEstudiante);
         }
+
+        public void ModificarEstudiante(Estudiante estudiante)
+        {
+            iEstudiante.ModificarEstudiante(estudiante);
+        }
     }
 }

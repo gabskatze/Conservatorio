@@ -53,6 +53,7 @@
             resources.ApplyResources(this.btnModificarEst, "btnModificarEst");
             this.btnModificarEst.Name = "btnModificarEst";
             this.btnModificarEst.UseVisualStyleBackColor = true;
+            this.btnModificarEst.Click += new System.EventHandler(this.btnModificarEst_Click);
             // 
             // tbxMod_Tel3Est
             // 
@@ -156,6 +157,7 @@
             this.Controls.Add(this.tbxMod_NombreEst);
             this.Controls.Add(this.lblMod_NombreEst);
             this.Name = "V_ModificarEstudiante";
+            this.Load += new System.EventHandler(this.V_ModificarEstudiante_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

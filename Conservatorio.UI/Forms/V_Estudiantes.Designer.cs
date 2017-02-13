@@ -47,7 +47,6 @@
             this.dgvEstudiantes.Name = "dgvEstudiantes";
             this.dgvEstudiantes.Size = new System.Drawing.Size(731, 324);
             this.dgvEstudiantes.TabIndex = 0;
-            this.dgvEstudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstudiantes_CellContentClick);
             // 
             // btnAgregarV_Est
             // 
@@ -78,6 +77,7 @@
             this.btnModificarV_Est.Size = new System.Drawing.Size(78, 73);
             this.btnModificarV_Est.TabIndex = 4;
             this.btnModificarV_Est.UseVisualStyleBackColor = true;
+            this.btnModificarV_Est.Click += new System.EventHandler(this.btnModificarV_Est_Click);
             // 
             // pictureBox1
             // 
