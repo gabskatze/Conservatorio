@@ -9,7 +9,7 @@ namespace Conservatorio.DS.Interfaces
     {
         void CrearEstudiante(Estudiante nuevoEstudiante);
 
-        void EliminarEstudiante(int idEstudiante);
+        void EliminarEstudiante(Estudiante nuevoEstudiante);
 
         void ModificarEstudiante(Estudiante estudiante);
 

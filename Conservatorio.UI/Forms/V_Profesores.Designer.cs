@@ -56,6 +56,7 @@
             this.btnAgregarProfesores.Size = new System.Drawing.Size(77, 77);
             this.btnAgregarProfesores.TabIndex = 2;
             this.btnAgregarProfesores.UseVisualStyleBackColor = true;
+            this.btnAgregarProfesores.Click += new System.EventHandler(this.btnAgregarProfesores_Click);
             // 
             // tbxBuscarProfesor
             // 
@@ -64,6 +65,7 @@
             this.tbxBuscarProfesor.Name = "tbxBuscarProfesor";
             this.tbxBuscarProfesor.Size = new System.Drawing.Size(209, 26);
             this.tbxBuscarProfesor.TabIndex = 5;
+            this.tbxBuscarProfesor.TextChanged += new System.EventHandler(this.tbxBuscarProfesor_TextChanged);
             // 
             // btnModProfesor
             // 
@@ -74,6 +76,7 @@
             this.btnModProfesor.Size = new System.Drawing.Size(80, 77);
             this.btnModProfesor.TabIndex = 6;
             this.btnModProfesor.UseVisualStyleBackColor = true;
+            this.btnModProfesor.Click += new System.EventHandler(this.btnModProfesor_Click);
             // 
             // pictureBox1
             // 
@@ -92,6 +95,7 @@
             this.btnBorrar.Size = new System.Drawing.Size(85, 77);
             this.btnBorrar.TabIndex = 20;
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // V_Profesores
             // 

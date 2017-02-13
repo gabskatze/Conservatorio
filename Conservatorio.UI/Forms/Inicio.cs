@@ -33,7 +33,9 @@ namespace Conservatorio.UI
 
         private void miProfesores_Click(object sender, EventArgs e)
         {
-
+            Form f = new V_Profesores();
+            f.MdiParent = this;
+            f.Show();
         }
 
         private void miInstrumentos_Click(object sender, EventArgs e)

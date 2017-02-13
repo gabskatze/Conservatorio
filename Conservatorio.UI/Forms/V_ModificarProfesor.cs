@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using Conservatorio.DATOS;
 
 namespace Conservatorio.UI.Forms
 {
     public partial class V_ModificarProfesor : Form
     {
-        public V_ModificarProfesor()
+        private V_Profesores vProfesor;
+        private Profesor profesor;
+
+        public V_ModificarProfesor(V_Profesores vProfesor, Profesor profesor)
         {
             InitializeComponent();
+
+            this.vProfesor = vProfesor;
+            this.profesor = profesor;
         }
     }
 }

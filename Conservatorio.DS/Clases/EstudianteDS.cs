@@ -15,16 +15,17 @@ namespace Conservatorio.DS.Clases
             using (var conn = Conexion.EstablecerConexion())
             {
                 conn.Save(nuevoEstudiante);
+                conn.Flush();
             }
         }
 
-        public void EliminarEstudiante(int idEstudiante)
+        public void EliminarEstudiante(Estudiante estudiante)
         {
             using (var conn = Conexion.EstablecerConexion())
             {
-                var miEstudiante = ObtenerEstudiante(idEstudiante);
-                miEstudiante.Estado = false;
-                ModificarEstudiante(miEstudiante);
+                estudiante.Estado = false;
+                conn.Update(estudiante);
+                conn.Flush();
             }
         }
 
@@ -33,6 +34,7 @@ namespace Conservatorio.DS.Clases
             using (var conn = Conexion.EstablecerConexion())
             {
                 conn.Update(estudiante);
+                conn.Flush();
             }
         }
 

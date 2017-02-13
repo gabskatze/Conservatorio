@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Conservatorio.DATOS;
 
 namespace Conservatorio.UI.Forms
 {
@@ -47,12 +48,12 @@ namespace Conservatorio.UI.Forms
                 Telefono1 = x.Telefono1,
                 Telefono2 = x.Telefono2,
                 Telefono3 = x.Telefono3,
-                NombreEncargado = x.Encargado == null ? "" : x.Encargado.Nombre,
-                Parentesco = x.Encargado == null ? "" : x.Encargado.Parentesco,
+                NombreEncargado = x.Encargado == null ? string.Empty : x.Encargado.Nombre,
+                Parentesco = x.Encargado == null ? string.Empty : x.Encargado.Parentesco,
                 Telefono1Encargado = x.Encargado == null ? (int?)null : x.Encargado.Telefono1,
-                Telefono2Encargado = x.Encargado == null ? null : x.Encargado.Telefono2,
+                Telefono2Encargado = x.Encargado == null ?  null : x.Encargado.Telefono2,
                 Telefono3Encargado = x.Encargado == null ? null : x.Encargado.Telefono3,
-                EmailEncargado = x.Encargado == null ? "" : x.Encargado.Email,
+                EmailEncargado = x.Encargado == null ? string.Empty : x.Encargado.Email
             }).ToList();
         }
 

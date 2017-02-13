@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Conservatorio.DATOS;
 
 namespace Conservatorio.BL.Interfaces
 {
     public interface IProfesor
     {
+        void CrearProfesor(Profesor profesor);
+        void ModificarProfesor(Profesor profesor);
+        void EliminarProfesor(Profesor profesor);
+        List<Profesor> ObtenerProfesores(string keyword);
     }
 }
