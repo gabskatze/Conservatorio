@@ -68,11 +68,11 @@
     <Compile Include="Forms\V_AgregarInstrumento.Designer.cs">
       <DependentUpon>V_AgregarInstrumento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\V_AgregarProfesor.cs">
+    <Compile Include="Forms\V_AgregarModificarProfesor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\V_AgregarProfesor.Designer.cs">
-      <DependentUpon>V_AgregarProfesor.cs</DependentUpon>
+    <Compile Include="Forms\V_AgregarModificarProfesor.Designer.cs">
+      <DependentUpon>V_AgregarModificarProfesor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\V_Estudiantes.cs">
       <SubType>Form</SubType>
@@ -104,12 +104,6 @@
     <Compile Include="Forms\V_ModificarEstudiante.Designer.cs">
       <DependentUpon>V_ModificarEstudiante.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\V_ModificarProfesor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\V_ModificarProfesor.Designer.cs">
-      <DependentUpon>V_ModificarProfesor.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\V_Profesores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,8 +133,8 @@
     <EmbeddedResource Include="Forms\V_AgregarInstrumento.resx">
       <DependentUpon>V_AgregarInstrumento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\V_AgregarProfesor.resx">
-      <DependentUpon>V_AgregarProfesor.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\V_AgregarModificarProfesor.resx">
+      <DependentUpon>V_AgregarModificarProfesor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_Estudiantes.resx">
       <DependentUpon>V_Estudiantes.cs</DependentUpon>
@@ -159,9 +153,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_ModificarEstudiante.resx">
       <DependentUpon>V_ModificarEstudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\V_ModificarProfesor.resx">
-      <DependentUpon>V_ModificarProfesor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_Profesores.resx">
       <DependentUpon>V_Profesores.cs</DependentUpon>

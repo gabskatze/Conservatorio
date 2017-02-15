@@ -66,7 +66,7 @@ namespace Conservatorio.UI.Forms
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Form f = new V_AgregarProfesor(this);
+            Form f = new V_AgregarModificarProfesor(this);
             f.ShowDialog();
         }
 
@@ -78,7 +78,7 @@ namespace Conservatorio.UI.Forms
                 return;
             }
 
-            Form f = new V_AgregarProfesor(this, profesor);
+            Form f = new V_AgregarModificarProfesor(this, profesor);
             f.ShowDialog();
         }
 

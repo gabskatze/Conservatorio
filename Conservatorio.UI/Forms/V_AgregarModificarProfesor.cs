@@ -1,29 +1,44 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 using Conservatorio.BL.Clases;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 
 namespace Conservatorio.UI.Forms
 {
-    public partial class V_AgregarProfesor : Form
+    public partial class V_AgregarModificarProfesor : Form
     {
         private readonly IProfesorBL profesorBL;
+        private readonly IInstrumentoBL instrumentoBL;
         private readonly V_Profesores vProfesor;
         private Profesor profesor;
 
-        public V_AgregarProfesor(V_Profesores vProfesor, Profesor profesor = null)
+        public V_AgregarModificarProfesor(V_Profesores vProfesor, Profesor profesor = null)
         {
             InitializeComponent();
 
             this.vProfesor = vProfesor;
             this.profesor = profesor;
             profesorBL = new ProfesorBL();
+            instrumentoBL = new InstrumentoBL();
+
+            CargarInstrumentos();
+        }
+
+        private void CargarInstrumentos()
+        {
+            clbInstrumentos.DataSource = instrumentoBL.ObtenerInstrumentos();
+            clbInstrumentos.DisplayMember = "NombreInstrumento";
+            clbInstrumentos.ValueMember = "IdInstrumento";
         }
 
         #region Action Methods
 
         private void V_AgregarProfesor_Load(object sender, System.EventArgs e)
         {
+            Text = profesor == null ? "Agregar Profesor" : "Modificar Profesor";
+
             if (profesor == null)
             {
                 return;

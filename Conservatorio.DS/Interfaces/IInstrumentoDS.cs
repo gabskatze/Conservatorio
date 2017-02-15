@@ -12,5 +12,6 @@ namespace Conservatorio.DS.Interfaces
         void ModificarInstrumento(Instrumento instrumento);
         Instrumento ObtenerInstrumento(int idInstrumento);
         List<Instrumento> ObtenerInstrumentos(Expression<Func<Instrumento, bool>> exp);
+        List<Instrumento> ObtenerInstrumentos();
     }
 }

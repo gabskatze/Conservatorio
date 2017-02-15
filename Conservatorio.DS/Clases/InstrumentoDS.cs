@@ -41,5 +41,13 @@ namespace Conservatorio.DS.Clases
                 return conn.Query<Instrumento>().Where(exp).ToList();
             }
         }
+
+        public List<Instrumento> ObtenerInstrumentos()
+        {
+            using (var conn = Conexion.EstablecerConexion())
+            {
+                return conn.Query<Instrumento>().ToList();
+            }
+        }
     }
 }

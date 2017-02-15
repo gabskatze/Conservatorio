@@ -19,5 +19,10 @@ namespace Conservatorio.BL.Clases
         {
             return _instrumentoDs.ObtenerInstrumentos(x => x.NombreInstrumento.Contains(keyword));
         }
+
+        public List<Instrumento> ObtenerInstrumentos()
+        {
+            return _instrumentoDs.ObtenerInstrumentos();
+        }
     }
 }
