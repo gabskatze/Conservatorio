@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Profesores));
             this.dgvProfesores = new System.Windows.Forms.DataGridView();
-            this.btnAgregarProfesores = new System.Windows.Forms.Button();
-            this.tbxBuscarProfesor = new System.Windows.Forms.TextBox();
-            this.btnModProfesor = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.tbxBuscar = new System.Windows.Forms.TextBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfesores)).BeginInit();
@@ -47,36 +47,36 @@
             this.dgvProfesores.Size = new System.Drawing.Size(731, 324);
             this.dgvProfesores.TabIndex = 1;
             // 
-            // btnAgregarProfesores
+            // btnAgregar
             // 
-            this.btnAgregarProfesores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarProfesores.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProfesores.Image")));
-            this.btnAgregarProfesores.Location = new System.Drawing.Point(93, 410);
-            this.btnAgregarProfesores.Name = "btnAgregarProfesores";
-            this.btnAgregarProfesores.Size = new System.Drawing.Size(77, 77);
-            this.btnAgregarProfesores.TabIndex = 2;
-            this.btnAgregarProfesores.UseVisualStyleBackColor = true;
-            this.btnAgregarProfesores.Click += new System.EventHandler(this.btnAgregarProfesores_Click);
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.Location = new System.Drawing.Point(93, 410);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(77, 77);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // tbxBuscarProfesor
+            // tbxBuscar
             // 
-            this.tbxBuscarProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxBuscarProfesor.Location = new System.Drawing.Point(126, 28);
-            this.tbxBuscarProfesor.Name = "tbxBuscarProfesor";
-            this.tbxBuscarProfesor.Size = new System.Drawing.Size(209, 26);
-            this.tbxBuscarProfesor.TabIndex = 5;
-            this.tbxBuscarProfesor.TextChanged += new System.EventHandler(this.tbxBuscarProfesor_TextChanged);
+            this.tbxBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxBuscar.Location = new System.Drawing.Point(126, 28);
+            this.tbxBuscar.Name = "tbxBuscar";
+            this.tbxBuscar.Size = new System.Drawing.Size(209, 26);
+            this.tbxBuscar.TabIndex = 5;
+            this.tbxBuscar.TextChanged += new System.EventHandler(this.tbxBuscar_TextChanged);
             // 
-            // btnModProfesor
+            // btnModificar
             // 
-            this.btnModProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModProfesor.Image = ((System.Drawing.Image)(resources.GetObject("btnModProfesor.Image")));
-            this.btnModProfesor.Location = new System.Drawing.Point(343, 410);
-            this.btnModProfesor.Name = "btnModProfesor";
-            this.btnModProfesor.Size = new System.Drawing.Size(80, 77);
-            this.btnModProfesor.TabIndex = 6;
-            this.btnModProfesor.UseVisualStyleBackColor = true;
-            this.btnModProfesor.Click += new System.EventHandler(this.btnModProfesor_Click);
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.Location = new System.Drawing.Point(343, 410);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(80, 77);
+            this.btnModificar.TabIndex = 6;
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // pictureBox1
             // 
@@ -104,14 +104,15 @@
             this.ClientSize = new System.Drawing.Size(802, 499);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnModProfesor);
-            this.Controls.Add(this.tbxBuscarProfesor);
-            this.Controls.Add(this.btnAgregarProfesores);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.tbxBuscar);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProfesores);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "V_Profesores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profesores";
+            this.Load += new System.EventHandler(this.V_Profesores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfesores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -122,9 +123,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvProfesores;
-        private System.Windows.Forms.Button btnAgregarProfesores;
-        private System.Windows.Forms.TextBox tbxBuscarProfesor;
-        private System.Windows.Forms.Button btnModProfesor;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.TextBox tbxBuscar;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnBorrar;
     }

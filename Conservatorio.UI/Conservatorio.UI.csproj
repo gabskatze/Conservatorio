@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="FormModels\EstudianteModel.cs" />
     <Compile Include="FormModels\InstrumentoModel.cs" />
+    <Compile Include="FormModels\ProfesorModel.cs" />
     <Compile Include="Forms\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>

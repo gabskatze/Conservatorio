@@ -9,44 +9,45 @@ namespace Conservatorio.UI.Forms
 {
     public partial class V_Instrumentos : Form
     {
-        private IInstrumento misInstrumentos;
+        private readonly IInstrumentoBL instrumentosBL;
 
         public V_Instrumentos()
         {
             InitializeComponent();
-            misInstrumentos = new InstrumentoBL();
+            instrumentosBL = new InstrumentoBL();
         }
 
         public void RefrescarInstrumentos()
         {
-            var keyword = tbxBuscarInstrumento.Text;
-            var list = misInstrumentos.ObtenerInstrumentos(keyword);
-            dgvInstrumentos.DataSource = list.Select(x => new InstrumentoModel{ IdInstrumento = x.IdInstrumento, NombreInstrumento = x.NombreInstrumento }).ToList();
+            var keyword = tbxBuscar.Text;
+            var list = instrumentosBL.ObtenerInstrumentos(keyword);
+            dgvInstrumentos.DataSource = list.Select(x => new InstrumentoModel
+            {
+                IdInstrumento = x.IdInstrumento,
+                NombreInstrumento = x.NombreInstrumento
+            }).ToList();
 
         }
 
-        #region Events
-        private void tbxBuscarInstrumento_TextChanged(object sender, EventArgs e)
-        {
-            RefrescarInstrumentos();
-        }
+        #region Action Events
 
-        private void btnAgregarInstrumento_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             Form f = new V_AgregarInstrumento(this);
             f.ShowDialog();
+        }
+
+        private void tbxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            RefrescarInstrumentos();
         }
 
         private void V_Instrumentos_Load(object sender, EventArgs e)
         {
             RefrescarInstrumentos();
         }
+
         #endregion
-
-        private void dgvInstrumentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
     
 }

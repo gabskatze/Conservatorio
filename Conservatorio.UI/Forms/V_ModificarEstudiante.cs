@@ -8,7 +8,7 @@ namespace Conservatorio.UI.Forms
 {
     public partial class V_ModificarEstudiante : Form
     {
-        private IEstudiante misEstudiates;
+        private IEstudianteBL misEstudiates;
         private V_Estudiantes vEst;
         private Estudiante estudiante;
         public Encargado Encargado { get; set; }

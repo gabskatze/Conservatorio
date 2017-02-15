@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
+using Conservatorio.DS.Clases;
+using Conservatorio.DS.Interfaces;
 
 namespace Conservatorio.BL.Clases
 {
-    public class InstrumentoBL : IInstrumento
+    public class InstrumentoBL : IInstrumentoBL
     {
-        DS.Interfaces.IInstrumento iInstrumento = new DS.Clases.InstrumentoDS();
+        private readonly IInstrumentoDS _instrumentoDs = new InstrumentoDS();
 
         public void CrearInstrumento(Instrumento nuevoInstrumento)
         {
-            iInstrumento.CrearInstrumento(nuevoInstrumento);
+            _instrumentoDs.CrearInstrumento(nuevoInstrumento);
         }
 
         public List<Instrumento> ObtenerInstrumentos(string keyword)
         {
-            return iInstrumento.ObtenerInstrumentos(x => x.NombreInstrumento.Contains(keyword));
+            return _instrumentoDs.ObtenerInstrumentos(x => x.NombreInstrumento.Contains(keyword));
         }
     }
 }

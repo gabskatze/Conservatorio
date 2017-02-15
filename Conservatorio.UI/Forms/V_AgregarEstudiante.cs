@@ -8,7 +8,7 @@ namespace Conservatorio.UI.Forms
 {
     public partial class V_AgregarEstudiante : Form
     {
-        private IEstudiante misEstudiates;
+        private IEstudianteBL misEstudiates;
         private V_Estudiantes vEst;
         public Encargado Encargado { get; set; }
        
@@ -24,13 +24,13 @@ namespace Conservatorio.UI.Forms
             Estudiante nuevoEstudiante = new Estudiante
             {
                 Nombre = tbxAg_NombreEst.Text,
-                Cedula = Int32.Parse(tbxAg_CedulaEst.Text),
+                Cedula = int.Parse(tbxAg_CedulaEst.Text),
                 Direccion = tbxAg_DireccionEst.Text,
                 Email = tbxAg_EmailEst.Text,
                 Estado = true,
                 FechaNacimiento = dtpFechNac.Value,
                 Ocupacion = tbxAg_OcupacionEst.Text,
-                Telefono1 = Int32.Parse(tbxAg_Tel1Est.Text),
+                Telefono1 = int.Parse(tbxAg_Tel1Est.Text),
                 Telefono2 = tbxAg_Tel2Est.Text == "" ? (int?)null : int.Parse(tbxAg_Tel2Est.Text),
                 Telefono3 = tbxAg_Tel3Est.Text == "" ? (int?)null : int.Parse(tbxAg_Tel3Est.Text),
                 Tipo = cbxTipo.SelectedItem.ToString(),

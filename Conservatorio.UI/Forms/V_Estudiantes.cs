@@ -6,19 +6,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Conservatorio.DATOS;
 
 namespace Conservatorio.UI.Forms
 {
     public partial class V_Estudiantes : Form
     {
-        private IEstudiante miEstudiante;
+        private readonly IEstudianteBL estudianteBL;
         private List<Estudiante> listaEstudiantes;
 
         public V_Estudiantes()
         {
             InitializeComponent();
-            miEstudiante = new EstudianteBL();
+            estudianteBL = new EstudianteBL();
         }
 
         private Estudiante ObtenerEstudianteSeleccionado()
@@ -34,8 +33,8 @@ namespace Conservatorio.UI.Forms
 
         public void RefrescarEstudiantes()
         {
-            var keyword = tbxBuscarEstudiante.Text;
-            listaEstudiantes = miEstudiante.ObtenerEstudiantes(keyword);
+            var keyword = tbxBuscar.Text;
+            listaEstudiantes = estudianteBL.ObtenerEstudiantes(keyword);
             dgvEstudiantes.DataSource = listaEstudiantes.Select(x => new EstudianteModel {
                 IdEstudiante = x.IdPersona,
                 Nombre = x.Nombre,
@@ -44,7 +43,7 @@ namespace Conservatorio.UI.Forms
                 Ocupacion = x.Ocupacion,
                 Email = x.Email,
                 Estado = x.Estado ? "Activo": "Inactivo",
-                FechaNacimiento = x.FechaNacimiento,
+                FechaNacimiento = x.FechaNacimiento.Value.ToShortDateString(),
                 Telefono1 = x.Telefono1,
                 Telefono2 = x.Telefono2,
                 Telefono3 = x.Telefono3,
@@ -57,40 +56,17 @@ namespace Conservatorio.UI.Forms
             }).ToList();
         }
 
-        private void btnAgregarV_Est_Click(object sender, EventArgs e)
+        #region Action Methods
+
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             Form f = new V_AgregarEstudiante(this);
             f.ShowDialog();
         }
 
-        private void V_Estudiantes_Load(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-            RefrescarEstudiantes();
-        }
-
-        private void tbxBuscarEstudiante_TextChanged(object sender, EventArgs e)
-        {
-            RefrescarEstudiantes();
-        }
-
-        private void btnBorrarEst_Click(object sender, EventArgs e)
-        {
-            if (dgvEstudiantes.SelectedRows.Count == 0)
-            {
-                return;
-            }
-
-            var selectedIndex = dgvEstudiantes.SelectedRows[0].Index;
-            var estudiantes = dgvEstudiantes.DataSource as List<EstudianteModel>;
-            var estudianteSeleccionado = estudiantes[selectedIndex];
-            //miEstudiante.EliminarEstudiante(estudianteSeleccionado.IdEstudiante);
-
-            RefrescarEstudiantes();
-        }
-
-        private void btnModificarV_Est_Click(object sender, EventArgs e)
-        {
-            Estudiante estudiante = ObtenerEstudianteSeleccionado();
+            var estudiante = ObtenerEstudianteSeleccionado();
             if (estudiante == null)
             {
                 return;
@@ -99,5 +75,29 @@ namespace Conservatorio.UI.Forms
             Form f = new V_ModificarEstudiante(this, estudiante);
             f.ShowDialog();
         }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            var estudiante = ObtenerEstudianteSeleccionado();
+            if (estudiante == null)
+            {
+                return;
+            }
+
+            estudianteBL.EliminarEstudiante(estudiante);
+            RefrescarEstudiantes();
+        }
+
+        private void V_Estudiantes_Load(object sender, EventArgs e)
+        {
+            RefrescarEstudiantes();
+        }
+
+        private void tbxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            RefrescarEstudiantes();
+        }
+
+        #endregion
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace Conservatorio.DS.Interfaces
 {
-    public interface IPagoMensualidad
+    public interface ICursoDS
     {
+
     }
 }

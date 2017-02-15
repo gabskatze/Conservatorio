@@ -5,19 +5,19 @@ using System.Data;
 
 namespace Conservatorio.DS.Clases
 {
-    public class EncargadoDS : IEncargado
+    public class EncargadoDS : IEncargadoDS
     {
         public void CrearEncargado(Encargado nuevoEncargado)
         {
             throw new NotImplementedException();
         }
 
-        public void EliminarEncargado(int idEncargado)
+        public void ModificarEncargado(Encargado encargado)
         {
             throw new NotImplementedException();
         }
 
-        public void ModificarEncargado(Encargado encargado)
+        public void EliminarEncargado(int idEncargado)
         {
             throw new NotImplementedException();
         }

@@ -2,31 +2,32 @@
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.DS.Clases;
+using Conservatorio.DS.Interfaces;
 
 namespace Conservatorio.BL.Clases
 {
-    public class ProfesorBL : IProfesor
+    public class ProfesorBL : IProfesorBL
     {
-        private DS.Interfaces.IProfesor profesoresDS = new ProfesorDS();
+        private readonly IProfesorDS _profesorDS = new ProfesorDS();
 
         public void CrearProfesor(Profesor profesor)
         {
-            profesoresDS.CrearProfesor(profesor);
+            _profesorDS.CrearProfesor(profesor);
         }
 
         public void ModificarProfesor(Profesor profesor)
         {
-            profesoresDS.ModificarProfesor(profesor);
+            _profesorDS.ModificarProfesor(profesor);
         }
 
         public void EliminarProfesor(Profesor profesor)
         {
-            profesoresDS.EliminarProfesor(profesor);
+            _profesorDS.EliminarProfesor(profesor);
         }
 
         public List<Profesor> ObtenerProfesores(string keyword)
         {
-            return profesoresDS.ObtenerProfesores(x => x.Nombre.Contains(keyword));
+            return _profesorDS.ObtenerProfesores(x => x.Nombre.Contains(keyword));
         }
     }
 }

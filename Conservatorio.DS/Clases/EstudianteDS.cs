@@ -8,7 +8,7 @@ using NHibernate.Linq;
 
 namespace Conservatorio.DS.Clases
 {
-    public class EstudianteDS : IEstudiante
+    public class EstudianteDS : IEstudianteDS
     {
         public void CrearEstudiante(Estudiante nuevoEstudiante)
         {
@@ -19,20 +19,20 @@ namespace Conservatorio.DS.Clases
             }
         }
 
-        public void EliminarEstudiante(Estudiante estudiante)
+        public void ModificarEstudiante(Estudiante estudiante)
         {
             using (var conn = Conexion.EstablecerConexion())
             {
-                estudiante.Estado = false;
                 conn.Update(estudiante);
                 conn.Flush();
             }
         }
 
-        public void ModificarEstudiante(Estudiante estudiante)
+        public void EliminarEstudiante(Estudiante estudiante)
         {
             using (var conn = Conexion.EstablecerConexion())
             {
+                estudiante.Estado = false;
                 conn.Update(estudiante);
                 conn.Flush();
             }

@@ -9,7 +9,7 @@ using NHibernate.Linq;
 
 namespace Conservatorio.DS.Clases
 {
-    public class ProfesorDS : IProfesor
+    public class ProfesorDS : IProfesorDS
     {
         public void CrearProfesor(Profesor profesor)
         {

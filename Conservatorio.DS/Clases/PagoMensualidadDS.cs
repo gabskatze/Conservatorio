@@ -2,7 +2,7 @@
 
 namespace Conservatorio.DS.Clases
 {
-    public class PagoMensualidadDS : IPagoMensualidad
+    public class PagoMensualidadDS : IPagoMensualidadDS
     {
         
     }

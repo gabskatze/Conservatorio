@@ -2,14 +2,11 @@
 
 namespace Conservatorio.DS.Interfaces
 {
-    public interface IEncargado
+    public interface IEncargadoDS
     {
         void CrearEncargado(Encargado nuevoEncargado);
-
-        void EliminarEncargado(int idEncargado);
-
         void ModificarEncargado(Encargado encargado);
-
+        void EliminarEncargado(int idEncargado);
         Encargado ObtenerEncargado(int idEncargado);
     }
 }

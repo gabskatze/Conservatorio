@@ -1,6 +1,6 @@
 ﻿namespace Conservatorio.BL.Interfaces
 {
-    public interface IEncargado
+    public interface IPagoMatriculaBL
     {
 
     }

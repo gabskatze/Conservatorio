@@ -30,14 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_AgregarProfesor));
             this.btnAgregarProf = new System.Windows.Forms.Button();
-            this.tbxAg_Tel3Prof = new System.Windows.Forms.TextBox();
-            this.tbxAg_Tel2Prof = new System.Windows.Forms.TextBox();
-            this.tbxAg_Tel1Prof = new System.Windows.Forms.TextBox();
-            this.mcFechNacProf = new System.Windows.Forms.MonthCalendar();
-            this.tbxAg_EmailProf = new System.Windows.Forms.TextBox();
-            this.tbxAg_OcupacionProf = new System.Windows.Forms.TextBox();
-            this.tbxAg_DireccionProf = new System.Windows.Forms.TextBox();
-            this.tbxAg_CedulaProf = new System.Windows.Forms.TextBox();
+            this.tbxTelefono3 = new System.Windows.Forms.TextBox();
+            this.tbxTelefono2 = new System.Windows.Forms.TextBox();
+            this.tbxTelefono1 = new System.Windows.Forms.TextBox();
+            this.tbxEmail = new System.Windows.Forms.TextBox();
+            this.tbxOcupacion = new System.Windows.Forms.TextBox();
+            this.tbxDireccion = new System.Windows.Forms.TextBox();
+            this.tbxCedula = new System.Windows.Forms.TextBox();
             this.lblAg_TelProf1 = new System.Windows.Forms.Label();
             this.lblAg_TelProf2 = new System.Windows.Forms.Label();
             this.lblAg_TelProf3 = new System.Windows.Forms.Label();
@@ -46,7 +45,7 @@
             this.lblAg_EmailProf = new System.Windows.Forms.Label();
             this.lblAg_DireccionProf = new System.Windows.Forms.Label();
             this.lblAg_OcupacionProf = new System.Windows.Forms.Label();
-            this.tbxAg_NombreProf = new System.Windows.Forms.TextBox();
+            this.tbxNombre = new System.Windows.Forms.TextBox();
             this.lblAg_NombreProf = new System.Windows.Forms.Label();
             this.cbAgClase4 = new System.Windows.Forms.ComboBox();
             this.cbAgClase3 = new System.Windows.Forms.ComboBox();
@@ -56,6 +55,7 @@
             this.lblAg_Clase3Prof = new System.Windows.Forms.Label();
             this.lblAg_Clase2Prof = new System.Windows.Forms.Label();
             this.lblAg_Clase1Prof = new System.Windows.Forms.Label();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnAgregarProf
@@ -67,68 +67,63 @@
             this.btnAgregarProf.Size = new System.Drawing.Size(70, 67);
             this.btnAgregarProf.TabIndex = 38;
             this.btnAgregarProf.UseVisualStyleBackColor = true;
+            this.btnAgregarProf.Click += new System.EventHandler(this.btnAgregarProf_Click);
             // 
-            // tbxAg_Tel3Prof
+            // tbxTelefono3
             // 
-            this.tbxAg_Tel3Prof.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAg_Tel3Prof.Location = new System.Drawing.Point(523, 309);
-            this.tbxAg_Tel3Prof.Name = "tbxAg_Tel3Prof";
-            this.tbxAg_Tel3Prof.Size = new System.Drawing.Size(166, 26);
-            this.tbxAg_Tel3Prof.TabIndex = 37;
+            this.tbxTelefono3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxTelefono3.Location = new System.Drawing.Point(523, 309);
+            this.tbxTelefono3.Name = "tbxTelefono3";
+            this.tbxTelefono3.Size = new System.Drawing.Size(166, 26);
+            this.tbxTelefono3.TabIndex = 37;
             // 
-            // tbxAg_Tel2Prof
+            // tbxTelefono2
             // 
-            this.tbxAg_Tel2Prof.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAg_Tel2Prof.Location = new System.Drawing.Point(523, 259);
-            this.tbxAg_Tel2Prof.Name = "tbxAg_Tel2Prof";
-            this.tbxAg_Tel2Prof.Size = new System.Drawing.Size(166, 26);
-            this.tbxAg_Tel2Prof.TabIndex = 36;
+            this.tbxTelefono2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxTelefono2.Location = new System.Drawing.Point(523, 259);
+            this.tbxTelefono2.Name = "tbxTelefono2";
+            this.tbxTelefono2.Size = new System.Drawing.Size(166, 26);
+            this.tbxTelefono2.TabIndex = 36;
             // 
-            // tbxAg_Tel1Prof
+            // tbxTelefono1
             // 
-            this.tbxAg_Tel1Prof.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAg_Tel1Prof.Location = new System.Drawing.Point(523, 207);
-            this.tbxAg_Tel1Prof.Name = "tbxAg_Tel1Prof";
-            this.tbxAg_Tel1Prof.Size = new System.Drawing.Size(166, 26);
-            this.tbxAg_Tel1Prof.TabIndex = 35;
+            this.tbxTelefono1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxTelefono1.Location = new System.Drawing.Point(523, 207);
+            this.tbxTelefono1.Name = "tbxTelefono1";
+            this.tbxTelefono1.Size = new System.Drawing.Size(166, 26);
+            this.tbxTelefono1.TabIndex = 35;
             // 
-            // mcFechNacProf
+            // tbxEmail
             // 
-            this.mcFechNacProf.Location = new System.Drawing.Point(180, 152);
-            this.mcFechNacProf.Name = "mcFechNacProf";
-            this.mcFechNacProf.TabIndex = 34;
+            this.tbxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxEmail.Location = new System.Drawing.Point(514, 146);
+            this.tbxEmail.Name = "tbxEmail";
+            this.tbxEmail.Size = new System.Drawing.Size(239, 26);
+            this.tbxEmail.TabIndex = 33;
             // 
-            // tbxAg_EmailProf
+            // tbxOcupacion
             // 
-            this.tbxAg_EmailProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAg_EmailProf.Location = new System.Drawing.Point(514, 146);
-            this.tbxAg_EmailProf.Name = "tbxAg_EmailProf";
-            this.tbxAg_EmailProf.Size = new System.Drawing.Size(239, 26);
-            this.tbxAg_EmailProf.TabIndex = 33;
+            this.tbxOcupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxOcupacion.Location = new System.Drawing.Point(514, 81);
+            this.tbxOcupacion.Name = "tbxOcupacion";
+            this.tbxOcupacion.Size = new System.Drawing.Size(159, 26);
+            this.tbxOcupacion.TabIndex = 32;
             // 
-            // tbxAg_OcupacionProf
+            // tbxDireccion
             // 
-            this.tbxAg_OcupacionProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAg_OcupacionProf.Location = new System.Drawing.Point(514, 81);
-            this.tbxAg_OcupacionProf.Name = "tbxAg_OcupacionProf";
-            this.tbxAg_OcupacionProf.Size = new System.Drawing.Size(159, 26);
-            this.tbxAg_OcupacionProf.TabIndex = 32;
+            this.tbxDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxDireccion.Location = new System.Drawing.Point(85, 81);
+            this.tbxDireccion.Name = "tbxDireccion";
+            this.tbxDireccion.Size = new System.Drawing.Size(291, 26);
+            this.tbxDireccion.TabIndex = 31;
             // 
-            // tbxAg_DireccionProf
+            // tbxCedula
             // 
-            this.tbxAg_DireccionProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAg_DireccionProf.Location = new System.Drawing.Point(85, 81);
-            this.tbxAg_DireccionProf.Name = "tbxAg_DireccionProf";
-            this.tbxAg_DireccionProf.Size = new System.Drawing.Size(291, 26);
-            this.tbxAg_DireccionProf.TabIndex = 31;
-            // 
-            // tbxAg_CedulaProf
-            // 
-            this.tbxAg_CedulaProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAg_CedulaProf.Location = new System.Drawing.Point(514, 24);
-            this.tbxAg_CedulaProf.Name = "tbxAg_CedulaProf";
-            this.tbxAg_CedulaProf.Size = new System.Drawing.Size(159, 26);
-            this.tbxAg_CedulaProf.TabIndex = 30;
+            this.tbxCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxCedula.Location = new System.Drawing.Point(514, 24);
+            this.tbxCedula.Name = "tbxCedula";
+            this.tbxCedula.Size = new System.Drawing.Size(159, 26);
+            this.tbxCedula.TabIndex = 30;
             // 
             // lblAg_TelProf1
             // 
@@ -210,13 +205,13 @@
             this.lblAg_OcupacionProf.TabIndex = 22;
             this.lblAg_OcupacionProf.Text = "Ocupación:";
             // 
-            // tbxAg_NombreProf
+            // tbxNombre
             // 
-            this.tbxAg_NombreProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAg_NombreProf.Location = new System.Drawing.Point(85, 21);
-            this.tbxAg_NombreProf.Name = "tbxAg_NombreProf";
-            this.tbxAg_NombreProf.Size = new System.Drawing.Size(291, 26);
-            this.tbxAg_NombreProf.TabIndex = 21;
+            this.tbxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxNombre.Location = new System.Drawing.Point(85, 21);
+            this.tbxNombre.Name = "tbxNombre";
+            this.tbxNombre.Size = new System.Drawing.Size(291, 26);
+            this.tbxNombre.TabIndex = 21;
             // 
             // lblAg_NombreProf
             // 
@@ -304,11 +299,19 @@
             this.lblAg_Clase1Prof.TabIndex = 64;
             this.lblAg_Clase1Prof.Text = "Clase 1:";
             // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(176, 152);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaNacimiento.TabIndex = 72;
+            // 
             // V_AgregarProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 527);
+            this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.cbAgClase4);
             this.Controls.Add(this.cbAgClase3);
             this.Controls.Add(this.cbAgClase1);
@@ -318,14 +321,13 @@
             this.Controls.Add(this.lblAg_Clase2Prof);
             this.Controls.Add(this.lblAg_Clase1Prof);
             this.Controls.Add(this.btnAgregarProf);
-            this.Controls.Add(this.tbxAg_Tel3Prof);
-            this.Controls.Add(this.tbxAg_Tel2Prof);
-            this.Controls.Add(this.tbxAg_Tel1Prof);
-            this.Controls.Add(this.mcFechNacProf);
-            this.Controls.Add(this.tbxAg_EmailProf);
-            this.Controls.Add(this.tbxAg_OcupacionProf);
-            this.Controls.Add(this.tbxAg_DireccionProf);
-            this.Controls.Add(this.tbxAg_CedulaProf);
+            this.Controls.Add(this.tbxTelefono3);
+            this.Controls.Add(this.tbxTelefono2);
+            this.Controls.Add(this.tbxTelefono1);
+            this.Controls.Add(this.tbxEmail);
+            this.Controls.Add(this.tbxOcupacion);
+            this.Controls.Add(this.tbxDireccion);
+            this.Controls.Add(this.tbxCedula);
             this.Controls.Add(this.lblAg_TelProf1);
             this.Controls.Add(this.lblAg_TelProf2);
             this.Controls.Add(this.lblAg_TelProf3);
@@ -334,11 +336,12 @@
             this.Controls.Add(this.lblAg_EmailProf);
             this.Controls.Add(this.lblAg_DireccionProf);
             this.Controls.Add(this.lblAg_OcupacionProf);
-            this.Controls.Add(this.tbxAg_NombreProf);
+            this.Controls.Add(this.tbxNombre);
             this.Controls.Add(this.lblAg_NombreProf);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "V_AgregarProfesor";
             this.Text = "Agregar Profesor";
+            this.Load += new System.EventHandler(this.V_AgregarProfesor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,14 +350,13 @@
         #endregion
 
         private System.Windows.Forms.Button btnAgregarProf;
-        private System.Windows.Forms.TextBox tbxAg_Tel3Prof;
-        private System.Windows.Forms.TextBox tbxAg_Tel2Prof;
-        private System.Windows.Forms.TextBox tbxAg_Tel1Prof;
-        private System.Windows.Forms.MonthCalendar mcFechNacProf;
-        private System.Windows.Forms.TextBox tbxAg_EmailProf;
-        private System.Windows.Forms.TextBox tbxAg_OcupacionProf;
-        private System.Windows.Forms.TextBox tbxAg_DireccionProf;
-        private System.Windows.Forms.TextBox tbxAg_CedulaProf;
+        private System.Windows.Forms.TextBox tbxTelefono3;
+        private System.Windows.Forms.TextBox tbxTelefono2;
+        private System.Windows.Forms.TextBox tbxTelefono1;
+        private System.Windows.Forms.TextBox tbxEmail;
+        private System.Windows.Forms.TextBox tbxOcupacion;
+        private System.Windows.Forms.TextBox tbxDireccion;
+        private System.Windows.Forms.TextBox tbxCedula;
         private System.Windows.Forms.Label lblAg_TelProf1;
         private System.Windows.Forms.Label lblAg_TelProf2;
         private System.Windows.Forms.Label lblAg_TelProf3;
@@ -363,7 +365,7 @@
         private System.Windows.Forms.Label lblAg_EmailProf;
         private System.Windows.Forms.Label lblAg_DireccionProf;
         private System.Windows.Forms.Label lblAg_OcupacionProf;
-        private System.Windows.Forms.TextBox tbxAg_NombreProf;
+        private System.Windows.Forms.TextBox tbxNombre;
         private System.Windows.Forms.Label lblAg_NombreProf;
         private System.Windows.Forms.ComboBox cbAgClase4;
         private System.Windows.Forms.ComboBox cbAgClase3;
@@ -373,5 +375,6 @@
         private System.Windows.Forms.Label lblAg_Clase3Prof;
         private System.Windows.Forms.Label lblAg_Clase2Prof;
         private System.Windows.Forms.Label lblAg_Clase1Prof;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
     }
 }

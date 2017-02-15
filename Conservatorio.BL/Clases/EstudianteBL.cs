@@ -1,37 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
+using Conservatorio.DS.Clases;
+using Conservatorio.DS.Interfaces;
 
 namespace Conservatorio.BL.Clases
 {
-    public class EstudianteBL : IEstudiante
+    public class EstudianteBL : IEstudianteBL
     {
-        DS.Interfaces.IEstudiante iEstudiante = new DS.Clases.EstudianteDS();
+        private readonly IEstudianteDS _estudianteDs = new EstudianteDS();
 
         public List<Estudiante> ObtenerEstudiantes(string keyword)
         {
-            return iEstudiante.ObtenerEstudiantes(x => x.Nombre.Contains(keyword));
+            return _estudianteDs.ObtenerEstudiantes(x => x.Nombre.Contains(keyword));
         }
 
         public List<Estudiante> ObtenerEstudiantes()
         {
-            return iEstudiante.ObtenerEstudiantes();
+            return _estudianteDs.ObtenerEstudiantes();
         }
 
         public void CrearEstudiante(Estudiante estudiante)
         {
-            iEstudiante.CrearEstudiante(estudiante);
+            _estudianteDs.CrearEstudiante(estudiante);
         }
 
         public void EliminarEstudiante(Estudiante estudiante)
         {
-            iEstudiante.EliminarEstudiante(estudiante);
+            _estudianteDs.EliminarEstudiante(estudiante);
         }
 
         public void ModificarEstudiante(Estudiante estudiante)
         {
-            iEstudiante.ModificarEstudiante(estudiante);
+            _estudianteDs.ModificarEstudiante(estudiante);
         }
     }
 }

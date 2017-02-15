@@ -1,6 +1,6 @@
 ﻿namespace Conservatorio.DS.Interfaces
 {
-    public interface IPagoMatricula
+    public interface IPagoMatriculaDS
     {
 
     }

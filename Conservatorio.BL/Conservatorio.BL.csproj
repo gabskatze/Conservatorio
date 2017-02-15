@@ -48,18 +48,16 @@
     <Compile Include="Clases\InstrumentoBL.cs" />
     <Compile Include="Clases\PagoMatriculaBL.cs" />
     <Compile Include="Clases\PagoMensualidadBL.cs" />
-    <Compile Include="Clases\PersonaBL.cs" />
     <Compile Include="Clases\ProfesorBL.cs" />
-    <Compile Include="Interfaces\IClase.cs" />
-    <Compile Include="Interfaces\IRegistroNota.cs" />
-    <Compile Include="Interfaces\ICurso.cs" />
-    <Compile Include="Interfaces\IEncargado.cs" />
-    <Compile Include="Interfaces\IEstudiante.cs" />
-    <Compile Include="Interfaces\IInstrumento.cs" />
-    <Compile Include="Interfaces\IPagoMatricula.cs" />
-    <Compile Include="Interfaces\IPagoMensualidad.cs" />
-    <Compile Include="Interfaces\IPersona.cs" />
-    <Compile Include="Interfaces\IProfesor.cs" />
+    <Compile Include="Interfaces\IClaseBL.cs" />
+    <Compile Include="Interfaces\IRegistroNotaBL.cs" />
+    <Compile Include="Interfaces\ICursoBL.cs" />
+    <Compile Include="Interfaces\IEncargadoBL.cs" />
+    <Compile Include="Interfaces\IEstudianteBL.cs" />
+    <Compile Include="Interfaces\IInstrumentoBL.cs" />
+    <Compile Include="Interfaces\IPagoMatriculaBL.cs" />
+    <Compile Include="Interfaces\IPagoMensualidadBL.cs" />
+    <Compile Include="Interfaces\IProfesorBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

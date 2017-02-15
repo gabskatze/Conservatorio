@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace Conservatorio.BL.Interfaces
 {
-    public interface IEstudiante
+    public interface IEstudianteBL
     {
+        void CrearEstudiante(Estudiante estudiante);
+        void ModificarEstudiante(Estudiante estudiante);
+        void EliminarEstudiante(Estudiante estudiante);
         List<Estudiante> ObtenerEstudiantes(string keyword);
         List<Estudiante> ObtenerEstudiantes();
-        void CrearEstudiante(Estudiante estudiante);
-        void EliminarEstudiante(Estudiante estudiante);
-        void ModificarEstudiante(Estudiante estudiante);
     }
 }

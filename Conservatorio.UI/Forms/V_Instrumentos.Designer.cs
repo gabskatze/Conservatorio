@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Instrumentos));
-            this.tbxBuscarInstrumento = new System.Windows.Forms.TextBox();
-            this.btnAgregarInstrumento = new System.Windows.Forms.Button();
+            this.tbxBuscar = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvInstrumentos = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInstrumentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // tbxBuscarInstrumento
+            // tbxBuscar
             // 
-            this.tbxBuscarInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxBuscarInstrumento.Location = new System.Drawing.Point(86, 30);
-            this.tbxBuscarInstrumento.Name = "tbxBuscarInstrumento";
-            this.tbxBuscarInstrumento.Size = new System.Drawing.Size(192, 26);
-            this.tbxBuscarInstrumento.TabIndex = 9;
-            this.tbxBuscarInstrumento.TextChanged += new System.EventHandler(this.tbxBuscarInstrumento_TextChanged);
+            this.tbxBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxBuscar.Location = new System.Drawing.Point(86, 30);
+            this.tbxBuscar.Name = "tbxBuscar";
+            this.tbxBuscar.Size = new System.Drawing.Size(192, 26);
+            this.tbxBuscar.TabIndex = 9;
+            this.tbxBuscar.TextChanged += new System.EventHandler(this.tbxBuscar_TextChanged);
             // 
-            // btnAgregarInstrumento
+            // btnAgregar
             // 
-            this.btnAgregarInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarInstrumento.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarInstrumento.Image")));
-            this.btnAgregarInstrumento.Location = new System.Drawing.Point(343, 366);
-            this.btnAgregarInstrumento.Name = "btnAgregarInstrumento";
-            this.btnAgregarInstrumento.Size = new System.Drawing.Size(73, 73);
-            this.btnAgregarInstrumento.TabIndex = 7;
-            this.btnAgregarInstrumento.UseVisualStyleBackColor = true;
-            this.btnAgregarInstrumento.Click += new System.EventHandler(this.btnAgregarInstrumento_Click);
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.Location = new System.Drawing.Point(343, 366);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(73, 73);
+            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvInstrumentos
             // 
@@ -67,7 +67,6 @@
             this.dgvInstrumentos.Name = "dgvInstrumentos";
             this.dgvInstrumentos.Size = new System.Drawing.Size(292, 283);
             this.dgvInstrumentos.TabIndex = 6;
-            this.dgvInstrumentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInstrumentos_CellContentClick);
             // 
             // pictureBox1
             // 
@@ -84,8 +83,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 453);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.tbxBuscarInstrumento);
-            this.Controls.Add(this.btnAgregarInstrumento);
+            this.Controls.Add(this.tbxBuscar);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvInstrumentos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "V_Instrumentos";
@@ -101,8 +100,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbxBuscarInstrumento;
-        private System.Windows.Forms.Button btnAgregarInstrumento;
+        private System.Windows.Forms.TextBox tbxBuscar;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvInstrumentos;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

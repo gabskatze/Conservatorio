@@ -2,7 +2,7 @@
 
 namespace Conservatorio.DS.Clases
 {
-    public class CursoDS : ICurso
+    public class CursoDS : ICursoDS
     {
 
     }

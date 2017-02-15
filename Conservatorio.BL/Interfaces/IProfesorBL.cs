@@ -3,7 +3,7 @@ using Conservatorio.DATOS;
 
 namespace Conservatorio.BL.Interfaces
 {
-    public interface IProfesor
+    public interface IProfesorBL
     {
         void CrearProfesor(Profesor profesor);
         void ModificarProfesor(Profesor profesor);

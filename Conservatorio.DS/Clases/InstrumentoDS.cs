@@ -8,7 +8,7 @@ using NHibernate.Linq;
 
 namespace Conservatorio.DS.Clases
 {
-    public class InstrumentoDS : IInstrumento
+    public class InstrumentoDS : IInstrumentoDS
     {
         public void CrearInstrumento(Instrumento nuevoInstrumento)
         {

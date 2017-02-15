@@ -5,7 +5,7 @@ using Conservatorio.DATOS;
 
 namespace Conservatorio.DS.Interfaces
 {
-    public interface IProfesor
+    public interface IProfesorDS
     {
         void CrearProfesor(Profesor profesor);
         void ModificarProfesor(Profesor profesor);
