@@ -50,8 +50,8 @@
             this.lblInstrumentos = new System.Windows.Forms.Label();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.clbInstrumentos = new System.Windows.Forms.CheckedListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblGradoAcademico = new System.Windows.Forms.Label();
+            this.tbGradoAcademico = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAgregarProf
@@ -68,7 +68,7 @@
             // tbxTelefono3
             // 
             this.tbxTelefono3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxTelefono3.Location = new System.Drawing.Point(514, 367);
+            this.tbxTelefono3.Location = new System.Drawing.Point(513, 364);
             this.tbxTelefono3.Name = "tbxTelefono3";
             this.tbxTelefono3.Size = new System.Drawing.Size(166, 26);
             this.tbxTelefono3.TabIndex = 37;
@@ -76,7 +76,7 @@
             // tbxTelefono2
             // 
             this.tbxTelefono2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxTelefono2.Location = new System.Drawing.Point(513, 317);
+            this.tbxTelefono2.Location = new System.Drawing.Point(513, 314);
             this.tbxTelefono2.Name = "tbxTelefono2";
             this.tbxTelefono2.Size = new System.Drawing.Size(166, 26);
             this.tbxTelefono2.TabIndex = 36;
@@ -84,7 +84,7 @@
             // tbxTelefono1
             // 
             this.tbxTelefono1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxTelefono1.Location = new System.Drawing.Point(513, 265);
+            this.tbxTelefono1.Location = new System.Drawing.Point(513, 262);
             this.tbxTelefono1.Name = "tbxTelefono1";
             this.tbxTelefono1.Size = new System.Drawing.Size(166, 26);
             this.tbxTelefono1.TabIndex = 35;
@@ -92,7 +92,7 @@
             // tbxEmail
             // 
             this.tbxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxEmail.Location = new System.Drawing.Point(478, 204);
+            this.tbxEmail.Location = new System.Drawing.Point(478, 201);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(239, 26);
             this.tbxEmail.TabIndex = 33;
@@ -246,31 +246,31 @@
             this.clbInstrumentos.Size = new System.Drawing.Size(252, 154);
             this.clbInstrumentos.TabIndex = 73;
             // 
-            // label1
+            // lblGradoAcademico
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(419, 146);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 20);
-            this.label1.TabIndex = 74;
-            this.label1.Text = "Grado Académico:";
+            this.lblGradoAcademico.AutoSize = true;
+            this.lblGradoAcademico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGradoAcademico.Location = new System.Drawing.Point(419, 146);
+            this.lblGradoAcademico.Name = "lblGradoAcademico";
+            this.lblGradoAcademico.Size = new System.Drawing.Size(141, 20);
+            this.lblGradoAcademico.TabIndex = 74;
+            this.lblGradoAcademico.Text = "Grado Académico:";
             // 
-            // textBox1
+            // tbGradoAcademico
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(566, 146);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 26);
-            this.textBox1.TabIndex = 75;
+            this.tbGradoAcademico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbGradoAcademico.Location = new System.Drawing.Point(566, 140);
+            this.tbGradoAcademico.Name = "tbGradoAcademico";
+            this.tbGradoAcademico.Size = new System.Drawing.Size(187, 26);
+            this.tbGradoAcademico.TabIndex = 75;
             // 
             // V_AgregarModificarProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 520);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbGradoAcademico);
+            this.Controls.Add(this.lblGradoAcademico);
             this.Controls.Add(this.clbInstrumentos);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.lblInstrumentos);
@@ -324,7 +324,7 @@
         private System.Windows.Forms.Label lblInstrumentos;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.CheckedListBox clbInstrumentos;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblGradoAcademico;
+        private System.Windows.Forms.TextBox tbGradoAcademico;
     }
 }

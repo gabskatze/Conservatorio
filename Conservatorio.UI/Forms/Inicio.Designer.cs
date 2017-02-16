@@ -34,7 +34,7 @@
             this.miEstudiantes = new System.Windows.Forms.ToolStripMenuItem();
             this.miProfesores = new System.Windows.Forms.ToolStripMenuItem();
             this.miInstrumentos = new System.Windows.Forms.ToolStripMenuItem();
-            this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miCursos = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mensualidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +58,7 @@
             this.miEstudiantes,
             this.miProfesores,
             this.miInstrumentos,
-            this.cursosToolStripMenuItem});
+            this.miCursos});
             this.mantenimientoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(128, 25);
@@ -85,11 +85,12 @@
             this.miInstrumentos.Text = "Instrumentos";
             this.miInstrumentos.Click += new System.EventHandler(this.miInstrumentos_Click);
             // 
-            // cursosToolStripMenuItem
+            // miCursos
             // 
-            this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
-            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
-            this.cursosToolStripMenuItem.Text = "Cursos";
+            this.miCursos.Name = "miCursos";
+            this.miCursos.Size = new System.Drawing.Size(172, 26);
+            this.miCursos.Text = "Cursos";
+            this.miCursos.Click += new System.EventHandler(this.miCursos_Click);
             // 
             // facturaciónToolStripMenuItem
             // 
@@ -145,6 +146,6 @@
         private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matriculaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mensualidadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miCursos;
     }
 }

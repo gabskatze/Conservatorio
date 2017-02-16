@@ -48,11 +48,21 @@ namespace Conservatorio.UI.Forms
             tbxCedula.Text = profesor.Cedula.ToString();
             tbxDireccion.Text = profesor.Direccion;
             tbxOcupacion.Text = profesor.Ocupacion;
+            tbGradoAcademico.Text = profesor.GradoAcademico;
             dtpFechaNacimiento.Value = profesor.FechaNacimiento.Value;
             tbxEmail.Text = profesor.Email;
             tbxTelefono1.Text = profesor.Telefono1.ToString();
             tbxTelefono2.Text = profesor.Telefono2.ToString();
             tbxTelefono3.Text = profesor.Telefono3.ToString();
+            var idsInstrumentos = profesor.Instrumentos.Select(x => x.IdInstrumento).ToList();
+            for (var i = 0; i < clbInstrumentos.Items.Count; i++)
+            {
+                var instrumento = (Instrumento)clbInstrumentos.Items[i];
+                if (idsInstrumentos.Contains(instrumento.IdInstrumento))
+                {
+                    clbInstrumentos.SetItemChecked(i, true);
+                }
+            }
         }
 
         private void btnAgregarProf_Click(object sender, System.EventArgs e)
@@ -69,12 +79,13 @@ namespace Conservatorio.UI.Forms
             profesor.Direccion = tbxDireccion.Text;
             profesor.Email = tbxEmail.Text;
             profesor.FechaNacimiento = dtpFechaNacimiento.Value;
-            profesor.GradoAcademico = string.Empty;
+            profesor.GradoAcademico = tbGradoAcademico.Text;
             profesor.Nombre = tbxNombre.Text;
             profesor.Ocupacion = tbxOcupacion.Text;
             profesor.Telefono1 = int.Parse(tbxTelefono1.Text);
             profesor.Telefono2 = string.IsNullOrEmpty(tbxTelefono2.Text) ? (int?) null : int.Parse(tbxTelefono2.Text);
             profesor.Telefono3 = string.IsNullOrEmpty(tbxTelefono3.Text) ? (int?) null : int.Parse(tbxTelefono3.Text);
+            profesor.Instrumentos = clbInstrumentos.CheckedItems.Cast<Instrumento>().ToList();
 
             if (profesor.IdPersona == 0)
             {

@@ -11,7 +11,7 @@ namespace Conservatorio.DS.Mappings
             Map(x => x.NombreCurso).Not.Nullable();
             Map(x => x.Nivel).Not.Nullable();
             References(x => x.CursoRequisito).Column("IdRequisito");
-            References(x => x.Instrumento).Column("IdInstrumento");
+            References(x => x.Instrumento).Column("IdInstrumento").Not.LazyLoad();
             HasMany(x => x.Clases).Cascade.All().KeyColumn("IdCurso");
         }
     }

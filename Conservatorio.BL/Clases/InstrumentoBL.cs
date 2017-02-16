@@ -12,6 +12,23 @@ namespace Conservatorio.BL.Clases
 
         public void CrearInstrumento(Instrumento nuevoInstrumento)
         {
+            // Agregar los 8 cursos para el instrumento
+            nuevoInstrumento.Cursos = new List<Curso>();
+            Curso requisito = null;
+            for (var i = 1; i <= 8; i++)
+            {
+                var curso = new Curso
+                {
+                    Instrumento = nuevoInstrumento,
+                    CursoRequisito = requisito,
+                    Nivel = i,
+                    NombreCurso = nuevoInstrumento.NombreInstrumento + " " + i
+                };
+                nuevoInstrumento.Cursos.Add(curso);
+
+                requisito = curso;
+            }
+
             _instrumentoDs.CrearInstrumento(nuevoInstrumento);
         }
 
