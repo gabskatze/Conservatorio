@@ -68,6 +68,12 @@
     <Compile Include="Forms\V_AgregarInstrumento.Designer.cs">
       <DependentUpon>V_AgregarInstrumento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\V_AgregarModificarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\V_AgregarModificarCurso.Designer.cs">
+      <DependentUpon>V_AgregarModificarCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\V_AgregarModificarProfesor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_AgregarInstrumento.resx">
       <DependentUpon>V_AgregarInstrumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\V_AgregarModificarCurso.resx">
+      <DependentUpon>V_AgregarModificarCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_AgregarModificarProfesor.resx">
       <DependentUpon>V_AgregarModificarProfesor.cs</DependentUpon>
