@@ -43,7 +43,7 @@
             this.tbxBuscar.Location = new System.Drawing.Point(86, 30);
             this.tbxBuscar.Name = "tbxBuscar";
             this.tbxBuscar.Size = new System.Drawing.Size(192, 26);
-            this.tbxBuscar.TabIndex = 9;
+            this.tbxBuscar.TabIndex = 1;
             this.tbxBuscar.TextChanged += new System.EventHandler(this.tbxBuscar_TextChanged);
             // 
             // btnAgregar
@@ -53,7 +53,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(343, 366);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(73, 73);
-            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.TabIndex = 3;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -66,7 +66,7 @@
             this.dgvInstrumentos.Location = new System.Drawing.Point(227, 56);
             this.dgvInstrumentos.Name = "dgvInstrumentos";
             this.dgvInstrumentos.Size = new System.Drawing.Size(292, 283);
-            this.dgvInstrumentos.TabIndex = 6;
+            this.dgvInstrumentos.TabIndex = 2;
             // 
             // pictureBox1
             // 

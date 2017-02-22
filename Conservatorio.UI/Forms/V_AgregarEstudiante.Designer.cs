@@ -174,7 +174,7 @@
             this.tbxAg_CedulaEst.Location = new System.Drawing.Point(516, 45);
             this.tbxAg_CedulaEst.Name = "tbxAg_CedulaEst";
             this.tbxAg_CedulaEst.Size = new System.Drawing.Size(159, 26);
-            this.tbxAg_CedulaEst.TabIndex = 11;
+            this.tbxAg_CedulaEst.TabIndex = 2;
             // 
             // tbxAg_DireccionEst
             // 
@@ -182,7 +182,7 @@
             this.tbxAg_DireccionEst.Location = new System.Drawing.Point(87, 102);
             this.tbxAg_DireccionEst.Name = "tbxAg_DireccionEst";
             this.tbxAg_DireccionEst.Size = new System.Drawing.Size(291, 26);
-            this.tbxAg_DireccionEst.TabIndex = 12;
+            this.tbxAg_DireccionEst.TabIndex = 3;
             // 
             // tbxAg_OcupacionEst
             // 
@@ -190,7 +190,7 @@
             this.tbxAg_OcupacionEst.Location = new System.Drawing.Point(516, 102);
             this.tbxAg_OcupacionEst.Name = "tbxAg_OcupacionEst";
             this.tbxAg_OcupacionEst.Size = new System.Drawing.Size(159, 26);
-            this.tbxAg_OcupacionEst.TabIndex = 13;
+            this.tbxAg_OcupacionEst.TabIndex = 4;
             // 
             // tbxAg_EmailEst
             // 
@@ -198,7 +198,7 @@
             this.tbxAg_EmailEst.Location = new System.Drawing.Point(516, 167);
             this.tbxAg_EmailEst.Name = "tbxAg_EmailEst";
             this.tbxAg_EmailEst.Size = new System.Drawing.Size(239, 26);
-            this.tbxAg_EmailEst.TabIndex = 14;
+            this.tbxAg_EmailEst.TabIndex = 6;
             // 
             // tbxAg_Tel1Est
             // 
@@ -206,7 +206,7 @@
             this.tbxAg_Tel1Est.Location = new System.Drawing.Point(525, 228);
             this.tbxAg_Tel1Est.Name = "tbxAg_Tel1Est";
             this.tbxAg_Tel1Est.Size = new System.Drawing.Size(166, 26);
-            this.tbxAg_Tel1Est.TabIndex = 16;
+            this.tbxAg_Tel1Est.TabIndex = 8;
             // 
             // tbxAg_Tel2Est
             // 
@@ -214,7 +214,7 @@
             this.tbxAg_Tel2Est.Location = new System.Drawing.Point(525, 280);
             this.tbxAg_Tel2Est.Name = "tbxAg_Tel2Est";
             this.tbxAg_Tel2Est.Size = new System.Drawing.Size(166, 26);
-            this.tbxAg_Tel2Est.TabIndex = 17;
+            this.tbxAg_Tel2Est.TabIndex = 9;
             // 
             // tbxAg_Tel3Est
             // 
@@ -222,7 +222,7 @@
             this.tbxAg_Tel3Est.Location = new System.Drawing.Point(525, 330);
             this.tbxAg_Tel3Est.Name = "tbxAg_Tel3Est";
             this.tbxAg_Tel3Est.Size = new System.Drawing.Size(166, 26);
-            this.tbxAg_Tel3Est.TabIndex = 18;
+            this.tbxAg_Tel3Est.TabIndex = 10;
             // 
             // btnAgregarEst
             // 
@@ -231,7 +231,7 @@
             this.btnAgregarEst.Location = new System.Drawing.Point(346, 361);
             this.btnAgregarEst.Name = "btnAgregarEst";
             this.btnAgregarEst.Size = new System.Drawing.Size(71, 70);
-            this.btnAgregarEst.TabIndex = 19;
+            this.btnAgregarEst.TabIndex = 10;
             this.btnAgregarEst.UseVisualStyleBackColor = true;
             this.btnAgregarEst.Click += new System.EventHandler(this.btnAgregarEst_Click);
             // 
@@ -242,7 +242,7 @@
             this.dtpFechNac.Location = new System.Drawing.Point(181, 173);
             this.dtpFechNac.Name = "dtpFechNac";
             this.dtpFechNac.Size = new System.Drawing.Size(197, 26);
-            this.dtpFechNac.TabIndex = 20;
+            this.dtpFechNac.TabIndex = 5;
             // 
             // cbxTipo
             // 
@@ -254,7 +254,7 @@
             this.cbxTipo.Location = new System.Drawing.Point(87, 234);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(142, 28);
-            this.cbxTipo.TabIndex = 21;
+            this.cbxTipo.TabIndex = 7;
             // 
             // label1
             // 

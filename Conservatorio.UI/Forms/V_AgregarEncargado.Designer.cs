@@ -61,7 +61,7 @@
             this.btnAgregarEnc.Location = new System.Drawing.Point(384, 214);
             this.btnAgregarEnc.Name = "btnAgregarEnc";
             this.btnAgregarEnc.Size = new System.Drawing.Size(71, 70);
-            this.btnAgregarEnc.TabIndex = 40;
+            this.btnAgregarEnc.TabIndex = 7;
             this.btnAgregarEnc.UseVisualStyleBackColor = true;
             this.btnAgregarEnc.Click += new System.EventHandler(this.btnAgregarEnc_Click);
             // 
@@ -71,7 +71,7 @@
             this.tbxAg_Tel3Enc.Location = new System.Drawing.Point(585, 173);
             this.tbxAg_Tel3Enc.Name = "tbxAg_Tel3Enc";
             this.tbxAg_Tel3Enc.Size = new System.Drawing.Size(166, 26);
-            this.tbxAg_Tel3Enc.TabIndex = 39;
+            this.tbxAg_Tel3Enc.TabIndex = 6;
             // 
             // tbxAg_Tel2Enc
             // 
@@ -79,7 +79,7 @@
             this.tbxAg_Tel2Enc.Location = new System.Drawing.Point(585, 114);
             this.tbxAg_Tel2Enc.Name = "tbxAg_Tel2Enc";
             this.tbxAg_Tel2Enc.Size = new System.Drawing.Size(166, 26);
-            this.tbxAg_Tel2Enc.TabIndex = 38;
+            this.tbxAg_Tel2Enc.TabIndex = 5;
             // 
             // tbxAg_Tel1Enc
             // 
@@ -87,7 +87,7 @@
             this.tbxAg_Tel1Enc.Location = new System.Drawing.Point(585, 57);
             this.tbxAg_Tel1Enc.Name = "tbxAg_Tel1Enc";
             this.tbxAg_Tel1Enc.Size = new System.Drawing.Size(166, 26);
-            this.tbxAg_Tel1Enc.TabIndex = 37;
+            this.tbxAg_Tel1Enc.TabIndex = 4;
             // 
             // tbxAg_EmailEnc
             // 
@@ -95,7 +95,7 @@
             this.tbxAg_EmailEnc.Location = new System.Drawing.Point(132, 170);
             this.tbxAg_EmailEnc.Name = "tbxAg_EmailEnc";
             this.tbxAg_EmailEnc.Size = new System.Drawing.Size(239, 26);
-            this.tbxAg_EmailEnc.TabIndex = 36;
+            this.tbxAg_EmailEnc.TabIndex = 3;
             // 
             // lblAg_TelEnc1
             // 
@@ -143,7 +143,7 @@
             this.tbxAg_NombreEnc.Location = new System.Drawing.Point(132, 54);
             this.tbxAg_NombreEnc.Name = "tbxAg_NombreEnc";
             this.tbxAg_NombreEnc.Size = new System.Drawing.Size(291, 26);
-            this.tbxAg_NombreEnc.TabIndex = 24;
+            this.tbxAg_NombreEnc.TabIndex = 1;
             // 
             // lblAg_NombreEnc
             // 
@@ -161,7 +161,7 @@
             this.tbxParentesco.Location = new System.Drawing.Point(157, 114);
             this.tbxParentesco.Name = "tbxParentesco";
             this.tbxParentesco.Size = new System.Drawing.Size(166, 26);
-            this.tbxParentesco.TabIndex = 44;
+            this.tbxParentesco.TabIndex = 2;
             // 
             // V_AgregarEncargado
             // 

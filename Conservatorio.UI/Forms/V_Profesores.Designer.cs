@@ -45,7 +45,7 @@
             this.dgvProfesores.Location = new System.Drawing.Point(27, 61);
             this.dgvProfesores.Name = "dgvProfesores";
             this.dgvProfesores.Size = new System.Drawing.Size(731, 324);
-            this.dgvProfesores.TabIndex = 1;
+            this.dgvProfesores.TabIndex = 2;
             // 
             // btnAgregar
             // 
@@ -54,7 +54,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(93, 410);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(77, 77);
-            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.TabIndex = 3;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -64,7 +64,7 @@
             this.tbxBuscar.Location = new System.Drawing.Point(126, 28);
             this.tbxBuscar.Name = "tbxBuscar";
             this.tbxBuscar.Size = new System.Drawing.Size(209, 26);
-            this.tbxBuscar.TabIndex = 5;
+            this.tbxBuscar.TabIndex = 1;
             this.tbxBuscar.TextChanged += new System.EventHandler(this.tbxBuscar_TextChanged);
             // 
             // btnModificar
@@ -73,8 +73,8 @@
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
             this.btnModificar.Location = new System.Drawing.Point(343, 410);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(80, 77);
-            this.btnModificar.TabIndex = 6;
+            this.btnModificar.Size = new System.Drawing.Size(75, 77);
+            this.btnModificar.TabIndex = 4;
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
@@ -92,8 +92,8 @@
             this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
             this.btnBorrar.Location = new System.Drawing.Point(612, 410);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(85, 77);
-            this.btnBorrar.TabIndex = 20;
+            this.btnBorrar.Size = new System.Drawing.Size(78, 77);
+            this.btnBorrar.TabIndex = 5;
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 

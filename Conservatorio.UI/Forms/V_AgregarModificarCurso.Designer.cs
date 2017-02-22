@@ -47,7 +47,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(133, 207);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(70, 67);
-            this.btnGuardar.TabIndex = 39;
+            this.btnGuardar.TabIndex = 5;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -77,16 +77,17 @@
             this.tbxNombre.Location = new System.Drawing.Point(87, 12);
             this.tbxNombre.Name = "tbxNombre";
             this.tbxNombre.Size = new System.Drawing.Size(235, 26);
-            this.tbxNombre.TabIndex = 42;
+            this.tbxNombre.TabIndex = 1;
             // 
             // cbxRequisito
             // 
             this.cbxRequisito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxRequisito.FormattingEnabled = true;
+            this.cbxRequisito.ItemHeight = 20;
             this.cbxRequisito.Location = new System.Drawing.Point(99, 107);
             this.cbxRequisito.Name = "cbxRequisito";
             this.cbxRequisito.Size = new System.Drawing.Size(223, 28);
-            this.cbxRequisito.TabIndex = 43;
+            this.cbxRequisito.TabIndex = 3;
             this.cbxRequisito.SelectedIndexChanged += new System.EventHandler(this.cbxRequisito_SelectedIndexChanged);
             // 
             // lblNivel
@@ -116,7 +117,7 @@
             this.tbxInstrumento.Name = "tbxInstrumento";
             this.tbxInstrumento.ReadOnly = true;
             this.tbxInstrumento.Size = new System.Drawing.Size(205, 26);
-            this.tbxInstrumento.TabIndex = 46;
+            this.tbxInstrumento.TabIndex = 2;
             // 
             // tbxNivel
             // 
@@ -124,7 +125,7 @@
             this.tbxNivel.Location = new System.Drawing.Point(64, 155);
             this.tbxNivel.Name = "tbxNivel";
             this.tbxNivel.Size = new System.Drawing.Size(74, 26);
-            this.tbxNivel.TabIndex = 47;
+            this.tbxNivel.TabIndex = 4;
             // 
             // V_AgregarModificarCurso
             // 
@@ -140,8 +141,10 @@
             this.Controls.Add(this.lblRequisito);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnGuardar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "V_AgregarModificarCurso";
-            this.Text = "V_AgregarModificarCurso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cursos";
             this.Load += new System.EventHandler(this.V_AgregarModificarCurso_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

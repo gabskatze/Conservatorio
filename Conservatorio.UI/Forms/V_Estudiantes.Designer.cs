@@ -46,7 +46,7 @@
             this.dgvEstudiantes.MultiSelect = false;
             this.dgvEstudiantes.Name = "dgvEstudiantes";
             this.dgvEstudiantes.Size = new System.Drawing.Size(731, 324);
-            this.dgvEstudiantes.TabIndex = 0;
+            this.dgvEstudiantes.TabIndex = 2;
             // 
             // btnAgregar
             // 
@@ -55,7 +55,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(164, 396);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(73, 73);
-            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.TabIndex = 3;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -65,7 +65,7 @@
             this.tbxBuscar.Location = new System.Drawing.Point(116, 27);
             this.tbxBuscar.Name = "tbxBuscar";
             this.tbxBuscar.Size = new System.Drawing.Size(232, 26);
-            this.tbxBuscar.TabIndex = 3;
+            this.tbxBuscar.TabIndex = 1;
             this.tbxBuscar.TextChanged += new System.EventHandler(this.tbxBuscar_TextChanged);
             // 
             // btnModificar
@@ -92,10 +92,10 @@
             // 
             this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
-            this.btnBorrar.Location = new System.Drawing.Point(541, 396);
+            this.btnBorrar.Location = new System.Drawing.Point(541, 394);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(78, 73);
-            this.btnBorrar.TabIndex = 18;
+            this.btnBorrar.Size = new System.Drawing.Size(81, 75);
+            this.btnBorrar.TabIndex = 5;
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 

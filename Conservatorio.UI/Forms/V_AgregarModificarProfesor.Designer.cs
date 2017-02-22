@@ -61,7 +61,7 @@
             this.btnAgregarProf.Location = new System.Drawing.Point(351, 433);
             this.btnAgregarProf.Name = "btnAgregarProf";
             this.btnAgregarProf.Size = new System.Drawing.Size(70, 67);
-            this.btnAgregarProf.TabIndex = 38;
+            this.btnAgregarProf.TabIndex = 12;
             this.btnAgregarProf.UseVisualStyleBackColor = true;
             this.btnAgregarProf.Click += new System.EventHandler(this.btnAgregarProf_Click);
             // 
@@ -71,7 +71,7 @@
             this.tbxTelefono3.Location = new System.Drawing.Point(513, 364);
             this.tbxTelefono3.Name = "tbxTelefono3";
             this.tbxTelefono3.Size = new System.Drawing.Size(166, 26);
-            this.tbxTelefono3.TabIndex = 37;
+            this.tbxTelefono3.TabIndex = 11;
             // 
             // tbxTelefono2
             // 
@@ -79,7 +79,7 @@
             this.tbxTelefono2.Location = new System.Drawing.Point(513, 314);
             this.tbxTelefono2.Name = "tbxTelefono2";
             this.tbxTelefono2.Size = new System.Drawing.Size(166, 26);
-            this.tbxTelefono2.TabIndex = 36;
+            this.tbxTelefono2.TabIndex = 10;
             // 
             // tbxTelefono1
             // 
@@ -87,7 +87,7 @@
             this.tbxTelefono1.Location = new System.Drawing.Point(513, 262);
             this.tbxTelefono1.Name = "tbxTelefono1";
             this.tbxTelefono1.Size = new System.Drawing.Size(166, 26);
-            this.tbxTelefono1.TabIndex = 35;
+            this.tbxTelefono1.TabIndex = 9;
             // 
             // tbxEmail
             // 
@@ -95,7 +95,7 @@
             this.tbxEmail.Location = new System.Drawing.Point(478, 201);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(239, 26);
-            this.tbxEmail.TabIndex = 33;
+            this.tbxEmail.TabIndex = 8;
             // 
             // tbxOcupacion
             // 
@@ -103,7 +103,7 @@
             this.tbxOcupacion.Location = new System.Drawing.Point(514, 81);
             this.tbxOcupacion.Name = "tbxOcupacion";
             this.tbxOcupacion.Size = new System.Drawing.Size(159, 26);
-            this.tbxOcupacion.TabIndex = 32;
+            this.tbxOcupacion.TabIndex = 4;
             // 
             // tbxDireccion
             // 
@@ -112,7 +112,7 @@
             this.tbxDireccion.Multiline = true;
             this.tbxDireccion.Name = "tbxDireccion";
             this.tbxDireccion.Size = new System.Drawing.Size(281, 71);
-            this.tbxDireccion.TabIndex = 31;
+            this.tbxDireccion.TabIndex = 5;
             // 
             // tbxCedula
             // 
@@ -236,7 +236,7 @@
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(179, 87);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(197, 20);
-            this.dtpFechaNacimiento.TabIndex = 72;
+            this.dtpFechaNacimiento.TabIndex = 3;
             // 
             // clbInstrumentos
             // 
@@ -244,7 +244,7 @@
             this.clbInstrumentos.Location = new System.Drawing.Point(124, 243);
             this.clbInstrumentos.Name = "clbInstrumentos";
             this.clbInstrumentos.Size = new System.Drawing.Size(252, 154);
-            this.clbInstrumentos.TabIndex = 73;
+            this.clbInstrumentos.TabIndex = 7;
             // 
             // lblGradoAcademico
             // 
@@ -262,7 +262,7 @@
             this.tbGradoAcademico.Location = new System.Drawing.Point(566, 140);
             this.tbGradoAcademico.Name = "tbGradoAcademico";
             this.tbGradoAcademico.Size = new System.Drawing.Size(187, 26);
-            this.tbGradoAcademico.TabIndex = 75;
+            this.tbGradoAcademico.TabIndex = 6;
             // 
             // V_AgregarModificarProfesor
             // 
@@ -294,6 +294,7 @@
             this.Controls.Add(this.lblNombre);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "V_AgregarModificarProfesor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Profesor";
             this.Load += new System.EventHandler(this.V_AgregarProfesor_Load);
             this.ResumeLayout(false);

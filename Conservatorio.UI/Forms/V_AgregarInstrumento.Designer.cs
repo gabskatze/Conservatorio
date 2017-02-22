@@ -41,7 +41,7 @@
             this.btnAgregarInst.Location = new System.Drawing.Point(182, 144);
             this.btnAgregarInst.Name = "btnAgregarInst";
             this.btnAgregarInst.Size = new System.Drawing.Size(72, 69);
-            this.btnAgregarInst.TabIndex = 1;
+            this.btnAgregarInst.TabIndex = 2;
             this.btnAgregarInst.UseVisualStyleBackColor = true;
             this.btnAgregarInst.Click += new System.EventHandler(this.btnAgregarInst_Click);
             // 
@@ -61,7 +61,7 @@
             this.tbxNombreInst.Location = new System.Drawing.Point(136, 86);
             this.tbxNombreInst.Name = "tbxNombreInst";
             this.tbxNombreInst.Size = new System.Drawing.Size(198, 26);
-            this.tbxNombreInst.TabIndex = 0;
+            this.tbxNombreInst.TabIndex = 1;
             // 
             // V_AgregarInstrumento
             // 
