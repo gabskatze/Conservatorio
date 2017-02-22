@@ -38,6 +38,7 @@
             this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mensualidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miClases = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +59,8 @@
             this.miEstudiantes,
             this.miProfesores,
             this.miInstrumentos,
-            this.miCursos});
+            this.miCursos,
+            this.miClases});
             this.mantenimientoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(128, 25);
@@ -114,6 +116,13 @@
             this.mensualidadToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.mensualidadToolStripMenuItem.Text = "Mensualidad";
             // 
+            // miClases
+            // 
+            this.miClases.Name = "miClases";
+            this.miClases.Size = new System.Drawing.Size(172, 26);
+            this.miClases.Text = "Clases";
+            this.miClases.Click += new System.EventHandler(this.miClases_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,5 +156,6 @@
         private System.Windows.Forms.ToolStripMenuItem matriculaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mensualidadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miCursos;
+        private System.Windows.Forms.ToolStripMenuItem miClases;
     }
 }

@@ -51,5 +51,13 @@ namespace Conservatorio.DS.Clases
                 return conn.Query<Profesor>().Where(exp).ToList();
             }
         }
+
+        public List<Profesor> ObtenerProfesores()
+        {
+            using (var conn = Conexion.EstablecerConexion())
+            {
+                return conn.Query<Profesor>().ToList();
+            }
+        }
     }
 }

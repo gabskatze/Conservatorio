@@ -1,29 +1,48 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using Conservatorio.DATOS;
 using Conservatorio.DS.Interfaces;
+using NHibernate.Linq;
 
 namespace Conservatorio.DS.Clases
 {
     public class ClaseDS : IClaseDS
     {
-        public void CrearClase(Clase nuevaClase)
+        public void CrearClase(Clase clase)
         {
-            throw new NotImplementedException();
+            using (var conn = Conexion.EstablecerConexion())
+            {
+                conn.Save(clase);
+                conn.Flush();
+            }
         }
 
         public void ModificarClase(Clase clase)
         {
-            throw new NotImplementedException();
+            using (var conn = Conexion.EstablecerConexion())
+            {
+                conn.Update(clase);
+                conn.Flush();
+            }
         }
 
-        public void EliminarClase(int idClase)
+        public void EliminarClase(Clase clase)
         {
-            throw new NotImplementedException();
+            using (var conn = Conexion.EstablecerConexion())
+            {
+                conn.Delete(clase);
+                conn.Flush();
+            }
         }
 
-        public Clase ObtenerClase(int idClase)
+        public List<Clase> ObtenerClases(Expression<Func<Clase, bool>> exp)
         {
-            throw new NotImplementedException();
+            using (var conn = Conexion.EstablecerConexion())
+            {
+                return conn.Query<Clase>().Where(exp).ToList();
+            }
         }
     }
 }

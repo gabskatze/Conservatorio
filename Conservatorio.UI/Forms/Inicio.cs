@@ -42,5 +42,12 @@ namespace Conservatorio.UI
             f.MdiParent = this;
             f.Show();
         }
+
+        private void miClases_Click(object sender, EventArgs e)
+        {
+            Form f = new V_Clases();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

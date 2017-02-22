@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.DS.Clases;
@@ -28,6 +29,16 @@ namespace Conservatorio.BL.Clases
         public List<Profesor> ObtenerProfesores(string keyword)
         {
             return _profesorDS.ObtenerProfesores(x => x.Nombre.Contains(keyword));
+        }
+
+        public List<Profesor> ObtenerProfesores()
+        {
+            return _profesorDS.ObtenerProfesores();
+        }
+
+        public List<Profesor> ObtenerProfesoresPorInstrumento(int idInstrumento)
+        {
+            return _profesorDS.ObtenerProfesores(p => p.Instrumentos.Select(i => i.IdInstrumento).Contains(idInstrumento));
         }
     }
 }

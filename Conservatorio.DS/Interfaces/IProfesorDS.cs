@@ -12,5 +12,6 @@ namespace Conservatorio.DS.Interfaces
         void EliminarProfesor(Profesor profesor);
         Profesor ObtenerProfesor(int idProfesor);
         List<Profesor> ObtenerProfesores(Expression<Func<Profesor, bool>> exp);
+        List<Profesor> ObtenerProfesores();
     }
 }

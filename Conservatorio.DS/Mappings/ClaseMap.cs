@@ -10,8 +10,8 @@ namespace Conservatorio.DS.Mappings
             Id(x => x.IdClase).GeneratedBy.Identity();
             Map(x => x.Dia).Not.Nullable();
             Map(x => x.Hora).Not.Nullable();
-            References(x => x.Profesor).Not.Nullable().Column("IdProfesor");
-            References(x => x.Curso).Not.Nullable().Column("IdCurso");
+            References(x => x.Profesor).Not.Nullable().Column("IdProfesor").Not.LazyLoad();
+            References(x => x.Curso).Not.Nullable().Column("IdCurso").Not.LazyLoad();
         }
     }
 }

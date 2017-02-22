@@ -21,8 +21,6 @@ namespace Conservatorio.UI.Forms
             this.curso = curso;
             this.instrumento = instrumento;
             cursoBL = new CursoBL();
-
-            CargarRequisitos();
         }
 
         private void CargarRequisitos()
@@ -57,19 +55,22 @@ namespace Conservatorio.UI.Forms
 
         private void V_AgregarModificarCurso_Load(object sender, EventArgs e)
         {
-            Text = curso == null ? "Agregar Curso" : "Modificar Curso";
+            CargarRequisitos();
             tbxInstrumento.Text = instrumento.NombreInstrumento;
 
             if (curso == null)
             {
-                return;
+                Text = "Agregar Curso";
             }
-
-            tbxNombre.Text = curso.NombreCurso;
-            tbxNivel.Text = curso.Nivel.ToString();
-            if (curso.CursoRequisito != null)
+            else
             {
-                cbxRequisito.SelectedValue = curso.CursoRequisito.IdCurso;
+                Text = "Modificar Curso";
+                tbxNombre.Text = curso.NombreCurso;
+                tbxNivel.Text = curso.Nivel.ToString();
+                if (curso.CursoRequisito != null)
+                {
+                    cbxRequisito.SelectedValue = curso.CursoRequisito.IdCurso;
+                }
             }
         }
 

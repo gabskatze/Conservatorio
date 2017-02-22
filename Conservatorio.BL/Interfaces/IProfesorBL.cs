@@ -9,5 +9,7 @@ namespace Conservatorio.BL.Interfaces
         void ModificarProfesor(Profesor profesor);
         void EliminarProfesor(Profesor profesor);
         List<Profesor> ObtenerProfesores(string keyword);
+        List<Profesor> ObtenerProfesores();
+        List<Profesor> ObtenerProfesoresPorInstrumento(int idInstrumento);
     }
 }
