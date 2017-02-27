@@ -41,6 +41,7 @@ namespace Conservatorio.UI.Forms
                 Cedula = x.Cedula,
                 Direccion = x.Direccion,
                 Ocupacion = x.Ocupacion,
+                GradoAcademico = x.GradoAcademico,
                 Email = x.Email,
                 Estado = x.Estado ? "Activo": "Inactivo",
                 FechaNacimiento = x.FechaNacimiento.Value.ToShortDateString(),

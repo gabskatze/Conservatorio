@@ -35,10 +35,11 @@
             this.miProfesores = new System.Windows.Forms.ToolStripMenuItem();
             this.miInstrumentos = new System.Windows.Forms.ToolStripMenuItem();
             this.miCursos = new System.Windows.Forms.ToolStripMenuItem();
+            this.miClases = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mensualidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.miClases = new System.Windows.Forms.ToolStripMenuItem();
+            this.notificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +47,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mantenimientoToolStripMenuItem,
-            this.facturaciónToolStripMenuItem});
+            this.facturaciónToolStripMenuItem,
+            this.notificacionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1052, 29);
@@ -94,6 +96,13 @@
             this.miCursos.Text = "Cursos";
             this.miCursos.Click += new System.EventHandler(this.miCursos_Click);
             // 
+            // miClases
+            // 
+            this.miClases.Name = "miClases";
+            this.miClases.Size = new System.Drawing.Size(172, 26);
+            this.miClases.Text = "Clases";
+            this.miClases.Click += new System.EventHandler(this.miClases_Click);
+            // 
             // facturaciónToolStripMenuItem
             // 
             this.facturaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -116,12 +125,12 @@
             this.mensualidadToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.mensualidadToolStripMenuItem.Text = "Mensualidad";
             // 
-            // miClases
+            // notificacionesToolStripMenuItem
             // 
-            this.miClases.Name = "miClases";
-            this.miClases.Size = new System.Drawing.Size(172, 26);
-            this.miClases.Text = "Clases";
-            this.miClases.Click += new System.EventHandler(this.miClases_Click);
+            this.notificacionesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.notificacionesToolStripMenuItem.Name = "notificacionesToolStripMenuItem";
+            this.notificacionesToolStripMenuItem.Size = new System.Drawing.Size(120, 25);
+            this.notificacionesToolStripMenuItem.Text = "Notificaciones";
             // 
             // Inicio
             // 
@@ -157,5 +166,6 @@
         private System.Windows.Forms.ToolStripMenuItem mensualidadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miCursos;
         private System.Windows.Forms.ToolStripMenuItem miClases;
+        private System.Windows.Forms.ToolStripMenuItem notificacionesToolStripMenuItem;
     }
 }

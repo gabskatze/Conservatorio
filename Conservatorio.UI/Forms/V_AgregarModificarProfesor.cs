@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows.Forms;
 using Conservatorio.BL.Clases;
 using Conservatorio.BL.Interfaces;
@@ -48,7 +47,6 @@ namespace Conservatorio.UI.Forms
             tbxCedula.Text = profesor.Cedula.ToString();
             tbxDireccion.Text = profesor.Direccion;
             tbxOcupacion.Text = profesor.Ocupacion;
-            tbGradoAcademico.Text = profesor.GradoAcademico;
             dtpFechaNacimiento.Value = profesor.FechaNacimiento.Value;
             tbxEmail.Text = profesor.Email;
             tbxTelefono1.Text = profesor.Telefono1.ToString();
@@ -79,7 +77,6 @@ namespace Conservatorio.UI.Forms
             profesor.Direccion = tbxDireccion.Text;
             profesor.Email = tbxEmail.Text;
             profesor.FechaNacimiento = dtpFechaNacimiento.Value;
-            profesor.GradoAcademico = tbGradoAcademico.Text;
             profesor.Nombre = tbxNombre.Text;
             profesor.Ocupacion = tbxOcupacion.Text;
             profesor.Telefono1 = int.Parse(tbxTelefono1.Text);

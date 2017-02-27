@@ -46,6 +46,8 @@
             this.lblMod_OcupacionEst = new System.Windows.Forms.Label();
             this.tbxMod_NombreEst = new System.Windows.Forms.TextBox();
             this.lblMod_NombreEst = new System.Windows.Forms.Label();
+            this.tbxModGradoAcademico = new System.Windows.Forms.TextBox();
+            this.lblModGradoAcademico = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnModificarEst
@@ -135,10 +137,22 @@
             resources.ApplyResources(this.lblMod_NombreEst, "lblMod_NombreEst");
             this.lblMod_NombreEst.Name = "lblMod_NombreEst";
             // 
+            // tbxModGradoAcademico
+            // 
+            resources.ApplyResources(this.tbxModGradoAcademico, "tbxModGradoAcademico");
+            this.tbxModGradoAcademico.Name = "tbxModGradoAcademico";
+            // 
+            // lblModGradoAcademico
+            // 
+            resources.ApplyResources(this.lblModGradoAcademico, "lblModGradoAcademico");
+            this.lblModGradoAcademico.Name = "lblModGradoAcademico";
+            // 
             // V_ModificarEstudiante
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tbxModGradoAcademico);
+            this.Controls.Add(this.lblModGradoAcademico);
             this.Controls.Add(this.btnModificarEst);
             this.Controls.Add(this.tbxMod_Tel3Est);
             this.Controls.Add(this.tbxMod_Tel2Est);
@@ -182,5 +196,7 @@
         private System.Windows.Forms.Label lblMod_OcupacionEst;
         private System.Windows.Forms.TextBox tbxMod_NombreEst;
         private System.Windows.Forms.Label lblMod_NombreEst;
+        private System.Windows.Forms.TextBox tbxModGradoAcademico;
+        private System.Windows.Forms.Label lblModGradoAcademico;
     }
 }

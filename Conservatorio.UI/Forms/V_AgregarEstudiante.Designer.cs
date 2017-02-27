@@ -54,6 +54,8 @@
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEncargado = new System.Windows.Forms.Button();
+            this.lblGradoAcademico = new System.Windows.Forms.Label();
+            this.tbxGradoAcademico = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -228,10 +230,10 @@
             // 
             this.btnAgregarEst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarEst.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarEst.Image")));
-            this.btnAgregarEst.Location = new System.Drawing.Point(346, 361);
+            this.btnAgregarEst.Location = new System.Drawing.Point(338, 391);
             this.btnAgregarEst.Name = "btnAgregarEst";
             this.btnAgregarEst.Size = new System.Drawing.Size(71, 70);
-            this.btnAgregarEst.TabIndex = 10;
+            this.btnAgregarEst.TabIndex = 12;
             this.btnAgregarEst.UseVisualStyleBackColor = true;
             this.btnAgregarEst.Click += new System.EventHandler(this.btnAgregarEst_Click);
             // 
@@ -251,7 +253,7 @@
             this.cbxTipo.Items.AddRange(new object[] {
             "Regular",
             "Becado"});
-            this.cbxTipo.Location = new System.Drawing.Point(87, 234);
+            this.cbxTipo.Location = new System.Drawing.Point(61, 223);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(142, 28);
             this.cbxTipo.TabIndex = 7;
@@ -269,7 +271,7 @@
             // btnEncargado
             // 
             this.btnEncargado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEncargado.Location = new System.Drawing.Point(87, 305);
+            this.btnEncargado.Location = new System.Drawing.Point(87, 336);
             this.btnEncargado.Name = "btnEncargado";
             this.btnEncargado.Size = new System.Drawing.Size(130, 39);
             this.btnEncargado.TabIndex = 23;
@@ -277,11 +279,31 @@
             this.btnEncargado.UseVisualStyleBackColor = true;
             this.btnEncargado.Click += new System.EventHandler(this.btnEncargado_Click);
             // 
+            // lblGradoAcademico
+            // 
+            this.lblGradoAcademico.AutoSize = true;
+            this.lblGradoAcademico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGradoAcademico.Location = new System.Drawing.Point(12, 289);
+            this.lblGradoAcademico.Name = "lblGradoAcademico";
+            this.lblGradoAcademico.Size = new System.Drawing.Size(141, 20);
+            this.lblGradoAcademico.TabIndex = 24;
+            this.lblGradoAcademico.Text = "Grado Académico:";
+            // 
+            // tbxGradoAcademico
+            // 
+            this.tbxGradoAcademico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxGradoAcademico.Location = new System.Drawing.Point(159, 286);
+            this.tbxGradoAcademico.Name = "tbxGradoAcademico";
+            this.tbxGradoAcademico.Size = new System.Drawing.Size(159, 26);
+            this.tbxGradoAcademico.TabIndex = 11;
+            // 
             // V_AgregarEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 443);
+            this.ClientSize = new System.Drawing.Size(831, 473);
+            this.Controls.Add(this.tbxGradoAcademico);
+            this.Controls.Add(this.lblGradoAcademico);
             this.Controls.Add(this.btnEncargado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxTipo);
@@ -340,5 +362,7 @@
         private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEncargado;
+        private System.Windows.Forms.Label lblGradoAcademico;
+        private System.Windows.Forms.TextBox tbxGradoAcademico;
     }
 }

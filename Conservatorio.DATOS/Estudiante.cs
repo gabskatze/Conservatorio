@@ -7,5 +7,6 @@ namespace Conservatorio.DATOS
         public virtual Encargado Encargado { get; set; }
         public virtual string Tipo { get; set; }
         public virtual IList<Instrumento> Instrumentos { get; set; }
+        public virtual string GradoAcademico { get; set; }
     }
 }

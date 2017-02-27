@@ -29,6 +29,7 @@ namespace Conservatorio.UI.Forms
                 Email = tbxAg_EmailEst.Text,
                 Estado = true,
                 FechaNacimiento = dtpFechNac.Value,
+                GradoAcademico = tbxGradoAcademico.Text,
                 Ocupacion = tbxAg_OcupacionEst.Text,
                 Telefono1 = int.Parse(tbxAg_Tel1Est.Text),
                 Telefono2 = tbxAg_Tel2Est.Text == "" ? (int?)null : int.Parse(tbxAg_Tel2Est.Text),

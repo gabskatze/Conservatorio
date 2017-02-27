@@ -8,7 +8,7 @@ namespace Conservatorio.DS.Mappings
         public ProfesorMap()
         {
             KeyColumn("IdProfesor");
-            Map(x => x.GradoAcademico);
+            
             HasManyToMany(x => x.Instrumentos).Cascade.All().Table("ProfesorInstrumento").ParentKeyColumn("IdProfesor").ChildKeyColumn("IdInstrumento").Not.LazyLoad();
             HasMany(x => x.Clases).Cascade.All().KeyColumn("IdProfesor");
         }

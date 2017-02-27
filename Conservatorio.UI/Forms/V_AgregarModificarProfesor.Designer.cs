@@ -50,8 +50,6 @@
             this.lblInstrumentos = new System.Windows.Forms.Label();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.clbInstrumentos = new System.Windows.Forms.CheckedListBox();
-            this.lblGradoAcademico = new System.Windows.Forms.Label();
-            this.tbGradoAcademico = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAgregarProf
@@ -246,31 +244,11 @@
             this.clbInstrumentos.Size = new System.Drawing.Size(252, 154);
             this.clbInstrumentos.TabIndex = 7;
             // 
-            // lblGradoAcademico
-            // 
-            this.lblGradoAcademico.AutoSize = true;
-            this.lblGradoAcademico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGradoAcademico.Location = new System.Drawing.Point(419, 146);
-            this.lblGradoAcademico.Name = "lblGradoAcademico";
-            this.lblGradoAcademico.Size = new System.Drawing.Size(141, 20);
-            this.lblGradoAcademico.TabIndex = 74;
-            this.lblGradoAcademico.Text = "Grado Académico:";
-            // 
-            // tbGradoAcademico
-            // 
-            this.tbGradoAcademico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbGradoAcademico.Location = new System.Drawing.Point(566, 140);
-            this.tbGradoAcademico.Name = "tbGradoAcademico";
-            this.tbGradoAcademico.Size = new System.Drawing.Size(187, 26);
-            this.tbGradoAcademico.TabIndex = 6;
-            // 
             // V_AgregarModificarProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 520);
-            this.Controls.Add(this.tbGradoAcademico);
-            this.Controls.Add(this.lblGradoAcademico);
             this.Controls.Add(this.clbInstrumentos);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.lblInstrumentos);
@@ -325,7 +303,5 @@
         private System.Windows.Forms.Label lblInstrumentos;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.CheckedListBox clbInstrumentos;
-        private System.Windows.Forms.Label lblGradoAcademico;
-        private System.Windows.Forms.TextBox tbGradoAcademico;
     }
 }

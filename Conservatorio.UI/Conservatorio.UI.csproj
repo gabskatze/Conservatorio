@@ -129,6 +129,12 @@
     <Compile Include="Forms\V_ModificarEstudiante.Designer.cs">
       <DependentUpon>V_ModificarEstudiante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\V_Notificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\V_Notificacion.Designer.cs">
+      <DependentUpon>V_Notificacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\V_Profesores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_ModificarEstudiante.resx">
       <DependentUpon>V_ModificarEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\V_Notificacion.resx">
+      <DependentUpon>V_Notificacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_Profesores.resx">
       <DependentUpon>V_Profesores.cs</DependentUpon>

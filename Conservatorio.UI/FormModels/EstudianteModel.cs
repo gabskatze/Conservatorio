@@ -21,5 +21,6 @@ namespace Conservatorio.UI.FormModels
         public int? Telefono2Encargado { get; set; }
         public int? Telefono3Encargado { get; set; }
         public string EmailEncargado { get; set; }
+        public string GradoAcademico { get; set; }
     }
 }

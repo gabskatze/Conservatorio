@@ -36,8 +36,7 @@ namespace Conservatorio.UI.Forms
                 FechaNacimiento = x.FechaNacimiento.Value.ToShortDateString(),
                 Telefono1 = x.Telefono1,
                 Telefono2 = x.Telefono2,
-                Telefono3 = x.Telefono3,
-                GradoAcademico = x.GradoAcademico
+                Telefono3 = x.Telefono3
             }).ToList();
         }
 
