@@ -5,6 +5,8 @@
         public string Curso { get; set; }
         public string Profesor { get; set; }
         public string Dia { get; set; }
-        public string Hora { get; set; }
+        public int Aula { get; set; }
+        public string HoraInicio { get; set; }
+        public string HoraFinal { get; set; }
     }
 }

@@ -1,0 +1,5 @@
+validacion de los forms
+notificaciones de correo
+
+agregar talleres y cursos elementales
+

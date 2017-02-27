@@ -150,7 +150,7 @@
             // btnAgregarCurso
             // 
             this.btnAgregarCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCurso.Image")));
-            this.btnAgregarCurso.Location = new System.Drawing.Point(15, 390);
+            this.btnAgregarCurso.Location = new System.Drawing.Point(12, 390);
             this.btnAgregarCurso.Name = "btnAgregarCurso";
             this.btnAgregarCurso.Size = new System.Drawing.Size(72, 70);
             this.btnAgregarCurso.TabIndex = 12;

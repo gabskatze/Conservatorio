@@ -10,6 +10,7 @@ namespace Conservatorio.DS.Mappings
             Id(x => x.IdPersona).GeneratedBy.Identity();
             Map(x => x.Cedula);
             Map(x => x.Direccion);
+            Map(x => x.Imagen);
             Map(x => x.Email);
             Map(x => x.Estado).Not.Nullable();
             Map(x => x.FechaNacimiento);

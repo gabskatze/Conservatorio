@@ -30,7 +30,9 @@ namespace Conservatorio.UI.Forms
                 Profesor = x.Profesor.Nombre,
                 Curso = x.Curso.NombreCurso,
                 Dia = x.Dia,
-                Hora = x.Hora
+                HoraInicio = x.HoraInicio,
+                HoraFinal = x.HoraFinal,
+                Aula = x.Aula
             }).ToList();
         }
 

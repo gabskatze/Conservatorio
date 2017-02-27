@@ -78,14 +78,17 @@ namespace Conservatorio.UI.Forms
 
         private void V_AgregarModificarClase_Load(object sender, EventArgs e)
         {
-            dtpHora.CustomFormat = TIME_FORMAT;
+            dtpHoraInicio.CustomFormat = TIME_FORMAT;
+            dtpHoraFinal.CustomFormat = TIME_FORMAT;
+
             CargarInstrumentos();
             CargarDias();
 
             if (clase == null)
             {
                 Text = "Agregar Clase";
-                dtpHora.Text = DateTime.Now.ToString(DEFAULT_TIME_FORMAT);
+                dtpHoraInicio.Text = DateTime.Now.ToString(DEFAULT_TIME_FORMAT);
+                dtpHoraFinal.Text = DateTime.Now.AddHours(1).ToString(DEFAULT_TIME_FORMAT);
             }
             else
             {
@@ -94,7 +97,9 @@ namespace Conservatorio.UI.Forms
                 cbxCursos.SelectedValue = clase.Curso.IdCurso;
                 cbxProfesores.SelectedValue = clase.Profesor.IdPersona;
                 cbxDias.SelectedItem = Enum.Parse(typeof(DiasEnum), clase.Dia);
-                dtpHora.Text = clase.Hora;
+                dtpHoraInicio.Text = clase.HoraInicio;
+                dtpHoraFinal.Text = clase.HoraFinal;
+                tbxAula.Text = clase.Aula.ToString();
             }
         }
 
@@ -114,8 +119,10 @@ namespace Conservatorio.UI.Forms
             clase.Curso = cbxCursos.SelectedItem as Curso;
             clase.Profesor = cbxProfesores.SelectedItem as Profesor;
             clase.Dia = cbxDias.SelectedItem.ToString();
-            clase.Hora = dtpHora.Value.ToString(TIME_FORMAT);
-            
+            clase.HoraInicio = dtpHoraInicio.Value.ToString(TIME_FORMAT);
+            clase.HoraFinal = dtpHoraFinal.Value.ToString(TIME_FORMAT);
+            clase.Aula = int.Parse(tbxAula.Text);
+
             if (clase.IdClase == 0)
             {
                 _claseBL.CrearClase(clase);
