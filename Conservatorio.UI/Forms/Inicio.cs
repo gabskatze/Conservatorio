@@ -49,5 +49,26 @@ namespace Conservatorio.UI
             f.MdiParent = this;
             f.Show();
         }
+
+        private void matriculaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new V_Matricula();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void mensualidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new V_Mensualidad();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void notificacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new V_Notificaciones();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

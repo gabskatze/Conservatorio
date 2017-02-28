@@ -2,4 +2,10 @@ validacion de los forms
 notificaciones de correo
 
 agregar talleres y cursos elementales
+fechaMatricula
 
+activar estudiantes y profesores inactivos
+
+buscar por cedula estudiantes y profesores
+
+clbinstrumentos ckd estudiante

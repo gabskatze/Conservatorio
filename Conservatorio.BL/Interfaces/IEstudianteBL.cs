@@ -8,7 +8,7 @@ namespace Conservatorio.BL.Interfaces
         void CrearEstudiante(Estudiante estudiante);
         void ModificarEstudiante(Estudiante estudiante);
         void EliminarEstudiante(Estudiante estudiante);
-        List<Estudiante> ObtenerEstudiantes(string keyword);
+        List<Estudiante> ObtenerEstudiantes(string keyword, bool incluirInactivos = true);
         List<Estudiante> ObtenerEstudiantes();
     }
 }

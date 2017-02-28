@@ -10,9 +10,9 @@ namespace Conservatorio.BL.Clases
     {
         private readonly IEstudianteDS _estudianteDs = new EstudianteDS();
 
-        public List<Estudiante> ObtenerEstudiantes(string keyword)
+        public List<Estudiante> ObtenerEstudiantes(string keyword, bool incluirInactivos = true)
         {
-            return _estudianteDs.ObtenerEstudiantes(x => x.Nombre.Contains(keyword));
+            return _estudianteDs.ObtenerEstudiantes(x => x.Nombre.Contains(keyword) && (incluirInactivos || x.Estado));
         }
 
         public List<Estudiante> ObtenerEstudiantes()

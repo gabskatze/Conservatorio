@@ -1,20 +1,98 @@
-﻿using System;
+﻿using Conservatorio.BL.Clases;
+using Conservatorio.BL.Interfaces;
+using Conservatorio.DATOS;
+using Conservatorio.UI.FormModels;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Conservatorio.UI.Forms
 {
     public partial class V_Matricula : Form
     {
+        private readonly IEstudianteBL estudianteBL;
+        private List<Estudiante> listaEstudiantes;
+
+        private readonly IInstrumentoBL instrumentoBL;
         public V_Matricula()
         {
             InitializeComponent();
+            estudianteBL = new EstudianteBL();
+            instrumentoBL = new InstrumentoBL();
+        }
+
+        private void V_Matricula_Load(object sender, EventArgs e)
+        {
+            RefrescarEstudiantes();
+            CargarInstrumentos();
+        }
+
+        public void RefrescarEstudiantes()
+        {
+            var keyword = tbxBuscarEst_Matric.Text;
+            listaEstudiantes = estudianteBL.ObtenerEstudiantes(keyword, false);
+            dgvEst_Matric.DataSource = listaEstudiantes.Select(x => new EstudianteModel
+            {
+                IdEstudiante = x.IdPersona,
+                Nombre = x.Nombre,
+                Cedula = x.Cedula,
+                Direccion = x.Direccion,
+                Ocupacion = x.Ocupacion,
+                GradoAcademico = x.GradoAcademico,
+                Email = x.Email,
+                Estado = x.Estado ? "Activo" : "Inactivo",
+                FechaNacimiento = x.FechaNacimiento.Value.ToShortDateString(),
+                Telefono1 = x.Telefono1,
+                Telefono2 = x.Telefono2,
+                Telefono3 = x.Telefono3,
+                NombreEncargado = x.Encargado == null ? string.Empty : x.Encargado.Nombre,
+                Parentesco = x.Encargado == null ? string.Empty : x.Encargado.Parentesco,
+                Telefono1Encargado = x.Encargado == null ? (int?)null : x.Encargado.Telefono1,
+                Telefono2Encargado = x.Encargado == null ? null : x.Encargado.Telefono2,
+                Telefono3Encargado = x.Encargado == null ? null : x.Encargado.Telefono3,
+                EmailEncargado = x.Encargado == null ? string.Empty : x.Encargado.Email
+            }).ToList();
+        }
+
+        private Estudiante ObtenerEstudianteSeleccionado()
+        {
+            if (dgvEst_Matric.SelectedRows.Count == 0)
+            {
+                return null;
+            }
+
+            var selectedIndex = dgvEst_Matric.SelectedRows[0].Index;
+            return listaEstudiantes[selectedIndex];
+        }
+
+        private void tbxBuscarEst_Matric_TextChanged(object sender, EventArgs e)
+        {
+            RefrescarEstudiantes();
+        }
+
+        private void dgvEst_Matric_DoubleClick(object sender, EventArgs e)
+        {
+            var estudiante = ObtenerEstudianteSeleccionado();
+            if (estudiante == null)
+            {
+                return;
+            }
+
+            lblNombreEstudiante.Text = estudiante.Nombre;
+            lblTipoEstudiante.Text = estudiante.Tipo;
+        }
+
+        private void CargarInstrumentos()
+        {
+            clbInstrumentos.DataSource = instrumentoBL.ObtenerInstrumentos();
+            clbInstrumentos.DisplayMember = "NombreInstrumento";
+            clbInstrumentos.ValueMember = "IdInstrumento";
+        }
+
+        private void CargarClases()
+        {
+
         }
     }
 }
