@@ -1,6 +1,8 @@
-﻿namespace Conservatorio.UI.Forms
+﻿using System.Windows.Forms;
+
+namespace Conservatorio.UI.Forms
 {
-    partial class V_AgregarModificarProfesor
+    partial class V_AgregarModificarProfesor : Form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_AgregarModificarProfesor));
             this.btnAgregarProf = new System.Windows.Forms.Button();
             this.tbxTelefono3 = new System.Windows.Forms.TextBox();
@@ -50,6 +53,8 @@
             this.lblInstrumentos = new System.Windows.Forms.Label();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.clbInstrumentos = new System.Windows.Forms.CheckedListBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregarProf
@@ -244,10 +249,16 @@
             this.clbInstrumentos.Size = new System.Drawing.Size(252, 154);
             this.clbInstrumentos.TabIndex = 7;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // V_AgregarModificarProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(783, 520);
             this.Controls.Add(this.clbInstrumentos);
             this.Controls.Add(this.dtpFechaNacimiento);
@@ -275,6 +286,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Profesor";
             this.Load += new System.EventHandler(this.V_AgregarProfesor_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +315,6 @@
         private System.Windows.Forms.Label lblInstrumentos;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.CheckedListBox clbInstrumentos;
+        private ErrorProvider errorProvider;
     }
 }

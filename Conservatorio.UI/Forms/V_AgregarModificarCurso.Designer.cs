@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_AgregarModificarCurso));
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -38,13 +39,15 @@
             this.lblInstrumento = new System.Windows.Forms.Label();
             this.tbxInstrumento = new System.Windows.Forms.TextBox();
             this.tbxNivel = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(133, 207);
+            this.btnGuardar.Location = new System.Drawing.Point(140, 207);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(70, 67);
             this.btnGuardar.TabIndex = 5;
@@ -127,11 +130,17 @@
             this.tbxNivel.Size = new System.Drawing.Size(74, 26);
             this.tbxNivel.TabIndex = 4;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // V_AgregarModificarCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 299);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.ClientSize = new System.Drawing.Size(349, 299);
             this.Controls.Add(this.tbxNivel);
             this.Controls.Add(this.tbxInstrumento);
             this.Controls.Add(this.lblInstrumento);
@@ -146,6 +155,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cursos";
             this.Load += new System.EventHandler(this.V_AgregarModificarCurso_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +172,6 @@
         private System.Windows.Forms.Label lblInstrumento;
         private System.Windows.Forms.TextBox tbxInstrumento;
         private System.Windows.Forms.TextBox tbxNivel;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

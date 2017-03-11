@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_AgregarInstrumento));
             this.btnAgregarInst = new System.Windows.Forms.Button();
             this.lblNombreInst = new System.Windows.Forms.Label();
             this.tbxNombreInst = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregarInst
@@ -63,10 +66,16 @@
             this.tbxNombreInst.Size = new System.Drawing.Size(198, 26);
             this.tbxNombreInst.TabIndex = 1;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // V_AgregarInstrumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(471, 280);
             this.Controls.Add(this.tbxNombreInst);
             this.Controls.Add(this.lblNombreInst);
@@ -76,6 +85,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Instrumento";
             this.Load += new System.EventHandler(this.V_AgregarInstrumento_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,5 +96,6 @@
         private System.Windows.Forms.Button btnAgregarInst;
         private System.Windows.Forms.Label lblNombreInst;
         private System.Windows.Forms.TextBox tbxNombreInst;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

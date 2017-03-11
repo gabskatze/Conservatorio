@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_AgregarModificarClase));
             this.lblCurso = new System.Windows.Forms.Label();
             this.lblProfesor = new System.Windows.Forms.Label();
@@ -44,6 +45,8 @@
             this.lblHoraFinal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxAula = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCurso
@@ -193,10 +196,16 @@
             this.tbxAula.Size = new System.Drawing.Size(51, 26);
             this.tbxAula.TabIndex = 7;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // V_AgregarModificarClase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(751, 393);
             this.Controls.Add(this.tbxAula);
             this.Controls.Add(this.label1);
@@ -218,6 +227,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asignación de Clase";
             this.Load += new System.EventHandler(this.V_AgregarModificarClase_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +250,6 @@
         private System.Windows.Forms.Label lblHoraFinal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbxAula;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

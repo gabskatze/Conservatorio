@@ -4,6 +4,7 @@ using Conservatorio.BL.Clases;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.DATOS.Enums;
+using Conservatorio.UI.FormValidation;
 
 namespace Conservatorio.UI.Forms
 {
@@ -22,6 +23,7 @@ namespace Conservatorio.UI.Forms
         public V_AgregarModificarClase(V_Clases vClases, Clase clase)
         {
             InitializeComponent();
+            ConfigurarValidacion();
 
             _claseBL = new ClaseBL();
             _instrumentoBL = new InstrumentoBL();
@@ -29,6 +31,20 @@ namespace Conservatorio.UI.Forms
             _profesorBL = new ProfesorBL();
             _vClases = vClases;
             this.clase = clase;
+        }
+
+        private void ConfigurarValidacion()
+        {
+            var validadores = new[]
+            {
+                new Validador
+                {
+                    Control = tbxAula,
+                    MetodoValidacion = (out string errorMsg) => !tbxAula.ValidarRequerido(out errorMsg) || !tbxAula.ValidarEntero(out errorMsg)
+                }
+            };
+
+            Validation.Config(errorProvider, validadores);
         }
 
         private void CargarInstrumentos()
@@ -111,6 +127,11 @@ namespace Conservatorio.UI.Forms
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (!ValidateChildren())
+            {
+                return;
+            }
+
             if (clase == null)
             {
                 clase = new Clase();

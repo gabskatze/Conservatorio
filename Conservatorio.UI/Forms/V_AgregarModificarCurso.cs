@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Conservatorio.BL.Clases;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
+using Conservatorio.UI.FormValidation;
 
 namespace Conservatorio.UI.Forms
 {
@@ -16,11 +17,31 @@ namespace Conservatorio.UI.Forms
         public V_AgregarModificarCurso(V_Cursos vCursos, Instrumento instrumento, Curso curso = null)
         {
             InitializeComponent();
+            ConfigurarValidacion();
 
             this.vCursos = vCursos;
             this.curso = curso;
             this.instrumento = instrumento;
             cursoBL = new CursoBL();
+        }
+
+        private void ConfigurarValidacion()
+        {
+            var validadores = new[]
+            {
+                new Validador
+                {
+                    Control = tbxNombre,
+                    MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxNivel,
+                    MetodoValidacion = (out string errorMsg) => !tbxNivel.ValidarRequerido(out errorMsg) || !tbxNivel.ValidarEntero(out errorMsg)
+                }
+            };
+
+            Validation.Config(errorProvider, validadores);
         }
 
         private void CargarRequisitos()
@@ -89,6 +110,11 @@ namespace Conservatorio.UI.Forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (!ValidateChildren())
+            {
+                return;
+            }
+
             if (curso == null)
             {
                 curso = new Curso();

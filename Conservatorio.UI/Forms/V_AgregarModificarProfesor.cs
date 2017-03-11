@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Conservatorio.BL.Clases;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
+using Conservatorio.UI.FormValidation;
 
 namespace Conservatorio.UI.Forms
 {
@@ -16,6 +17,7 @@ namespace Conservatorio.UI.Forms
         public V_AgregarModificarProfesor(V_Profesores vProfesor, Profesor profesor = null)
         {
             InitializeComponent();
+            ConfigurarValidacion();
 
             this.vProfesor = vProfesor;
             this.profesor = profesor;
@@ -30,6 +32,50 @@ namespace Conservatorio.UI.Forms
             clbInstrumentos.DataSource = instrumentoBL.ObtenerInstrumentos();
             clbInstrumentos.DisplayMember = "NombreInstrumento";
             clbInstrumentos.ValueMember = "IdInstrumento";
+        }
+
+        private void ConfigurarValidacion()
+        {
+            var validadores = new[]
+            {
+                new Validador
+                {
+                    Control = tbxNombre,
+                    MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxCedula,
+                    MetodoValidacion = (out string errorMsg) => !tbxCedula.ValidarRequerido(out errorMsg) || !tbxCedula.ValidarEntero(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxOcupacion,
+                    MetodoValidacion = (out string errorMsg) => !tbxOcupacion.ValidarRequerido(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxEmail,
+                    MetodoValidacion = (out string errorMsg) => !tbxEmail.ValidarRequerido(out errorMsg) || !tbxEmail.ValidarEmail(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxTelefono1,
+                    MetodoValidacion = (out string errorMsg) => !tbxTelefono1.ValidarRequerido(out errorMsg) || !tbxTelefono1.ValidarEntero(out errorMsg) || !tbxTelefono1.ValidarLargo(8, out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxTelefono2,
+                    MetodoValidacion = (out string errorMsg) => !tbxTelefono2.ValidarEntero(out errorMsg) || !tbxTelefono2.ValidarLargo(8, out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxTelefono3,
+                    MetodoValidacion = (out string errorMsg) => !tbxTelefono3.ValidarEntero(out errorMsg) || !tbxTelefono3.ValidarLargo(8, out errorMsg)
+                }
+            };
+
+            Validation.Config(errorProvider, validadores);
         }
 
         #region Action Methods
@@ -65,6 +111,11 @@ namespace Conservatorio.UI.Forms
 
         private void btnAgregarProf_Click(object sender, System.EventArgs e)
         {
+            if (!ValidateChildren())
+            {
+                return;
+            }
+
             if (profesor == null)
             {
                 profesor = new Profesor
@@ -98,5 +149,6 @@ namespace Conservatorio.UI.Forms
         }
 
         #endregion
+
     }
 }

@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormValidation\ControlExtensions.cs" />
     <Compile Include="FormModels\ClaseModel.cs" />
     <Compile Include="FormModels\EstudianteModel.cs" />
     <Compile Include="FormModels\InstrumentoModel.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="Forms\V_Profesores.Designer.cs">
       <DependentUpon>V_Profesores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormValidation\Validation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\V_AgregarCurso_Matricula.cs">
@@ -161,6 +163,7 @@
     <Compile Include="Forms\V_AgregarEncargado.Designer.cs">
       <DependentUpon>V_AgregarEncargado.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormValidation\Validador.cs" />
     <EmbeddedResource Include="Forms\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>

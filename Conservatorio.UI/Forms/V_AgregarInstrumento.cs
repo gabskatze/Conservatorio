@@ -3,6 +3,7 @@ using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using System;
 using System.Windows.Forms;
+using Conservatorio.UI.FormValidation;
 
 namespace Conservatorio.UI.Forms
 {
@@ -14,15 +15,35 @@ namespace Conservatorio.UI.Forms
         public V_AgregarInstrumento(V_Instrumentos vInstrumentos)
         {
             InitializeComponent();
+            ConfigurarValidacion();
 
             instrumentoBL = new InstrumentoBL();
             vInst = vInstrumentos;
+        }
+
+        private void ConfigurarValidacion()
+        {
+            var validadores = new[]
+            {
+                new Validador
+                {
+                    Control = tbxNombreInst,
+                    MetodoValidacion = (out string errorMsg) => !tbxNombreInst.ValidarRequerido(out errorMsg)
+                }
+            };
+
+            Validation.Config(errorProvider, validadores);
         }
 
         #region Action Methods
 
         private void btnAgregarInst_Click(object sender, EventArgs e)
         {
+            if (!ValidateChildren())
+            {
+                return;
+            }
+
             var nuevoInstrumento = new Instrumento
             {
                 NombreInstrumento = tbxNombreInst.Text
