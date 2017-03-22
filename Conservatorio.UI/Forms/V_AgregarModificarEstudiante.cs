@@ -3,6 +3,7 @@ using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using System;
 using System.Windows.Forms;
+using Conservatorio.DATOS.Enums;
 using Emgu.CV;
 
 namespace Conservatorio.UI.Forms
@@ -36,10 +37,17 @@ namespace Conservatorio.UI.Forms
             this.estudiante = estudiante;
         }
 
+        private void CargarTiposEstudiante()
+        {
+            cbxTipo.DataSource = Enum.GetValues(typeof(TipoEstudianteEnum));
+        }
+
         #region Action Methods
 
         private void V_AgregarModificarEstudiante_Load(object sender, EventArgs e)
         {
+            CargarTiposEstudiante();
+
             Text = estudiante == null ? "Agregar Estudiante" : "Modificar Estudiante";
 
             if (estudiante == null)
@@ -57,7 +65,7 @@ namespace Conservatorio.UI.Forms
             tbxTel1.Text = estudiante.Telefono1.ToString();
             tbxTel2.Text = estudiante.Telefono2.ToString();
             tbxTel3.Text = estudiante.Telefono3.ToString();
-            cbxTipo.SelectedText = estudiante.Tipo;
+            cbxTipo.SelectedItem = Enum.Parse(typeof(TipoEstudianteEnum), estudiante.Tipo);
             Encargado = estudiante.Encargado;
         }
 
@@ -99,7 +107,7 @@ namespace Conservatorio.UI.Forms
 
         private void btnEncargado_Click(object sender, EventArgs e)
         {
-            Form f = new V_AgregarEncargado(this);
+            Form f = new V_AgregarModificarEncargado(this, Encargado);
             f.ShowDialog();
         }
 

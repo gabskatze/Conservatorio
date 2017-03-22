@@ -59,6 +59,7 @@
     <Compile Include="Clase.cs" />
     <Compile Include="Enums\DiasEnum.cs" />
     <Compile Include="Enums\EnumsHelper.cs" />
+    <Compile Include="Enums\TipoEstudianteEnum.cs" />
     <Compile Include="RegistroNota.cs" />
     <Compile Include="Curso.cs" />
     <Compile Include="Encargado.cs" />

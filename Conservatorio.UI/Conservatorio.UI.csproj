@@ -178,11 +178,11 @@
     <Compile Include="Forms\V_AgregarCurso_Matricula.Designer.cs">
       <DependentUpon>V_AgregarCurso_Matricula.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\V_AgregarEncargado.cs">
+    <Compile Include="Forms\V_AgregarModificarEncargado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\V_AgregarEncargado.Designer.cs">
-      <DependentUpon>V_AgregarEncargado.cs</DependentUpon>
+    <Compile Include="Forms\V_AgregarModificarEncargado.Designer.cs">
+      <DependentUpon>V_AgregarModificarEncargado.cs</DependentUpon>
     </Compile>
     <Compile Include="FormValidation\Validador.cs" />
     <EmbeddedResource Include="Forms\Inicio.resx">
@@ -242,8 +242,8 @@
     <EmbeddedResource Include="Forms\V_AgregarCurso_Matricula.resx">
       <DependentUpon>V_AgregarCurso_Matricula.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\V_AgregarEncargado.resx">
-      <DependentUpon>V_AgregarEncargado.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\V_AgregarModificarEncargado.resx">
+      <DependentUpon>V_AgregarModificarEncargado.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
