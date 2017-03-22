@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_AgregarModificarEstudiante));
             this.lblNombre = new System.Windows.Forms.Label();
             this.tbxNombre = new System.Windows.Forms.TextBox();
@@ -53,6 +54,8 @@
             this.btnEncargado = new System.Windows.Forms.Button();
             this.lblGradoAcademico = new System.Windows.Forms.Label();
             this.tbxGradoAcademico = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -281,10 +284,16 @@
             this.tbxGradoAcademico.Size = new System.Drawing.Size(159, 23);
             this.tbxGradoAcademico.TabIndex = 11;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // V_AgregarModificarEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(831, 473);
             this.Controls.Add(this.tbxGradoAcademico);
             this.Controls.Add(this.lblGradoAcademico);
@@ -315,6 +324,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Estudiante";
             this.Load += new System.EventHandler(this.V_AgregarModificarEstudiante_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,5 +356,6 @@
         private System.Windows.Forms.Button btnEncargado;
         private System.Windows.Forms.Label lblGradoAcademico;
         private System.Windows.Forms.TextBox tbxGradoAcademico;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
