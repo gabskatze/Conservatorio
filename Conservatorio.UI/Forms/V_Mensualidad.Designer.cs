@@ -152,8 +152,10 @@
             this.btnSalvarMensualidad.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarMensualidad.Image")));
             this.btnSalvarMensualidad.Location = new System.Drawing.Point(665, 381);
             this.btnSalvarMensualidad.Name = "btnSalvarMensualidad";
-            this.btnSalvarMensualidad.Size = new System.Drawing.Size(76, 74);
+            this.btnSalvarMensualidad.Size = new System.Drawing.Size(70, 70);
             this.btnSalvarMensualidad.TabIndex = 40;
+            this.btnSalvarMensualidad.Text = "Salvar";
+            this.btnSalvarMensualidad.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvarMensualidad.UseVisualStyleBackColor = true;
             // 
             // lblNombreEstudiante
@@ -177,7 +179,7 @@
             // tbxBuscarEst_Mensualidad
             // 
             this.tbxBuscarEst_Mensualidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxBuscarEst_Mensualidad.Location = new System.Drawing.Point(72, 16);
+            this.tbxBuscarEst_Mensualidad.Location = new System.Drawing.Point(59, 16);
             this.tbxBuscarEst_Mensualidad.Name = "tbxBuscarEst_Mensualidad";
             this.tbxBuscarEst_Mensualidad.Size = new System.Drawing.Size(217, 22);
             this.tbxBuscarEst_Mensualidad.TabIndex = 32;
@@ -236,7 +238,8 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(18, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 35);
+            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 58;
             this.pictureBox1.TabStop = false;
             // 

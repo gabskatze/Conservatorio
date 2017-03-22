@@ -38,9 +38,9 @@
             // btnEnviar
             // 
             this.btnEnviar.Image = ((System.Drawing.Image)(resources.GetObject("btnEnviar.Image")));
-            this.btnEnviar.Location = new System.Drawing.Point(265, 334);
+            this.btnEnviar.Location = new System.Drawing.Point(274, 332);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(84, 69);
+            this.btnEnviar.Size = new System.Drawing.Size(70, 70);
             this.btnEnviar.TabIndex = 0;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -60,7 +60,7 @@
             // 
             this.cbDestinatario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDestinatario.FormattingEnabled = true;
-            this.cbDestinatario.Location = new System.Drawing.Point(131, 36);
+            this.cbDestinatario.Location = new System.Drawing.Point(116, 36);
             this.cbDestinatario.Name = "cbDestinatario";
             this.cbDestinatario.Size = new System.Drawing.Size(166, 24);
             this.cbDestinatario.TabIndex = 6;

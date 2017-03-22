@@ -39,12 +39,14 @@
             // 
             // btnAgregarInst
             // 
-            this.btnAgregarInst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarInst.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarInst.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarInst.Image")));
             this.btnAgregarInst.Location = new System.Drawing.Point(180, 152);
             this.btnAgregarInst.Name = "btnAgregarInst";
-            this.btnAgregarInst.Size = new System.Drawing.Size(57, 52);
+            this.btnAgregarInst.Size = new System.Drawing.Size(70, 70);
             this.btnAgregarInst.TabIndex = 2;
+            this.btnAgregarInst.Text = "Salvar";
+            this.btnAgregarInst.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarInst.UseVisualStyleBackColor = true;
             this.btnAgregarInst.Click += new System.EventHandler(this.btnAgregarInst_Click);
             // 
@@ -76,7 +78,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(384, 237);
+            this.ClientSize = new System.Drawing.Size(403, 265);
             this.Controls.Add(this.tbxNombreInst);
             this.Controls.Add(this.lblNombreInst);
             this.Controls.Add(this.btnAgregarInst);

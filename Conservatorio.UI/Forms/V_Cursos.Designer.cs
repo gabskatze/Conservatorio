@@ -42,7 +42,7 @@
             // 
             this.lblInstrumento.AutoSize = true;
             this.lblInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstrumento.Location = new System.Drawing.Point(32, 25);
+            this.lblInstrumento.Location = new System.Drawing.Point(32, 35);
             this.lblInstrumento.Name = "lblInstrumento";
             this.lblInstrumento.Size = new System.Drawing.Size(79, 16);
             this.lblInstrumento.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             this.cbxInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxInstrumento.FormattingEnabled = true;
-            this.cbxInstrumento.Location = new System.Drawing.Point(117, 17);
+            this.cbxInstrumento.Location = new System.Drawing.Point(117, 27);
             this.cbxInstrumento.Name = "cbxInstrumento";
             this.cbxInstrumento.Size = new System.Drawing.Size(274, 24);
             this.cbxInstrumento.TabIndex = 1;
@@ -81,30 +81,36 @@
             // btnModificar
             // 
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.Location = new System.Drawing.Point(229, 348);
+            this.btnModificar.Location = new System.Drawing.Point(201, 337);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(55, 55);
+            this.btnModificar.Size = new System.Drawing.Size(70, 70);
             this.btnModificar.TabIndex = 4;
+            this.btnModificar.Text = "Editar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(117, 348);
+            this.btnAgregar.Location = new System.Drawing.Point(41, 337);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(55, 55);
+            this.btnAgregar.Size = new System.Drawing.Size(70, 70);
             this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(336, 348);
+            this.btnEliminar.Location = new System.Drawing.Point(359, 337);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(55, 55);
+            this.btnEliminar.Size = new System.Drawing.Size(70, 70);
             this.btnEliminar.TabIndex = 5;
+            this.btnEliminar.Text = "Borrar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 

@@ -64,12 +64,14 @@ namespace Conservatorio.UI.Forms
             // 
             // btnAgregarProf
             // 
-            this.btnAgregarProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarProf.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProf.Image")));
             this.btnAgregarProf.Location = new System.Drawing.Point(562, 407);
             this.btnAgregarProf.Name = "btnAgregarProf";
-            this.btnAgregarProf.Size = new System.Drawing.Size(55, 50);
+            this.btnAgregarProf.Size = new System.Drawing.Size(70, 70);
             this.btnAgregarProf.TabIndex = 12;
+            this.btnAgregarProf.Text = "Salvar";
+            this.btnAgregarProf.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarProf.UseVisualStyleBackColor = true;
             this.btnAgregarProf.Click += new System.EventHandler(this.btnAgregarProf_Click);
             // 
@@ -266,8 +268,10 @@ namespace Conservatorio.UI.Forms
             this.btnCapturar.Image = ((System.Drawing.Image)(resources.GetObject("btnCapturar.Image")));
             this.btnCapturar.Location = new System.Drawing.Point(674, 248);
             this.btnCapturar.Name = "btnCapturar";
-            this.btnCapturar.Size = new System.Drawing.Size(65, 40);
+            this.btnCapturar.Size = new System.Drawing.Size(65, 65);
             this.btnCapturar.TabIndex = 66;
+            this.btnCapturar.Text = "Capturar";
+            this.btnCapturar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCapturar.UseVisualStyleBackColor = true;
             this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click);
             // 
@@ -286,8 +290,10 @@ namespace Conservatorio.UI.Forms
             this.btnSeleccionarImagen.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarImagen.Image")));
             this.btnSeleccionarImagen.Location = new System.Drawing.Point(434, 248);
             this.btnSeleccionarImagen.Name = "btnSeleccionarImagen";
-            this.btnSeleccionarImagen.Size = new System.Drawing.Size(62, 40);
+            this.btnSeleccionarImagen.Size = new System.Drawing.Size(65, 65);
             this.btnSeleccionarImagen.TabIndex = 67;
+            this.btnSeleccionarImagen.Text = "Buscar";
+            this.btnSeleccionarImagen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSeleccionarImagen.UseVisualStyleBackColor = true;
             this.btnSeleccionarImagen.Click += new System.EventHandler(this.btnSeleccionarImagen_Click);
             // 

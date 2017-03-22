@@ -87,16 +87,19 @@
             this.btnSalvarMatricula.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarMatricula.Image")));
             this.btnSalvarMatricula.Location = new System.Drawing.Point(737, 441);
             this.btnSalvarMatricula.Name = "btnSalvarMatricula";
-            this.btnSalvarMatricula.Size = new System.Drawing.Size(76, 74);
+            this.btnSalvarMatricula.Size = new System.Drawing.Size(70, 70);
             this.btnSalvarMatricula.TabIndex = 8;
+            this.btnSalvarMatricula.Text = "Salvar";
+            this.btnSalvarMatricula.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvarMatricula.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 41);
+            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
@@ -107,7 +110,7 @@
             this.clbInstrumentos.FormattingEnabled = true;
             this.clbInstrumentos.Location = new System.Drawing.Point(11, 220);
             this.clbInstrumentos.Name = "clbInstrumentos";
-            this.clbInstrumentos.Size = new System.Drawing.Size(264, 130);
+            this.clbInstrumentos.Size = new System.Drawing.Size(264, 123);
             this.clbInstrumentos.TabIndex = 3;
             this.clbInstrumentos.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbInstrumentos_ItemCheck);
             // 

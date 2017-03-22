@@ -151,12 +151,6 @@
     <Compile Include="Forms\V_Mensualidad.Designer.cs">
       <DependentUpon>V_Mensualidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\V_Notificacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\V_Notificacion.Designer.cs">
-      <DependentUpon>V_Notificacion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\V_Notificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,9 +215,6 @@
     <EmbeddedResource Include="Forms\V_Mensualidad.resx">
       <DependentUpon>V_Mensualidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\V_Notificacion.resx">
-      <DependentUpon>V_Notificacion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_Notificaciones.resx">
       <DependentUpon>V_Notificaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,12 +270,7 @@
     <Content Include="Images\1490223707_pencil.png" />
     <Content Include="Images\1490223725_search.png" />
     <Content Include="Images\1490224819_user_male_delete.png" />
-    <Content Include="Images\agrega.jpg" />
-    <Content Include="Images\borra.jpg" />
     <Content Include="Images\icon.ico" />
-    <Content Include="Images\lupa.jpg" />
-    <Content Include="Images\music.jpg" />
-    <Content Include="Images\salva.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Conservatorio.BL\Conservatorio.BL.csproj">

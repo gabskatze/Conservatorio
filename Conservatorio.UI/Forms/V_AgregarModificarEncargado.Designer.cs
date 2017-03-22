@@ -47,127 +47,129 @@
             // lblParentesco
             // 
             this.lblParentesco.AutoSize = true;
-            this.lblParentesco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblParentesco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblParentesco.Location = new System.Drawing.Point(57, 120);
             this.lblParentesco.Name = "lblParentesco";
-            this.lblParentesco.Size = new System.Drawing.Size(94, 20);
+            this.lblParentesco.Size = new System.Drawing.Size(80, 16);
             this.lblParentesco.TabIndex = 43;
             this.lblParentesco.Text = "Parentesco:";
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.Location = new System.Drawing.Point(384, 214);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(71, 70);
+            this.btnSalvar.Size = new System.Drawing.Size(70, 70);
             this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // tbxTel3
             // 
-            this.tbxTel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxTel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxTel3.Location = new System.Drawing.Point(585, 173);
             this.tbxTel3.Name = "tbxTel3";
-            this.tbxTel3.Size = new System.Drawing.Size(166, 26);
+            this.tbxTel3.Size = new System.Drawing.Size(166, 22);
             this.tbxTel3.TabIndex = 6;
             // 
             // tbxTel2
             // 
-            this.tbxTel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxTel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxTel2.Location = new System.Drawing.Point(585, 114);
             this.tbxTel2.Name = "tbxTel2";
-            this.tbxTel2.Size = new System.Drawing.Size(166, 26);
+            this.tbxTel2.Size = new System.Drawing.Size(166, 22);
             this.tbxTel2.TabIndex = 5;
             // 
             // tbxTel1
             // 
-            this.tbxTel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxTel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxTel1.Location = new System.Drawing.Point(585, 57);
             this.tbxTel1.Name = "tbxTel1";
-            this.tbxTel1.Size = new System.Drawing.Size(166, 26);
+            this.tbxTel1.Size = new System.Drawing.Size(166, 22);
             this.tbxTel1.TabIndex = 4;
             // 
             // tbxEmail
             // 
-            this.tbxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxEmail.Location = new System.Drawing.Point(132, 170);
+            this.tbxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxEmail.Location = new System.Drawing.Point(143, 170);
             this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(239, 26);
+            this.tbxEmail.Size = new System.Drawing.Size(239, 22);
             this.tbxEmail.TabIndex = 3;
             // 
             // lblTel1
             // 
             this.lblTel1.AutoSize = true;
-            this.lblTel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTel1.Location = new System.Drawing.Point(480, 60);
             this.lblTel1.Name = "lblTel1";
-            this.lblTel1.Size = new System.Drawing.Size(88, 20);
+            this.lblTel1.Size = new System.Drawing.Size(75, 16);
             this.lblTel1.TabIndex = 32;
             this.lblTel1.Text = "Teléfono 1:";
             // 
             // lblTel2
             // 
             this.lblTel2.AutoSize = true;
-            this.lblTel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTel2.Location = new System.Drawing.Point(480, 120);
             this.lblTel2.Name = "lblTel2";
-            this.lblTel2.Size = new System.Drawing.Size(88, 20);
+            this.lblTel2.Size = new System.Drawing.Size(75, 16);
             this.lblTel2.TabIndex = 31;
             this.lblTel2.Text = "Teléfono 2:";
             // 
             // lblTel3
             // 
             this.lblTel3.AutoSize = true;
-            this.lblTel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTel3.Location = new System.Drawing.Point(480, 176);
             this.lblTel3.Name = "lblTel3";
-            this.lblTel3.Size = new System.Drawing.Size(88, 20);
+            this.lblTel3.Size = new System.Drawing.Size(75, 16);
             this.lblTel3.TabIndex = 30;
             this.lblTel3.Text = "Teléfono 3:";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(57, 176);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(52, 20);
+            this.lblEmail.Size = new System.Drawing.Size(45, 16);
             this.lblEmail.TabIndex = 27;
             this.lblEmail.Text = "Email:";
             // 
             // tbxNombre
             // 
-            this.tbxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxNombre.Location = new System.Drawing.Point(132, 54);
+            this.tbxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxNombre.Location = new System.Drawing.Point(143, 54);
             this.tbxNombre.Name = "tbxNombre";
-            this.tbxNombre.Size = new System.Drawing.Size(291, 26);
+            this.tbxNombre.Size = new System.Drawing.Size(291, 22);
             this.tbxNombre.TabIndex = 1;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(57, 60);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(69, 20);
+            this.lblNombre.Size = new System.Drawing.Size(60, 16);
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "Nombre:";
             // 
             // tbxParentesco
             // 
-            this.tbxParentesco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxParentesco.Location = new System.Drawing.Point(157, 114);
+            this.tbxParentesco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxParentesco.Location = new System.Drawing.Point(143, 114);
             this.tbxParentesco.Name = "tbxParentesco";
-            this.tbxParentesco.Size = new System.Drawing.Size(166, 26);
+            this.tbxParentesco.Size = new System.Drawing.Size(166, 22);
             this.tbxParentesco.TabIndex = 2;
             // 
             // V_AgregarModificarEncargado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 301);
+            this.ClientSize = new System.Drawing.Size(839, 308);
             this.Controls.Add(this.tbxParentesco);
             this.Controls.Add(this.lblParentesco);
             this.Controls.Add(this.btnSalvar);

@@ -101,47 +101,49 @@
             // lblCursoSelect
             // 
             this.lblCursoSelect.AutoSize = true;
-            this.lblCursoSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCursoSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCursoSelect.Location = new System.Drawing.Point(12, 122);
             this.lblCursoSelect.Name = "lblCursoSelect";
-            this.lblCursoSelect.Size = new System.Drawing.Size(45, 16);
+            this.lblCursoSelect.Size = new System.Drawing.Size(51, 16);
             this.lblCursoSelect.TabIndex = 8;
             this.lblCursoSelect.Text = "label5";
             // 
             // lblHorarioSelect
             // 
             this.lblHorarioSelect.AutoSize = true;
-            this.lblHorarioSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHorarioSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHorarioSelect.Location = new System.Drawing.Point(217, 122);
             this.lblHorarioSelect.Name = "lblHorarioSelect";
-            this.lblHorarioSelect.Size = new System.Drawing.Size(45, 16);
+            this.lblHorarioSelect.Size = new System.Drawing.Size(51, 16);
             this.lblHorarioSelect.TabIndex = 9;
             this.lblHorarioSelect.Text = "label6";
             // 
             // lblProfesorSelect
             // 
             this.lblProfesorSelect.AutoSize = true;
-            this.lblProfesorSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfesorSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfesorSelect.Location = new System.Drawing.Point(428, 122);
             this.lblProfesorSelect.Name = "lblProfesorSelect";
-            this.lblProfesorSelect.Size = new System.Drawing.Size(45, 16);
+            this.lblProfesorSelect.Size = new System.Drawing.Size(51, 16);
             this.lblProfesorSelect.TabIndex = 10;
             this.lblProfesorSelect.Text = "label7";
             // 
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(275, 209);
+            this.btnAgregar.Location = new System.Drawing.Point(275, 186);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(55, 44);
+            this.btnAgregar.Size = new System.Drawing.Size(70, 70);
             this.btnAgregar.TabIndex = 11;
+            this.btnAgregar.Text = "Salvar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // V_AgregarCurso_Matricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 275);
+            this.ClientSize = new System.Drawing.Size(606, 287);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblProfesorSelect);
             this.Controls.Add(this.lblHorarioSelect);
