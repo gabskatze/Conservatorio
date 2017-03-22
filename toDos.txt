@@ -8,13 +8,13 @@ Instrucciones:
 6. Al metodo del click del boton: agregar condicion de ValidateChildren
 
 
-notificaciones de correo
+*notificaciones de correo
 
-agregar talleres y cursos elementales
-fechaMatricula
+*agregar talleres y cursos elementales
+*fechaMatricula
 
-activar estudiantes y profesores inactivos
+*activar estudiantes y profesores inactivos
 
-buscar por cedula estudiantes y profesores
+*buscar por cedula estudiantes y profesores
 
-clbinstrumentos ckd estudiante
+*clbinstrumentos ckd estudiante

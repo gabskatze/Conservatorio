@@ -6,16 +6,18 @@ namespace Conservatorio.UI.Forms
 {
     public partial class V_AgregarEncargado : Form
     {
-        private V_AgregarEstudiante vAgEst;
-        public V_AgregarEncargado(V_AgregarEstudiante vAg_Est)
+        private readonly V_AgregarModificarEstudiante vAgregarModificarEstudiante;
+
+        public V_AgregarEncargado(V_AgregarModificarEstudiante vAgregarModificarEstudiante)
         {
             InitializeComponent();
-            vAgEst = vAg_Est;
+
+            this.vAgregarModificarEstudiante = vAgregarModificarEstudiante;
         }
 
         private void btnAgregarEnc_Click(object sender, EventArgs e)
         {
-            Encargado miEncargado = new Encargado
+            var miEncargado = new Encargado
             {
                 Nombre = tbxAg_NombreEnc.Text,
                 Email = tbxAg_EmailEnc.Text,
@@ -25,8 +27,8 @@ namespace Conservatorio.UI.Forms
                 Telefono2 = tbxAg_Tel2Enc.Text == "" ? (int?)null : Int32.Parse(tbxAg_Tel2Enc.Text),
                 Telefono3 = tbxAg_Tel3Enc.Text == "" ? (int?)null : Int32.Parse(tbxAg_Tel3Enc.Text)
             };
-            vAgEst.Encargado = miEncargado;
 
+            vAgregarModificarEstudiante.Encargado = miEncargado;
             Close();
         }
     }
