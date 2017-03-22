@@ -13,7 +13,6 @@ namespace Conservatorio.DS
 
         static Conexion()
         {
-            CrearConfiguracion();
             Factory = CrearSessionFactory();
         }
 
@@ -23,14 +22,6 @@ namespace Conservatorio.DS
             {
                 return System.Configuration.ConfigurationManager.ConnectionStrings["Conservatorio"].ConnectionString;
             }
-        }
-
-        private static void CrearConfiguracion()
-        {
-            Fluently.Configure().Database(MsSqlConfiguration.MsSql2012.ConnectionString(ConnectionString))
-                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<InstrumentoMap>())
-                .ExposeConfiguration(ActualizarSchema)
-                .BuildConfiguration();
         }
 
         private static void ActualizarSchema(Configuration cfg)
@@ -47,8 +38,9 @@ namespace Conservatorio.DS
 
         private static ISessionFactory CrearSessionFactory()
         {
-            return Fluently.Configure().Database(MsSqlConfiguration.MsSql2008.ConnectionString(ConnectionString))
+            return Fluently.Configure().Database(MsSqlConfiguration.MsSql2012.ConnectionString(ConnectionString))
               .Mappings(m => m.FluentMappings.AddFromAssemblyOf<InstrumentoMap>())
+              .ExposeConfiguration(ActualizarSchema)
               .BuildSessionFactory();
         }
 
