@@ -1,6 +1,7 @@
 ﻿using Conservatorio.BL.Clases;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
+using Conservatorio.DATOS.Enums;
 using Conservatorio.UI.FormModels;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace Conservatorio.UI.Forms
     public partial class V_Matricula : Form
     {
         private readonly IEstudianteBL estudianteBL;
+        private readonly IClaseBL claseBL;
         private List<Estudiante> listaEstudiantes;
 
         private readonly IInstrumentoBL instrumentoBL;
@@ -20,12 +22,14 @@ namespace Conservatorio.UI.Forms
             InitializeComponent();
             estudianteBL = new EstudianteBL();
             instrumentoBL = new InstrumentoBL();
+            claseBL = new ClaseBL();
         }
 
         private void V_Matricula_Load(object sender, EventArgs e)
         {
             RefrescarEstudiantes();
             CargarInstrumentos();
+            CargarPagos();
         }
 
         public void RefrescarEstudiantes()
@@ -93,6 +97,37 @@ namespace Conservatorio.UI.Forms
         private void CargarClases()
         {
 
+        }
+
+        private void CargarPagos()
+        {
+            cbTipoPago.DataSource = Enum.GetValues(typeof(TipoPagoEnum));
+        }
+
+        private List<Instrumento> ObtenerInstrumentosSeleccionados()
+        {
+            return clbInstrumentos.CheckedItems.Cast<Instrumento>().ToList();
+        }
+
+        private void clbInstrumentos_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            var estudiante = ObtenerEstudianteSeleccionado();
+            if (estudiante == null)
+            {
+                return;
+            }
+
+            var instrumentosSeleccionados = ObtenerInstrumentosSeleccionados();
+            var clases = claseBL.ObtenerClasesDisponibles(estudiante, instrumentosSeleccionados);
+            dgv_Clase_Mat.DataSource = clases.Select(x => new ClaseModel
+            {
+                Profesor = x.Profesor.Nombre,
+                Curso = x.Curso.NombreCurso,
+                Dia = x.Dia,
+                HoraInicio = x.HoraInicio,
+                HoraFinal = x.HoraFinal,
+                Aula = x.Aula
+            }).ToList();
         }
     }
 }

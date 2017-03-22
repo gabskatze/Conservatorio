@@ -39,10 +39,10 @@
             // 
             // tbxBuscar
             // 
-            this.tbxBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxBuscar.Location = new System.Drawing.Point(86, 30);
+            this.tbxBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxBuscar.Location = new System.Drawing.Point(108, 20);
             this.tbxBuscar.Name = "tbxBuscar";
-            this.tbxBuscar.Size = new System.Drawing.Size(192, 26);
+            this.tbxBuscar.Size = new System.Drawing.Size(255, 22);
             this.tbxBuscar.TabIndex = 1;
             this.tbxBuscar.TextChanged += new System.EventHandler(this.tbxBuscar_TextChanged);
             // 
@@ -50,7 +50,7 @@
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(343, 366);
+            this.btnAgregar.Location = new System.Drawing.Point(187, 366);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(73, 73);
             this.btnAgregar.TabIndex = 3;
@@ -63,7 +63,7 @@
             this.dgvInstrumentos.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgvInstrumentos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvInstrumentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInstrumentos.Location = new System.Drawing.Point(227, 56);
+            this.dgvInstrumentos.Location = new System.Drawing.Point(71, 56);
             this.dgvInstrumentos.Name = "dgvInstrumentos";
             this.dgvInstrumentos.Size = new System.Drawing.Size(292, 283);
             this.dgvInstrumentos.TabIndex = 2;
@@ -71,9 +71,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(49, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(59, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox1.Size = new System.Drawing.Size(43, 38);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
@@ -81,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 453);
+            this.ClientSize = new System.Drawing.Size(441, 453);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbxBuscar);
             this.Controls.Add(this.btnAgregar);

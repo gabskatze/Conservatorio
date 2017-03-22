@@ -12,5 +12,6 @@ namespace Conservatorio.DATOS
         public virtual Estudiante Estudiante { get; set; }
         public virtual string Comentario { get; set; }
         public virtual string TipoPago { get; set; }
+        public virtual string Referencia { get; set; }
     }
 }

@@ -9,5 +9,7 @@ namespace Conservatorio.BL.Interfaces
         void ModificarClase(Clase clase);
         void EliminarClase(Clase clase);
         List<Clase> ObtenerClases(string keyword);
+
+        List<Clase> ObtenerClasesDisponibles(Estudiante estudiante, List<Instrumento> instrumentos);
     }
 }

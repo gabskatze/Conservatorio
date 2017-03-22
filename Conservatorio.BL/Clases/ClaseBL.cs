@@ -3,6 +3,7 @@ using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.DS.Clases;
 using Conservatorio.DS.Interfaces;
+using System.Linq;
 
 namespace Conservatorio.BL.Clases
 {
@@ -28,6 +29,12 @@ namespace Conservatorio.BL.Clases
         public List<Clase> ObtenerClases(string keyword)
         {
             return _claseDs.ObtenerClases(x => x.Profesor.Nombre.Contains(keyword) || x.Curso.NombreCurso.Contains(keyword) || x.Dia.Contains(keyword));
+        }
+
+        public List<Clase> ObtenerClasesDisponibles(Estudiante estudiante, List<Instrumento> instrumentos)
+        {
+            var idsInstrumentos = instrumentos.Select(x => x.IdInstrumento);
+            return _claseDs.ObtenerClases(x => idsInstrumentos.Contains(x.Curso.Instrumento.IdInstrumento));
         }
     }
 }

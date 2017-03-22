@@ -51,7 +51,7 @@
             this.notificacionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1076, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(1076, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -63,43 +63,43 @@
             this.miInstrumentos,
             this.miCursos,
             this.miClases});
-            this.mantenimientoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mantenimientoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
-            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(128, 25);
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(115, 23);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
             // 
             // miEstudiantes
             // 
             this.miEstudiantes.Name = "miEstudiantes";
-            this.miEstudiantes.Size = new System.Drawing.Size(172, 26);
+            this.miEstudiantes.Size = new System.Drawing.Size(160, 24);
             this.miEstudiantes.Text = "Estudiantes";
             this.miEstudiantes.Click += new System.EventHandler(this.miEstudiantes_Click);
             // 
             // miProfesores
             // 
             this.miProfesores.Name = "miProfesores";
-            this.miProfesores.Size = new System.Drawing.Size(172, 26);
+            this.miProfesores.Size = new System.Drawing.Size(160, 24);
             this.miProfesores.Text = "Profesores";
             this.miProfesores.Click += new System.EventHandler(this.miProfesores_Click);
             // 
             // miInstrumentos
             // 
             this.miInstrumentos.Name = "miInstrumentos";
-            this.miInstrumentos.Size = new System.Drawing.Size(172, 26);
+            this.miInstrumentos.Size = new System.Drawing.Size(160, 24);
             this.miInstrumentos.Text = "Instrumentos";
             this.miInstrumentos.Click += new System.EventHandler(this.miInstrumentos_Click);
             // 
             // miCursos
             // 
             this.miCursos.Name = "miCursos";
-            this.miCursos.Size = new System.Drawing.Size(172, 26);
+            this.miCursos.Size = new System.Drawing.Size(160, 24);
             this.miCursos.Text = "Cursos";
             this.miCursos.Click += new System.EventHandler(this.miCursos_Click);
             // 
             // miClases
             // 
             this.miClases.Name = "miClases";
-            this.miClases.Size = new System.Drawing.Size(172, 26);
+            this.miClases.Size = new System.Drawing.Size(160, 24);
             this.miClases.Text = "Clases";
             this.miClases.Click += new System.EventHandler(this.miClases_Click);
             // 
@@ -108,30 +108,30 @@
             this.facturaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.matriculaToolStripMenuItem,
             this.mensualidadToolStripMenuItem});
-            this.facturaciónToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.facturaciónToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.facturaciónToolStripMenuItem.Name = "facturaciónToolStripMenuItem";
-            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(101, 25);
+            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(91, 23);
             this.facturaciónToolStripMenuItem.Text = "Facturación";
             // 
             // matriculaToolStripMenuItem
             // 
             this.matriculaToolStripMenuItem.Name = "matriculaToolStripMenuItem";
-            this.matriculaToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.matriculaToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
             this.matriculaToolStripMenuItem.Text = "Matricula";
             this.matriculaToolStripMenuItem.Click += new System.EventHandler(this.matriculaToolStripMenuItem_Click);
             // 
             // mensualidadToolStripMenuItem
             // 
             this.mensualidadToolStripMenuItem.Name = "mensualidadToolStripMenuItem";
-            this.mensualidadToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.mensualidadToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
             this.mensualidadToolStripMenuItem.Text = "Mensualidad";
             this.mensualidadToolStripMenuItem.Click += new System.EventHandler(this.mensualidadToolStripMenuItem_Click);
             // 
             // notificacionesToolStripMenuItem
             // 
-            this.notificacionesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.notificacionesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.notificacionesToolStripMenuItem.Name = "notificacionesToolStripMenuItem";
-            this.notificacionesToolStripMenuItem.Size = new System.Drawing.Size(120, 25);
+            this.notificacionesToolStripMenuItem.Size = new System.Drawing.Size(105, 23);
             this.notificacionesToolStripMenuItem.Text = "Notificaciones";
             this.notificacionesToolStripMenuItem.Click += new System.EventHandler(this.notificacionesToolStripMenuItem_Click);
             // 

@@ -49,7 +49,7 @@
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.Location = new System.Drawing.Point(140, 207);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(70, 67);
+            this.btnGuardar.Size = new System.Drawing.Size(57, 53);
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -57,77 +57,77 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(12, 15);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(69, 20);
+            this.lblNombre.Size = new System.Drawing.Size(60, 16);
             this.lblNombre.TabIndex = 40;
             this.lblNombre.Text = "Nombre:";
             // 
             // lblRequisito
             // 
             this.lblRequisito.AutoSize = true;
-            this.lblRequisito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRequisito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRequisito.Location = new System.Drawing.Point(12, 110);
             this.lblRequisito.Name = "lblRequisito";
-            this.lblRequisito.Size = new System.Drawing.Size(80, 20);
+            this.lblRequisito.Size = new System.Drawing.Size(68, 16);
             this.lblRequisito.TabIndex = 41;
             this.lblRequisito.Text = "Requisito:";
             // 
             // tbxNombre
             // 
-            this.tbxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxNombre.Location = new System.Drawing.Point(87, 12);
+            this.tbxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxNombre.Location = new System.Drawing.Point(99, 12);
             this.tbxNombre.Name = "tbxNombre";
-            this.tbxNombre.Size = new System.Drawing.Size(235, 26);
+            this.tbxNombre.Size = new System.Drawing.Size(161, 22);
             this.tbxNombre.TabIndex = 1;
             // 
             // cbxRequisito
             // 
-            this.cbxRequisito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxRequisito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxRequisito.FormattingEnabled = true;
-            this.cbxRequisito.ItemHeight = 20;
+            this.cbxRequisito.ItemHeight = 16;
             this.cbxRequisito.Location = new System.Drawing.Point(99, 107);
             this.cbxRequisito.Name = "cbxRequisito";
-            this.cbxRequisito.Size = new System.Drawing.Size(223, 28);
+            this.cbxRequisito.Size = new System.Drawing.Size(166, 24);
             this.cbxRequisito.TabIndex = 3;
             this.cbxRequisito.SelectedIndexChanged += new System.EventHandler(this.cbxRequisito_SelectedIndexChanged);
             // 
             // lblNivel
             // 
             this.lblNivel.AutoSize = true;
-            this.lblNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNivel.Location = new System.Drawing.Point(12, 158);
             this.lblNivel.Name = "lblNivel";
-            this.lblNivel.Size = new System.Drawing.Size(46, 20);
+            this.lblNivel.Size = new System.Drawing.Size(42, 16);
             this.lblNivel.TabIndex = 44;
             this.lblNivel.Text = "Nivel:";
             // 
             // lblInstrumento
             // 
             this.lblInstrumento.AutoSize = true;
-            this.lblInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInstrumento.Location = new System.Drawing.Point(12, 62);
             this.lblInstrumento.Name = "lblInstrumento";
-            this.lblInstrumento.Size = new System.Drawing.Size(99, 20);
+            this.lblInstrumento.Size = new System.Drawing.Size(79, 16);
             this.lblInstrumento.TabIndex = 45;
             this.lblInstrumento.Text = "Instrumento:";
             // 
             // tbxInstrumento
             // 
-            this.tbxInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxInstrumento.Location = new System.Drawing.Point(117, 59);
+            this.tbxInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxInstrumento.Location = new System.Drawing.Point(100, 59);
             this.tbxInstrumento.Name = "tbxInstrumento";
             this.tbxInstrumento.ReadOnly = true;
-            this.tbxInstrumento.Size = new System.Drawing.Size(205, 26);
+            this.tbxInstrumento.Size = new System.Drawing.Size(160, 22);
             this.tbxInstrumento.TabIndex = 2;
             // 
             // tbxNivel
             // 
-            this.tbxNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxNivel.Location = new System.Drawing.Point(64, 155);
+            this.tbxNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxNivel.Location = new System.Drawing.Point(99, 155);
             this.tbxNivel.Name = "tbxNivel";
-            this.tbxNivel.Size = new System.Drawing.Size(74, 26);
+            this.tbxNivel.Size = new System.Drawing.Size(74, 22);
             this.tbxNivel.TabIndex = 4;
             // 
             // errorProvider
@@ -140,7 +140,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(349, 299);
+            this.ClientSize = new System.Drawing.Size(322, 285);
             this.Controls.Add(this.tbxNivel);
             this.Controls.Add(this.tbxInstrumento);
             this.Controls.Add(this.lblInstrumento);

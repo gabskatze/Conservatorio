@@ -38,34 +38,37 @@
             // btnEnviar
             // 
             this.btnEnviar.Image = ((System.Drawing.Image)(resources.GetObject("btnEnviar.Image")));
-            this.btnEnviar.Location = new System.Drawing.Point(271, 359);
+            this.btnEnviar.Location = new System.Drawing.Point(265, 334);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(77, 82);
+            this.btnEnviar.Size = new System.Drawing.Size(84, 69);
             this.btnEnviar.TabIndex = 0;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEnviar.UseVisualStyleBackColor = true;
             // 
             // lblDestinatario
             // 
             this.lblDestinatario.AutoSize = true;
-            this.lblDestinatario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDestinatario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDestinatario.Location = new System.Drawing.Point(30, 44);
             this.lblDestinatario.Name = "lblDestinatario";
-            this.lblDestinatario.Size = new System.Drawing.Size(95, 20);
+            this.lblDestinatario.Size = new System.Drawing.Size(80, 16);
             this.lblDestinatario.TabIndex = 1;
             this.lblDestinatario.Text = "Destinatario";
             // 
             // cbDestinatario
             // 
-            this.cbDestinatario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDestinatario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDestinatario.FormattingEnabled = true;
             this.cbDestinatario.Location = new System.Drawing.Point(131, 36);
             this.cbDestinatario.Name = "cbDestinatario";
-            this.cbDestinatario.Size = new System.Drawing.Size(166, 28);
+            this.cbDestinatario.Size = new System.Drawing.Size(166, 24);
             this.cbDestinatario.TabIndex = 6;
             // 
             // tbxMensaje
             // 
-            this.tbxMensaje.Location = new System.Drawing.Point(34, 112);
+            this.tbxMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMensaje.Location = new System.Drawing.Point(33, 85);
             this.tbxMensaje.Multiline = true;
             this.tbxMensaje.Name = "tbxMensaje";
             this.tbxMensaje.Size = new System.Drawing.Size(549, 230);
@@ -75,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 470);
+            this.ClientSize = new System.Drawing.Size(618, 426);
             this.Controls.Add(this.tbxMensaje);
             this.Controls.Add(this.cbDestinatario);
             this.Controls.Add(this.lblDestinatario);

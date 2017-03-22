@@ -46,6 +46,8 @@
             this.tbComentario = new System.Windows.Forms.TextBox();
             this.pb_Est = new System.Windows.Forms.PictureBox();
             this.lblTipoEstudiante = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEst_Matric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Clase_Mat)).BeginInit();
@@ -54,17 +56,17 @@
             // 
             // tbxBuscarEst_Matric
             // 
-            this.tbxBuscarEst_Matric.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxBuscarEst_Matric.Location = new System.Drawing.Point(47, 12);
+            this.tbxBuscarEst_Matric.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxBuscarEst_Matric.Location = new System.Drawing.Point(60, 25);
             this.tbxBuscarEst_Matric.Name = "tbxBuscarEst_Matric";
-            this.tbxBuscarEst_Matric.Size = new System.Drawing.Size(217, 26);
+            this.tbxBuscarEst_Matric.Size = new System.Drawing.Size(231, 22);
             this.tbxBuscarEst_Matric.TabIndex = 1;
             this.tbxBuscarEst_Matric.TextChanged += new System.EventHandler(this.tbxBuscarEst_Matric_TextChanged);
             // 
             // dgvEst_Matric
             // 
             this.dgvEst_Matric.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEst_Matric.Location = new System.Drawing.Point(11, 47);
+            this.dgvEst_Matric.Location = new System.Drawing.Point(11, 59);
             this.dgvEst_Matric.Name = "dgvEst_Matric";
             this.dgvEst_Matric.Size = new System.Drawing.Size(406, 135);
             this.dgvEst_Matric.TabIndex = 2;
@@ -94,26 +96,28 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(11, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 35);
+            this.pictureBox1.Size = new System.Drawing.Size(43, 41);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
             // clbInstrumentos
             // 
-            this.clbInstrumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clbInstrumentos.CheckOnClick = true;
+            this.clbInstrumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clbInstrumentos.FormattingEnabled = true;
             this.clbInstrumentos.Location = new System.Drawing.Point(11, 220);
             this.clbInstrumentos.Name = "clbInstrumentos";
             this.clbInstrumentos.Size = new System.Drawing.Size(264, 130);
             this.clbInstrumentos.TabIndex = 3;
+            this.clbInstrumentos.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbInstrumentos_ItemCheck);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 197);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 20);
+            this.label1.Size = new System.Drawing.Size(95, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "Instrumentos";
             // 
@@ -122,69 +126,69 @@
             this.dgv_Clase_Mat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Clase_Mat.Location = new System.Drawing.Point(345, 220);
             this.dgv_Clase_Mat.Name = "dgv_Clase_Mat";
-            this.dgv_Clase_Mat.Size = new System.Drawing.Size(498, 124);
+            this.dgv_Clase_Mat.Size = new System.Drawing.Size(498, 130);
             this.dgv_Clase_Mat.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(341, 197);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 21;
             this.label2.Text = "Clases";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 374);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 380);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 20);
+            this.label3.Size = new System.Drawing.Size(103, 16);
             this.label3.TabIndex = 22;
             this.label3.Text = "Tipo de Pago";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(341, 378);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(634, 374);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 20);
+            this.label4.Size = new System.Drawing.Size(50, 16);
             this.label4.TabIndex = 23;
             this.label4.Text = "Monto";
             // 
             // cbTipoPago
             // 
-            this.cbTipoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoPago.FormattingEnabled = true;
             this.cbTipoPago.Location = new System.Drawing.Point(132, 372);
             this.cbTipoPago.Name = "cbTipoPago";
-            this.cbTipoPago.Size = new System.Drawing.Size(121, 28);
+            this.cbTipoPago.Size = new System.Drawing.Size(121, 24);
             this.cbTipoPago.TabIndex = 5;
             // 
             // tbMontoMat
             // 
-            this.tbMontoMat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMontoMat.Location = new System.Drawing.Point(406, 374);
+            this.tbMontoMat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMontoMat.Location = new System.Drawing.Point(699, 372);
             this.tbMontoMat.Name = "tbMontoMat";
-            this.tbMontoMat.Size = new System.Drawing.Size(122, 26);
+            this.tbMontoMat.Size = new System.Drawing.Size(127, 22);
             this.tbMontoMat.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 422);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 20);
+            this.label5.Size = new System.Drawing.Size(95, 16);
             this.label5.TabIndex = 26;
             this.label5.Text = "Comentarios";
             // 
             // tbComentario
             // 
-            this.tbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbComentario.Location = new System.Drawing.Point(16, 446);
             this.tbComentario.Multiline = true;
             this.tbComentario.Name = "tbComentario";
@@ -209,11 +213,31 @@
             this.lblTipoEstudiante.TabIndex = 29;
             this.lblTipoEstudiante.Text = "Tipo";
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(431, 372);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(149, 22);
+            this.textBox1.TabIndex = 30;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(296, 375);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 16);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "No. Referencia";
+            // 
             // V_Matricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 533);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lblTipoEstudiante);
             this.Controls.Add(this.pb_Est);
             this.Controls.Add(this.tbComentario);
@@ -263,5 +287,7 @@
         private System.Windows.Forms.TextBox tbComentario;
         private System.Windows.Forms.PictureBox pb_Est;
         private System.Windows.Forms.Label lblTipoEstudiante;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
     }
 }

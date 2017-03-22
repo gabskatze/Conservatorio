@@ -41,47 +41,49 @@
             // lblInstrumento
             // 
             this.lblInstrumento.AutoSize = true;
-            this.lblInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstrumento.Location = new System.Drawing.Point(12, 20);
+            this.lblInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstrumento.Location = new System.Drawing.Point(32, 25);
             this.lblInstrumento.Name = "lblInstrumento";
-            this.lblInstrumento.Size = new System.Drawing.Size(99, 20);
+            this.lblInstrumento.Size = new System.Drawing.Size(79, 16);
             this.lblInstrumento.TabIndex = 0;
             this.lblInstrumento.Text = "Instrumento:";
             // 
             // cbxInstrumento
             // 
-            this.cbxInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxInstrumento.FormattingEnabled = true;
             this.cbxInstrumento.Location = new System.Drawing.Point(117, 17);
             this.cbxInstrumento.Name = "cbxInstrumento";
-            this.cbxInstrumento.Size = new System.Drawing.Size(274, 28);
+            this.cbxInstrumento.Size = new System.Drawing.Size(274, 24);
             this.cbxInstrumento.TabIndex = 1;
             this.cbxInstrumento.SelectedIndexChanged += new System.EventHandler(this.cbxInstrumento_SelectedIndexChanged);
             // 
             // lbxCursos
             // 
+            this.lbxCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxCursos.FormattingEnabled = true;
+            this.lbxCursos.ItemHeight = 16;
             this.lbxCursos.Location = new System.Drawing.Point(117, 76);
             this.lbxCursos.Name = "lbxCursos";
-            this.lbxCursos.Size = new System.Drawing.Size(274, 251);
+            this.lbxCursos.Size = new System.Drawing.Size(274, 244);
             this.lbxCursos.TabIndex = 2;
             // 
             // lblCursos
             // 
             this.lblCursos.AutoSize = true;
-            this.lblCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCursos.Location = new System.Drawing.Point(12, 76);
+            this.lblCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCursos.Location = new System.Drawing.Point(32, 76);
             this.lblCursos.Name = "lblCursos";
-            this.lblCursos.Size = new System.Drawing.Size(63, 20);
+            this.lblCursos.Size = new System.Drawing.Size(53, 16);
             this.lblCursos.TabIndex = 3;
             this.lblCursos.Text = "Cursos:";
             // 
             // btnModificar
             // 
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.Location = new System.Drawing.Point(185, 348);
+            this.btnModificar.Location = new System.Drawing.Point(229, 348);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(72, 72);
+            this.btnModificar.Size = new System.Drawing.Size(55, 55);
             this.btnModificar.TabIndex = 4;
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -89,9 +91,9 @@
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(67, 348);
+            this.btnAgregar.Location = new System.Drawing.Point(117, 348);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(76, 72);
+            this.btnAgregar.Size = new System.Drawing.Size(55, 55);
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -99,9 +101,9 @@
             // btnEliminar
             // 
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(316, 348);
+            this.btnEliminar.Location = new System.Drawing.Point(336, 348);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 72);
+            this.btnEliminar.Size = new System.Drawing.Size(55, 55);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -110,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 432);
+            this.ClientSize = new System.Drawing.Size(465, 450);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnModificar);

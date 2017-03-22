@@ -261,6 +261,24 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\1490221296_books_add.png" />
+    <Content Include="Images\1490221322_save_accept.png" />
+    <Content Include="Images\1490221329_img-landscape.png" />
+    <Content Include="Images\1490221351_user_male_add.png" />
+    <Content Include="Images\1490221368_Accept.png" />
+    <Content Include="Images\1490221389_books_edit.png" />
+    <Content Include="Images\1490221421_user_male_accept.png" />
+    <Content Include="Images\1490221701_webcam.png" />
+    <Content Include="Images\1490221757_Add.png" />
+    <Content Include="Images\1490221808_books_delete.png" />
+    <Content Include="Images\1490221922_remove.png" />
+    <Content Include="Images\1490221973_user_male_edit.png" />
+    <Content Include="Images\1490222071_mail_go.png" />
+    <Content Include="Images\1490222180_delete.png" />
+    <Content Include="Images\1490223629_credit-cards.png" />
+    <Content Include="Images\1490223707_pencil.png" />
+    <Content Include="Images\1490223725_search.png" />
+    <Content Include="Images\1490224819_user_male_delete.png" />
     <Content Include="Images\agrega.jpg" />
     <Content Include="Images\borra.jpg" />
     <Content Include="Images\icon.ico" />

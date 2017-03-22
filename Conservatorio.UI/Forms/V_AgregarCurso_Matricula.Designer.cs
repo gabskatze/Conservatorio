@@ -44,93 +44,96 @@
             // lblCurso
             // 
             this.lblCurso.AutoSize = true;
-            this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurso.Location = new System.Drawing.Point(12, 33);
             this.lblCurso.Name = "lblCurso";
-            this.lblCurso.Size = new System.Drawing.Size(51, 20);
+            this.lblCurso.Size = new System.Drawing.Size(43, 16);
             this.lblCurso.TabIndex = 0;
             this.lblCurso.Text = "Curso";
             // 
             // lblHorario
             // 
             this.lblHorario.AutoSize = true;
-            this.lblHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHorario.Location = new System.Drawing.Point(217, 33);
             this.lblHorario.Name = "lblHorario";
-            this.lblHorario.Size = new System.Drawing.Size(61, 20);
+            this.lblHorario.Size = new System.Drawing.Size(53, 16);
             this.lblHorario.TabIndex = 1;
             this.lblHorario.Text = "Horario";
             // 
             // lblProfesor
             // 
             this.lblProfesor.AutoSize = true;
-            this.lblProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfesor.Location = new System.Drawing.Point(428, 33);
             this.lblProfesor.Name = "lblProfesor";
-            this.lblProfesor.Size = new System.Drawing.Size(69, 20);
+            this.lblProfesor.Size = new System.Drawing.Size(59, 16);
             this.lblProfesor.TabIndex = 2;
             this.lblProfesor.Text = "Profesor";
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(15, 64);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(137, 21);
+            this.comboBox1.Size = new System.Drawing.Size(137, 24);
             this.comboBox1.TabIndex = 4;
             // 
             // comboBox2
             // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(220, 64);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(145, 21);
+            this.comboBox2.Size = new System.Drawing.Size(145, 24);
             this.comboBox2.TabIndex = 5;
             // 
             // comboBox3
             // 
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(431, 64);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(152, 21);
+            this.comboBox3.Size = new System.Drawing.Size(152, 24);
             this.comboBox3.TabIndex = 6;
             // 
             // lblCursoSelect
             // 
             this.lblCursoSelect.AutoSize = true;
-            this.lblCursoSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCursoSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCursoSelect.Location = new System.Drawing.Point(12, 122);
             this.lblCursoSelect.Name = "lblCursoSelect";
-            this.lblCursoSelect.Size = new System.Drawing.Size(57, 20);
+            this.lblCursoSelect.Size = new System.Drawing.Size(45, 16);
             this.lblCursoSelect.TabIndex = 8;
             this.lblCursoSelect.Text = "label5";
             // 
             // lblHorarioSelect
             // 
             this.lblHorarioSelect.AutoSize = true;
-            this.lblHorarioSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHorarioSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHorarioSelect.Location = new System.Drawing.Point(217, 122);
             this.lblHorarioSelect.Name = "lblHorarioSelect";
-            this.lblHorarioSelect.Size = new System.Drawing.Size(57, 20);
+            this.lblHorarioSelect.Size = new System.Drawing.Size(45, 16);
             this.lblHorarioSelect.TabIndex = 9;
             this.lblHorarioSelect.Text = "label6";
             // 
             // lblProfesorSelect
             // 
             this.lblProfesorSelect.AutoSize = true;
-            this.lblProfesorSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfesorSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfesorSelect.Location = new System.Drawing.Point(428, 122);
             this.lblProfesorSelect.Name = "lblProfesorSelect";
-            this.lblProfesorSelect.Size = new System.Drawing.Size(57, 20);
+            this.lblProfesorSelect.Size = new System.Drawing.Size(45, 16);
             this.lblProfesorSelect.TabIndex = 10;
             this.lblProfesorSelect.Text = "label7";
             // 
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(252, 208);
+            this.btnAgregar.Location = new System.Drawing.Point(275, 209);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(76, 72);
+            this.btnAgregar.Size = new System.Drawing.Size(55, 44);
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
@@ -138,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 305);
+            this.ClientSize = new System.Drawing.Size(604, 275);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblProfesorSelect);
             this.Controls.Add(this.lblHorarioSelect);

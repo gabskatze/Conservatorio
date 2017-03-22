@@ -41,9 +41,9 @@
             // 
             this.btnAgregarInst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarInst.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarInst.Image")));
-            this.btnAgregarInst.Location = new System.Drawing.Point(182, 144);
+            this.btnAgregarInst.Location = new System.Drawing.Point(180, 152);
             this.btnAgregarInst.Name = "btnAgregarInst";
-            this.btnAgregarInst.Size = new System.Drawing.Size(72, 69);
+            this.btnAgregarInst.Size = new System.Drawing.Size(57, 52);
             this.btnAgregarInst.TabIndex = 2;
             this.btnAgregarInst.UseVisualStyleBackColor = true;
             this.btnAgregarInst.Click += new System.EventHandler(this.btnAgregarInst_Click);
@@ -51,19 +51,19 @@
             // lblNombreInst
             // 
             this.lblNombreInst.AutoSize = true;
-            this.lblNombreInst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreInst.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreInst.Location = new System.Drawing.Point(61, 86);
             this.lblNombreInst.Name = "lblNombreInst";
-            this.lblNombreInst.Size = new System.Drawing.Size(69, 20);
+            this.lblNombreInst.Size = new System.Drawing.Size(60, 16);
             this.lblNombreInst.TabIndex = 2;
             this.lblNombreInst.Text = "Nombre:";
             // 
             // tbxNombreInst
             // 
-            this.tbxNombreInst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxNombreInst.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxNombreInst.Location = new System.Drawing.Point(136, 86);
             this.tbxNombreInst.Name = "tbxNombreInst";
-            this.tbxNombreInst.Size = new System.Drawing.Size(198, 26);
+            this.tbxNombreInst.Size = new System.Drawing.Size(198, 22);
             this.tbxNombreInst.TabIndex = 1;
             // 
             // errorProvider
@@ -76,7 +76,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(471, 280);
+            this.ClientSize = new System.Drawing.Size(384, 237);
             this.Controls.Add(this.tbxNombreInst);
             this.Controls.Add(this.lblNombreInst);
             this.Controls.Add(this.btnAgregarInst);

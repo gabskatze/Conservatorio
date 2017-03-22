@@ -52,79 +52,79 @@
             // lblCurso
             // 
             this.lblCurso.AutoSize = true;
-            this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurso.Location = new System.Drawing.Point(382, 45);
             this.lblCurso.Name = "lblCurso";
-            this.lblCurso.Size = new System.Drawing.Size(55, 20);
+            this.lblCurso.Size = new System.Drawing.Size(46, 16);
             this.lblCurso.TabIndex = 0;
             this.lblCurso.Text = "Curso:";
             // 
             // lblProfesor
             // 
             this.lblProfesor.AutoSize = true;
-            this.lblProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfesor.Location = new System.Drawing.Point(15, 115);
+            this.lblProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfesor.Location = new System.Drawing.Point(15, 107);
             this.lblProfesor.Name = "lblProfesor";
-            this.lblProfesor.Size = new System.Drawing.Size(73, 20);
+            this.lblProfesor.Size = new System.Drawing.Size(62, 16);
             this.lblProfesor.TabIndex = 1;
             this.lblProfesor.Text = "Profesor:";
             // 
             // lblDia
             // 
             this.lblDia.AutoSize = true;
-            this.lblDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDia.Location = new System.Drawing.Point(382, 120);
+            this.lblDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDia.Location = new System.Drawing.Point(382, 112);
             this.lblDia.Name = "lblDia";
-            this.lblDia.Size = new System.Drawing.Size(37, 20);
+            this.lblDia.Size = new System.Drawing.Size(32, 16);
             this.lblDia.TabIndex = 2;
             this.lblDia.Text = "Dia:";
             // 
             // lblHoraInicio
             // 
             this.lblHoraInicio.AutoSize = true;
-            this.lblHoraInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoraInicio.Location = new System.Drawing.Point(12, 208);
+            this.lblHoraInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoraInicio.Location = new System.Drawing.Point(12, 176);
             this.lblHoraInicio.Name = "lblHoraInicio";
-            this.lblHoraInicio.Size = new System.Drawing.Size(109, 20);
+            this.lblHoraInicio.Size = new System.Drawing.Size(94, 16);
             this.lblHoraInicio.TabIndex = 3;
             this.lblHoraInicio.Text = "Hora de inicio:";
             // 
             // cbxCursos
             // 
-            this.cbxCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxCursos.FormattingEnabled = true;
             this.cbxCursos.Location = new System.Drawing.Point(515, 37);
             this.cbxCursos.Name = "cbxCursos";
-            this.cbxCursos.Size = new System.Drawing.Size(194, 28);
+            this.cbxCursos.Size = new System.Drawing.Size(144, 24);
             this.cbxCursos.TabIndex = 2;
             // 
             // cbxProfesores
             // 
-            this.cbxProfesores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxProfesores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxProfesores.FormattingEnabled = true;
-            this.cbxProfesores.Location = new System.Drawing.Point(94, 112);
+            this.cbxProfesores.Location = new System.Drawing.Point(94, 104);
             this.cbxProfesores.Name = "cbxProfesores";
-            this.cbxProfesores.Size = new System.Drawing.Size(241, 28);
+            this.cbxProfesores.Size = new System.Drawing.Size(176, 24);
             this.cbxProfesores.TabIndex = 3;
             // 
             // cbxDias
             // 
-            this.cbxDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxDias.FormattingEnabled = true;
-            this.cbxDias.Location = new System.Drawing.Point(515, 115);
+            this.cbxDias.Location = new System.Drawing.Point(515, 107);
             this.cbxDias.Name = "cbxDias";
-            this.cbxDias.Size = new System.Drawing.Size(194, 28);
+            this.cbxDias.Size = new System.Drawing.Size(144, 24);
             this.cbxDias.TabIndex = 4;
             // 
             // dtpHoraInicio
             // 
             this.dtpHoraInicio.CustomFormat = "";
-            this.dtpHoraInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHoraInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHoraInicio.Location = new System.Drawing.Point(130, 204);
+            this.dtpHoraInicio.Location = new System.Drawing.Point(130, 172);
             this.dtpHoraInicio.Name = "dtpHoraInicio";
             this.dtpHoraInicio.ShowUpDown = true;
-            this.dtpHoraInicio.Size = new System.Drawing.Size(205, 26);
+            this.dtpHoraInicio.Size = new System.Drawing.Size(150, 22);
             this.dtpHoraInicio.TabIndex = 5;
             // 
             // btnSalvar
@@ -132,7 +132,7 @@
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.Location = new System.Drawing.Point(332, 297);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(76, 72);
+            this.btnSalvar.Size = new System.Drawing.Size(63, 53);
             this.btnSalvar.TabIndex = 8;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -140,60 +140,60 @@
             // lblInstrumento
             // 
             this.lblInstrumento.AutoSize = true;
-            this.lblInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInstrumento.Location = new System.Drawing.Point(15, 48);
             this.lblInstrumento.Name = "lblInstrumento";
-            this.lblInstrumento.Size = new System.Drawing.Size(99, 20);
+            this.lblInstrumento.Size = new System.Drawing.Size(79, 16);
             this.lblInstrumento.TabIndex = 13;
             this.lblInstrumento.Text = "Instrumento:";
             // 
             // cbxInstrumento
             // 
-            this.cbxInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxInstrumento.FormattingEnabled = true;
-            this.cbxInstrumento.Location = new System.Drawing.Point(120, 40);
+            this.cbxInstrumento.Location = new System.Drawing.Point(100, 42);
             this.cbxInstrumento.Name = "cbxInstrumento";
-            this.cbxInstrumento.Size = new System.Drawing.Size(215, 28);
+            this.cbxInstrumento.Size = new System.Drawing.Size(170, 24);
             this.cbxInstrumento.TabIndex = 1;
             this.cbxInstrumento.SelectedIndexChanged += new System.EventHandler(this.cbxInstrumento_SelectedIndexChanged);
             // 
             // dtpHoraFinal
             // 
             this.dtpHoraFinal.CustomFormat = "";
-            this.dtpHoraFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHoraFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHoraFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHoraFinal.Location = new System.Drawing.Point(515, 203);
+            this.dtpHoraFinal.Location = new System.Drawing.Point(515, 171);
             this.dtpHoraFinal.Name = "dtpHoraFinal";
             this.dtpHoraFinal.ShowUpDown = true;
-            this.dtpHoraFinal.Size = new System.Drawing.Size(194, 26);
+            this.dtpHoraFinal.Size = new System.Drawing.Size(144, 22);
             this.dtpHoraFinal.TabIndex = 6;
             // 
             // lblHoraFinal
             // 
             this.lblHoraFinal.AutoSize = true;
-            this.lblHoraFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoraFinal.Location = new System.Drawing.Point(383, 208);
+            this.lblHoraFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoraFinal.Location = new System.Drawing.Point(383, 176);
             this.lblHoraFinal.Name = "lblHoraFinal";
-            this.lblHoraFinal.Size = new System.Drawing.Size(81, 20);
+            this.lblHoraFinal.Size = new System.Drawing.Size(68, 16);
             this.lblHoraFinal.TabIndex = 14;
             this.lblHoraFinal.Text = "Hora final:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 268);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 230);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 20);
+            this.label1.Size = new System.Drawing.Size(38, 16);
             this.label1.TabIndex = 15;
             this.label1.Text = "Aula:";
             // 
             // tbxAula
             // 
-            this.tbxAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAula.Location = new System.Drawing.Point(75, 262);
+            this.tbxAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxAula.Location = new System.Drawing.Point(94, 224);
             this.tbxAula.Name = "tbxAula";
-            this.tbxAula.Size = new System.Drawing.Size(51, 26);
+            this.tbxAula.Size = new System.Drawing.Size(51, 22);
             this.tbxAula.TabIndex = 7;
             // 
             // errorProvider

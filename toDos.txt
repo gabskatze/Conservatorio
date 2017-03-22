@@ -18,3 +18,5 @@ Instrucciones:
 *buscar por cedula estudiantes y profesores
 
 *clbinstrumentos ckd estudiante
+
+*agregar form registroNota con 3 notas y que calcule la nota final
