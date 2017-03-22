@@ -1,9 +1,15 @@
-﻿using System.Linq;
+﻿using System;
+using System.Configuration;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using Conservatorio.BL.Clases;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.UI.FormValidation;
+using Emgu.CV;
 
 namespace Conservatorio.UI.Forms
 {
@@ -13,6 +19,18 @@ namespace Conservatorio.UI.Forms
         private readonly IInstrumentoBL instrumentoBL;
         private readonly V_Profesores vProfesor;
         private Profesor profesor;
+
+        private Capture _capture;
+        private Capture CameraCapture
+        {
+            get
+            {
+                return _capture ?? (_capture = new Capture());
+            }
+            set { _capture = value; }
+        } 
+
+        private bool CaptureInProgress { get; set; }
 
         public V_AgregarModificarProfesor(V_Profesores vProfesor, Profesor profesor = null)
         {
@@ -80,7 +98,7 @@ namespace Conservatorio.UI.Forms
 
         #region Action Methods
 
-        private void V_AgregarProfesor_Load(object sender, System.EventArgs e)
+        private void V_AgregarProfesor_Load(object sender, EventArgs e)
         {
             Text = profesor == null ? "Agregar Profesor" : "Modificar Profesor";
 
@@ -98,6 +116,14 @@ namespace Conservatorio.UI.Forms
             tbxTelefono1.Text = profesor.Telefono1.ToString();
             tbxTelefono2.Text = profesor.Telefono2.ToString();
             tbxTelefono3.Text = profesor.Telefono3.ToString();
+
+            if (!string.IsNullOrEmpty(profesor.Imagen))
+            {
+                var bytes = File.ReadAllBytes(ConfigurationManager.AppSettings["imagesFolder"] + profesor.Imagen);
+                var ms = new MemoryStream(bytes);
+                pbxFoto.Image = Image.FromStream(ms);
+            }
+
             var idsInstrumentos = profesor.Instrumentos.Select(x => x.IdInstrumento).ToList();
             for (var i = 0; i < clbInstrumentos.Items.Count; i++)
             {
@@ -109,7 +135,7 @@ namespace Conservatorio.UI.Forms
             }
         }
 
-        private void btnAgregarProf_Click(object sender, System.EventArgs e)
+        private void btnAgregarProf_Click(object sender, EventArgs e)
         {
             if (!ValidateChildren())
             {
@@ -122,6 +148,11 @@ namespace Conservatorio.UI.Forms
                 {
                     Estado = true
                 };
+            }
+
+            if (string.IsNullOrEmpty(profesor.Imagen))
+            {
+                profesor.Imagen = Guid.NewGuid() + ".png";
             }
 
             profesor.Cedula = int.Parse(tbxCedula.Text);
@@ -144,8 +175,46 @@ namespace Conservatorio.UI.Forms
                 profesorBL.ModificarProfesor(profesor);
             }
 
+            // Guardar la imagen
+            var foto = pbxFoto.Image;
+            if(foto != null)
+            {
+                foto.Save(ConfigurationManager.AppSettings["imagesFolder"] + profesor.Imagen, ImageFormat.Png);
+            }
+
             Close();
             vProfesor.RefrescarProfesores();
+        }
+
+        private void btnSeleccionarImagen_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var fileName = openFileDialog.FileName;
+                pbxFoto.Image = Image.FromFile(fileName);
+            }
+        }
+
+        private void ProcessFrame(object sender, EventArgs arg)
+        {
+            var image = CameraCapture.QueryFrame().Bitmap;
+            pbxFoto.Image = image;
+        }
+
+        private void btnCapturar_Click(object sender, EventArgs e)
+        {
+            if (CaptureInProgress)
+            {
+                Application.Idle -= ProcessFrame;
+                CameraCapture.Dispose();
+                CameraCapture = null;
+            }
+            else
+            {
+                Application.Idle += ProcessFrame;
+            }
+
+            CaptureInProgress = !CaptureInProgress;
         }
 
         #endregion

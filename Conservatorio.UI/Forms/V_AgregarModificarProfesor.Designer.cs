@@ -54,7 +54,12 @@ namespace Conservatorio.UI.Forms
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.clbInstrumentos = new System.Windows.Forms.CheckedListBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnCapturar = new System.Windows.Forms.Button();
+            this.pbxFoto = new System.Windows.Forms.PictureBox();
+            this.btnSeleccionarImagen = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregarProf
@@ -71,7 +76,7 @@ namespace Conservatorio.UI.Forms
             // tbxTelefono3
             // 
             this.tbxTelefono3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxTelefono3.Location = new System.Drawing.Point(513, 364);
+            this.tbxTelefono3.Location = new System.Drawing.Point(513, 281);
             this.tbxTelefono3.Name = "tbxTelefono3";
             this.tbxTelefono3.Size = new System.Drawing.Size(166, 26);
             this.tbxTelefono3.TabIndex = 11;
@@ -79,7 +84,7 @@ namespace Conservatorio.UI.Forms
             // tbxTelefono2
             // 
             this.tbxTelefono2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxTelefono2.Location = new System.Drawing.Point(513, 314);
+            this.tbxTelefono2.Location = new System.Drawing.Point(514, 240);
             this.tbxTelefono2.Name = "tbxTelefono2";
             this.tbxTelefono2.Size = new System.Drawing.Size(166, 26);
             this.tbxTelefono2.TabIndex = 10;
@@ -87,7 +92,7 @@ namespace Conservatorio.UI.Forms
             // tbxTelefono1
             // 
             this.tbxTelefono1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxTelefono1.Location = new System.Drawing.Point(513, 262);
+            this.tbxTelefono1.Location = new System.Drawing.Point(513, 200);
             this.tbxTelefono1.Name = "tbxTelefono1";
             this.tbxTelefono1.Size = new System.Drawing.Size(166, 26);
             this.tbxTelefono1.TabIndex = 9;
@@ -95,7 +100,7 @@ namespace Conservatorio.UI.Forms
             // tbxEmail
             // 
             this.tbxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxEmail.Location = new System.Drawing.Point(478, 201);
+            this.tbxEmail.Location = new System.Drawing.Point(477, 143);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(239, 26);
             this.tbxEmail.TabIndex = 8;
@@ -129,7 +134,7 @@ namespace Conservatorio.UI.Forms
             // 
             this.lblTelefono1.AutoSize = true;
             this.lblTelefono1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono1.Location = new System.Drawing.Point(419, 268);
+            this.lblTelefono1.Location = new System.Drawing.Point(419, 203);
             this.lblTelefono1.Name = "lblTelefono1";
             this.lblTelefono1.Size = new System.Drawing.Size(88, 20);
             this.lblTelefono1.TabIndex = 29;
@@ -139,7 +144,7 @@ namespace Conservatorio.UI.Forms
             // 
             this.lblTelefono2.AutoSize = true;
             this.lblTelefono2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono2.Location = new System.Drawing.Point(419, 320);
+            this.lblTelefono2.Location = new System.Drawing.Point(419, 243);
             this.lblTelefono2.Name = "lblTelefono2";
             this.lblTelefono2.Size = new System.Drawing.Size(88, 20);
             this.lblTelefono2.TabIndex = 28;
@@ -149,7 +154,7 @@ namespace Conservatorio.UI.Forms
             // 
             this.lblTelefono3.AutoSize = true;
             this.lblTelefono3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono3.Location = new System.Drawing.Point(420, 370);
+            this.lblTelefono3.Location = new System.Drawing.Point(419, 284);
             this.lblTelefono3.Name = "lblTelefono3";
             this.lblTelefono3.Size = new System.Drawing.Size(88, 20);
             this.lblTelefono3.TabIndex = 27;
@@ -179,7 +184,7 @@ namespace Conservatorio.UI.Forms
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(420, 207);
+            this.lblEmail.Location = new System.Drawing.Point(419, 146);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(52, 20);
             this.lblEmail.TabIndex = 24;
@@ -254,12 +259,50 @@ namespace Conservatorio.UI.Forms
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // btnCapturar
+            // 
+            this.btnCapturar.Location = new System.Drawing.Point(607, 326);
+            this.btnCapturar.Name = "btnCapturar";
+            this.btnCapturar.Size = new System.Drawing.Size(109, 23);
+            this.btnCapturar.TabIndex = 66;
+            this.btnCapturar.Text = "Capturar Imagen";
+            this.btnCapturar.UseVisualStyleBackColor = true;
+            this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click);
+            // 
+            // pbxFoto
+            // 
+            this.pbxFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbxFoto.Location = new System.Drawing.Point(513, 355);
+            this.pbxFoto.Name = "pbxFoto";
+            this.pbxFoto.Size = new System.Drawing.Size(145, 145);
+            this.pbxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbxFoto.TabIndex = 65;
+            this.pbxFoto.TabStop = false;
+            // 
+            // btnSeleccionarImagen
+            // 
+            this.btnSeleccionarImagen.Location = new System.Drawing.Point(456, 326);
+            this.btnSeleccionarImagen.Name = "btnSeleccionarImagen";
+            this.btnSeleccionarImagen.Size = new System.Drawing.Size(109, 23);
+            this.btnSeleccionarImagen.TabIndex = 67;
+            this.btnSeleccionarImagen.Text = "Seleccionar Imagen";
+            this.btnSeleccionarImagen.UseVisualStyleBackColor = true;
+            this.btnSeleccionarImagen.Click += new System.EventHandler(this.btnSeleccionarImagen_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png|GIF (*.gif)|*.gif|All files (*.*)|*.*";
+            this.openFileDialog.Title = "Seleccione una foto";
+            // 
             // V_AgregarModificarProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(783, 520);
+            this.Controls.Add(this.btnSeleccionarImagen);
+            this.Controls.Add(this.btnCapturar);
+            this.Controls.Add(this.pbxFoto);
             this.Controls.Add(this.clbInstrumentos);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.lblInstrumentos);
@@ -287,6 +330,7 @@ namespace Conservatorio.UI.Forms
             this.Text = "Agregar Profesor";
             this.Load += new System.EventHandler(this.V_AgregarProfesor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,5 +360,9 @@ namespace Conservatorio.UI.Forms
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.CheckedListBox clbInstrumentos;
         private ErrorProvider errorProvider;
+        private Button btnCapturar;
+        private PictureBox pbxFoto;
+        private Button btnSeleccionarImagen;
+        private OpenFileDialog openFileDialog;
     }
 }
