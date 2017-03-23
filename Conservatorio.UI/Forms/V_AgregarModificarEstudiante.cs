@@ -41,7 +41,9 @@ namespace Conservatorio.UI.Forms
 
         private void CargarTiposEstudiante()
         {
-            cbxTipo.DataSource = Enum.GetValues(typeof(TipoEstudianteEnum));
+            cbxTipo.DataSource = EnumsHelper.GetEnumNamesAndDescriptions<TipoEstudianteEnum>();
+            cbxTipo.ValueMember = "Key";
+            cbxTipo.DisplayMember = "Value";
         }
 
         private void ConfigurarValidacion()
@@ -101,7 +103,7 @@ namespace Conservatorio.UI.Forms
             tbxTel1.Text = estudiante.Telefono1.ToString();
             tbxTel2.Text = estudiante.Telefono2.ToString();
             tbxTel3.Text = estudiante.Telefono3.ToString();
-            cbxTipo.SelectedItem = Enum.Parse(typeof(TipoEstudianteEnum), estudiante.Tipo);
+            cbxTipo.SelectedValue = estudiante.Tipo;
             Encargado = estudiante.Encargado;
         }
 
@@ -133,7 +135,7 @@ private void btnSalvar_Click(object sender, EventArgs e)
             estudiante.Telefono1 = int.Parse(tbxTel1.Text);
             estudiante.Telefono2 = tbxTel2.Text == "" ? (int?)null : int.Parse(tbxTel2.Text);
             estudiante.Telefono3 = tbxTel3.Text == "" ? (int?)null : int.Parse(tbxTel3.Text);
-            estudiante.Tipo = cbxTipo.SelectedItem.ToString();
+            estudiante.Tipo = cbxTipo.SelectedValue.ToString();
             estudiante.Encargado = Encargado;
 
             if (estudiante.IdPersona == 0)

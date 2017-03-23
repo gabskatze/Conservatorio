@@ -56,7 +56,9 @@ namespace Conservatorio.UI.Forms
 
         private void CargarDias()
         {
-            cbxDias.DataSource = Enum.GetValues(typeof(DiasEnum));
+            cbxDias.DataSource = EnumsHelper.GetEnumNamesAndDescriptions<DiasEnum>();
+            cbxDias.ValueMember = "Key";
+            cbxDias.DisplayMember = "Value";
         }
 
         private void CargarCursos()
@@ -112,7 +114,7 @@ namespace Conservatorio.UI.Forms
                 cbxInstrumento.SelectedValue = clase.Curso.Instrumento.IdInstrumento;
                 cbxCursos.SelectedValue = clase.Curso.IdCurso;
                 cbxProfesores.SelectedValue = clase.Profesor.IdPersona;
-                cbxDias.SelectedItem = Enum.Parse(typeof(DiasEnum), clase.Dia);
+                cbxDias.SelectedValue = clase.Dia;
                 dtpHoraInicio.Text = clase.HoraInicio;
                 dtpHoraFinal.Text = clase.HoraFinal;
                 tbxAula.Text = clase.Aula.ToString();
@@ -139,7 +141,7 @@ namespace Conservatorio.UI.Forms
 
             clase.Curso = cbxCursos.SelectedItem as Curso;
             clase.Profesor = cbxProfesores.SelectedItem as Profesor;
-            clase.Dia = cbxDias.SelectedItem.ToString();
+            clase.Dia = cbxDias.SelectedValue.ToString();
             clase.HoraInicio = dtpHoraInicio.Value.ToString(TIME_FORMAT);
             clase.HoraFinal = dtpHoraFinal.Value.ToString(TIME_FORMAT);
             clase.Aula = int.Parse(tbxAula.Text);
