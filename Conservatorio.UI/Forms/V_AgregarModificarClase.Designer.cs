@@ -118,7 +118,7 @@
             // 
             // dtpHoraInicio
             // 
-            this.dtpHoraInicio.CustomFormat = "";
+            this.dtpHoraInicio.CustomFormat = "hh:mm tt";
             this.dtpHoraInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpHoraInicio.Location = new System.Drawing.Point(130, 172);
@@ -161,7 +161,7 @@
             // 
             // dtpHoraFinal
             // 
-            this.dtpHoraFinal.CustomFormat = "";
+            this.dtpHoraFinal.CustomFormat = "hh:mm tt";
             this.dtpHoraFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHoraFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpHoraFinal.Location = new System.Drawing.Point(515, 171);

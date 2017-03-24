@@ -1,5 +1,4 @@
-*validacion de los forms
-Instrucciones:
+*Validaciones - Instrucciones:
 1. Agregar un Control del Toolbox, ErrorProvider
 2. Agregar metodo ConfigurarValidacion y configurar las validaciones respectivas
 3. Llamar al metodo ConfigurarValidacion en el constructor
@@ -8,13 +7,15 @@ Instrucciones:
 6. Al metodo del click del boton: agregar condicion de ValidateChildren
 
 
-*notificaciones de correo
+Cosas por hacer:
+-Agregar try-catch
+-notificaciones de correo
+-agregar talleres y cursos elementales
+-buscar por cedula estudiantes y profesores
+-camara/imagen para Estudiante y Encargado
+-activar estudiantes y profesores inactivos
+-agregar form registroNota con 3 notas y que calcule la nota final
+-arreglar fechaMatricula automatizada (en la ventana de pagos)
 
-*agregar talleres y cursos elementales
-*fechaMatricula automatizada
-
-*activar estudiantes y profesores inactivos
-
-*clbinstrumentos ckd estudiante
-
-*agregar form registroNota con 3 notas y que calcule la nota final
+-solo 1 ventana a la vez
+-tener solo 1 BL a la vez

@@ -204,6 +204,7 @@
             // 
             // pb_Est
             // 
+            this.pb_Est.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pb_Est.Location = new System.Drawing.Point(706, 21);
             this.pb_Est.Name = "pb_Est";
             this.pb_Est.Size = new System.Drawing.Size(120, 137);

@@ -116,23 +116,26 @@ namespace Conservatorio.UI.Forms
 
         private void clbInstrumentos_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            var estudiante = ObtenerEstudianteSeleccionado();
-            if (estudiante == null)
+            BeginInvoke((MethodInvoker) (() =>
             {
-                return;
-            }
+                var estudiante = ObtenerEstudianteSeleccionado();
+                if (estudiante == null)
+                {
+                    return;
+                }
 
-            var instrumentosSeleccionados = ObtenerInstrumentosSeleccionados();
-            var clases = claseBL.ObtenerClasesDisponibles(estudiante, instrumentosSeleccionados);
-            dgv_Clase_Mat.DataSource = clases.Select(x => new ClaseModel
-            {
-                Profesor = x.Profesor.Nombre,
-                Curso = x.Curso.NombreCurso,
-                Dia = x.Dia,
-                HoraInicio = x.HoraInicio,
-                HoraFinal = x.HoraFinal,
-                Aula = x.Aula
-            }).ToList();
+                var instrumentosSeleccionados = ObtenerInstrumentosSeleccionados();
+                var clases = claseBL.ObtenerClasesDisponibles(estudiante, instrumentosSeleccionados);
+                dgv_Clase_Mat.DataSource = clases.Select(x => new ClaseModel
+                {
+                    Profesor = x.Profesor.Nombre,
+                    Curso = x.Curso.NombreCurso,
+                    Dia = x.Dia,
+                    HoraInicio = x.HoraInicio,
+                    HoraFinal = x.HoraFinal,
+                    Aula = x.Aula
+                }).ToList();
+            }));
         }
 
 

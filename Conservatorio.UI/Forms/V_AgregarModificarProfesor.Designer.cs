@@ -243,7 +243,9 @@ namespace Conservatorio.UI.Forms
             // 
             // dtpFechaNacimiento
             // 
+            this.dtpFechaNacimiento.CustomFormat = "dd/MM/yyyy";
             this.dtpFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(179, 87);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(197, 22);
@@ -251,6 +253,7 @@ namespace Conservatorio.UI.Forms
             // 
             // clbInstrumentos
             // 
+            this.clbInstrumentos.CheckOnClick = true;
             this.clbInstrumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clbInstrumentos.FormattingEnabled = true;
             this.clbInstrumentos.Location = new System.Drawing.Point(115, 360);

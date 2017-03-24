@@ -96,9 +96,6 @@ namespace Conservatorio.UI.Forms
 
         private void V_AgregarModificarClase_Load(object sender, EventArgs e)
         {
-            dtpHoraInicio.CustomFormat = TIME_FORMAT;
-            dtpHoraFinal.CustomFormat = TIME_FORMAT;
-
             CargarInstrumentos();
             CargarDias();
 
