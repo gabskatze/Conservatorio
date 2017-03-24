@@ -70,5 +70,12 @@ namespace Conservatorio.UI
             f.MdiParent = this;
             f.Show();
         }
+
+        private void registroDeNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new V_RegistroNota();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

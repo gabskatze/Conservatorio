@@ -3,6 +3,7 @@ using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.DATOS.Enums;
 using Conservatorio.UI.FormModels;
+using Conservatorio.UI.FormValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace Conservatorio.UI.Forms
         public V_Matricula()
         {
             InitializeComponent();
+            ConfigurarValidacion();
+
             estudianteBL = new EstudianteBL();
             instrumentoBL = new InstrumentoBL();
             claseBL = new ClaseBL();
@@ -128,6 +131,33 @@ namespace Conservatorio.UI.Forms
                 HoraFinal = x.HoraFinal,
                 Aula = x.Aula
             }).ToList();
+        }
+
+
+        private void ConfigurarValidacion()
+        {
+            var validadores = new[]
+            {
+                new Validador
+                {
+                    Control = tbMontoMat,
+                    MetodoValidacion = (out string errorMsg) => !tbMontoMat.ValidarEntero(out errorMsg) && !tbMontoMat.ValidarRequerido(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbReferencia,
+                    MetodoValidacion = (out string errorMsg) => !tbReferencia.ValidarRequerido(out errorMsg)
+                }
+            };
+
+            Validation.Config(errorProvider, validadores);
+        }
+        private void btnSalvarMatricula_Click(object sender, EventArgs e)
+        {
+            if (!ValidateChildren())
+            {
+                return;
+            }
         }
     }
 }

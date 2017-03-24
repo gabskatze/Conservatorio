@@ -28,7 +28,7 @@ namespace Conservatorio.BL.Clases
 
         public List<Profesor> ObtenerProfesores(string keyword)
         {
-            return _profesorDS.ObtenerProfesores(x => x.Nombre.Contains(keyword));
+            return _profesorDS.ObtenerProfesores(x => x.Nombre.Contains(keyword) || x.Cedula.ToString().Contains(keyword));
         }
 
         public List<Profesor> ObtenerProfesores()

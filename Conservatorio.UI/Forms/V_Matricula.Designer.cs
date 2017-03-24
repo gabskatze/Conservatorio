@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Matricula));
             this.tbxBuscarEst_Matric = new System.Windows.Forms.TextBox();
             this.dgvEst_Matric = new System.Windows.Forms.DataGridView();
@@ -46,12 +47,14 @@
             this.tbComentario = new System.Windows.Forms.TextBox();
             this.pb_Est = new System.Windows.Forms.PictureBox();
             this.lblTipoEstudiante = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbReferencia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEst_Matric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Clase_Mat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Est)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxBuscarEst_Matric
@@ -92,6 +95,7 @@
             this.btnSalvarMatricula.Text = "Salvar";
             this.btnSalvarMatricula.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvarMatricula.UseVisualStyleBackColor = true;
+            this.btnSalvarMatricula.Click += new System.EventHandler(this.btnSalvarMatricula_Click);
             // 
             // pictureBox1
             // 
@@ -216,13 +220,13 @@
             this.lblTipoEstudiante.TabIndex = 29;
             this.lblTipoEstudiante.Text = "Tipo";
             // 
-            // textBox1
+            // tbReferencia
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(431, 372);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 22);
-            this.textBox1.TabIndex = 30;
+            this.tbReferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbReferencia.Location = new System.Drawing.Point(431, 372);
+            this.tbReferencia.Name = "tbReferencia";
+            this.tbReferencia.Size = new System.Drawing.Size(149, 22);
+            this.tbReferencia.TabIndex = 30;
             // 
             // label6
             // 
@@ -234,12 +238,18 @@
             this.label6.TabIndex = 31;
             this.label6.Text = "No. Referencia";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // V_Matricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(868, 533);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbReferencia);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblTipoEstudiante);
             this.Controls.Add(this.pb_Est);
@@ -267,6 +277,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Clase_Mat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Est)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,7 +301,8 @@
         private System.Windows.Forms.TextBox tbComentario;
         private System.Windows.Forms.PictureBox pb_Est;
         private System.Windows.Forms.Label lblTipoEstudiante;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbReferencia;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

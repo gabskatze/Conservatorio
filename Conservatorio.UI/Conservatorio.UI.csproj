@@ -74,6 +74,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\V_RegistroNota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\V_RegistroNota.Designer.cs">
+      <DependentUpon>V_RegistroNota.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormValidation\ControlExtensions.cs" />
     <Compile Include="FormModels\ClaseModel.cs" />
     <Compile Include="FormModels\EstudianteModel.cs" />
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\V_Profesores.resx">
       <DependentUpon>V_Profesores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\V_RegistroNota.resx">
+      <DependentUpon>V_RegistroNota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

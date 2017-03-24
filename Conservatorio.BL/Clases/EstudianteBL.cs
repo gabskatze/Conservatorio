@@ -12,7 +12,7 @@ namespace Conservatorio.BL.Clases
 
         public List<Estudiante> ObtenerEstudiantes(string keyword, bool incluirInactivos = true)
         {
-            return _estudianteDs.ObtenerEstudiantes(x => x.Nombre.Contains(keyword) && (incluirInactivos || x.Estado));
+            return _estudianteDs.ObtenerEstudiantes(x => x.Nombre.Contains(keyword) || x.Cedula.ToString().Contains(keyword) && (incluirInactivos || x.Estado));
         }
 
         public List<Estudiante> ObtenerEstudiantes()

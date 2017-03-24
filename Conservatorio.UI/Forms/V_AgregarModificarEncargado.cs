@@ -1,4 +1,5 @@
 ﻿using Conservatorio.DATOS;
+using Conservatorio.UI.FormValidation;
 using System;
 using System.Windows.Forms;
 
@@ -12,6 +13,7 @@ namespace Conservatorio.UI.Forms
         public V_AgregarModificarEncargado(V_AgregarModificarEstudiante vAgregarModificarEstudiante, Encargado encargado = null)
         {
             InitializeComponent();
+            ConfigurarValidacion();
 
             this.vAgregarModificarEstudiante = vAgregarModificarEstudiante;
             Encargado = encargado;
@@ -34,8 +36,41 @@ namespace Conservatorio.UI.Forms
             tbxTel3.Text = Encargado.Telefono3.ToString();
         }
 
+        private void ConfigurarValidacion()
+        {
+            var validadores = new[]
+            {
+                new Validador
+                {
+                    Control = tbxNombre,
+                    MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxParentesco,
+                    MetodoValidacion = (out string errorMsg) => !tbxParentesco.ValidarRequerido(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxEmail,
+                    MetodoValidacion = (out string errorMsg) => !tbxEmail.ValidarEmail(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxTel1,
+                    MetodoValidacion = (out string errorMsg) => !tbxTel1.ValidarRequerido(out errorMsg) || !tbxTel1.ValidarEntero(out errorMsg) || !tbxTel1.ValidarLargo(8, out errorMsg)
+                }
+            };
+
+            Validation.Config(errorProvider, validadores);
+        }
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (!ValidateChildren())
+            {
+                return;
+            }
             if (Encargado == null)
             {
                 Encargado = new Encargado

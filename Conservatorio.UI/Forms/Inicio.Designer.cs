@@ -40,6 +40,7 @@
             this.matriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mensualidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +63,8 @@
             this.miProfesores,
             this.miInstrumentos,
             this.miCursos,
-            this.miClases});
+            this.miClases,
+            this.registroDeNotasToolStripMenuItem});
             this.mantenimientoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(115, 23);
@@ -71,35 +73,35 @@
             // miEstudiantes
             // 
             this.miEstudiantes.Name = "miEstudiantes";
-            this.miEstudiantes.Size = new System.Drawing.Size(160, 24);
+            this.miEstudiantes.Size = new System.Drawing.Size(187, 24);
             this.miEstudiantes.Text = "Estudiantes";
             this.miEstudiantes.Click += new System.EventHandler(this.miEstudiantes_Click);
             // 
             // miProfesores
             // 
             this.miProfesores.Name = "miProfesores";
-            this.miProfesores.Size = new System.Drawing.Size(160, 24);
+            this.miProfesores.Size = new System.Drawing.Size(187, 24);
             this.miProfesores.Text = "Profesores";
             this.miProfesores.Click += new System.EventHandler(this.miProfesores_Click);
             // 
             // miInstrumentos
             // 
             this.miInstrumentos.Name = "miInstrumentos";
-            this.miInstrumentos.Size = new System.Drawing.Size(160, 24);
+            this.miInstrumentos.Size = new System.Drawing.Size(187, 24);
             this.miInstrumentos.Text = "Instrumentos";
             this.miInstrumentos.Click += new System.EventHandler(this.miInstrumentos_Click);
             // 
             // miCursos
             // 
             this.miCursos.Name = "miCursos";
-            this.miCursos.Size = new System.Drawing.Size(160, 24);
+            this.miCursos.Size = new System.Drawing.Size(187, 24);
             this.miCursos.Text = "Cursos";
             this.miCursos.Click += new System.EventHandler(this.miCursos_Click);
             // 
             // miClases
             // 
             this.miClases.Name = "miClases";
-            this.miClases.Size = new System.Drawing.Size(160, 24);
+            this.miClases.Size = new System.Drawing.Size(187, 24);
             this.miClases.Text = "Clases";
             this.miClases.Click += new System.EventHandler(this.miClases_Click);
             // 
@@ -134,6 +136,13 @@
             this.notificacionesToolStripMenuItem.Size = new System.Drawing.Size(105, 23);
             this.notificacionesToolStripMenuItem.Text = "Notificaciones";
             this.notificacionesToolStripMenuItem.Click += new System.EventHandler(this.notificacionesToolStripMenuItem_Click);
+            // 
+            // registroDeNotasToolStripMenuItem
+            // 
+            this.registroDeNotasToolStripMenuItem.Name = "registroDeNotasToolStripMenuItem";
+            this.registroDeNotasToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.registroDeNotasToolStripMenuItem.Text = "Registro de Notas";
+            this.registroDeNotasToolStripMenuItem.Click += new System.EventHandler(this.registroDeNotasToolStripMenuItem_Click);
             // 
             // Inicio
             // 
@@ -170,5 +179,6 @@
         private System.Windows.Forms.ToolStripMenuItem miCursos;
         private System.Windows.Forms.ToolStripMenuItem miClases;
         private System.Windows.Forms.ToolStripMenuItem notificacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeNotasToolStripMenuItem;
     }
 }
