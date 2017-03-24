@@ -1,13 +1,15 @@
-﻿namespace Conservatorio.DATOS.Enums
+﻿using System.ComponentModel;
+
+namespace Conservatorio.DATOS.Enums
 {
     public enum DiasEnum
     {
         Lunes,
         Martes,
-        Miercoles,
+        [Description("Miércoles")] Miercoles,
         Jueves,
         Viernes,
-        Sabado,
+        [Description("Sábado")] Sabado,
         Domingo
     }
 }

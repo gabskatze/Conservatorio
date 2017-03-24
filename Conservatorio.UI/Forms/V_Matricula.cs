@@ -104,7 +104,9 @@ namespace Conservatorio.UI.Forms
 
         private void CargarPagos()
         {
-            cbTipoPago.DataSource = Enum.GetValues(typeof(TipoPagoEnum));
+            cbTipoPago.DataSource = EnumsHelper.GetEnumNamesAndDescriptions<TipoPagoEnum>();
+            cbTipoPago.ValueMember = "Key";
+            cbTipoPago.DisplayMember = "Value";
         }
 
         private List<Instrumento> ObtenerInstrumentosSeleccionados()
