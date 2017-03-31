@@ -46,6 +46,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbxAula = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblPeriodo = new System.Windows.Forms.Label();
+            this.tbxAno = new System.Windows.Forms.TextBox();
+            this.lblAno = new System.Windows.Forms.Label();
+            this.cbxPeriodo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,11 +77,11 @@
             // 
             this.lblDia.AutoSize = true;
             this.lblDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDia.Location = new System.Drawing.Point(382, 112);
+            this.lblDia.Location = new System.Drawing.Point(382, 107);
             this.lblDia.Name = "lblDia";
             this.lblDia.Size = new System.Drawing.Size(32, 16);
             this.lblDia.TabIndex = 2;
-            this.lblDia.Text = "Dia:";
+            this.lblDia.Text = "Día:";
             // 
             // lblHoraInicio
             // 
@@ -93,7 +97,7 @@
             // 
             this.cbxCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxCursos.FormattingEnabled = true;
-            this.cbxCursos.Location = new System.Drawing.Point(515, 37);
+            this.cbxCursos.Location = new System.Drawing.Point(515, 42);
             this.cbxCursos.Name = "cbxCursos";
             this.cbxCursos.Size = new System.Drawing.Size(144, 24);
             this.cbxCursos.TabIndex = 2;
@@ -111,7 +115,7 @@
             // 
             this.cbxDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxDias.FormattingEnabled = true;
-            this.cbxDias.Location = new System.Drawing.Point(515, 107);
+            this.cbxDias.Location = new System.Drawing.Point(515, 104);
             this.cbxDias.Name = "cbxDias";
             this.cbxDias.Size = new System.Drawing.Size(144, 24);
             this.cbxDias.TabIndex = 4;
@@ -121,16 +125,17 @@
             this.dtpHoraInicio.CustomFormat = "hh:mm tt";
             this.dtpHoraInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHoraInicio.Location = new System.Drawing.Point(130, 172);
+            this.dtpHoraInicio.Location = new System.Drawing.Point(120, 171);
             this.dtpHoraInicio.Name = "dtpHoraInicio";
             this.dtpHoraInicio.ShowUpDown = true;
             this.dtpHoraInicio.Size = new System.Drawing.Size(150, 22);
             this.dtpHoraInicio.TabIndex = 5;
+            this.dtpHoraInicio.ValueChanged += new System.EventHandler(this.dtpHoraInicio_ValueChanged);
             // 
             // btnSalvar
             // 
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(332, 297);
+            this.btnSalvar.Location = new System.Drawing.Point(342, 294);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(70, 70);
             this.btnSalvar.TabIndex = 8;
@@ -153,7 +158,7 @@
             // 
             this.cbxInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxInstrumento.FormattingEnabled = true;
-            this.cbxInstrumento.Location = new System.Drawing.Point(100, 42);
+            this.cbxInstrumento.Location = new System.Drawing.Point(100, 45);
             this.cbxInstrumento.Name = "cbxInstrumento";
             this.cbxInstrumento.Size = new System.Drawing.Size(170, 24);
             this.cbxInstrumento.TabIndex = 1;
@@ -164,7 +169,7 @@
             this.dtpHoraFinal.CustomFormat = "hh:mm tt";
             this.dtpHoraFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHoraFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHoraFinal.Location = new System.Drawing.Point(515, 171);
+            this.dtpHoraFinal.Location = new System.Drawing.Point(515, 170);
             this.dtpHoraFinal.Name = "dtpHoraFinal";
             this.dtpHoraFinal.ShowUpDown = true;
             this.dtpHoraFinal.Size = new System.Drawing.Size(144, 22);
@@ -193,7 +198,7 @@
             // tbxAula
             // 
             this.tbxAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAula.Location = new System.Drawing.Point(94, 224);
+            this.tbxAula.Location = new System.Drawing.Point(94, 227);
             this.tbxAula.Name = "tbxAula";
             this.tbxAula.Size = new System.Drawing.Size(51, 22);
             this.tbxAula.TabIndex = 7;
@@ -203,12 +208,53 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // lblPeriodo
+            // 
+            this.lblPeriodo.AutoSize = true;
+            this.lblPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeriodo.Location = new System.Drawing.Point(383, 230);
+            this.lblPeriodo.Name = "lblPeriodo";
+            this.lblPeriodo.Size = new System.Drawing.Size(59, 16);
+            this.lblPeriodo.TabIndex = 17;
+            this.lblPeriodo.Text = "Período:";
+            // 
+            // tbxAno
+            // 
+            this.tbxAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxAno.Location = new System.Drawing.Point(581, 227);
+            this.tbxAno.Name = "tbxAno";
+            this.tbxAno.Size = new System.Drawing.Size(78, 22);
+            this.tbxAno.TabIndex = 18;
+            // 
+            // lblAno
+            // 
+            this.lblAno.AutoSize = true;
+            this.lblAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAno.Location = new System.Drawing.Point(540, 230);
+            this.lblAno.Name = "lblAno";
+            this.lblAno.Size = new System.Drawing.Size(35, 16);
+            this.lblAno.TabIndex = 19;
+            this.lblAno.Text = "Año:";
+            // 
+            // cbxPeriodo
+            // 
+            this.cbxPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxPeriodo.FormattingEnabled = true;
+            this.cbxPeriodo.Location = new System.Drawing.Point(448, 227);
+            this.cbxPeriodo.Name = "cbxPeriodo";
+            this.cbxPeriodo.Size = new System.Drawing.Size(56, 24);
+            this.cbxPeriodo.TabIndex = 20;
+            // 
             // V_AgregarModificarClase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(751, 393);
+            this.Controls.Add(this.cbxPeriodo);
+            this.Controls.Add(this.tbxAno);
+            this.Controls.Add(this.lblAno);
+            this.Controls.Add(this.lblPeriodo);
             this.Controls.Add(this.tbxAula);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpHoraFinal);
@@ -253,5 +299,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbxAula;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.TextBox tbxAno;
+        private System.Windows.Forms.Label lblAno;
+        private System.Windows.Forms.Label lblPeriodo;
+        private System.Windows.Forms.ComboBox cbxPeriodo;
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Conservatorio.BL.Clases;
+using Conservatorio.BL;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 
@@ -19,7 +19,7 @@ namespace Conservatorio.UI.Forms
         {
             InitializeComponent();
 
-            cursoBL = new CursoBL();
+            cursoBL = CapaLogica.CursoBl;
         }
 
         private Instrumento ObtenerInstrumentoSeleccionado()

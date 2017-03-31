@@ -12,6 +12,8 @@ namespace Conservatorio.DS.Mappings
             Map(x => x.HoraInicio).Not.Nullable();
             Map(x => x.HoraFinal).Not.Nullable();
             Map(x => x.Aula).Not.Nullable();
+            Map(x => x.Periodo).Not.Nullable();
+            Map(x => x.Ano).Not.Nullable();
             References(x => x.Profesor).Not.Nullable().Column("IdProfesor").Not.LazyLoad();
             References(x => x.Curso).Not.Nullable().Column("IdCurso").Not.LazyLoad();
         }

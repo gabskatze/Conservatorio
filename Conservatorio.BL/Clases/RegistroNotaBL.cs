@@ -4,6 +4,8 @@ namespace Conservatorio.BL.Clases
 {
     public class RegistroNotaBL : IRegistroNotaBL
     {
-
+        internal RegistroNotaBL()
+        {
+        }
     }
 }

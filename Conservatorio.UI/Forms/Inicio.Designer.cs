@@ -1,4 +1,4 @@
-﻿namespace Conservatorio.UI
+﻿namespace Conservatorio.UI.Forms
 {
     partial class Inicio
     {
@@ -29,46 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.miEstudiantes = new System.Windows.Forms.ToolStripMenuItem();
             this.miProfesores = new System.Windows.Forms.ToolStripMenuItem();
             this.miInstrumentos = new System.Windows.Forms.ToolStripMenuItem();
             this.miCursos = new System.Windows.Forms.ToolStripMenuItem();
             this.miClases = new System.Windows.Forms.ToolStripMenuItem();
-            this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.matriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mensualidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miRegistroNotas = new System.Windows.Forms.ToolStripMenuItem();
+            this.miFacturacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.miMatricula = new System.Windows.Forms.ToolStripMenuItem();
+            this.miMensualidad = new System.Windows.Forms.ToolStripMenuItem();
+            this.miNotificaciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // miMantenimiento
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mantenimientoToolStripMenuItem,
-            this.facturaciónToolStripMenuItem,
-            this.notificacionesToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1076, 27);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // mantenimientoToolStripMenuItem
-            // 
-            this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miMantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miEstudiantes,
             this.miProfesores,
             this.miInstrumentos,
             this.miCursos,
             this.miClases,
-            this.registroDeNotasToolStripMenuItem});
-            this.mantenimientoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
-            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(115, 23);
-            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
+            this.miRegistroNotas});
+            this.miMantenimiento.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.miMantenimiento.Name = "miMantenimiento";
+            this.miMantenimiento.Size = new System.Drawing.Size(115, 23);
+            this.miMantenimiento.Text = "Mantenimiento";
             // 
             // miEstudiantes
             // 
@@ -105,44 +93,56 @@
             this.miClases.Text = "Clases";
             this.miClases.Click += new System.EventHandler(this.miClases_Click);
             // 
-            // facturaciónToolStripMenuItem
+            // miRegistroNotas
             // 
-            this.facturaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.matriculaToolStripMenuItem,
-            this.mensualidadToolStripMenuItem});
-            this.facturaciónToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.facturaciónToolStripMenuItem.Name = "facturaciónToolStripMenuItem";
-            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(91, 23);
-            this.facturaciónToolStripMenuItem.Text = "Facturación";
+            this.miRegistroNotas.Name = "miRegistroNotas";
+            this.miRegistroNotas.Size = new System.Drawing.Size(187, 24);
+            this.miRegistroNotas.Text = "Registro de Notas";
+            this.miRegistroNotas.Click += new System.EventHandler(this.miRegistroNotas_Click);
             // 
-            // matriculaToolStripMenuItem
+            // miFacturacion
             // 
-            this.matriculaToolStripMenuItem.Name = "matriculaToolStripMenuItem";
-            this.matriculaToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
-            this.matriculaToolStripMenuItem.Text = "Matricula";
-            this.matriculaToolStripMenuItem.Click += new System.EventHandler(this.matriculaToolStripMenuItem_Click);
+            this.miFacturacion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miMatricula,
+            this.miMensualidad});
+            this.miFacturacion.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.miFacturacion.Name = "miFacturacion";
+            this.miFacturacion.Size = new System.Drawing.Size(91, 23);
+            this.miFacturacion.Text = "Facturación";
             // 
-            // mensualidadToolStripMenuItem
+            // miMatricula
             // 
-            this.mensualidadToolStripMenuItem.Name = "mensualidadToolStripMenuItem";
-            this.mensualidadToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
-            this.mensualidadToolStripMenuItem.Text = "Mensualidad";
-            this.mensualidadToolStripMenuItem.Click += new System.EventHandler(this.mensualidadToolStripMenuItem_Click);
+            this.miMatricula.Name = "miMatricula";
+            this.miMatricula.Size = new System.Drawing.Size(156, 24);
+            this.miMatricula.Text = "Matricula";
+            this.miMatricula.Click += new System.EventHandler(this.miMatricula_Click);
             // 
-            // notificacionesToolStripMenuItem
+            // miMensualidad
             // 
-            this.notificacionesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.notificacionesToolStripMenuItem.Name = "notificacionesToolStripMenuItem";
-            this.notificacionesToolStripMenuItem.Size = new System.Drawing.Size(105, 23);
-            this.notificacionesToolStripMenuItem.Text = "Notificaciones";
-            this.notificacionesToolStripMenuItem.Click += new System.EventHandler(this.notificacionesToolStripMenuItem_Click);
+            this.miMensualidad.Name = "miMensualidad";
+            this.miMensualidad.Size = new System.Drawing.Size(156, 24);
+            this.miMensualidad.Text = "Mensualidad";
+            this.miMensualidad.Click += new System.EventHandler(this.miMensualidad_Click);
             // 
-            // registroDeNotasToolStripMenuItem
+            // miNotificaciones
             // 
-            this.registroDeNotasToolStripMenuItem.Name = "registroDeNotasToolStripMenuItem";
-            this.registroDeNotasToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
-            this.registroDeNotasToolStripMenuItem.Text = "Registro de Notas";
-            this.registroDeNotasToolStripMenuItem.Click += new System.EventHandler(this.registroDeNotasToolStripMenuItem_Click);
+            this.miNotificaciones.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.miNotificaciones.Name = "miNotificaciones";
+            this.miNotificaciones.Size = new System.Drawing.Size(105, 23);
+            this.miNotificaciones.Text = "Notificaciones";
+            this.miNotificaciones.Click += new System.EventHandler(this.miNotificaciones_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miMantenimiento,
+            this.miFacturacion,
+            this.miNotificaciones});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1076, 27);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // Inicio
             // 
@@ -168,17 +168,17 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miMantenimiento;
         private System.Windows.Forms.ToolStripMenuItem miEstudiantes;
         private System.Windows.Forms.ToolStripMenuItem miProfesores;
         private System.Windows.Forms.ToolStripMenuItem miInstrumentos;
-        private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem matriculaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mensualidadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miCursos;
         private System.Windows.Forms.ToolStripMenuItem miClases;
-        private System.Windows.Forms.ToolStripMenuItem notificacionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registroDeNotasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miRegistroNotas;
+        private System.Windows.Forms.ToolStripMenuItem miFacturacion;
+        private System.Windows.Forms.ToolStripMenuItem miMatricula;
+        private System.Windows.Forms.ToolStripMenuItem miMensualidad;
+        private System.Windows.Forms.ToolStripMenuItem miNotificaciones;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

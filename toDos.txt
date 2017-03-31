@@ -11,11 +11,20 @@ Cosas por hacer:
 -Agregar try-catch
 -notificaciones de correo
 -agregar talleres y cursos elementales
--buscar por cedula estudiantes y profesores
 -camara/imagen para Estudiante y Encargado
 -activar estudiantes y profesores inactivos
 -agregar form registroNota con 3 notas y que calcule la nota final
 -arreglar fechaMatricula automatizada (en la ventana de pagos)
 
--solo 1 ventana a la vez
--tener solo 1 BL a la vez
+-validaciones en el BL para agregar Clases para que no choquen Horarios/Profesores/Aulas
+
+
+
+-Nuevo control para asignar clases
+
+	L	K	M	J	V	S	D
+08-09          
+09-10
+10-11
+11-12
+...

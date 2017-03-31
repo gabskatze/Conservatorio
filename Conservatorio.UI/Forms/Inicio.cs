@@ -1,11 +1,27 @@
-﻿using Conservatorio.UI.Forms;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
-namespace Conservatorio.UI
+namespace Conservatorio.UI.Forms
 {
     public partial class Inicio : Form
     {
+        private void ActivateForm<T>() where T : Form
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(T))
+                {
+                    form.WindowState = FormWindowState.Normal;
+                    form.Activate();
+                    return;
+                }
+            }
+
+            Form newForm = Activator.CreateInstance<T>();
+            newForm.MdiParent = this;
+            newForm.Show();
+        }
+
         public Inicio()
         {
             InitializeComponent();
@@ -17,65 +33,47 @@ namespace Conservatorio.UI
 
         private void miEstudiantes_Click(object sender, EventArgs e)
         {
-            Form f = new V_Estudiantes();
-            f.MdiParent = this;
-            f.Show();
+            ActivateForm<V_Estudiantes>();
         }
 
         private void miProfesores_Click(object sender, EventArgs e)
         {
-            Form f = new V_Profesores();
-            f.MdiParent = this;
-            f.Show();
+            ActivateForm<V_Profesores>();
         }
 
         private void miInstrumentos_Click(object sender, EventArgs e)
         {
-            Form f = new V_Instrumentos();
-            f.MdiParent = this;
-            f.Show();
+            ActivateForm<V_Instrumentos>();
         }
 
         private void miCursos_Click(object sender, EventArgs e)
         {
-            Form f = new V_Cursos();
-            f.MdiParent = this;
-            f.Show();
+            ActivateForm<V_Cursos>();
         }
 
         private void miClases_Click(object sender, EventArgs e)
         {
-            Form f = new V_Clases();
-            f.MdiParent = this;
-            f.Show();
+            ActivateForm<V_Clases>();
         }
 
-        private void matriculaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void miRegistroNotas_Click(object sender, EventArgs e)
         {
-            Form f = new V_Matricula();
-            f.MdiParent = this;
-            f.Show();
+            ActivateForm<V_RegistroNota>();
         }
 
-        private void mensualidadToolStripMenuItem_Click(object sender, EventArgs e)
+        private void miMatricula_Click(object sender, EventArgs e)
         {
-            Form f = new V_Mensualidad();
-            f.MdiParent = this;
-            f.Show();
+            ActivateForm<V_Matricula>();
         }
 
-        private void notificacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void miMensualidad_Click(object sender, EventArgs e)
         {
-            Form f = new V_Notificaciones();
-            f.MdiParent = this;
-            f.Show();
+            ActivateForm<V_Mensualidad>();
         }
 
-        private void registroDeNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void miNotificaciones_Click(object sender, EventArgs e)
         {
-            Form f = new V_RegistroNota();
-            f.MdiParent = this;
-            f.Show();
+            ActivateForm<V_Notificaciones>();
         }
     }
 }

@@ -1,9 +1,9 @@
-﻿using Conservatorio.BL.Clases;
-using Conservatorio.BL.Interfaces;
+﻿using Conservatorio.BL.Interfaces;
 using Conservatorio.UI.FormModels;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using Conservatorio.BL;
 
 namespace Conservatorio.UI.Forms
 {
@@ -14,7 +14,7 @@ namespace Conservatorio.UI.Forms
         public V_Instrumentos()
         {
             InitializeComponent();
-            instrumentosBL = new InstrumentoBL();
+            instrumentosBL = CapaLogica.InstrumentoBl;
         }
 
         public void RefrescarInstrumentos()

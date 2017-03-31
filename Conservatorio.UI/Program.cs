@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Conservatorio.UI.Forms;
 
 namespace Conservatorio.UI
 {
@@ -12,7 +10,7 @@ namespace Conservatorio.UI
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

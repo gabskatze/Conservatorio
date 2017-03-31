@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Conservatorio.BL.Clases;
+using Conservatorio.BL;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.UI.FormModels;
@@ -17,7 +17,7 @@ namespace Conservatorio.UI.Forms
         public V_Profesores()
         {
             InitializeComponent();
-            profesorBL = new ProfesorBL();
+            profesorBL = CapaLogica.ProfesorBl;
         }
 
         public void RefrescarProfesores()

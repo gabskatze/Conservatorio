@@ -8,5 +8,8 @@ namespace Conservatorio.BL.Clases
     {
         private readonly IPagoMatriculaDS _pagoMatriculaDs = new PagoMatriculaDS();
 
+        internal PagoMatriculaBL()
+        {
+        }
     }
 }

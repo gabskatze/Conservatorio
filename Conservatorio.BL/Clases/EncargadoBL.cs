@@ -8,5 +8,9 @@ namespace Conservatorio.BL.Clases
     {
         private readonly IEncargadoDS _claseDs = new EncargadoDS();
 
+        internal EncargadoBL()
+        {
+        }
+
     }
 }

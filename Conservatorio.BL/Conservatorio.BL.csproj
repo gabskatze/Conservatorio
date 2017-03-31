@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapaLogica.cs" />
     <Compile Include="Clases\ClaseBL.cs" />
     <Compile Include="Clases\RegistroNotaBL.cs" />
     <Compile Include="Clases\CursoBL.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Interfaces\IPagoMensualidadBL.cs" />
     <Compile Include="Interfaces\IProfesorBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidacionException.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Conservatorio.DATOS\Conservatorio.DATOS.csproj">

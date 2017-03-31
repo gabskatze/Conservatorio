@@ -170,6 +170,7 @@
       <DependentUpon>V_Profesores.cs</DependentUpon>
     </Compile>
     <Compile Include="FormValidation\Validation.cs" />
+    <Compile Include="Helpers\DateTimeHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\V_AgregarCurso_Matricula.cs">
@@ -258,7 +259,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\1490221296_books_add.png" />

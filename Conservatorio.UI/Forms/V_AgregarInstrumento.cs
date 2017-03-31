@@ -3,6 +3,7 @@ using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using System;
 using System.Windows.Forms;
+using Conservatorio.BL;
 using Conservatorio.UI.FormValidation;
 
 namespace Conservatorio.UI.Forms
@@ -17,7 +18,7 @@ namespace Conservatorio.UI.Forms
             InitializeComponent();
             ConfigurarValidacion();
 
-            instrumentoBL = new InstrumentoBL();
+            instrumentoBL = CapaLogica.InstrumentoBl;
             vInst = vInstrumentos;
         }
 

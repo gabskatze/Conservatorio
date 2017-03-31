@@ -11,6 +11,10 @@ namespace Conservatorio.BL.Clases
     {
         private readonly IProfesorDS _profesorDS = new ProfesorDS();
 
+        internal ProfesorBL()
+        {
+        }
+
         public void CrearProfesor(Profesor profesor)
         {
             _profesorDS.CrearProfesor(profesor);

@@ -8,5 +8,6 @@
         public int Aula { get; set; }
         public string HoraInicio { get; set; }
         public string HoraFinal { get; set; }
+        public string Periodo { get; set; }
     }
 }

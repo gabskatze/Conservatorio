@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Conservatorio.BL;
 
 namespace Conservatorio.UI.Forms
 {
@@ -17,7 +18,7 @@ namespace Conservatorio.UI.Forms
         public V_Estudiantes()
         {
             InitializeComponent();
-            estudianteBL = new EstudianteBL();
+            estudianteBL = CapaLogica.EstudianteBl;
         }
 
         private Estudiante ObtenerEstudianteSeleccionado()

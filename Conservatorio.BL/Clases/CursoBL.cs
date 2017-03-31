@@ -10,6 +10,10 @@ namespace Conservatorio.BL.Clases
     {
         private readonly ICursoDS _cursoDs = new CursoDS();
 
+        internal CursoBL()
+        {
+        }
+
         public void CrearCurso(Curso curso)
         {
             _cursoDs.CrearCurso(curso);

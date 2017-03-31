@@ -5,7 +5,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Conservatorio.BL.Clases;
+using Conservatorio.BL;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.UI.FormValidation;
@@ -39,8 +39,8 @@ namespace Conservatorio.UI.Forms
 
             this.vProfesor = vProfesor;
             this.profesor = profesor;
-            profesorBL = new ProfesorBL();
-            instrumentoBL = new InstrumentoBL();
+            profesorBL = CapaLogica.ProfesorBl;
+            instrumentoBL = CapaLogica.InstrumentoBl;
 
             CargarInstrumentos();
         }

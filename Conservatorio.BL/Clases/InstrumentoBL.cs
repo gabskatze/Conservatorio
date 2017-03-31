@@ -10,6 +10,10 @@ namespace Conservatorio.BL.Clases
     {
         private readonly IInstrumentoDS _instrumentoDs = new InstrumentoDS();
 
+        internal InstrumentoBL()
+        {
+        }
+
         public void CrearInstrumento(Instrumento nuevoInstrumento)
         {
             // Agregar los 8 cursos para el instrumento

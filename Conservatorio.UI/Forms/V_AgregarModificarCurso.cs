@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using Conservatorio.BL.Clases;
+using Conservatorio.BL;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.UI.FormValidation;
@@ -22,7 +22,7 @@ namespace Conservatorio.UI.Forms
             this.vCursos = vCursos;
             this.curso = curso;
             this.instrumento = instrumento;
-            cursoBL = new CursoBL();
+            cursoBL = CapaLogica.CursoBl;
         }
 
         private void ConfigurarValidacion()

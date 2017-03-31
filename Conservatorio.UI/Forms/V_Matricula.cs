@@ -1,5 +1,4 @@
-﻿using Conservatorio.BL.Clases;
-using Conservatorio.BL.Interfaces;
+﻿using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.DATOS.Enums;
 using Conservatorio.UI.FormModels;
@@ -8,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Conservatorio.BL;
 
 namespace Conservatorio.UI.Forms
 {
@@ -23,9 +23,9 @@ namespace Conservatorio.UI.Forms
             InitializeComponent();
             ConfigurarValidacion();
 
-            estudianteBL = new EstudianteBL();
-            instrumentoBL = new InstrumentoBL();
-            claseBL = new ClaseBL();
+            estudianteBL = CapaLogica.EstudianteBl;
+            instrumentoBL = CapaLogica.InstrumentoBl;
+            claseBL = CapaLogica.ClaseBl;
         }
 
         private void V_Matricula_Load(object sender, EventArgs e)

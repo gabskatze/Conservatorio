@@ -1,18 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Windows.Forms;
-using Conservatorio.BL.Clases;
+using Conservatorio.BL;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.DATOS.Enums;
 using Conservatorio.UI.FormValidation;
+using Conservatorio.UI.Helpers;
 
 namespace Conservatorio.UI.Forms
 {
     public partial class V_AgregarModificarClase : Form
     {
-        private const string TIME_FORMAT = "hh:mm tt";
-        private const string DEFAULT_TIME_FORMAT = "hh:00 tt";
-
         private readonly IClaseBL _claseBL;
         private readonly IInstrumentoBL _instrumentoBL;
         private readonly ICursoBL _cursoBL;
@@ -25,10 +25,10 @@ namespace Conservatorio.UI.Forms
             InitializeComponent();
             ConfigurarValidacion();
 
-            _claseBL = new ClaseBL();
-            _instrumentoBL = new InstrumentoBL();
-            _cursoBL = new CursoBL();
-            _profesorBL = new ProfesorBL();
+            _claseBL = CapaLogica.ClaseBl;
+            _instrumentoBL = CapaLogica.InstrumentoBl;
+            _cursoBL = CapaLogica.CursoBl;
+            _profesorBL = CapaLogica.ProfesorBl;
             _vClases = vClases;
             this.clase = clase;
         }
@@ -41,6 +41,11 @@ namespace Conservatorio.UI.Forms
                 {
                     Control = tbxAula,
                     MetodoValidacion = (out string errorMsg) => !tbxAula.ValidarRequerido(out errorMsg) || !tbxAula.ValidarEntero(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxAno,
+                    MetodoValidacion = (out string errorMsg) => !tbxAno.ValidarRequerido(out errorMsg) || !tbxAno.ValidarEntero(out errorMsg)
                 }
             };
 
@@ -59,6 +64,17 @@ namespace Conservatorio.UI.Forms
             cbxDias.DataSource = EnumsHelper.GetEnumNamesAndDescriptions<DiasEnum>();
             cbxDias.ValueMember = "Key";
             cbxDias.DisplayMember = "Value";
+        }
+
+        private void CargarPeriodos()
+        {
+            var list = new List<int>();
+            var cantidadPeriodos = int.Parse(ConfigurationManager.AppSettings["cantidadPeriodos"]);
+            for (var i = 1; i <= cantidadPeriodos; i++)
+            {
+                list.Add(i);
+            }
+            cbxPeriodo.DataSource = list;
         }
 
         private void CargarCursos()
@@ -98,12 +114,17 @@ namespace Conservatorio.UI.Forms
         {
             CargarInstrumentos();
             CargarDias();
+            CargarPeriodos();
 
             if (clase == null)
             {
                 Text = "Agregar Clase";
-                dtpHoraInicio.Text = DateTime.Now.ToString(DEFAULT_TIME_FORMAT);
-                dtpHoraFinal.Text = DateTime.Now.AddHours(1).ToString(DEFAULT_TIME_FORMAT);
+                // Poner la hora de inicio a las 8 AM
+                var horaInicio = DateTime.Now.EnPunto();
+                horaInicio = horaInicio.AddHours((horaInicio.Hour - 8) * -1);
+                dtpHoraInicio.Value = horaInicio;
+                dtpHoraFinal.Value = horaInicio.AddHours(1);
+                tbxAno.Text = horaInicio.Year.ToString();
             }
             else
             {
@@ -115,6 +136,8 @@ namespace Conservatorio.UI.Forms
                 dtpHoraInicio.Text = clase.HoraInicio;
                 dtpHoraFinal.Text = clase.HoraFinal;
                 tbxAula.Text = clase.Aula.ToString();
+                cbxPeriodo.SelectedItem = clase.Periodo;
+                tbxAno.Text = clase.Ano.ToString();
             }
         }
 
@@ -122,6 +145,12 @@ namespace Conservatorio.UI.Forms
         {
             CargarCursos();
             CargarProfesores();
+        }
+
+        private void dtpHoraInicio_ValueChanged(object sender, EventArgs e)
+        {
+            var dateTime = dtpHoraInicio.Value;
+            dtpHoraFinal.Value = dateTime.AddHours(1);
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -139,9 +168,11 @@ namespace Conservatorio.UI.Forms
             clase.Curso = cbxCursos.SelectedItem as Curso;
             clase.Profesor = cbxProfesores.SelectedItem as Profesor;
             clase.Dia = cbxDias.SelectedValue.ToString();
-            clase.HoraInicio = dtpHoraInicio.Value.ToString(TIME_FORMAT);
-            clase.HoraFinal = dtpHoraFinal.Value.ToString(TIME_FORMAT);
+            clase.HoraInicio = dtpHoraInicio.Value.ToString(dtpHoraInicio.CustomFormat);
+            clase.HoraFinal = dtpHoraFinal.Value.ToString(dtpHoraInicio.CustomFormat);
             clase.Aula = int.Parse(tbxAula.Text);
+            clase.Periodo = (int)cbxPeriodo.SelectedValue;
+            clase.Ano = int.Parse(tbxAno.Text);
 
             if (clase.IdClase == 0)
             {
@@ -157,5 +188,6 @@ namespace Conservatorio.UI.Forms
         }
 
         #endregion
+
     }
 }

@@ -3,6 +3,7 @@ using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using System;
 using System.Windows.Forms;
+using Conservatorio.BL;
 using Conservatorio.DATOS.Enums;
 using Conservatorio.UI.FormValidation;
 using Emgu.CV;
@@ -34,7 +35,7 @@ namespace Conservatorio.UI.Forms
             InitializeComponent();
             ConfigurarValidacion();
 
-            estudiantesBL = new EstudianteBL();
+            estudiantesBL = CapaLogica.EstudianteBl;
             this.vEstudiantes = vEstudiantes;
             this.estudiante = estudiante;
         }

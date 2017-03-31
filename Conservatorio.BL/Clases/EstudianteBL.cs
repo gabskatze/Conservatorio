@@ -10,6 +10,10 @@ namespace Conservatorio.BL.Clases
     {
         private readonly IEstudianteDS _estudianteDs = new EstudianteDS();
 
+        internal EstudianteBL()
+        {
+        }
+
         public List<Estudiante> ObtenerEstudiantes(string keyword, bool incluirInactivos = true)
         {
             return _estudianteDs.ObtenerEstudiantes(x => x.Nombre.Contains(keyword) || x.Cedula.ToString().Contains(keyword) && (incluirInactivos || x.Estado));

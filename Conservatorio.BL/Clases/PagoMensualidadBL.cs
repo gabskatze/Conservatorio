@@ -8,5 +8,8 @@ namespace Conservatorio.BL.Clases
     {
         private readonly IPagoMensualidadDS _pagoMensualidadDs = new PagoMensualidadDS();
 
+        internal PagoMensualidadBL()
+        {
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.DS.Clases;
@@ -11,13 +12,44 @@ namespace Conservatorio.BL.Clases
     {
         private readonly IClaseDS _claseDs = new ClaseDS();
 
+        internal ClaseBL()
+        {
+        }
+
+        private bool ValidarClase(Clase clase, out string msj)
+        {
+            var result = true;
+            msj = null;
+
+            var clasesEnConflicto = _claseDs.ObtenerClases(x => x.Periodo == clase.Periodo && x.Ano == clase.Ano);
+            if (clasesEnConflicto.Any())
+            {
+                result = false;
+                msj = "";
+            }
+
+            return result;
+        }
+
         public void CrearClase(Clase clase)
         {
+            string msj;
+            if (!ValidarClase(clase, out msj))
+            {
+                throw new ValidacionException(msj);
+            }
+
             _claseDs.CrearClase(clase);
         }
 
         public void ModificarClase(Clase clase)
         {
+            string msj;
+            if (!ValidarClase(clase, out msj))
+            {
+                throw new ValidacionException(msj);
+            }
+
             _claseDs.ModificarClase(clase);
         }
 

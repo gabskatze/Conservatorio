@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Conservatorio.BL.Clases;
+using Conservatorio.BL;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.UI.FormModels;
@@ -18,7 +18,7 @@ namespace Conservatorio.UI.Forms
         {
             InitializeComponent();
 
-            claseBL = new ClaseBL();
+            claseBL = CapaLogica.ClaseBl;
         }
 
         public void RefrescarClases()
@@ -32,7 +32,8 @@ namespace Conservatorio.UI.Forms
                 Dia = x.Dia,
                 HoraInicio = x.HoraInicio,
                 HoraFinal = x.HoraFinal,
-                Aula = x.Aula
+                Aula = x.Aula,
+                Periodo = string.Format("{0}-{1}", x.Ano, x.Periodo)
             }).ToList();
         }
 
