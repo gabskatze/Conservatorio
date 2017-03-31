@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Conservatorio.BL
 {
     public class ValidacionException : Exception
     {
-        public string Mensaje { get; set; }
+        public List<string> Mensajes { get; set; }
 
-        public ValidacionException(string mensaje)
+        public ValidacionException(List<string> mensajes)
         {
-            Mensaje = mensaje;
+            Mensajes = mensajes;
         }
 
     }

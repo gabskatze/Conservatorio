@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Conservatorio.UI.Helpers
+namespace Conservatorio.DATOS.Helpers
 {
-    public static class DateTimeExtensions
+    public static class DateTimeHelper
     {
         public static DateTime EnPunto(this DateTime dateTime)
         {
@@ -12,5 +12,9 @@ namespace Conservatorio.UI.Helpers
                 .AddMilliseconds(dateTime.Millisecond * -1);
         }
 
+        public static DateTime FromString(string hora, string format)
+        {
+            return DateTime.Now;
+        }
     }
 }

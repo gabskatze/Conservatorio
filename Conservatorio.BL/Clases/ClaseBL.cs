@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.DS.Clases;
@@ -16,16 +15,26 @@ namespace Conservatorio.BL.Clases
         {
         }
 
-        private bool ValidarClase(Clase clase, out string msj)
+        private bool ValidarClase(Clase clase, out List<string> msjs)
         {
             var result = true;
-            msj = null;
+            msjs = new List<string>();
 
-            var clasesEnConflicto = _claseDs.ObtenerClases(x => x.Periodo == clase.Periodo && x.Ano == clase.Ano);
-            if (clasesEnConflicto.Any())
+            //TODO: mejorar esta logica del tiempo
+            var clasesMismoTiempo = _claseDs.ObtenerClases(x => x.Periodo == clase.Periodo && x.Ano == clase.Ano && x.Dia == clase.Dia && x.HoraInicio == clase.HoraInicio && x.HoraFinal == clase.HoraFinal);
+
+            var mismaAula = clasesMismoTiempo.Where(x => x.Aula == clase.Aula);
+            if (mismaAula.Any(x => x.IdClase != clase.IdClase))
             {
                 result = false;
-                msj = "";
+                msjs.Add("La clase tiene un aula ya asignada en el mismo horario");
+            }
+
+            var mismoProfesor = clasesMismoTiempo.Where(x => x.Profesor.IdPersona == clase.Profesor.IdPersona);
+            if (mismoProfesor.Any(x => x.IdClase != clase.IdClase))
+            {
+                result = false;
+                msjs.Add("La clase tiene un profesor ya asignado en el mismo horario");
             }
 
             return result;
@@ -33,10 +42,10 @@ namespace Conservatorio.BL.Clases
 
         public void CrearClase(Clase clase)
         {
-            string msj;
-            if (!ValidarClase(clase, out msj))
+            List<string> mensajes;
+            if (!ValidarClase(clase, out mensajes))
             {
-                throw new ValidacionException(msj);
+                throw new ValidacionException(mensajes);
             }
 
             _claseDs.CrearClase(clase);
@@ -44,10 +53,10 @@ namespace Conservatorio.BL.Clases
 
         public void ModificarClase(Clase clase)
         {
-            string msj;
-            if (!ValidarClase(clase, out msj))
+            List<string> mensajes;
+            if (!ValidarClase(clase, out mensajes))
             {
-                throw new ValidacionException(msj);
+                throw new ValidacionException(mensajes);
             }
 
             _claseDs.ModificarClase(clase);

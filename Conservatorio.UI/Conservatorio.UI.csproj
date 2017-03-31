@@ -170,7 +170,6 @@
       <DependentUpon>V_Profesores.cs</DependentUpon>
     </Compile>
     <Compile Include="FormValidation\Validation.cs" />
-    <Compile Include="Helpers\DateTimeExtensions.cs" />
     <Compile Include="Helpers\FormExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

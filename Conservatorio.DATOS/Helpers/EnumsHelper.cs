@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace Conservatorio.DATOS.Enums
+namespace Conservatorio.DATOS.Helpers
 {
     public static class EnumsHelper
     {

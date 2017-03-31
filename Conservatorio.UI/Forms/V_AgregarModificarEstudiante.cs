@@ -4,6 +4,7 @@ using System;
 using System.Windows.Forms;
 using Conservatorio.BL;
 using Conservatorio.DATOS.Enums;
+using Conservatorio.DATOS.Helpers;
 using Conservatorio.UI.FormValidation;
 using Conservatorio.UI.Helpers;
 using Emgu.CV;

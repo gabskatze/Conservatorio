@@ -8,16 +8,19 @@
 
 
 Cosas por hacer:
--Agregar try-catch
 -notificaciones de correo
 -agregar talleres y cursos elementales
 -camara/imagen para Estudiante y Encargado
 -activar estudiantes y profesores inactivos
 -agregar form registroNota con 3 notas y que calcule la nota final
 -arreglar fechaMatricula automatizada (en la ventana de pagos)
+-agregar AutoMapping
 
 -validaciones en el BL para agregar Clases para que no choquen Horarios/Profesores/Aulas
 
+
+
+------------|--------------------|--------------
 
 
 -Nuevo control para asignar clases

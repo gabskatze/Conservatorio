@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Conservatorio.BL;
+using Conservatorio.DATOS.Helpers;
 using Conservatorio.UI.Helpers;
 
 namespace Conservatorio.UI.Forms
