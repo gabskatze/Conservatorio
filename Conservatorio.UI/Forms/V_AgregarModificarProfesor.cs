@@ -45,176 +45,236 @@ namespace Conservatorio.UI.Forms
             CargarInstrumentos();
         }
 
+        private void MostrarError(Exception ex)
+        {
+            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         private void CargarInstrumentos()
         {
-            clbInstrumentos.DataSource = instrumentoBL.ObtenerInstrumentos();
-            clbInstrumentos.DisplayMember = "NombreInstrumento";
-            clbInstrumentos.ValueMember = "IdInstrumento";
+            try
+            {
+                clbInstrumentos.DataSource = instrumentoBL.ObtenerInstrumentos();
+                clbInstrumentos.DisplayMember = "NombreInstrumento";
+                clbInstrumentos.ValueMember = "IdInstrumento";
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void ConfigurarValidacion()
         {
-            var validadores = new[]
+            try
             {
-                new Validador
+                    var validadores = new[]
                 {
-                    Control = tbxNombre,
-                    MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
-                },
-                new Validador
-                {
-                    Control = tbxCedula,
-                    MetodoValidacion = (out string errorMsg) => !tbxCedula.ValidarRequerido(out errorMsg) || !tbxCedula.ValidarEntero(out errorMsg)
-                },
-                new Validador
-                {
-                    Control = tbxOcupacion,
-                    MetodoValidacion = (out string errorMsg) => !tbxOcupacion.ValidarRequerido(out errorMsg)
-                },
-                new Validador
-                {
-                    Control = tbxEmail,
-                    MetodoValidacion = (out string errorMsg) => !tbxEmail.ValidarRequerido(out errorMsg) || !tbxEmail.ValidarEmail(out errorMsg)
-                },
-                new Validador
-                {
-                    Control = tbxTelefono1,
-                    MetodoValidacion = (out string errorMsg) => !tbxTelefono1.ValidarRequerido(out errorMsg) || !tbxTelefono1.ValidarEntero(out errorMsg) || !tbxTelefono1.ValidarLargo(8, out errorMsg)
-                },
-                new Validador
-                {
-                    Control = tbxTelefono2,
-                    MetodoValidacion = (out string errorMsg) => !tbxTelefono2.ValidarEntero(out errorMsg) || !tbxTelefono2.ValidarLargo(8, out errorMsg)
-                },
-                new Validador
-                {
-                    Control = tbxTelefono3,
-                    MetodoValidacion = (out string errorMsg) => !tbxTelefono3.ValidarEntero(out errorMsg) || !tbxTelefono3.ValidarLargo(8, out errorMsg)
-                }
-            };
+                    new Validador
+                    {
+                        Control = tbxNombre,
+                        MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
+                    },
+                    new Validador
+                    {
+                        Control = tbxCedula,
+                        MetodoValidacion = (out string errorMsg) => !tbxCedula.ValidarRequerido(out errorMsg) || !tbxCedula.ValidarEntero(out errorMsg)
+                    },
+                    new Validador
+                    {
+                        Control = tbxOcupacion,
+                        MetodoValidacion = (out string errorMsg) => !tbxOcupacion.ValidarRequerido(out errorMsg)
+                    },
+                    new Validador
+                    {
+                        Control = tbxEmail,
+                        MetodoValidacion = (out string errorMsg) => !tbxEmail.ValidarRequerido(out errorMsg) || !tbxEmail.ValidarEmail(out errorMsg)
+                    },
+                    new Validador
+                    {
+                        Control = tbxTelefono1,
+                        MetodoValidacion = (out string errorMsg) => !tbxTelefono1.ValidarRequerido(out errorMsg) || !tbxTelefono1.ValidarEntero(out errorMsg) || !tbxTelefono1.ValidarLargo(8, out errorMsg)
+                    },
+                    new Validador
+                    {
+                        Control = tbxTelefono2,
+                        MetodoValidacion = (out string errorMsg) => !tbxTelefono2.ValidarEntero(out errorMsg) || !tbxTelefono2.ValidarLargo(8, out errorMsg)
+                    },
+                    new Validador
+                    {
+                        Control = tbxTelefono3,
+                        MetodoValidacion = (out string errorMsg) => !tbxTelefono3.ValidarEntero(out errorMsg) || !tbxTelefono3.ValidarLargo(8, out errorMsg)
+                    }
+                };
 
-            Validation.Config(errorProvider, validadores);
+                    Validation.Config(errorProvider, validadores);
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         #region Action Methods
 
         private void V_AgregarProfesor_Load(object sender, EventArgs e)
         {
-            Text = profesor == null ? "Agregar Profesor" : "Modificar Profesor";
-
-            if (profesor == null)
+            try
             {
-                return;
-            }
+                Text = profesor == null ? "Agregar Profesor" : "Modificar Profesor";
 
-            tbxNombre.Text = profesor.Nombre;
-            tbxCedula.Text = profesor.Cedula.ToString();
-            tbxDireccion.Text = profesor.Direccion;
-            tbxOcupacion.Text = profesor.Ocupacion;
-            dtpFechaNacimiento.Value = profesor.FechaNacimiento.Value;
-            tbxEmail.Text = profesor.Email;
-            tbxTelefono1.Text = profesor.Telefono1.ToString();
-            tbxTelefono2.Text = profesor.Telefono2.ToString();
-            tbxTelefono3.Text = profesor.Telefono3.ToString();
-
-            if (!string.IsNullOrEmpty(profesor.Imagen))
-            {
-                var bytes = File.ReadAllBytes(ConfigurationManager.AppSettings["imagesFolder"] + profesor.Imagen);
-                var ms = new MemoryStream(bytes);
-                pbxFoto.Image = Image.FromStream(ms);
-            }
-
-            var idsInstrumentos = profesor.Instrumentos.Select(x => x.IdInstrumento).ToList();
-            for (var i = 0; i < clbInstrumentos.Items.Count; i++)
-            {
-                var instrumento = (Instrumento)clbInstrumentos.Items[i];
-                if (idsInstrumentos.Contains(instrumento.IdInstrumento))
+                if (profesor == null)
                 {
-                    clbInstrumentos.SetItemChecked(i, true);
+                    return;
+                }
+
+                tbxNombre.Text = profesor.Nombre;
+                tbxCedula.Text = profesor.Cedula.ToString();
+                tbxDireccion.Text = profesor.Direccion;
+                tbxOcupacion.Text = profesor.Ocupacion;
+                dtpFechaNacimiento.Value = profesor.FechaNacimiento.Value;
+                tbxEmail.Text = profesor.Email;
+                tbxTelefono1.Text = profesor.Telefono1.ToString();
+                tbxTelefono2.Text = profesor.Telefono2.ToString();
+                tbxTelefono3.Text = profesor.Telefono3.ToString();
+
+                if (!string.IsNullOrEmpty(profesor.Imagen))
+                {
+                    var bytes = File.ReadAllBytes(ConfigurationManager.AppSettings["imagesFolder"] + profesor.Imagen);
+                    var ms = new MemoryStream(bytes);
+                    pbxFoto.Image = Image.FromStream(ms);
+                }
+
+                var idsInstrumentos = profesor.Instrumentos.Select(x => x.IdInstrumento).ToList();
+                for (var i = 0; i < clbInstrumentos.Items.Count; i++)
+                {
+                    var instrumento = (Instrumento)clbInstrumentos.Items[i];
+                    if (idsInstrumentos.Contains(instrumento.IdInstrumento))
+                    {
+                        clbInstrumentos.SetItemChecked(i, true);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void btnAgregarProf_Click(object sender, EventArgs e)
         {
-            if (!ValidateChildren())
+            try
             {
-                return;
-            }
-
-            if (profesor == null)
-            {
-                profesor = new Profesor
+                if (!ValidateChildren())
                 {
-                    Estado = true
-                };
-            }
+                    return;
+                }
 
-            if (string.IsNullOrEmpty(profesor.Imagen))
+                if (profesor == null)
+                {
+                    profesor = new Profesor
+                    {
+                        Estado = true
+                    };
+                }
+
+                if (string.IsNullOrEmpty(profesor.Imagen))
+                {
+                    profesor.Imagen = Guid.NewGuid() + ".png";
+                }
+
+                profesor.Cedula = int.Parse(tbxCedula.Text);
+                profesor.Direccion = tbxDireccion.Text;
+                profesor.Email = tbxEmail.Text;
+                profesor.FechaNacimiento = dtpFechaNacimiento.Value;
+                profesor.Nombre = tbxNombre.Text;
+                profesor.Ocupacion = tbxOcupacion.Text;
+                profesor.Telefono1 = int.Parse(tbxTelefono1.Text);
+                profesor.Telefono2 = string.IsNullOrEmpty(tbxTelefono2.Text) ? (int?)null : int.Parse(tbxTelefono2.Text);
+                profesor.Telefono3 = string.IsNullOrEmpty(tbxTelefono3.Text) ? (int?)null : int.Parse(tbxTelefono3.Text);
+                profesor.Instrumentos = clbInstrumentos.CheckedItems.Cast<Instrumento>().ToList();
+
+                if (profesor.IdPersona == 0)
+                {
+                    profesorBL.CrearProfesor(profesor);
+                }
+                else
+                {
+                    profesorBL.ModificarProfesor(profesor);
+                }
+
+                // Guardar la imagen
+                var foto = pbxFoto.Image;
+                if (foto != null)
+                {
+                    foto.Save(ConfigurationManager.AppSettings["imagesFolder"] + profesor.Imagen, ImageFormat.Png);
+                }
+
+                Close();
+                vProfesor.RefrescarProfesores();
+            }
+            catch (Exception ex)
             {
-                profesor.Imagen = Guid.NewGuid() + ".png";
+                MostrarError(ex);
             }
-
-            profesor.Cedula = int.Parse(tbxCedula.Text);
-            profesor.Direccion = tbxDireccion.Text;
-            profesor.Email = tbxEmail.Text;
-            profesor.FechaNacimiento = dtpFechaNacimiento.Value;
-            profesor.Nombre = tbxNombre.Text;
-            profesor.Ocupacion = tbxOcupacion.Text;
-            profesor.Telefono1 = int.Parse(tbxTelefono1.Text);
-            profesor.Telefono2 = string.IsNullOrEmpty(tbxTelefono2.Text) ? (int?) null : int.Parse(tbxTelefono2.Text);
-            profesor.Telefono3 = string.IsNullOrEmpty(tbxTelefono3.Text) ? (int?) null : int.Parse(tbxTelefono3.Text);
-            profesor.Instrumentos = clbInstrumentos.CheckedItems.Cast<Instrumento>().ToList();
-
-            if (profesor.IdPersona == 0)
-            {
-                profesorBL.CrearProfesor(profesor);
-            }
-            else
-            {
-                profesorBL.ModificarProfesor(profesor);
-            }
-
-            // Guardar la imagen
-            var foto = pbxFoto.Image;
-            if(foto != null)
-            {
-                foto.Save(ConfigurationManager.AppSettings["imagesFolder"] + profesor.Imagen, ImageFormat.Png);
-            }
-
-            Close();
-            vProfesor.RefrescarProfesores();
+            
         }
 
         private void btnSeleccionarImagen_Click(object sender, EventArgs e)
         {
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                var fileName = openFileDialog.FileName;
-                pbxFoto.Image = Image.FromFile(fileName);
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var fileName = openFileDialog.FileName;
+                    pbxFoto.Image = Image.FromFile(fileName);
+                }
             }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void ProcessFrame(object sender, EventArgs arg)
         {
-            var image = CameraCapture.QueryFrame().Bitmap;
-            pbxFoto.Image = image;
+            try
+            {
+                var image = CameraCapture.QueryFrame().Bitmap;
+                pbxFoto.Image = image;
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void btnCapturar_Click(object sender, EventArgs e)
         {
-            if (CaptureInProgress)
+            try
             {
-                Application.Idle -= ProcessFrame;
-                CameraCapture.Dispose();
-                CameraCapture = null;
-            }
-            else
-            {
-                Application.Idle += ProcessFrame;
-            }
+                if (CaptureInProgress)
+                {
+                    Application.Idle -= ProcessFrame;
+                    CameraCapture.Dispose();
+                    CameraCapture = null;
+                }
+                else
+                {
+                    Application.Idle += ProcessFrame;
+                }
 
-            CaptureInProgress = !CaptureInProgress;
+                CaptureInProgress = !CaptureInProgress;
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         #endregion

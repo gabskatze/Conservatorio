@@ -16,16 +16,28 @@ namespace Conservatorio.UI.Forms
             InitializeComponent();
             instrumentosBL = new InstrumentoBL();
         }
+        private void MostrarError(Exception ex)
+        {
+            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
         public void RefrescarInstrumentos()
         {
-            var keyword = tbxBuscar.Text;
-            var list = instrumentosBL.ObtenerInstrumentos(keyword);
-            dgvInstrumentos.DataSource = list.Select(x => new InstrumentoModel
+            try
             {
-                IdInstrumento = x.IdInstrumento,
-                NombreInstrumento = x.NombreInstrumento
-            }).ToList();
+                var keyword = tbxBuscar.Text;
+                var list = instrumentosBL.ObtenerInstrumentos(keyword);
+                dgvInstrumentos.DataSource = list.Select(x => new InstrumentoModel
+                {
+                    IdInstrumento = x.IdInstrumento,
+                    NombreInstrumento = x.NombreInstrumento
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
 
         }
 
@@ -33,18 +45,41 @@ namespace Conservatorio.UI.Forms
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Form f = new V_AgregarInstrumento(this);
-            f.ShowDialog();
+            try
+            {
+                Form f = new V_AgregarInstrumento(this);
+                f.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void tbxBuscar_TextChanged(object sender, EventArgs e)
         {
-            RefrescarInstrumentos();
+            try
+            {
+                RefrescarInstrumentos();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void V_Instrumentos_Load(object sender, EventArgs e)
         {
-            RefrescarInstrumentos();
+            try
+            {
+                RefrescarInstrumentos();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
         }
 
         #endregion

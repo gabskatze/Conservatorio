@@ -22,8 +22,22 @@ namespace Conservatorio.UI.Forms
             cursoBL = new CursoBL();
         }
 
+        private void MostrarError(Exception ex)
+        {
+            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         private Instrumento ObtenerInstrumentoSeleccionado()
         {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             var instrumentoIndex = cbxInstrumento.SelectedIndex;
             if (instrumentoIndex < 0)
             {
@@ -35,6 +49,7 @@ namespace Conservatorio.UI.Forms
 
         private Curso ObtenerCursoSeleccionado()
         {
+
             return lbxCursos.SelectedItem as Curso;
         }
 
@@ -42,76 +57,124 @@ namespace Conservatorio.UI.Forms
 
         private void V_Cursos_Load(object sender, EventArgs e)
         {
-            RefrescarCursos();
+            try
+            {
+                RefrescarCursos();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void cbxInstrumento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var instrumentoSeleccionado = ObtenerInstrumentoSeleccionado();
-            if (instrumentoSeleccionado == null)
+            try
             {
-                return;
-            }
+                var instrumentoSeleccionado = ObtenerInstrumentoSeleccionado();
+                if (instrumentoSeleccionado == null)
+                {
+                    return;
+                }
 
-            lbxCursos.DataSource = listaCursos
-                .Where(x => x.Instrumento.IdInstrumento == instrumentoSeleccionado.IdInstrumento)
-                .OrderBy(x => x.Nivel)
-                .ToList();
-            lbxCursos.DisplayMember = "NombreCurso";
-            lbxCursos.ValueMember = "IdCurso";
+                lbxCursos.DataSource = listaCursos
+                    .Where(x => x.Instrumento.IdInstrumento == instrumentoSeleccionado.IdInstrumento)
+                    .OrderBy(x => x.Nivel)
+                    .ToList();
+                lbxCursos.DisplayMember = "NombreCurso";
+                lbxCursos.ValueMember = "IdCurso";
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         public void RefrescarCursos()
         {
-            var instrumentoSeleccionado = ObtenerInstrumentoSeleccionado();
-
-            listaCursos = cursoBL.ObtenerCursos();
-            listaInstrumentos = listaCursos.Select(x => x.Instrumento).Distinct().ToList();
-
-            cbxInstrumento.DataSource = listaInstrumentos;
-            cbxInstrumento.DisplayMember = "NombreInstrumento";
-            cbxInstrumento.ValueMember = "IdInstrumento";
-
-            if (instrumentoSeleccionado != null)
+            try
             {
-                cbxInstrumento.SelectedValue = instrumentoSeleccionado.IdInstrumento;
+                var instrumentoSeleccionado = ObtenerInstrumentoSeleccionado();
+
+                listaCursos = cursoBL.ObtenerCursos();
+                listaInstrumentos = listaCursos.Select(x => x.Instrumento).Distinct().ToList();
+
+                cbxInstrumento.DataSource = listaInstrumentos;
+                cbxInstrumento.DisplayMember = "NombreInstrumento";
+                cbxInstrumento.ValueMember = "IdInstrumento";
+
+                if (instrumentoSeleccionado != null)
+                {
+                    cbxInstrumento.SelectedValue = instrumentoSeleccionado.IdInstrumento;
+                }
             }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            var instrumento = ObtenerInstrumentoSeleccionado();
-            if (instrumento == null)
+            try
             {
-                return;
-            }
+                var instrumento = ObtenerInstrumentoSeleccionado();
+                if (instrumento == null)
+                {
+                    return;
+                }
 
-            Form form = new V_AgregarModificarCurso(this, instrumento);
-            form.ShowDialog();
+                Form form = new V_AgregarModificarCurso(this, instrumento);
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            var curso = ObtenerCursoSeleccionado();
-            if (curso == null)
+            try
             {
-                return;
-            }
+                var curso = ObtenerCursoSeleccionado();
+                if (curso == null)
+                {
+                    return;
+                }
 
-            Form form = new V_AgregarModificarCurso(this, curso.Instrumento, curso);
-            form.ShowDialog();
+                Form form = new V_AgregarModificarCurso(this, curso.Instrumento, curso);
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            var curso = ObtenerCursoSeleccionado();
-            if (curso == null)
+            try
             {
-                return;
-            }
+                var curso = ObtenerCursoSeleccionado();
+                if (curso == null)
+                {
+                    return;
+                }
 
-            cursoBL.EliminarCurso(curso);
-            RefrescarCursos();
+                cursoBL.EliminarCurso(curso);
+                RefrescarCursos();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         #endregion

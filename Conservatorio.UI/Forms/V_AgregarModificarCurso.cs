@@ -25,117 +25,170 @@ namespace Conservatorio.UI.Forms
             cursoBL = new CursoBL();
         }
 
+        private void MostrarError(Exception ex)
+        {
+            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         private void ConfigurarValidacion()
         {
-            var validadores = new[]
+            try
             {
-                new Validador
+                    var validadores = new[]
                 {
-                    Control = tbxNombre,
-                    MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
-                },
-                new Validador
-                {
-                    Control = tbxNivel,
-                    MetodoValidacion = (out string errorMsg) => !tbxNivel.ValidarRequerido(out errorMsg) || !tbxNivel.ValidarEntero(out errorMsg)
-                }
-            };
+                    new Validador
+                    {
+                        Control = tbxNombre,
+                        MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
+                    },
+                    new Validador
+                    {
+                        Control = tbxNivel,
+                        MetodoValidacion = (out string errorMsg) => !tbxNivel.ValidarRequerido(out errorMsg) || !tbxNivel.ValidarEntero(out errorMsg)
+                    }
+                };
 
-            Validation.Config(errorProvider, validadores);
+                    Validation.Config(errorProvider, validadores);
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void CargarRequisitos()
         {
-            var nullRequisito = new Curso {IdCurso = 0, NombreCurso = "(ninguno)"};
-            var listaRequisitos = cursoBL.ObtenerCursosPorInstrumento(instrumento.IdInstrumento);
-            if (curso != null)
+            try
             {
-                listaRequisitos.RemoveAll(x => x.IdCurso == curso.IdCurso);
-            }
-            listaRequisitos.Insert(0, nullRequisito);
+                var nullRequisito = new Curso { IdCurso = 0, NombreCurso = "(ninguno)" };
+                var listaRequisitos = cursoBL.ObtenerCursosPorInstrumento(instrumento.IdInstrumento);
+                if (curso != null)
+                {
+                    listaRequisitos.RemoveAll(x => x.IdCurso == curso.IdCurso);
+                }
+                listaRequisitos.Insert(0, nullRequisito);
 
-            cbxRequisito.DataSource = listaRequisitos;
-            cbxRequisito.ValueMember = "IdCurso";
-            cbxRequisito.DisplayMember = "NombreCurso";
+                cbxRequisito.DataSource = listaRequisitos;
+                cbxRequisito.ValueMember = "IdCurso";
+                cbxRequisito.DisplayMember = "NombreCurso";
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private Curso ObtenerRequisitoSeleccionado()
         {
-            Curso requisito = null;
-            if (cbxRequisito.SelectedIndex > 0)
+            try
             {
-                var requisitoSeleccionado = cbxRequisito.SelectedItem as Curso;
-                if (requisitoSeleccionado.IdCurso != 0)
+                Curso requisito = null;
+                if (cbxRequisito.SelectedIndex > 0)
                 {
-                    requisito = requisitoSeleccionado;
+                    var requisitoSeleccionado = cbxRequisito.SelectedItem as Curso;
+                    if (requisitoSeleccionado.IdCurso != 0)
+                    {
+                        requisito = requisitoSeleccionado;
+                    }
                 }
-            }
 
-            return requisito;
+                return requisito;
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void V_AgregarModificarCurso_Load(object sender, EventArgs e)
         {
-            CargarRequisitos();
-            tbxInstrumento.Text = instrumento.NombreInstrumento;
+            try
+            {
+                CargarRequisitos();
+                tbxInstrumento.Text = instrumento.NombreInstrumento;
 
-            if (curso == null)
-            {
-                Text = "Agregar Curso";
-            }
-            else
-            {
-                Text = "Modificar Curso";
-                tbxNombre.Text = curso.NombreCurso;
-                tbxNivel.Text = curso.Nivel.ToString();
-                if (curso.CursoRequisito != null)
+                if (curso == null)
                 {
-                    cbxRequisito.SelectedValue = curso.CursoRequisito.IdCurso;
+                    Text = "Agregar Curso";
+                }
+                else
+                {
+                    Text = "Modificar Curso";
+                    tbxNombre.Text = curso.NombreCurso;
+                    tbxNivel.Text = curso.Nivel.ToString();
+                    if (curso.CursoRequisito != null)
+                    {
+                        cbxRequisito.SelectedValue = curso.CursoRequisito.IdCurso;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void cbxRequisito_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var requisitoSeleccionado = ObtenerRequisitoSeleccionado();
-
-            var nuevoNivel = 1;
-            if (requisitoSeleccionado != null)
+            try
             {
-                nuevoNivel = requisitoSeleccionado.Nivel + 1;
-            }
+                var requisitoSeleccionado = ObtenerRequisitoSeleccionado();
 
-            tbxNivel.Text = nuevoNivel.ToString();
+                var nuevoNivel = 1;
+                if (requisitoSeleccionado != null)
+                {
+                    nuevoNivel = requisitoSeleccionado.Nivel + 1;
+                }
+
+                tbxNivel.Text = nuevoNivel.ToString();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!ValidateChildren())
+            try
             {
-                return;
-            }
+                if (!ValidateChildren())
+                {
+                    return;
+                }
 
-            if (curso == null)
+                if (curso == null)
+                {
+                    curso = new Curso();
+                }
+
+                curso.Instrumento = instrumento;
+                curso.NombreCurso = tbxNombre.Text;
+                curso.Nivel = int.Parse(tbxNivel.Text);
+                curso.CursoRequisito = ObtenerRequisitoSeleccionado();
+
+                if (curso.IdCurso == 0)
+                {
+                    cursoBL.CrearCurso(curso);
+                }
+                else
+                {
+                    cursoBL.ModificarCurso(curso);
+                }
+
+                Close();
+                vCursos.RefrescarCursos();
+            }
+            catch (Exception ex)
             {
-                curso = new Curso();
+                MostrarError(ex);
             }
-
-            curso.Instrumento = instrumento;
-            curso.NombreCurso = tbxNombre.Text;
-            curso.Nivel = int.Parse(tbxNivel.Text);
-            curso.CursoRequisito = ObtenerRequisitoSeleccionado();
-
-            if (curso.IdCurso == 0)
-            {
-                cursoBL.CrearCurso(curso);
-            }
-            else
-            {
-                cursoBL.ModificarCurso(curso);
-            }
-
-            Close();
-            vCursos.RefrescarCursos();
+            
         }
     }
 }

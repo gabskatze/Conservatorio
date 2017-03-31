@@ -32,128 +32,204 @@ namespace Conservatorio.UI.Forms
             _vClases = vClases;
             this.clase = clase;
         }
-
+        private void MostrarError(Exception ex)
+        {
+            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         private void ConfigurarValidacion()
         {
-            var validadores = new[]
+            try
             {
-                new Validador
+                    var validadores = new[]
                 {
-                    Control = tbxAula,
-                    MetodoValidacion = (out string errorMsg) => !tbxAula.ValidarRequerido(out errorMsg) || !tbxAula.ValidarEntero(out errorMsg)
-                }
-            };
+                    new Validador
+                    {
+                        Control = tbxAula,
+                        MetodoValidacion = (out string errorMsg) => !tbxAula.ValidarRequerido(out errorMsg) || !tbxAula.ValidarEntero(out errorMsg)
+                    }
+                };
 
-            Validation.Config(errorProvider, validadores);
+                Validation.Config(errorProvider, validadores);
+            }
+            catch (Exception ex)
+            {
+
+                MostrarError(ex);
+            }
+            
         }
 
         private void CargarInstrumentos()
         {
-            cbxInstrumento.DataSource = _instrumentoBL.ObtenerInstrumentos();
-            cbxInstrumento.ValueMember = "IdInstrumento";
-            cbxInstrumento.DisplayMember = "NombreInstrumento";
+            try
+            {
+                cbxInstrumento.DataSource = _instrumentoBL.ObtenerInstrumentos();
+                cbxInstrumento.ValueMember = "IdInstrumento";
+                cbxInstrumento.DisplayMember = "NombreInstrumento";
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void CargarDias()
         {
-            cbxDias.DataSource = EnumsHelper.GetEnumNamesAndDescriptions<DiasEnum>();
-            cbxDias.ValueMember = "Key";
-            cbxDias.DisplayMember = "Value";
+            try
+            {
+                cbxDias.DataSource = EnumsHelper.GetEnumNamesAndDescriptions<DiasEnum>();
+                cbxDias.ValueMember = "Key";
+                cbxDias.DisplayMember = "Value";
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void CargarCursos()
         {
-            var instrumentoSeleccionado = ObtenerInstrumentoSeleccionado();
-            if (instrumentoSeleccionado == null)
+            try
             {
-                return;
-            }
+                var instrumentoSeleccionado = ObtenerInstrumentoSeleccionado();
+                if (instrumentoSeleccionado == null)
+                {
+                    return;
+                }
 
-            cbxCursos.DataSource = _cursoBL.ObtenerCursosPorInstrumento(instrumentoSeleccionado.IdInstrumento);
-            cbxCursos.ValueMember = "IdCurso";
-            cbxCursos.DisplayMember = "NombreCurso";
+                cbxCursos.DataSource = _cursoBL.ObtenerCursosPorInstrumento(instrumentoSeleccionado.IdInstrumento);
+                cbxCursos.ValueMember = "IdCurso";
+                cbxCursos.DisplayMember = "NombreCurso";
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void CargarProfesores()
         {
-            var instrumentoSeleccionado = ObtenerInstrumentoSeleccionado();
-            if (instrumentoSeleccionado == null)
+            try
             {
-                return;
-            }
+                var instrumentoSeleccionado = ObtenerInstrumentoSeleccionado();
+                if (instrumentoSeleccionado == null)
+                {
+                    return;
+                }
 
-            cbxProfesores.DataSource = _profesorBL.ObtenerProfesoresPorInstrumento(instrumentoSeleccionado.IdInstrumento);
-            cbxProfesores.ValueMember = "IdPersona";
-            cbxProfesores.DisplayMember = "Nombre";
+                cbxProfesores.DataSource = _profesorBL.ObtenerProfesoresPorInstrumento(instrumentoSeleccionado.IdInstrumento);
+                cbxProfesores.ValueMember = "IdPersona";
+                cbxProfesores.DisplayMember = "Nombre";
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private Instrumento ObtenerInstrumentoSeleccionado()
         {
-            return cbxInstrumento.SelectedItem as Instrumento;
+            try
+            {
+                return cbxInstrumento.SelectedItem as Instrumento;
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         #region Action Methods
 
         private void V_AgregarModificarClase_Load(object sender, EventArgs e)
         {
-            CargarInstrumentos();
-            CargarDias();
+            try
+            {
+                CargarInstrumentos();
+                CargarDias();
 
-            if (clase == null)
-            {
-                Text = "Agregar Clase";
-                dtpHoraInicio.Text = DateTime.Now.ToString(DEFAULT_TIME_FORMAT);
-                dtpHoraFinal.Text = DateTime.Now.AddHours(1).ToString(DEFAULT_TIME_FORMAT);
+                if (clase == null)
+                {
+                    Text = "Agregar Clase";
+                    dtpHoraInicio.Text = DateTime.Now.ToString(DEFAULT_TIME_FORMAT);
+                    dtpHoraFinal.Text = DateTime.Now.AddHours(1).ToString(DEFAULT_TIME_FORMAT);
+                }
+                else
+                {
+                    Text = "Modificar Clase";
+                    cbxInstrumento.SelectedValue = clase.Curso.Instrumento.IdInstrumento;
+                    cbxCursos.SelectedValue = clase.Curso.IdCurso;
+                    cbxProfesores.SelectedValue = clase.Profesor.IdPersona;
+                    cbxDias.SelectedValue = clase.Dia;
+                    dtpHoraInicio.Text = clase.HoraInicio;
+                    dtpHoraFinal.Text = clase.HoraFinal;
+                    tbxAula.Text = clase.Aula.ToString();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Text = "Modificar Clase";
-                cbxInstrumento.SelectedValue = clase.Curso.Instrumento.IdInstrumento;
-                cbxCursos.SelectedValue = clase.Curso.IdCurso;
-                cbxProfesores.SelectedValue = clase.Profesor.IdPersona;
-                cbxDias.SelectedValue = clase.Dia;
-                dtpHoraInicio.Text = clase.HoraInicio;
-                dtpHoraFinal.Text = clase.HoraFinal;
-                tbxAula.Text = clase.Aula.ToString();
+                MostrarError(ex);
             }
+            
         }
 
         private void cbxInstrumento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CargarCursos();
-            CargarProfesores();
+            try
+            {
+                CargarCursos();
+                CargarProfesores();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (!ValidateChildren())
+            try
             {
-                return;
-            }
+                if (!ValidateChildren())
+                {
+                    return;
+                }
 
-            if (clase == null)
-            {
-                clase = new Clase();
-            }
+                if (clase == null)
+                {
+                    clase = new Clase();
+                }
 
-            clase.Curso = cbxCursos.SelectedItem as Curso;
-            clase.Profesor = cbxProfesores.SelectedItem as Profesor;
-            clase.Dia = cbxDias.SelectedValue.ToString();
-            clase.HoraInicio = dtpHoraInicio.Value.ToString(TIME_FORMAT);
-            clase.HoraFinal = dtpHoraFinal.Value.ToString(TIME_FORMAT);
-            clase.Aula = int.Parse(tbxAula.Text);
+                clase.Curso = cbxCursos.SelectedItem as Curso;
+                clase.Profesor = cbxProfesores.SelectedItem as Profesor;
+                clase.Dia = cbxDias.SelectedValue.ToString();
+                clase.HoraInicio = dtpHoraInicio.Value.ToString(TIME_FORMAT);
+                clase.HoraFinal = dtpHoraFinal.Value.ToString(TIME_FORMAT);
+                clase.Aula = int.Parse(tbxAula.Text);
 
-            if (clase.IdClase == 0)
-            {
-                _claseBL.CrearClase(clase);
+                if (clase.IdClase == 0)
+                {
+                    _claseBL.CrearClase(clase);
+                }
+                else
+                {
+                    _claseBL.ModificarClase(clase);
+                }
+
+                Close();
+                _vClases.RefrescarClases();
             }
-            else
+            catch (Exception ex)
             {
-                _claseBL.ModificarClase(clase);
+                MostrarError(ex);
             }
             
-            Close();
-            _vClases.RefrescarClases();
         }
 
         #endregion
