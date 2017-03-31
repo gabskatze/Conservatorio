@@ -82,25 +82,17 @@ namespace Conservatorio.UI.Forms
 
         private Curso ObtenerRequisitoSeleccionado()
         {
-            try
+            Curso requisito = null;
+            if (cbxRequisito.SelectedIndex > 0)
             {
-                Curso requisito = null;
-                if (cbxRequisito.SelectedIndex > 0)
+                var requisitoSeleccionado = cbxRequisito.SelectedItem as Curso;
+                if (requisitoSeleccionado != null && requisitoSeleccionado.IdCurso != 0)
                 {
-                    var requisitoSeleccionado = cbxRequisito.SelectedItem as Curso;
-                    if (requisitoSeleccionado.IdCurso != 0)
-                    {
-                        requisito = requisitoSeleccionado;
-                    }
+                    requisito = requisitoSeleccionado;
                 }
+            }
 
-                return requisito;
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
+            return requisito;
         }
 
         private void V_AgregarModificarCurso_Load(object sender, EventArgs e)

@@ -52,21 +52,13 @@ namespace Conservatorio.UI.Forms
 
         private Clase ObtenerClaseSeleccionada()
         {
-            try
+            if (dgvClases.SelectedRows.Count == 0)
             {
-                if (dgvClases.SelectedRows.Count == 0)
-                {
-                    return null;
-                }
+                return null;
+            }
 
-                var selectedIndex = dgvClases.SelectedRows[0].Index;
-                return listaClases[selectedIndex];
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
+            var selectedIndex = dgvClases.SelectedRows[0].Index;
+            return listaClases[selectedIndex];
         }
 
         #region Action Methods
@@ -81,7 +73,6 @@ namespace Conservatorio.UI.Forms
             {
                 MostrarError(ex);
             }
-            
         }
 
         private void tbxBuscar_TextChanged(object sender, EventArgs e)

@@ -143,15 +143,7 @@ namespace Conservatorio.UI.Forms
 
         private Instrumento ObtenerInstrumentoSeleccionado()
         {
-            try
-            {
-                return cbxInstrumento.SelectedItem as Instrumento;
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
+            return cbxInstrumento.SelectedItem as Instrumento;
         }
 
         #region Action Methods
