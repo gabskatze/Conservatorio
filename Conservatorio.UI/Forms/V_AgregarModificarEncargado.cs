@@ -19,75 +19,104 @@ namespace Conservatorio.UI.Forms
             Encargado = encargado;
         }
 
+        private void MostrarError(Exception ex)
+        {
+            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         private void V_AgregarModificarEncargado_Load(object sender, EventArgs e)
         {
-            Text = Encargado == null ? "Agregar Encargado" : "Modificar Encargado";
-
-            if (Encargado == null)
+            try
             {
-                return;
-            }
+                Text = Encargado == null ? "Agregar Encargado" : "Modificar Encargado";
 
-            tbxNombre.Text = Encargado.Nombre;
-            tbxParentesco.Text = Encargado.Parentesco;
-            tbxEmail.Text = Encargado.Email;
-            tbxTel1.Text = Encargado.Telefono1.ToString();
-            tbxTel2.Text = Encargado.Telefono2.ToString();
-            tbxTel3.Text = Encargado.Telefono3.ToString();
+                if (Encargado == null)
+                {
+                    return;
+                }
+
+                tbxNombre.Text = Encargado.Nombre;
+                tbxParentesco.Text = Encargado.Parentesco;
+                tbxEmail.Text = Encargado.Email;
+                tbxTel1.Text = Encargado.Telefono1.ToString();
+                tbxTel2.Text = Encargado.Telefono2.ToString();
+                tbxTel3.Text = Encargado.Telefono3.ToString();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void ConfigurarValidacion()
         {
-            var validadores = new[]
+            try
             {
-                new Validador
+                    var validadores = new[]
                 {
-                    Control = tbxNombre,
-                    MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
-                },
-                new Validador
-                {
-                    Control = tbxParentesco,
-                    MetodoValidacion = (out string errorMsg) => !tbxParentesco.ValidarRequerido(out errorMsg)
-                },
-                new Validador
-                {
-                    Control = tbxEmail,
-                    MetodoValidacion = (out string errorMsg) => !tbxEmail.ValidarEmail(out errorMsg)
-                },
-                new Validador
-                {
-                    Control = tbxTel1,
-                    MetodoValidacion = (out string errorMsg) => !tbxTel1.ValidarRequerido(out errorMsg) || !tbxTel1.ValidarEntero(out errorMsg) || !tbxTel1.ValidarLargo(8, out errorMsg)
-                }
-            };
+                    new Validador
+                    {
+                        Control = tbxNombre,
+                        MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
+                    },
+                    new Validador
+                    {
+                        Control = tbxParentesco,
+                        MetodoValidacion = (out string errorMsg) => !tbxParentesco.ValidarRequerido(out errorMsg)
+                    },
+                    new Validador
+                    {
+                        Control = tbxEmail,
+                        MetodoValidacion = (out string errorMsg) => !tbxEmail.ValidarEmail(out errorMsg)
+                    },
+                    new Validador
+                    {
+                        Control = tbxTel1,
+                        MetodoValidacion = (out string errorMsg) => !tbxTel1.ValidarRequerido(out errorMsg) || !tbxTel1.ValidarEntero(out errorMsg) || !tbxTel1.ValidarLargo(8, out errorMsg)
+                    }
+                };
 
-            Validation.Config(errorProvider, validadores);
+                    Validation.Config(errorProvider, validadores);
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (!ValidateChildren())
+            try
             {
-                return;
-            }
-            if (Encargado == null)
-            {
-                Encargado = new Encargado
+                if (!ValidateChildren())
                 {
-                    Estado = true
-                };
+                    return;
+                }
+                if (Encargado == null)
+                {
+                    Encargado = new Encargado
+                    {
+                        Estado = true
+                    };
+                }
+
+                Encargado.Nombre = tbxNombre.Text;
+                Encargado.Parentesco = tbxParentesco.Text;
+                Encargado.Email = tbxEmail.Text;
+                Encargado.Telefono1 = int.Parse(tbxTel1.Text);
+                Encargado.Telefono2 = tbxTel2.Text == "" ? (int?)null : int.Parse(tbxTel2.Text);
+                Encargado.Telefono3 = tbxTel3.Text == "" ? (int?)null : int.Parse(tbxTel3.Text);
+
+                vAgregarModificarEstudiante.Encargado = Encargado;
+                Close();
             }
-
-            Encargado.Nombre = tbxNombre.Text;
-            Encargado.Parentesco = tbxParentesco.Text;
-            Encargado.Email = tbxEmail.Text;
-            Encargado.Telefono1 = int.Parse(tbxTel1.Text);
-            Encargado.Telefono2 = tbxTel2.Text == "" ? (int?)null : int.Parse(tbxTel2.Text);
-            Encargado.Telefono3 = tbxTel3.Text == "" ? (int?)null : int.Parse(tbxTel3.Text);
-
-            vAgregarModificarEstudiante.Encargado = Encargado;
-            Close();
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
     }
 }

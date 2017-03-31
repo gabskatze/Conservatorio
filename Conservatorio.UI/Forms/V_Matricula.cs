@@ -28,42 +28,63 @@ namespace Conservatorio.UI.Forms
             claseBL = CapaLogica.ClaseBl;
         }
 
+        private void MostrarError(Exception ex)
+        {
+            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         private void V_Matricula_Load(object sender, EventArgs e)
         {
-            RefrescarEstudiantes();
-            CargarInstrumentos();
-            CargarPagos();
+            try
+            {
+                RefrescarEstudiantes();
+                CargarInstrumentos();
+                CargarPagos();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         public void RefrescarEstudiantes()
         {
-            var keyword = tbxBuscarEst_Matric.Text;
-            listaEstudiantes = estudianteBL.ObtenerEstudiantes(keyword, false);
-            dgvEst_Matric.DataSource = listaEstudiantes.Select(x => new EstudianteModel
+            try
             {
-                IdEstudiante = x.IdPersona,
-                Nombre = x.Nombre,
-                Cedula = x.Cedula,
-                Direccion = x.Direccion,
-                Ocupacion = x.Ocupacion,
-                GradoAcademico = x.GradoAcademico,
-                Email = x.Email,
-                Estado = x.Estado ? "Activo" : "Inactivo",
-                FechaNacimiento = x.FechaNacimiento.Value.ToShortDateString(),
-                Telefono1 = x.Telefono1,
-                Telefono2 = x.Telefono2,
-                Telefono3 = x.Telefono3,
-                NombreEncargado = x.Encargado == null ? string.Empty : x.Encargado.Nombre,
-                Parentesco = x.Encargado == null ? string.Empty : x.Encargado.Parentesco,
-                Telefono1Encargado = x.Encargado == null ? (int?)null : x.Encargado.Telefono1,
-                Telefono2Encargado = x.Encargado == null ? null : x.Encargado.Telefono2,
-                Telefono3Encargado = x.Encargado == null ? null : x.Encargado.Telefono3,
-                EmailEncargado = x.Encargado == null ? string.Empty : x.Encargado.Email
-            }).ToList();
+                var keyword = tbxBuscarEst_Matric.Text;
+                listaEstudiantes = estudianteBL.ObtenerEstudiantes(keyword, false);
+                dgvEst_Matric.DataSource = listaEstudiantes.Select(x => new EstudianteModel
+                {
+                    IdEstudiante = x.IdPersona,
+                    Nombre = x.Nombre,
+                    Cedula = x.Cedula,
+                    Direccion = x.Direccion,
+                    Ocupacion = x.Ocupacion,
+                    GradoAcademico = x.GradoAcademico,
+                    Email = x.Email,
+                    Estado = x.Estado ? "Activo" : "Inactivo",
+                    FechaNacimiento = x.FechaNacimiento.Value.ToShortDateString(),
+                    Telefono1 = x.Telefono1,
+                    Telefono2 = x.Telefono2,
+                    Telefono3 = x.Telefono3,
+                    NombreEncargado = x.Encargado == null ? string.Empty : x.Encargado.Nombre,
+                    Parentesco = x.Encargado == null ? string.Empty : x.Encargado.Parentesco,
+                    Telefono1Encargado = x.Encargado == null ? (int?)null : x.Encargado.Telefono1,
+                    Telefono2Encargado = x.Encargado == null ? null : x.Encargado.Telefono2,
+                    Telefono3Encargado = x.Encargado == null ? null : x.Encargado.Telefono3,
+                    EmailEncargado = x.Encargado == null ? string.Empty : x.Encargado.Email
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private Estudiante ObtenerEstudianteSeleccionado()
         {
+
             if (dgvEst_Matric.SelectedRows.Count == 0)
             {
                 return null;
@@ -75,26 +96,50 @@ namespace Conservatorio.UI.Forms
 
         private void tbxBuscarEst_Matric_TextChanged(object sender, EventArgs e)
         {
-            RefrescarEstudiantes();
+            try
+            {
+                RefrescarEstudiantes();
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void dgvEst_Matric_DoubleClick(object sender, EventArgs e)
         {
-            var estudiante = ObtenerEstudianteSeleccionado();
-            if (estudiante == null)
+            try
             {
-                return;
-            }
+                var estudiante = ObtenerEstudianteSeleccionado();
+                if (estudiante == null)
+                {
+                    return;
+                }
 
-            lblNombreEstudiante.Text = estudiante.Nombre;
-            lblTipoEstudiante.Text = estudiante.Tipo;
+                lblNombreEstudiante.Text = estudiante.Nombre;
+                lblTipoEstudiante.Text = estudiante.Tipo;
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+           
         }
 
         private void CargarInstrumentos()
         {
-            clbInstrumentos.DataSource = instrumentoBL.ObtenerInstrumentos();
-            clbInstrumentos.DisplayMember = "NombreInstrumento";
-            clbInstrumentos.ValueMember = "IdInstrumento";
+            try
+            {
+                clbInstrumentos.DataSource = instrumentoBL.ObtenerInstrumentos();
+                clbInstrumentos.DisplayMember = "NombreInstrumento";
+                clbInstrumentos.ValueMember = "IdInstrumento";
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private void CargarClases()
@@ -104,44 +149,62 @@ namespace Conservatorio.UI.Forms
 
         private void CargarPagos()
         {
-            cbTipoPago.DataSource = EnumsHelper.GetEnumNamesAndDescriptions<TipoPagoEnum>();
-            cbTipoPago.ValueMember = "Key";
-            cbTipoPago.DisplayMember = "Value";
+            try
+            {
+                cbTipoPago.DataSource = EnumsHelper.GetEnumNamesAndDescriptions<TipoPagoEnum>();
+                cbTipoPago.ValueMember = "Key";
+                cbTipoPago.DisplayMember = "Value";
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
         private List<Instrumento> ObtenerInstrumentosSeleccionados()
         {
-            return clbInstrumentos.CheckedItems.Cast<Instrumento>().ToList();
+                return clbInstrumentos.CheckedItems.Cast<Instrumento>().ToList();
         }
 
         private void clbInstrumentos_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            BeginInvoke((MethodInvoker) (() =>
+            try
             {
-                var estudiante = ObtenerEstudianteSeleccionado();
-                if (estudiante == null)
+                BeginInvoke((MethodInvoker)(() =>
                 {
-                    return;
-                }
+                    var estudiante = ObtenerEstudianteSeleccionado();
+                    if (estudiante == null)
+                    {
+                        return;
+                    }
 
-                var instrumentosSeleccionados = ObtenerInstrumentosSeleccionados();
-                var clases = claseBL.ObtenerClasesDisponibles(estudiante, instrumentosSeleccionados);
-                dgv_Clase_Mat.DataSource = clases.Select(x => new ClaseModel
-                {
-                    Profesor = x.Profesor.Nombre,
-                    Curso = x.Curso.NombreCurso,
-                    Dia = x.Dia,
-                    HoraInicio = x.HoraInicio,
-                    HoraFinal = x.HoraFinal,
-                    Aula = x.Aula
-                }).ToList();
-            }));
+                    var instrumentosSeleccionados = ObtenerInstrumentosSeleccionados();
+                    var clases = claseBL.ObtenerClasesDisponibles(estudiante, instrumentosSeleccionados);
+                    dgv_Clase_Mat.DataSource = clases.Select(x => new ClaseModel
+                    {
+                        Profesor = x.Profesor.Nombre,
+                        Curso = x.Curso.NombreCurso,
+                        Dia = x.Dia,
+                        HoraInicio = x.HoraInicio,
+                        HoraFinal = x.HoraFinal,
+                        Aula = x.Aula
+                    }).ToList();
+                }));
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
 
 
         private void ConfigurarValidacion()
         {
-            var validadores = new[]
+            try
+            {
+                var validadores = new[]
             {
                 new Validador
                 {
@@ -155,14 +218,28 @@ namespace Conservatorio.UI.Forms
                 }
             };
 
-            Validation.Config(errorProvider, validadores);
+                Validation.Config(errorProvider, validadores);
+            }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
         private void btnSalvarMatricula_Click(object sender, EventArgs e)
         {
-            if (!ValidateChildren())
+            try
             {
-                return;
+                if (!ValidateChildren())
+                {
+                    return;
+                }
             }
+            catch (Exception ex)
+            {
+                MostrarError(ex);
+            }
+            
         }
     }
 }

@@ -21,38 +21,60 @@ namespace Conservatorio.UI.Forms
             instrumentoBL = CapaLogica.InstrumentoBl;
             vInst = vInstrumentos;
         }
+        private void MostrarError(Exception ex)
+        {
+            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
         private void ConfigurarValidacion()
         {
-            var validadores = new[]
+            try
             {
-                new Validador
+                var validadores = new[]
                 {
-                    Control = tbxNombreInst,
-                    MetodoValidacion = (out string errorMsg) => !tbxNombreInst.ValidarRequerido(out errorMsg)
-                }
-            };
+                    new Validador
+                    {
+                        Control = tbxNombreInst,
+                        MetodoValidacion = (out string errorMsg) => !tbxNombreInst.ValidarRequerido(out errorMsg)
+                    }
+                };
 
-            Validation.Config(errorProvider, validadores);
+                Validation.Config(errorProvider, validadores);
+            }
+            catch (Exception ex)
+            {
+
+                MostrarError(ex);
+            }
+            
         }
 
         #region Action Methods
 
         private void btnAgregarInst_Click(object sender, EventArgs e)
         {
-            if (!ValidateChildren())
+            try
             {
-                return;
+                if (!ValidateChildren())
+                {
+                    return;
+                }
+
+                var nuevoInstrumento = new Instrumento
+                {
+                    NombreInstrumento = tbxNombreInst.Text
+                };
+                instrumentoBL.CrearInstrumento(nuevoInstrumento);
+
+                Close();
+                vInst.RefrescarInstrumentos();
             }
-
-            var nuevoInstrumento = new Instrumento
+            catch (Exception ex)
             {
-                NombreInstrumento = tbxNombreInst.Text
-            };
-            instrumentoBL.CrearInstrumento(nuevoInstrumento);
 
-            Close();
-            vInst.RefrescarInstrumentos();
+                MostrarError(ex);
+            }
+            
         }
 
         private void V_AgregarInstrumento_Load(object sender, EventArgs e)
