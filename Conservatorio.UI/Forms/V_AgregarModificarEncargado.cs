@@ -2,12 +2,14 @@
 using Conservatorio.UI.FormValidation;
 using System;
 using System.Windows.Forms;
+using Conservatorio.UI.Helpers;
 
 namespace Conservatorio.UI.Forms
 {
     public partial class V_AgregarModificarEncargado : Form
     {
         private readonly V_AgregarModificarEstudiante vAgregarModificarEstudiante;
+
         private Encargado Encargado { get; set; }
 
         public V_AgregarModificarEncargado(V_AgregarModificarEstudiante vAgregarModificarEstudiante, Encargado encargado = null)
@@ -19,10 +21,37 @@ namespace Conservatorio.UI.Forms
             Encargado = encargado;
         }
 
-        private void MostrarError(Exception ex)
+        private void ConfigurarValidacion()
         {
-            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            var validadores = new[]
+            {
+                new Validador
+                {
+                    Control = tbxNombre,
+                    MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxParentesco,
+                    MetodoValidacion = (out string errorMsg) => !tbxParentesco.ValidarRequerido(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxEmail,
+                    MetodoValidacion = (out string errorMsg) => !tbxEmail.ValidarEmail(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxTel1,
+                    MetodoValidacion = (out string errorMsg) => !tbxTel1.ValidarRequerido(out errorMsg) || !tbxTel1.ValidarEntero(out errorMsg) || !tbxTel1.ValidarLargo(8, out errorMsg)
+                }
+            };
+
+            Validation.Config(errorProvider, validadores);
+
         }
+
+        #region Action Methods
 
         private void V_AgregarModificarEncargado_Load(object sender, EventArgs e)
         {
@@ -44,46 +73,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
-        }
-
-        private void ConfigurarValidacion()
-        {
-            try
-            {
-                    var validadores = new[]
-                {
-                    new Validador
-                    {
-                        Control = tbxNombre,
-                        MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = tbxParentesco,
-                        MetodoValidacion = (out string errorMsg) => !tbxParentesco.ValidarRequerido(out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = tbxEmail,
-                        MetodoValidacion = (out string errorMsg) => !tbxEmail.ValidarEmail(out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = tbxTel1,
-                        MetodoValidacion = (out string errorMsg) => !tbxTel1.ValidarRequerido(out errorMsg) || !tbxTel1.ValidarEntero(out errorMsg) || !tbxTel1.ValidarLargo(8, out errorMsg)
-                    }
-                };
-
-                    Validation.Config(errorProvider, validadores);
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -94,6 +85,7 @@ namespace Conservatorio.UI.Forms
                 {
                     return;
                 }
+
                 if (Encargado == null)
                 {
                     Encargado = new Encargado
@@ -114,9 +106,10 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
+
+        #endregion
     }
 }

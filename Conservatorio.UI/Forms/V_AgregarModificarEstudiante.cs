@@ -1,11 +1,11 @@
-﻿using Conservatorio.BL.Clases;
-using Conservatorio.BL.Interfaces;
+﻿using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using System;
 using System.Windows.Forms;
 using Conservatorio.BL;
 using Conservatorio.DATOS.Enums;
 using Conservatorio.UI.FormValidation;
+using Conservatorio.UI.Helpers;
 using Emgu.CV;
 
 namespace Conservatorio.UI.Forms
@@ -39,66 +39,46 @@ namespace Conservatorio.UI.Forms
             this.vEstudiantes = vEstudiantes;
             this.estudiante = estudiante;
         }
-        private void MostrarError(Exception ex)
-        {
-            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
 
         private void CargarTiposEstudiante()
         {
-            try
-            {
-                cbxTipo.DataSource = EnumsHelper.GetEnumNamesAndDescriptions<TipoEstudianteEnum>();
-                cbxTipo.ValueMember = "Key";
-                cbxTipo.DisplayMember = "Value";
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
+            cbxTipo.DataSource = EnumsHelper.GetEnumNamesAndDescriptions<TipoEstudianteEnum>();
+            cbxTipo.ValueMember = "Key";
+            cbxTipo.DisplayMember = "Value";
         }
 
         private void ConfigurarValidacion()
         {
-            try
+            var validadores = new[]
             {
-                    var validadores = new[]
+                new Validador
                 {
-                    new Validador
-                    {
-                        Control = tbxNombre,
-                        MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = tbxCedula,
-                        MetodoValidacion = (out string errorMsg) => !tbxCedula.ValidarEntero(out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = tbxEmail,
-                        MetodoValidacion = (out string errorMsg) => !tbxEmail.ValidarEmail(out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = tbxTel1,
-                        MetodoValidacion = (out string errorMsg) => !tbxTel1.ValidarRequerido(out errorMsg) || !tbxTel1.ValidarEntero(out errorMsg) || !tbxTel1.ValidarLargo(8, out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = dtpFechaNacimiento,
-                        MetodoValidacion = (out string errorMsg) => !dtpFechaNacimiento.ValidarRequerido(out errorMsg)
-                    }
-                };
+                    Control = tbxNombre,
+                    MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxCedula,
+                    MetodoValidacion = (out string errorMsg) => !tbxCedula.ValidarEntero(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxEmail,
+                    MetodoValidacion = (out string errorMsg) => !tbxEmail.ValidarEmail(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxTel1,
+                    MetodoValidacion = (out string errorMsg) => !tbxTel1.ValidarRequerido(out errorMsg) || !tbxTel1.ValidarEntero(out errorMsg) || !tbxTel1.ValidarLargo(8, out errorMsg)
+                },
+                new Validador
+                {
+                    Control = dtpFechaNacimiento,
+                    MetodoValidacion = (out string errorMsg) => !dtpFechaNacimiento.ValidarRequerido(out errorMsg)
+                }
+            };
 
-                    Validation.Config(errorProvider, validadores);
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
+            Validation.Config(errorProvider, validadores);
         }
 
         #region Action Methods
@@ -131,12 +111,10 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
-        
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             try
@@ -180,9 +158,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void btnEncargado_Click(object sender, EventArgs e)
@@ -194,9 +171,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         #endregion

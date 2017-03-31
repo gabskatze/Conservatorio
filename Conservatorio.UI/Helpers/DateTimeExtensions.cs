@@ -2,7 +2,7 @@
 
 namespace Conservatorio.UI.Helpers
 {
-    public static class DateTimeHelper
+    public static class DateTimeExtensions
     {
         public static DateTime EnPunto(this DateTime dateTime)
         {

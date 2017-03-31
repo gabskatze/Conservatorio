@@ -281,6 +281,7 @@
             this.Name = "V_Mensualidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pago Mensual";
+            this.Load += new System.EventHandler(this.V_Mensualidad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Est)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEst_Mensualidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

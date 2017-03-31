@@ -519,6 +519,7 @@
             this.Name = "V_RegistroNota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Notas";
+            this.Load += new System.EventHandler(this.V_RegistroNota_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Est)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).EndInit();

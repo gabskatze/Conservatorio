@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Conservatorio.BL;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
+using Conservatorio.UI.Helpers;
 
 namespace Conservatorio.UI.Forms
 {
@@ -21,23 +22,9 @@ namespace Conservatorio.UI.Forms
 
             cursoBL = CapaLogica.CursoBl;
         }
-
-        private void MostrarError(Exception ex)
-        {
-            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
+        
         private Instrumento ObtenerInstrumentoSeleccionado()
         {
-            try
-            {
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
             var instrumentoIndex = cbxInstrumento.SelectedIndex;
             if (instrumentoIndex < 0)
             {
@@ -49,7 +36,6 @@ namespace Conservatorio.UI.Forms
 
         private Curso ObtenerCursoSeleccionado()
         {
-
             return lbxCursos.SelectedItem as Curso;
         }
 
@@ -63,9 +49,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void cbxInstrumento_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,9 +72,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         public void RefrescarCursos()
@@ -112,9 +96,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -132,9 +115,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -152,9 +134,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -172,9 +153,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         #endregion

@@ -87,6 +87,7 @@
             this.Name = "V_Notificaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Notificaciones";
+            this.Load += new System.EventHandler(this.V_Notificaciones_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

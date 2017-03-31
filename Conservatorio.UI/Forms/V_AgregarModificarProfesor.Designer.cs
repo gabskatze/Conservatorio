@@ -2,7 +2,7 @@
 
 namespace Conservatorio.UI.Forms
 {
-    partial class V_AgregarModificarProfesor : Form
+    partial class V_AgregarModificarProfesor
     {
         /// <summary>
         /// Required designer variable.

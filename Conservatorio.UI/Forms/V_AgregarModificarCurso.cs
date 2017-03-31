@@ -4,6 +4,7 @@ using Conservatorio.BL;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.UI.FormValidation;
+using Conservatorio.UI.Helpers;
 
 namespace Conservatorio.UI.Forms
 {
@@ -25,59 +26,39 @@ namespace Conservatorio.UI.Forms
             cursoBL = CapaLogica.CursoBl;
         }
 
-        private void MostrarError(Exception ex)
-        {
-            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
         private void ConfigurarValidacion()
         {
-            try
-            {
-                    var validadores = new[]
-                {
-                    new Validador
-                    {
-                        Control = tbxNombre,
-                        MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = tbxNivel,
-                        MetodoValidacion = (out string errorMsg) => !tbxNivel.ValidarRequerido(out errorMsg) || !tbxNivel.ValidarEntero(out errorMsg)
-                    }
-                };
 
-                    Validation.Config(errorProvider, validadores);
-            }
-            catch (Exception ex)
+            var validadores = new[]
             {
-                MostrarError(ex);
-            }
-            
+                new Validador
+                {
+                    Control = tbxNombre,
+                    MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxNivel,
+                    MetodoValidacion = (out string errorMsg) => !tbxNivel.ValidarRequerido(out errorMsg) || !tbxNivel.ValidarEntero(out errorMsg)
+                }
+            };
+
+            Validation.Config(errorProvider, validadores);
         }
 
         private void CargarRequisitos()
         {
-            try
+            var nullRequisito = new Curso {IdCurso = 0, NombreCurso = "(ninguno)"};
+            var listaRequisitos = cursoBL.ObtenerCursosPorInstrumento(instrumento.IdInstrumento);
+            if (curso != null)
             {
-                var nullRequisito = new Curso { IdCurso = 0, NombreCurso = "(ninguno)" };
-                var listaRequisitos = cursoBL.ObtenerCursosPorInstrumento(instrumento.IdInstrumento);
-                if (curso != null)
-                {
-                    listaRequisitos.RemoveAll(x => x.IdCurso == curso.IdCurso);
-                }
-                listaRequisitos.Insert(0, nullRequisito);
+                listaRequisitos.RemoveAll(x => x.IdCurso == curso.IdCurso);
+            }
+            listaRequisitos.Insert(0, nullRequisito);
 
-                cbxRequisito.DataSource = listaRequisitos;
-                cbxRequisito.ValueMember = "IdCurso";
-                cbxRequisito.DisplayMember = "NombreCurso";
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
+            cbxRequisito.DataSource = listaRequisitos;
+            cbxRequisito.ValueMember = "IdCurso";
+            cbxRequisito.DisplayMember = "NombreCurso";
         }
 
         private Curso ObtenerRequisitoSeleccionado()
@@ -94,6 +75,8 @@ namespace Conservatorio.UI.Forms
 
             return requisito;
         }
+
+        #region Action Methods
 
         private void V_AgregarModificarCurso_Load(object sender, EventArgs e)
         {
@@ -119,9 +102,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void cbxRequisito_SelectedIndexChanged(object sender, EventArgs e)
@@ -140,9 +122,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -178,9 +159,11 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
+
+        #endregion
+
     }
 }

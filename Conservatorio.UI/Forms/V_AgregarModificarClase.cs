@@ -33,52 +33,30 @@ namespace Conservatorio.UI.Forms
             this.clase = clase;
         }
 		
-        private void MostrarError(Exception ex)
-        {
-            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-		
         private void ConfigurarValidacion()
         {
-            try
+            var validadores = new[]
             {
-                    var validadores = new[]
+                new Validador
                 {
-                    new Validador
-                    {
-                        Control = tbxAula,
-                        MetodoValidacion = (out string errorMsg) => !tbxAula.ValidarRequerido(out errorMsg) || !tbxAula.ValidarEntero(out errorMsg)
+                    Control = tbxAula,
+                    MetodoValidacion = (out string errorMsg) => !tbxAula.ValidarRequerido(out errorMsg) || !tbxAula.ValidarEntero(out errorMsg)
                 },
                 new Validador
                 {
                     Control = tbxAno,
                     MetodoValidacion = (out string errorMsg) => !tbxAno.ValidarRequerido(out errorMsg) || !tbxAno.ValidarEntero(out errorMsg)
-                    }
-                };
+                }
+            };
 
-                Validation.Config(errorProvider, validadores);
-            }
-            catch (Exception ex)
-            {
-
-                MostrarError(ex);
-            }
-            
+            Validation.Config(errorProvider, validadores);
         }
 
         private void CargarInstrumentos()
         {
-            try
-            {
-                cbxInstrumento.DataSource = _instrumentoBL.ObtenerInstrumentos();
-                cbxInstrumento.ValueMember = "IdInstrumento";
-                cbxInstrumento.DisplayMember = "NombreInstrumento";
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
+            cbxInstrumento.DataSource = _instrumentoBL.ObtenerInstrumentos();
+            cbxInstrumento.ValueMember = "IdInstrumento";
+            cbxInstrumento.DisplayMember = "NombreInstrumento";
         }
 
         private void CargarDias()
@@ -101,44 +79,28 @@ namespace Conservatorio.UI.Forms
 
         private void CargarCursos()
         {
-            try
+            var instrumentoSeleccionado = ObtenerInstrumentoSeleccionado();
+            if (instrumentoSeleccionado == null)
             {
-                var instrumentoSeleccionado = ObtenerInstrumentoSeleccionado();
-                if (instrumentoSeleccionado == null)
-                {
-                    return;
-                }
+                return;
+            }
 
-                cbxCursos.DataSource = _cursoBL.ObtenerCursosPorInstrumento(instrumentoSeleccionado.IdInstrumento);
-                cbxCursos.ValueMember = "IdCurso";
-                cbxCursos.DisplayMember = "NombreCurso";
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
+            cbxCursos.DataSource = _cursoBL.ObtenerCursosPorInstrumento(instrumentoSeleccionado.IdInstrumento);
+            cbxCursos.ValueMember = "IdCurso";
+            cbxCursos.DisplayMember = "NombreCurso";
         }
 
         private void CargarProfesores()
         {
-            try
+            var instrumentoSeleccionado = ObtenerInstrumentoSeleccionado();
+            if (instrumentoSeleccionado == null)
             {
-                var instrumentoSeleccionado = ObtenerInstrumentoSeleccionado();
-                if (instrumentoSeleccionado == null)
-                {
-                    return;
-                }
+                return;
+            }
 
-                cbxProfesores.DataSource = _profesorBL.ObtenerProfesoresPorInstrumento(instrumentoSeleccionado.IdInstrumento);
-                cbxProfesores.ValueMember = "IdPersona";
-                cbxProfesores.DisplayMember = "Nombre";
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
+            cbxProfesores.DataSource = _profesorBL.ObtenerProfesoresPorInstrumento(instrumentoSeleccionado.IdInstrumento);
+            cbxProfesores.ValueMember = "IdPersona";
+            cbxProfesores.DisplayMember = "Nombre";
         }
 
         private Instrumento ObtenerInstrumentoSeleccionado()
@@ -159,12 +121,12 @@ namespace Conservatorio.UI.Forms
                 if (clase == null)
                 {
                     Text = "Agregar Clase";
-                // Poner la hora de inicio a las 8 AM
-                var horaInicio = DateTime.Now.EnPunto();
-                horaInicio = horaInicio.AddHours((horaInicio.Hour - 8) * -1);
-                dtpHoraInicio.Value = horaInicio;
-                dtpHoraFinal.Value = horaInicio.AddHours(1);
-                tbxAno.Text = horaInicio.Year.ToString();
+                    // Poner la hora de inicio a las 8 AM
+                    var horaInicio = DateTime.Now.EnPunto();
+                    horaInicio = horaInicio.AddHours((horaInicio.Hour - 8)*-1);
+                    dtpHoraInicio.Value = horaInicio;
+                    dtpHoraFinal.Value = horaInicio.AddHours(1);
+                    tbxAno.Text = horaInicio.Year.ToString();
                 }
                 else
                 {
@@ -176,27 +138,40 @@ namespace Conservatorio.UI.Forms
                     dtpHoraInicio.Text = clase.HoraInicio;
                     dtpHoraFinal.Text = clase.HoraFinal;
                     tbxAula.Text = clase.Aula.ToString();
-                cbxPeriodo.SelectedItem = clase.Periodo;
-                tbxAno.Text = clase.Ano.ToString();
+                    cbxPeriodo.SelectedItem = clase.Periodo;
+                    tbxAno.Text = clase.Ano.ToString();
                 }
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void cbxInstrumento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CargarCursos();
-            CargarProfesores();
+            try
+            {
+                CargarCursos();
+                CargarProfesores();
+            }
+            catch (Exception ex)
+            {
+                this.MostrarError(ex);
+            }
         }
 		
         private void dtpHoraInicio_ValueChanged(object sender, EventArgs e)
         {
-            var dateTime = dtpHoraInicio.Value;
-            dtpHoraFinal.Value = dateTime.AddHours(1);
+            try
+            {
+                var dateTime = dtpHoraInicio.Value;
+                dtpHoraFinal.Value = dateTime.AddHours(1);
+            }
+            catch (Exception ex)
+            {
+                this.MostrarError(ex);
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -216,11 +191,11 @@ namespace Conservatorio.UI.Forms
                 clase.Curso = cbxCursos.SelectedItem as Curso;
                 clase.Profesor = cbxProfesores.SelectedItem as Profesor;
                 clase.Dia = cbxDias.SelectedValue.ToString();
-            clase.HoraInicio = dtpHoraInicio.Value.ToString(dtpHoraInicio.CustomFormat);
-            clase.HoraFinal = dtpHoraFinal.Value.ToString(dtpHoraInicio.CustomFormat);
+                clase.HoraInicio = dtpHoraInicio.Value.ToString(dtpHoraInicio.CustomFormat);
+                clase.HoraFinal = dtpHoraFinal.Value.ToString(dtpHoraInicio.CustomFormat);
                 clase.Aula = int.Parse(tbxAula.Text);
-            clase.Periodo = (int)cbxPeriodo.SelectedValue;
-            clase.Ano = int.Parse(tbxAno.Text);
+                clase.Periodo = (int) cbxPeriodo.SelectedValue;
+                clase.Ano = int.Parse(tbxAno.Text);
 
                 if (clase.IdClase == 0)
                 {
@@ -236,9 +211,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         #endregion

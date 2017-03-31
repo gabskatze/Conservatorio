@@ -9,6 +9,7 @@ using Conservatorio.BL;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.UI.FormValidation;
+using Conservatorio.UI.Helpers;
 using Emgu.CV;
 
 namespace Conservatorio.UI.Forms
@@ -45,75 +46,62 @@ namespace Conservatorio.UI.Forms
             CargarInstrumentos();
         }
 
-        private void MostrarError(Exception ex)
-        {
-            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
         private void CargarInstrumentos()
         {
-            try
-            {
-                clbInstrumentos.DataSource = instrumentoBL.ObtenerInstrumentos();
-                clbInstrumentos.DisplayMember = "NombreInstrumento";
-                clbInstrumentos.ValueMember = "IdInstrumento";
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
+            clbInstrumentos.DataSource = instrumentoBL.ObtenerInstrumentos();
+            clbInstrumentos.DisplayMember = "NombreInstrumento";
+            clbInstrumentos.ValueMember = "IdInstrumento";
         }
 
         private void ConfigurarValidacion()
         {
-            try
-            {
-                    var validadores = new[]
-                {
-                    new Validador
-                    {
-                        Control = tbxNombre,
-                        MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = tbxCedula,
-                        MetodoValidacion = (out string errorMsg) => !tbxCedula.ValidarRequerido(out errorMsg) || !tbxCedula.ValidarEntero(out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = tbxOcupacion,
-                        MetodoValidacion = (out string errorMsg) => !tbxOcupacion.ValidarRequerido(out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = tbxEmail,
-                        MetodoValidacion = (out string errorMsg) => !tbxEmail.ValidarRequerido(out errorMsg) || !tbxEmail.ValidarEmail(out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = tbxTelefono1,
-                        MetodoValidacion = (out string errorMsg) => !tbxTelefono1.ValidarRequerido(out errorMsg) || !tbxTelefono1.ValidarEntero(out errorMsg) || !tbxTelefono1.ValidarLargo(8, out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = tbxTelefono2,
-                        MetodoValidacion = (out string errorMsg) => !tbxTelefono2.ValidarEntero(out errorMsg) || !tbxTelefono2.ValidarLargo(8, out errorMsg)
-                    },
-                    new Validador
-                    {
-                        Control = tbxTelefono3,
-                        MetodoValidacion = (out string errorMsg) => !tbxTelefono3.ValidarEntero(out errorMsg) || !tbxTelefono3.ValidarLargo(8, out errorMsg)
-                    }
-                };
 
-                    Validation.Config(errorProvider, validadores);
-            }
-            catch (Exception ex)
+            var validadores = new[]
             {
-                MostrarError(ex);
-            }
-            
+                new Validador
+                {
+                    Control = tbxNombre,
+                    MetodoValidacion = (out string errorMsg) => !tbxNombre.ValidarRequerido(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxCedula,
+                    MetodoValidacion = (out string errorMsg) => !tbxCedula.ValidarRequerido(out errorMsg) || !tbxCedula.ValidarEntero(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxOcupacion,
+                    MetodoValidacion = (out string errorMsg) => !tbxOcupacion.ValidarRequerido(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxEmail,
+                    MetodoValidacion = (out string errorMsg) => !tbxEmail.ValidarRequerido(out errorMsg) || !tbxEmail.ValidarEmail(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxTelefono1,
+                    MetodoValidacion = (out string errorMsg) => !tbxTelefono1.ValidarRequerido(out errorMsg) || !tbxTelefono1.ValidarEntero(out errorMsg) || !tbxTelefono1.ValidarLargo(8, out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxTelefono2,
+                    MetodoValidacion = (out string errorMsg) => !tbxTelefono2.ValidarEntero(out errorMsg) || !tbxTelefono2.ValidarLargo(8, out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxTelefono3,
+                    MetodoValidacion = (out string errorMsg) => !tbxTelefono3.ValidarEntero(out errorMsg) || !tbxTelefono3.ValidarLargo(8, out errorMsg)
+                }
+            };
+
+            Validation.Config(errorProvider, validadores);
+        }
+
+        private void ProcessFrame(object sender, EventArgs arg)
+        {
+            var image = CameraCapture.QueryFrame().Bitmap;
+            pbxFoto.Image = image;
         }
 
         #region Action Methods
@@ -158,9 +146,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void btnAgregarProf_Click(object sender, EventArgs e)
@@ -217,9 +204,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void btnSeleccionarImagen_Click(object sender, EventArgs e)
@@ -234,23 +220,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
-        }
-
-        private void ProcessFrame(object sender, EventArgs arg)
-        {
-            try
-            {
-                var image = CameraCapture.QueryFrame().Bitmap;
-                pbxFoto.Image = image;
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
         }
 
         private void btnCapturar_Click(object sender, EventArgs e)
@@ -272,9 +243,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         #endregion

@@ -6,6 +6,7 @@ using Conservatorio.BL;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.UI.FormModels;
+using Conservatorio.UI.Helpers;
 
 namespace Conservatorio.UI.Forms
 {
@@ -20,34 +21,21 @@ namespace Conservatorio.UI.Forms
 
             claseBL = CapaLogica.ClaseBl;
         }
-
-        private void MostrarError(Exception ex)
-        {
-            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
+        
         public void RefrescarClases()
         {
-            try
+            var keyword = tbxBuscar.Text;
+            listaClases = claseBL.ObtenerClases(keyword);
+            dgvClases.DataSource = listaClases.Select(x => new ClaseModel
             {
-                var keyword = tbxBuscar.Text;
-                listaClases = claseBL.ObtenerClases(keyword);
-                dgvClases.DataSource = listaClases.Select(x => new ClaseModel
-                {
-                    Profesor = x.Profesor.Nombre,
-                    Curso = x.Curso.NombreCurso,
-                    Dia = x.Dia,
-                    HoraInicio = x.HoraInicio,
-                    HoraFinal = x.HoraFinal,
-	                Aula = x.Aula,
-	                Periodo = string.Format("{0}-{1}", x.Ano, x.Periodo)
-                }).ToList();
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
+                Profesor = x.Profesor.Nombre,
+                Curso = x.Curso.NombreCurso,
+                Dia = x.Dia,
+                HoraInicio = x.HoraInicio,
+                HoraFinal = x.HoraFinal,
+	            Aula = x.Aula,
+	            Periodo = string.Format("{0}-{1}", x.Ano, x.Periodo)
+            }).ToList();
         }
 
         private Clase ObtenerClaseSeleccionada()
@@ -71,7 +59,7 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
         }
 
@@ -83,7 +71,7 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
         }
 
@@ -96,7 +84,7 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
             
         }
@@ -116,7 +104,7 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
             
         }
@@ -136,9 +124,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         #endregion

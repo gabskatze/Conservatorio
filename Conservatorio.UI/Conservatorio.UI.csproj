@@ -170,7 +170,8 @@
       <DependentUpon>V_Profesores.cs</DependentUpon>
     </Compile>
     <Compile Include="FormValidation\Validation.cs" />
-    <Compile Include="Helpers\DateTimeHelper.cs" />
+    <Compile Include="Helpers\DateTimeExtensions.cs" />
+    <Compile Include="Helpers\FormExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\V_AgregarCurso_Matricula.cs">

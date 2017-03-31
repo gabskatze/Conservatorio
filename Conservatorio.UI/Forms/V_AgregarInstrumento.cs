@@ -5,6 +5,7 @@ using System;
 using System.Windows.Forms;
 using Conservatorio.BL;
 using Conservatorio.UI.FormValidation;
+using Conservatorio.UI.Helpers;
 
 namespace Conservatorio.UI.Forms
 {
@@ -21,32 +22,19 @@ namespace Conservatorio.UI.Forms
             instrumentoBL = CapaLogica.InstrumentoBl;
             vInst = vInstrumentos;
         }
-        private void MostrarError(Exception ex)
-        {
-            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
 
         private void ConfigurarValidacion()
         {
-            try
+            var validadores = new[]
             {
-                var validadores = new[]
+                new Validador
                 {
-                    new Validador
-                    {
-                        Control = tbxNombreInst,
-                        MetodoValidacion = (out string errorMsg) => !tbxNombreInst.ValidarRequerido(out errorMsg)
-                    }
-                };
+                    Control = tbxNombreInst,
+                    MetodoValidacion = (out string errorMsg) => !tbxNombreInst.ValidarRequerido(out errorMsg)
+                }
+            };
 
-                Validation.Config(errorProvider, validadores);
-            }
-            catch (Exception ex)
-            {
-
-                MostrarError(ex);
-            }
-            
+            Validation.Config(errorProvider, validadores);
         }
 
         #region Action Methods
@@ -71,15 +59,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
-        }
-
-        private void V_AgregarInstrumento_Load(object sender, EventArgs e)
-        {
-
         }
 
         #endregion

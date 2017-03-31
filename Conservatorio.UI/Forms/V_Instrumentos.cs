@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using Conservatorio.BL;
+using Conservatorio.UI.Helpers;
 
 namespace Conservatorio.UI.Forms
 {
@@ -16,29 +17,16 @@ namespace Conservatorio.UI.Forms
             InitializeComponent();
             instrumentosBL = CapaLogica.InstrumentoBl;
         }
-        private void MostrarError(Exception ex)
-        {
-            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
 
         public void RefrescarInstrumentos()
         {
-            try
+            var keyword = tbxBuscar.Text;
+            var list = instrumentosBL.ObtenerInstrumentos(keyword);
+            dgvInstrumentos.DataSource = list.Select(x => new InstrumentoModel
             {
-                var keyword = tbxBuscar.Text;
-                var list = instrumentosBL.ObtenerInstrumentos(keyword);
-                dgvInstrumentos.DataSource = list.Select(x => new InstrumentoModel
-                {
-                    IdInstrumento = x.IdInstrumento,
-                    NombreInstrumento = x.NombreInstrumento
-                }).ToList();
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
-
+                IdInstrumento = x.IdInstrumento,
+                NombreInstrumento = x.NombreInstrumento
+            }).ToList();
         }
 
         #region Action Events
@@ -52,9 +40,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void tbxBuscar_TextChanged(object sender, EventArgs e)
@@ -65,9 +52,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void V_Instrumentos_Load(object sender, EventArgs e)
@@ -78,7 +64,7 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
         }
 

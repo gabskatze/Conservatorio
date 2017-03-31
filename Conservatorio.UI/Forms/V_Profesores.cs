@@ -6,6 +6,7 @@ using Conservatorio.BL;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.UI.FormModels;
+using Conservatorio.UI.Helpers;
 
 namespace Conservatorio.UI.Forms
 {
@@ -20,36 +21,24 @@ namespace Conservatorio.UI.Forms
             profesorBL = CapaLogica.ProfesorBl;
         }
 
-        private void MostrarError(Exception ex)
-        {
-            MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
         public void RefrescarProfesores()
         {
-            try
+            var keyword = tbxBuscar.Text;
+            listaProfesores = profesorBL.ObtenerProfesores(keyword);
+            dgvProfesores.DataSource = listaProfesores.Select(x => new ProfesorModel
             {
-                var keyword = tbxBuscar.Text;
-                listaProfesores = profesorBL.ObtenerProfesores(keyword);
-                dgvProfesores.DataSource = listaProfesores.Select(x => new ProfesorModel
-                {
-                    IdProfesor = x.IdPersona,
-                    Nombre = x.Nombre,
-                    Cedula = x.Cedula.Value,
-                    Direccion = x.Direccion,
-                    Ocupacion = x.Ocupacion,
-                    Email = x.Email,
-                    Estado = x.Estado ? "Activo" : "Inactivo",
-                    FechaNacimiento = x.FechaNacimiento.Value.ToShortDateString(),
-                    Telefono1 = x.Telefono1,
-                    Telefono2 = x.Telefono2,
-                    Telefono3 = x.Telefono3
-                }).ToList();
-            }
-            catch (Exception ex)
-            {
-                MostrarError(ex);
-            }
-            
+                IdProfesor = x.IdPersona,
+                Nombre = x.Nombre,
+                Cedula = x.Cedula.Value,
+                Direccion = x.Direccion,
+                Ocupacion = x.Ocupacion,
+                Email = x.Email,
+                Estado = x.Estado ? "Activo" : "Inactivo",
+                FechaNacimiento = x.FechaNacimiento.Value.ToShortDateString(),
+                Telefono1 = x.Telefono1,
+                Telefono2 = x.Telefono2,
+                Telefono3 = x.Telefono3
+            }).ToList();
         }
 
         private Profesor ObtenerProfesorSeleccionado()
@@ -73,9 +62,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void tbxBuscar_TextChanged(object sender, EventArgs e)
@@ -86,7 +74,7 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+               this.MostrarError(ex);
             }
         }
 
@@ -99,9 +87,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -119,9 +106,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -139,9 +125,8 @@ namespace Conservatorio.UI.Forms
             }
             catch (Exception ex)
             {
-                MostrarError(ex);
+                this.MostrarError(ex);
             }
-            
         }
 
         #endregion
