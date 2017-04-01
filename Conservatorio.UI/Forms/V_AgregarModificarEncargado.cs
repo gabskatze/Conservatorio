@@ -1,8 +1,13 @@
 ﻿using Conservatorio.DATOS;
 using Conservatorio.UI.FormValidation;
 using System;
+using System.Configuration;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
 using Conservatorio.UI.Helpers;
+using Emgu.CV;
 
 namespace Conservatorio.UI.Forms
 {
@@ -11,6 +16,18 @@ namespace Conservatorio.UI.Forms
         private readonly V_AgregarModificarEstudiante vAgregarModificarEstudiante;
 
         private Encargado Encargado { get; set; }
+
+        private Capture _capture;
+        private Capture CameraCapture
+        {
+            get
+            {
+                return _capture ?? (_capture = new Capture());
+            }
+            set { _capture = value; }
+        }
+
+        private bool CaptureInProgress { get; set; }
 
         public V_AgregarModificarEncargado(V_AgregarModificarEstudiante vAgregarModificarEstudiante, Encargado encargado = null)
         {
@@ -42,13 +59,19 @@ namespace Conservatorio.UI.Forms
                 },
                 new Validador
                 {
-                    Control = tbxTel1,
-                    MetodoValidacion = (out string errorMsg) => !tbxTel1.ValidarRequerido(out errorMsg) || !tbxTel1.ValidarEntero(out errorMsg) || !tbxTel1.ValidarLargo(8, out errorMsg)
+                    Control = tbxTelefono1,
+                    MetodoValidacion = (out string errorMsg) => !tbxTelefono1.ValidarRequerido(out errorMsg) || !tbxTelefono1.ValidarEntero(out errorMsg) || !tbxTelefono1.ValidarLargo(8, out errorMsg)
                 }
             };
 
             Validation.Config(errorProvider, validadores);
 
+        }
+
+        private void ProcessFrame(object sender, EventArgs arg)
+        {
+            var image = CameraCapture.QueryFrame().Bitmap;
+            pbxFoto.Image = image;
         }
 
         #region Action Methods
@@ -67,9 +90,16 @@ namespace Conservatorio.UI.Forms
                 tbxNombre.Text = Encargado.Nombre;
                 tbxParentesco.Text = Encargado.Parentesco;
                 tbxEmail.Text = Encargado.Email;
-                tbxTel1.Text = Encargado.Telefono1.ToString();
-                tbxTel2.Text = Encargado.Telefono2.ToString();
-                tbxTel3.Text = Encargado.Telefono3.ToString();
+                tbxTelefono1.Text = Encargado.Telefono1.ToString();
+                tbxTelefono2.Text = Encargado.Telefono2.ToString();
+                tbxTelefono3.Text = Encargado.Telefono3.ToString();
+
+                if (!string.IsNullOrEmpty(Encargado.Imagen))
+                {
+                    var bytes = File.ReadAllBytes(ConfigurationManager.AppSettings["imagesFolder"] + Encargado.Imagen);
+                    var ms = new MemoryStream(bytes);
+                    pbxFoto.Image = Image.FromStream(ms);
+                }
             }
             catch (Exception ex)
             {
@@ -97,11 +127,19 @@ namespace Conservatorio.UI.Forms
                 Encargado.Nombre = tbxNombre.Text;
                 Encargado.Parentesco = tbxParentesco.Text;
                 Encargado.Email = tbxEmail.Text;
-                Encargado.Telefono1 = int.Parse(tbxTel1.Text);
-                Encargado.Telefono2 = tbxTel2.Text == "" ? (int?)null : int.Parse(tbxTel2.Text);
-                Encargado.Telefono3 = tbxTel3.Text == "" ? (int?)null : int.Parse(tbxTel3.Text);
+                Encargado.Telefono1 = int.Parse(tbxTelefono1.Text);
+                Encargado.Telefono2 = tbxTelefono2.Text == "" ? (int?)null : int.Parse(tbxTelefono2.Text);
+                Encargado.Telefono3 = tbxTelefono3.Text == "" ? (int?)null : int.Parse(tbxTelefono3.Text);
 
                 vAgregarModificarEstudiante.Encargado = Encargado;
+
+                // Guardar la imagen
+                var foto = pbxFoto.Image;
+                if (foto != null)
+                {
+                    foto.Save(ConfigurationManager.AppSettings["imagesFolder"] + Encargado.Imagen, ImageFormat.Png);
+                }
+
                 Close();
             }
             catch (Exception ex)
@@ -111,5 +149,44 @@ namespace Conservatorio.UI.Forms
         }
 
         #endregion
+
+        private void btnSeleccionarImagen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var fileName = openFileDialog.FileName;
+                    pbxFoto.Image = Image.FromFile(fileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                this.MostrarError(ex);
+            }
+        }
+
+        private void btnCapturar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CaptureInProgress)
+                {
+                    Application.Idle -= ProcessFrame;
+                    CameraCapture.Dispose();
+                    CameraCapture = null;
+                }
+                else
+                {
+                    Application.Idle += ProcessFrame;
+                }
+
+                CaptureInProgress = !CaptureInProgress;
+            }
+            catch (Exception ex)
+            {
+                this.MostrarError(ex);
+            }
+        }
     }
 }

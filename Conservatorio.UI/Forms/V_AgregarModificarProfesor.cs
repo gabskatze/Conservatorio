@@ -42,8 +42,6 @@ namespace Conservatorio.UI.Forms
             this.profesor = profesor;
             profesorBL = CapaLogica.ProfesorBl;
             instrumentoBL = CapaLogica.InstrumentoBl;
-
-            CargarInstrumentos();
         }
 
         private void CargarInstrumentos()
@@ -110,6 +108,8 @@ namespace Conservatorio.UI.Forms
         {
             try
             {
+                CargarInstrumentos();
+
                 Text = profesor == null ? "Agregar Profesor" : "Modificar Profesor";
 
                 if (profesor == null)
@@ -121,18 +121,13 @@ namespace Conservatorio.UI.Forms
                 tbxCedula.Text = profesor.Cedula.ToString();
                 tbxDireccion.Text = profesor.Direccion;
                 tbxOcupacion.Text = profesor.Ocupacion;
-                dtpFechaNacimiento.Value = profesor.FechaNacimiento.Value;
+                dtpFechaNacimiento.Value = profesor.FechaNacimiento ?? DateTime.Now;
                 tbxEmail.Text = profesor.Email;
                 tbxTelefono1.Text = profesor.Telefono1.ToString();
                 tbxTelefono2.Text = profesor.Telefono2.ToString();
                 tbxTelefono3.Text = profesor.Telefono3.ToString();
-
-                if (!string.IsNullOrEmpty(profesor.Imagen))
-                {
-                    var bytes = File.ReadAllBytes(ConfigurationManager.AppSettings["imagesFolder"] + profesor.Imagen);
-                    var ms = new MemoryStream(bytes);
-                    pbxFoto.Image = Image.FromStream(ms);
-                }
+                rbtnActivo.Checked = profesor.Estado;
+                rbtnInactivo.Checked = !profesor.Estado;
 
                 var idsInstrumentos = profesor.Instrumentos.Select(x => x.IdInstrumento).ToList();
                 for (var i = 0; i < clbInstrumentos.Items.Count; i++)
@@ -142,6 +137,13 @@ namespace Conservatorio.UI.Forms
                     {
                         clbInstrumentos.SetItemChecked(i, true);
                     }
+                }
+
+                if (!string.IsNullOrEmpty(profesor.Imagen))
+                {
+                    var bytes = File.ReadAllBytes(ConfigurationManager.AppSettings["imagesFolder"] + profesor.Imagen);
+                    var ms = new MemoryStream(bytes);
+                    pbxFoto.Image = Image.FromStream(ms);
                 }
             }
             catch (Exception ex)
@@ -161,10 +163,7 @@ namespace Conservatorio.UI.Forms
 
                 if (profesor == null)
                 {
-                    profesor = new Profesor
-                    {
-                        Estado = true
-                    };
+                    profesor = new Profesor();
                 }
 
                 if (string.IsNullOrEmpty(profesor.Imagen))
@@ -182,6 +181,7 @@ namespace Conservatorio.UI.Forms
                 profesor.Telefono2 = string.IsNullOrEmpty(tbxTelefono2.Text) ? (int?)null : int.Parse(tbxTelefono2.Text);
                 profesor.Telefono3 = string.IsNullOrEmpty(tbxTelefono3.Text) ? (int?)null : int.Parse(tbxTelefono3.Text);
                 profesor.Instrumentos = clbInstrumentos.CheckedItems.Cast<Instrumento>().ToList();
+                profesor.Estado = rbtnActivo.Checked;
 
                 if (profesor.IdPersona == 0)
                 {
@@ -248,6 +248,5 @@ namespace Conservatorio.UI.Forms
         }
 
         #endregion
-
     }
 }

@@ -1,26 +1,13 @@
-*Validaciones - Instrucciones:
-1. Agregar un Control del Toolbox, ErrorProvider
-2. Agregar metodo ConfigurarValidacion y configurar las validaciones respectivas
-3. Llamar al metodo ConfigurarValidacion en el constructor
-4. Al Control de ErrorProvider: BlinkStyle=NeverBlink, Name: errorProvider
-5. Al Form: AutoValidate=EnableAllowFocusChange
-6. Al metodo del click del boton: agregar condicion de ValidateChildren
-
-
-Cosas por hacer:
--notificaciones de correo
--agregar talleres y cursos elementales
--camara/imagen para Estudiante y Encargado
--activar estudiantes y profesores inactivos
+-Arreglar TabIndex en AgregarModificar Estudiante/Profesor/Encargado	GABY
+-agregar AutoMapping							JC
+-notificaciones de correo						
+-agregar talleres y cursos elementales					
 -agregar form registroNota con 3 notas y que calcule la nota final
 -arreglar fechaMatricula automatizada (en la ventana de pagos)
--agregar AutoMapping
+
 
 -validaciones en el BL para agregar Clases para que no choquen Horarios/Profesores/Aulas
 
-
-
-------------|--------------------|--------------
 
 
 -Nuevo control para asignar clases

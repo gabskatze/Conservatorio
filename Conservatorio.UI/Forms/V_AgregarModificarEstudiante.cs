@@ -1,6 +1,10 @@
 ﻿using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using System;
+using System.Configuration;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
 using Conservatorio.BL;
 using Conservatorio.DATOS.Enums;
@@ -20,7 +24,7 @@ namespace Conservatorio.UI.Forms
         private Estudiante estudiante;
         
         private Capture _capture;
-        private Capture CameraCapture//meter try catch??
+        private Capture CameraCapture
         {
             get
             {
@@ -82,6 +86,12 @@ namespace Conservatorio.UI.Forms
             Validation.Config(errorProvider, validadores);
         }
 
+        private void ProcessFrame(object sender, EventArgs arg)
+        {
+            var image = CameraCapture.QueryFrame().Bitmap;
+            pbxFoto.Image = image;
+        }
+
         #region Action Methods
 
         private void V_AgregarModificarEstudiante_Load(object sender, EventArgs e)
@@ -97,18 +107,66 @@ namespace Conservatorio.UI.Forms
                     return;
                 }
 
+                Encargado = estudiante.Encargado;
                 tbxNombre.Text = estudiante.Nombre;
                 tbxCedula.Text = estudiante.Cedula.ToString();
                 tbxDireccion.Text = estudiante.Direccion;
                 tbxOcupacion.Text = estudiante.Ocupacion;
-                dtpFechaNacimiento.Value = estudiante.FechaNacimiento.Value;
+                dtpFechaNacimiento.Value = estudiante.FechaNacimiento ?? DateTime.Now;
                 tbxEmail.Text = estudiante.Email;
                 tbxGradoAcademico.Text = estudiante.GradoAcademico;
                 tbxTel1.Text = estudiante.Telefono1.ToString();
                 tbxTel2.Text = estudiante.Telefono2.ToString();
                 tbxTel3.Text = estudiante.Telefono3.ToString();
                 cbxTipo.SelectedValue = estudiante.Tipo;
-                Encargado = estudiante.Encargado;
+                rbtnActivo.Checked = estudiante.Estado;
+                rbtnInactivo.Checked = !estudiante.Estado;
+
+                if (!string.IsNullOrEmpty(estudiante.Imagen))
+                {
+                    var bytes = File.ReadAllBytes(ConfigurationManager.AppSettings["imagesFolder"] + estudiante.Imagen);
+                    var ms = new MemoryStream(bytes);
+                    pbxFoto.Image = Image.FromStream(ms);
+                }
+            }
+            catch (Exception ex)
+            {
+                this.MostrarError(ex);
+            }
+        }
+
+        private void btnSeleccionarImagen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var fileName = openFileDialog.FileName;
+                    pbxFoto.Image = Image.FromFile(fileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                this.MostrarError(ex);
+            }
+        }
+
+        private void btnCapturar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CaptureInProgress)
+                {
+                    Application.Idle -= ProcessFrame;
+                    CameraCapture.Dispose();
+                    CameraCapture = null;
+                }
+                else
+                {
+                    Application.Idle += ProcessFrame;
+                }
+
+                CaptureInProgress = !CaptureInProgress;
             }
             catch (Exception ex)
             {
@@ -124,12 +182,15 @@ namespace Conservatorio.UI.Forms
                 {
                     return;
                 }
+
                 if (estudiante == null)
                 {
-                    estudiante = new Estudiante
-                    {
-                        Estado = true
-                    };
+                    estudiante = new Estudiante();
+                }
+
+                if (string.IsNullOrEmpty(estudiante.Imagen))
+                {
+                    estudiante.Imagen = Guid.NewGuid() + ".png";
                 }
 
                 estudiante.Nombre = tbxNombre.Text;
@@ -143,6 +204,7 @@ namespace Conservatorio.UI.Forms
                 estudiante.Telefono2 = tbxTel2.Text == "" ? (int?)null : int.Parse(tbxTel2.Text);
                 estudiante.Telefono3 = tbxTel3.Text == "" ? (int?)null : int.Parse(tbxTel3.Text);
                 estudiante.Tipo = cbxTipo.SelectedValue.ToString();
+                estudiante.Estado = rbtnActivo.Checked;
                 estudiante.Encargado = Encargado;
 
                 if (estudiante.IdPersona == 0)
@@ -152,6 +214,13 @@ namespace Conservatorio.UI.Forms
                 else
                 {
                     estudiantesBL.ModificarEstudiante(estudiante);
+                }
+
+                // Guardar la imagen
+                var foto = pbxFoto.Image;
+                if (foto != null)
+                {
+                    foto.Save(ConfigurationManager.AppSettings["imagesFolder"] + estudiante.Imagen, ImageFormat.Png);
                 }
 
                 Close();
