@@ -74,6 +74,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormModels\DiaHorasModel.cs" />
     <Compile Include="Forms\V_RegistroNota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +171,7 @@
       <DependentUpon>V_Profesores.cs</DependentUpon>
     </Compile>
     <Compile Include="FormValidation\Validation.cs" />
+    <Compile Include="Helpers\DataTableHelper.cs" />
     <Compile Include="Helpers\FormExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

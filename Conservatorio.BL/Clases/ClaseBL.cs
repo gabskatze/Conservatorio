@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.DS.Clases;
 using Conservatorio.DS.Interfaces;
 using System.Linq;
+using Conservatorio.DATOS.Helpers;
 
 namespace Conservatorio.BL.Clases
 {
@@ -20,8 +22,11 @@ namespace Conservatorio.BL.Clases
             var result = true;
             msjs = new List<string>();
 
-            //TODO: mejorar esta logica del tiempo
-            var clasesMismoTiempo = _claseDs.ObtenerClases(x => x.Periodo == clase.Periodo && x.Ano == clase.Ano && x.Dia == clase.Dia && x.HoraInicio == clase.HoraInicio && x.HoraFinal == clase.HoraFinal);
+            var clasesMismoDia = _claseDs.ObtenerClases(x => x.Periodo == clase.Periodo && x.Ano == clase.Ano && x.Dia == clase.Dia);
+            var clasesMismoTiempo = clasesMismoDia
+                .Where(x => !(DateTimeHelper.FromString(clase.HoraFinal) < DateTimeHelper.FromString(x.HoraInicio)) && 
+                            !(DateTimeHelper.FromString(clase.HoraInicio) > DateTimeHelper.FromString(x.HoraFinal)))
+                .ToList();
 
             var mismaAula = clasesMismoTiempo.Where(x => x.Aula == clase.Aula);
             if (mismaAula.Any(x => x.IdClase != clase.IdClase))
@@ -76,6 +81,11 @@ namespace Conservatorio.BL.Clases
         {
             var idsInstrumentos = instrumentos.Select(x => x.IdInstrumento);
             return _claseDs.ObtenerClases(x => idsInstrumentos.Contains(x.Curso.Instrumento.IdInstrumento));
+        }
+
+        public List<Clase> ObtenerClases(int periodo, int ano, Profesor profesor, int aula)
+        {
+            return _claseDs.ObtenerClases(x => x.Periodo == periodo && x.Ano == ano && (x.Profesor.IdPersona == profesor.IdPersona || x.Aula == aula));
         }
     }
 }

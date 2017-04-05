@@ -4,6 +4,12 @@ namespace Conservatorio.DATOS.Helpers
 {
     public static class DateTimeHelper
     {
+        public static class Constants
+        {
+            public const string HourMinutesMeridianFormat = "hh:mm tt";
+            public const string HourMeridianFormat = "hh tt";
+        }
+
         public static DateTime EnPunto(this DateTime dateTime)
         {
             return dateTime
@@ -12,9 +18,14 @@ namespace Conservatorio.DATOS.Helpers
                 .AddMilliseconds(dateTime.Millisecond * -1);
         }
 
-        public static DateTime FromString(string hora, string format)
+        public static bool IsBetween(this DateTime dateTime, DateTime dateTime1, DateTime dateTime2)
         {
-            return DateTime.Now;
+            return dateTime1 <= dateTime && dateTime <= dateTime2;
+        }
+
+        public static DateTime FromString(string hora)
+        {
+            return DateTime.Parse(hora);
         }
     }
 }

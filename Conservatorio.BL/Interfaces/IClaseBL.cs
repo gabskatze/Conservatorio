@@ -10,5 +10,6 @@ namespace Conservatorio.BL.Interfaces
         void EliminarClase(Clase clase);
         List<Clase> ObtenerClases(string keyword);
         List<Clase> ObtenerClasesDisponibles(Estudiante estudiante, List<Instrumento> instrumentos);
+        List<Clase> ObtenerClases(int periodo, int ano, Profesor profesor, int aula);
     }
 }

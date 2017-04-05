@@ -1,20 +1,13 @@
+-Modulo Matricula							
 -Arreglar TabIndex en AgregarModificar Estudiante/Profesor/Encargado	GABY
 -agregar AutoMapping							JC
 -notificaciones de correo						
 -agregar talleres y cursos elementales					
--agregar form registroNota con 3 notas y que calcule la nota final
--arreglar fechaMatricula automatizada (en la ventana de pagos)
+-agregar form registroNota con 3 notas y que calcule la nota final	
+-arreglar fechaMatricula automatizada (en la ventana de pagos)		
 
 
--validaciones en el BL para agregar Clases para que no choquen Horarios/Profesores/Aulas
+Tareas Realizadas:
+-Nuevo control para asignar clases					JC
+-Modulo clases (Agregar/Modificar/Eliminar & Validaciones BL)		JC
 
-
-
--Nuevo control para asignar clases
-
-	L	K	M	J	V	S	D
-08-09          
-09-10
-10-11
-11-12
-...
