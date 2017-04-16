@@ -1,7 +1,9 @@
-﻿namespace Conservatorio.DS.Interfaces
+﻿using Conservatorio.DATOS;
+
+namespace Conservatorio.DS.Interfaces
 {
     public interface IPagoMatriculaDS
     {
-
+        void CrearPagoMatricula(PagoMatricula pagoMatricula);
     }
 }

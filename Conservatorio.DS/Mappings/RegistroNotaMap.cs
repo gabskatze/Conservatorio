@@ -10,7 +10,7 @@ namespace Conservatorio.DS.Mappings
             Id(x => x.IdRegistroNota).GeneratedBy.Identity();
             Map(x => x.Nota);
             References(x => x.Estudiante).Column("IdEstudiante");
-            References(x => x.Clase).Column("IdClase");
+            References(x => x.Clase).Column("IdClase").Not.LazyLoad();
         }
     }
 }

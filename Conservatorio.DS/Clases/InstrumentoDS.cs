@@ -15,6 +15,7 @@ namespace Conservatorio.DS.Clases
             using (var conn = Conexion.EstablecerConexion())
             {
                 conn.Save(nuevoInstrumento);
+                conn.Flush();
             }
         }
 
@@ -23,6 +24,7 @@ namespace Conservatorio.DS.Clases
             using (var conn = Conexion.EstablecerConexion())
             {
                 conn.Update(instrumento);
+                conn.Flush();
             }
         }
 

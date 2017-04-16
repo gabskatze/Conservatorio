@@ -5,6 +5,9 @@ using Conservatorio.UI.FormModels;
 using Conservatorio.UI.FormValidation;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Conservatorio.BL;
@@ -17,9 +20,13 @@ namespace Conservatorio.UI.Forms
     {
         private readonly IEstudianteBL estudianteBL;
         private readonly IClaseBL claseBL;
-        private List<Estudiante> listaEstudiantes;
-
         private readonly IInstrumentoBL instrumentoBL;
+        private readonly IRegistroNotaBL registroNotaBL;
+        private readonly IPagoMatriculaBL pagoMatriculaBL;
+
+        private List<Estudiante> listaEstudiantes;
+        private List<Clase> listaClases;
+        private List<Clase> listaClasesDisponibles;
 
         public V_Matricula()
         {
@@ -29,35 +36,39 @@ namespace Conservatorio.UI.Forms
             estudianteBL = CapaLogica.EstudianteBl;
             instrumentoBL = CapaLogica.InstrumentoBl;
             claseBL = CapaLogica.ClaseBl;
+            registroNotaBL = CapaLogica.RegistroNotaBl;
+            pagoMatriculaBL = CapaLogica.PagoMatriculaBl;
         }
 
         private void ConfigurarValidacion()
         {
-
             var validadores = new[]
             {
                 new Validador
                 {
-                    Control = tbMontoMat,
-                    MetodoValidacion =
-                        (out string errorMsg) =>
-                            !tbMontoMat.ValidarEntero(out errorMsg) && !tbMontoMat.ValidarRequerido(out errorMsg)
+                    Control = tbxAno,
+                    MetodoValidacion = (out string errorMsg) => !tbxAno.ValidarRequerido(out errorMsg) && tbxAno.ValidarEntero(out errorMsg)
                 },
                 new Validador
                 {
-                    Control = tbReferencia,
-                    MetodoValidacion = (out string errorMsg) => !tbReferencia.ValidarRequerido(out errorMsg)
+                    Control = tbxMonto,
+                    MetodoValidacion = (out string errorMsg) => !tbxMonto.ValidarEntero(out errorMsg) && !tbxMonto.ValidarRequerido(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxReferencia,
+                    MetodoValidacion = (out string errorMsg) => !tbxReferencia.ValidarRequerido(out errorMsg)
                 }
             };
 
             Validation.Config(errorProvider, validadores);
         }
 
-        public void RefrescarEstudiantes()
+        private void RefrescarEstudiantes()
         {
-            var keyword = tbxBuscarEst_Matric.Text;
+            var keyword = tbxBuscarEstudiante.Text;
             listaEstudiantes = estudianteBL.ObtenerEstudiantes(keyword, false);
-            dgvEst_Matric.DataSource = listaEstudiantes.Select(x => new EstudianteModel
+            dgvEstudiantes.DataSource = listaEstudiantes.Select(x => new EstudianteModel
             {
                 IdEstudiante = x.IdPersona,
                 Nombre = x.Nombre,
@@ -80,27 +91,35 @@ namespace Conservatorio.UI.Forms
             }).ToList();
         }
 
-        private Estudiante ObtenerEstudianteSeleccionado()
+        private void RefrescarClasesDelPeriodo()
         {
-            if (dgvEst_Matric.SelectedRows.Count == 0)
+            if (string.IsNullOrEmpty(tbxAno.Text))
             {
-                return null;
+                return;
             }
 
-            var selectedIndex = dgvEst_Matric.SelectedRows[0].Index;
-            return listaEstudiantes[selectedIndex];
+            var ano = int.Parse(tbxAno.Text);
+            var periodo = (int)cbxPeriodo.SelectedItem;
+
+            listaClases = claseBL.ObtenerClases(periodo, ano);
         }
 
-        private void CargarPagos()
+        private void CargarPeriodos()
         {
-            cbTipoPago.DataSource = EnumsHelper.GetEnumNamesAndDescriptions<TipoPagoEnum>();
-            cbTipoPago.ValueMember = "Key";
-            cbTipoPago.DisplayMember = "Value";
+            var list = new List<int>();
+            var cantidadPeriodos = int.Parse(ConfigurationManager.AppSettings["cantidadPeriodos"]);
+            for (var i = 1; i <= cantidadPeriodos; i++)
+            {
+                list.Add(i);
+            }
+            cbxPeriodo.DataSource = list;
         }
 
-        private List<Instrumento> ObtenerInstrumentosSeleccionados()
+        private void CargarTipoPagos()
         {
-            return clbInstrumentos.CheckedItems.Cast<Instrumento>().ToList();
+            cbxTipoPago.DataSource = EnumsHelper.GetEnumNamesAndDescriptions<TipoPagoEnum>();
+            cbxTipoPago.ValueMember = "Key";
+            cbxTipoPago.DisplayMember = "Value";
         }
 
         private void CargarInstrumentos()
@@ -110,9 +129,59 @@ namespace Conservatorio.UI.Forms
             clbInstrumentos.ValueMember = "IdInstrumento";
         }
 
-        private void CargarClases()
+        private void SeleccionarInstrumentosPorEstudiante(Estudiante estudiante)
         {
+            for (var i = 0; i < clbInstrumentos.Items.Count; i++)
+            {
+                var idsInstrumentosEstudiante = estudiante.Instrumentos.Select(x => x.IdInstrumento);
+                var instrumento = clbInstrumentos.Items[i] as Instrumento;
+                var check = idsInstrumentosEstudiante.Contains(instrumento.IdInstrumento);
+                clbInstrumentos.SetItemChecked(i, check);
+            }
+        }
 
+        private void PreseleccionarPeriodo()
+        {
+            var datos = pagoMatriculaBL.ObtenerPeriodoActual();
+            var periodo = datos.Item1;
+            var ano = datos.Item2;
+
+            cbxPeriodo.SelectedItem = periodo;
+            tbxAno.Text = ano.ToString();
+        }
+
+        private Estudiante ObtenerEstudianteSeleccionado()
+        {
+            if (dgvEstudiantes.SelectedRows.Count == 0)
+            {
+                return null;
+            }
+
+            var selectedIndex = dgvEstudiantes.SelectedRows[0].Index;
+            return listaEstudiantes[selectedIndex];
+        }
+
+        private List<Instrumento> ObtenerInstrumentosSeleccionados()
+        {
+            return clbInstrumentos.CheckedItems.Cast<Instrumento>().ToList();
+        }
+
+        private List<Clase> ObtenerClasesSeleccionadas()
+        {
+            var resultado = new List<Clase>();
+            var clasesSeleccionadas = dgvClases.SelectedRows;
+            if (clasesSeleccionadas.Count == 0)
+            {
+                return resultado;
+            }
+
+            foreach (var clasesSeleccionada in clasesSeleccionadas.Cast<DataGridViewRow>())
+            {
+                var idx = clasesSeleccionada.Index;
+                resultado.Add(listaClasesDisponibles[idx]);
+            }
+
+            return resultado;
         }
 
         #region Action Methods
@@ -121,9 +190,12 @@ namespace Conservatorio.UI.Forms
         {
             try
             {
-                RefrescarEstudiantes();
+                CargarPeriodos();
+                CargarTipoPagos();
                 CargarInstrumentos();
-                CargarPagos();
+
+                PreseleccionarPeriodo();
+                RefrescarEstudiantes();
             }
             catch (Exception ex)
             {
@@ -143,6 +215,30 @@ namespace Conservatorio.UI.Forms
             }
         }
 
+        private void cbxPeriodo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                RefrescarClasesDelPeriodo();
+            }
+            catch (Exception ex)
+            {
+                this.MostrarError(ex);
+            }
+        }
+
+        private void tbxAno_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                RefrescarClasesDelPeriodo();
+            }
+            catch (Exception ex)
+            {
+                this.MostrarError(ex);
+            }
+        }
+
         private void dgvEst_Matric_DoubleClick(object sender, EventArgs e)
         {
             try
@@ -155,6 +251,18 @@ namespace Conservatorio.UI.Forms
 
                 lblNombreEstudiante.Text = estudiante.Nombre;
                 lblTipoEstudiante.Text = estudiante.Tipo;
+                if (!string.IsNullOrEmpty(estudiante.Imagen))
+                {
+                    var bytes = File.ReadAllBytes(ConfigurationManager.AppSettings["imagesFolder"] + estudiante.Imagen);
+                    var ms = new MemoryStream(bytes);
+                    pbxEstudiante.Image = Image.FromStream(ms);
+                }
+                else
+                {
+                    pbxEstudiante.Image = null;
+                }
+
+                SeleccionarInstrumentosPorEstudiante(estudiante);
             }
             catch (Exception ex)
             {
@@ -175,15 +283,17 @@ namespace Conservatorio.UI.Forms
                     }
 
                     var instrumentosSeleccionados = ObtenerInstrumentosSeleccionados();
-                    var clases = claseBL.ObtenerClasesDisponibles(estudiante, instrumentosSeleccionados);
-                    dgv_Clase_Mat.DataSource = clases.Select(x => new ClaseModel
+                    var cursosAprobados = registroNotaBL.ObtenerCursosAprobados(estudiante);
+                    listaClasesDisponibles = claseBL.ObtenerClasesDisponibles(listaClases, instrumentosSeleccionados,cursosAprobados).ToList();
+                    dgvClases.DataSource = listaClasesDisponibles.Select(x => new ClaseModel
                     {
                         Profesor = x.Profesor.Nombre,
                         Curso = x.Curso.NombreCurso,
                         Dia = x.Dia,
                         HoraInicio = x.HoraInicio,
                         HoraFinal = x.HoraFinal,
-                        Aula = x.Aula
+                        Aula = x.Aula,
+                        Periodo = string.Format("{0}-{1}", x.Periodo, x.Ano)
                     }).ToList();
                 }));
             }
@@ -191,7 +301,6 @@ namespace Conservatorio.UI.Forms
             {
                 this.MostrarError(ex);
             }
-            
         }
 
         private void btnSalvarMatricula_Click(object sender, EventArgs e)
@@ -202,6 +311,52 @@ namespace Conservatorio.UI.Forms
                 {
                     return;
                 }
+
+                var estudiante = ObtenerEstudianteSeleccionado();
+                if (estudiante == null)
+                {
+                    return;
+                }
+
+                var clases = ObtenerClasesSeleccionadas();
+
+                var registrosNota = new List<RegistroNota>();
+                foreach (var clase in clases)
+                {
+                    if (!estudiante.Instrumentos.Select(x => x.IdInstrumento).Contains(clase.Curso.Instrumento.IdInstrumento))
+                    {
+                        estudiante.Instrumentos.Add(clase.Curso.Instrumento);
+                    }
+
+                    var registroNota = new RegistroNota
+                    {
+                        Estudiante = estudiante,
+                        Clase = clase,
+                        Nota = 0
+                    };
+                    registrosNota.Add(registroNota);
+                }
+
+                var pagoMatricula = new PagoMatricula
+                {
+                    Estudiante = estudiante,
+                    Periodo = ((int)cbxPeriodo.SelectedItem).ToString(),
+                    Comentario = tbxComentario.Text,
+                    TipoPago = cbxTipoPago.SelectedValue.ToString(),
+                    Año = int.Parse(tbxAno.Text),
+                    FechaPago = DateTime.Now,
+                    Monto = int.Parse(tbxMonto.Text),
+                    Referencia = tbxReferencia.Text
+                };
+
+                //salvar en EstudianteInstrumento
+                estudianteBL.ModificarEstudiante(estudiante);
+
+                //salvar en RegistroNota
+                registrosNota.ForEach(x => registroNotaBL.CrearRegistroNota(x));
+
+                //salvar en PagoMatricula
+                pagoMatriculaBL.CrearPagoMatricula(pagoMatricula);
             }
             catch (Exception ex)
             {
@@ -210,6 +365,6 @@ namespace Conservatorio.UI.Forms
         }
 
         #endregion
-
+        
     }
 }

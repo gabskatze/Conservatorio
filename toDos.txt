@@ -1,8 +1,10 @@
--Modulo Matricula							
--Arreglar TabIndex en AgregarModificar Estudiante/Profesor/Encargado	GABY
--agregar AutoMapping							JC
--notificaciones de correo						
--agregar talleres y cursos elementales					
+-Agregar talleres y cursos elementales					GABY
+-Arreglar TabIndex en todos los modulos					GABY
+-agregar AutoMapper							JC
+-Modulo Matricula							JC
+-Modulo Mensualidades							
+-Modulo Notificaciones 							
+-bugs con capturas de imagen (nombre del archivo y tamano)		
 -agregar form registroNota con 3 notas y que calcule la nota final	
 -arreglar fechaMatricula automatizada (en la ventana de pagos)		
 

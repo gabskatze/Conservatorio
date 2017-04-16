@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.DS.Clases;
@@ -77,15 +76,27 @@ namespace Conservatorio.BL.Clases
             return _claseDs.ObtenerClases(x => x.Profesor.Nombre.Contains(keyword) || x.Curso.NombreCurso.Contains(keyword) || x.Dia.Contains(keyword));
         }
 
-        public List<Clase> ObtenerClasesDisponibles(Estudiante estudiante, List<Instrumento> instrumentos)
+        public List<Clase> ObtenerClasesDisponibles(List<Clase> clasesDelPeriodo, List<Instrumento> instrumentos, List<Curso> cursosAprobados)
         {
             var idsInstrumentos = instrumentos.Select(x => x.IdInstrumento);
-            return _claseDs.ObtenerClases(x => idsInstrumentos.Contains(x.Curso.Instrumento.IdInstrumento));
+            var idsCursosAprobados = cursosAprobados.Select(x => x.IdCurso);
+
+            return clasesDelPeriodo
+                .Where(x => idsInstrumentos.Contains(x.Curso.Instrumento.IdInstrumento))
+                .Where(x => !idsCursosAprobados.Contains(x.Curso.IdCurso))
+                .Where(x => x.Curso.CursoRequisito == null || idsCursosAprobados.Contains(x.Curso.CursoRequisito.IdCurso))
+                .ToList();
         }
 
         public List<Clase> ObtenerClases(int periodo, int ano, Profesor profesor, int aula)
         {
             return _claseDs.ObtenerClases(x => x.Periodo == periodo && x.Ano == ano && (x.Profesor.IdPersona == profesor.IdPersona || x.Aula == aula));
         }
+
+        public List<Clase> ObtenerClases(int periodo, int ano)
+        {
+            return _claseDs.ObtenerClases(x => x.Periodo == periodo && x.Ano == ano);
+        }
+
     }
 }

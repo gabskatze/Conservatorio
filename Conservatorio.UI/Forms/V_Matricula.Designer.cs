@@ -30,72 +30,76 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Matricula));
-            this.tbxBuscarEst_Matric = new System.Windows.Forms.TextBox();
-            this.dgvEst_Matric = new System.Windows.Forms.DataGridView();
+            this.tbxBuscarEstudiante = new System.Windows.Forms.TextBox();
+            this.dgvEstudiantes = new System.Windows.Forms.DataGridView();
             this.lblNombreEstudiante = new System.Windows.Forms.Label();
-            this.btnSalvarMatricula = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.clbInstrumentos = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgv_Clase_Mat = new System.Windows.Forms.DataGridView();
+            this.dgvClases = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbTipoPago = new System.Windows.Forms.ComboBox();
-            this.tbMontoMat = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbComentario = new System.Windows.Forms.TextBox();
-            this.pb_Est = new System.Windows.Forms.PictureBox();
+            this.lblTipoPago = new System.Windows.Forms.Label();
+            this.lblMonto = new System.Windows.Forms.Label();
+            this.cbxTipoPago = new System.Windows.Forms.ComboBox();
+            this.tbxMonto = new System.Windows.Forms.TextBox();
+            this.lblComentario = new System.Windows.Forms.Label();
+            this.tbxComentario = new System.Windows.Forms.TextBox();
+            this.pbxEstudiante = new System.Windows.Forms.PictureBox();
             this.lblTipoEstudiante = new System.Windows.Forms.Label();
-            this.tbReferencia = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.tbxReferencia = new System.Windows.Forms.TextBox();
+            this.lblReferencia = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEst_Matric)).BeginInit();
+            this.lblPeriodo = new System.Windows.Forms.Label();
+            this.cbxPeriodo = new System.Windows.Forms.ComboBox();
+            this.lblAno = new System.Windows.Forms.Label();
+            this.tbxAno = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Clase_Mat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Est)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClases)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEstudiante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // tbxBuscarEst_Matric
+            // tbxBuscarEstudiante
             // 
-            this.tbxBuscarEst_Matric.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxBuscarEst_Matric.Location = new System.Drawing.Point(60, 25);
-            this.tbxBuscarEst_Matric.Name = "tbxBuscarEst_Matric";
-            this.tbxBuscarEst_Matric.Size = new System.Drawing.Size(231, 22);
-            this.tbxBuscarEst_Matric.TabIndex = 1;
-            this.tbxBuscarEst_Matric.TextChanged += new System.EventHandler(this.tbxBuscarEst_Matric_TextChanged);
+            this.tbxBuscarEstudiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxBuscarEstudiante.Location = new System.Drawing.Point(60, 25);
+            this.tbxBuscarEstudiante.Name = "tbxBuscarEstudiante";
+            this.tbxBuscarEstudiante.Size = new System.Drawing.Size(231, 22);
+            this.tbxBuscarEstudiante.TabIndex = 1;
+            this.tbxBuscarEstudiante.TextChanged += new System.EventHandler(this.tbxBuscarEst_Matric_TextChanged);
             // 
-            // dgvEst_Matric
+            // dgvEstudiantes
             // 
-            this.dgvEst_Matric.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEst_Matric.Location = new System.Drawing.Point(11, 59);
-            this.dgvEst_Matric.Name = "dgvEst_Matric";
-            this.dgvEst_Matric.Size = new System.Drawing.Size(406, 135);
-            this.dgvEst_Matric.TabIndex = 2;
-            this.dgvEst_Matric.DoubleClick += new System.EventHandler(this.dgvEst_Matric_DoubleClick);
+            this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEstudiantes.Location = new System.Drawing.Point(11, 59);
+            this.dgvEstudiantes.Name = "dgvEstudiantes";
+            this.dgvEstudiantes.Size = new System.Drawing.Size(406, 135);
+            this.dgvEstudiantes.TabIndex = 2;
+            this.dgvEstudiantes.DoubleClick += new System.EventHandler(this.dgvEst_Matric_DoubleClick);
             // 
             // lblNombreEstudiante
             // 
             this.lblNombreEstudiante.AutoSize = true;
             this.lblNombreEstudiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreEstudiante.Location = new System.Drawing.Point(430, 21);
+            this.lblNombreEstudiante.Location = new System.Drawing.Point(437, 74);
             this.lblNombreEstudiante.Name = "lblNombreEstudiante";
             this.lblNombreEstudiante.Size = new System.Drawing.Size(71, 20);
             this.lblNombreEstudiante.TabIndex = 3;
             this.lblNombreEstudiante.Text = "Nombre";
             // 
-            // btnSalvarMatricula
+            // btnSalvar
             // 
-            this.btnSalvarMatricula.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarMatricula.Image")));
-            this.btnSalvarMatricula.Location = new System.Drawing.Point(737, 441);
-            this.btnSalvarMatricula.Name = "btnSalvarMatricula";
-            this.btnSalvarMatricula.Size = new System.Drawing.Size(70, 70);
-            this.btnSalvarMatricula.TabIndex = 8;
-            this.btnSalvarMatricula.Text = "Salvar";
-            this.btnSalvarMatricula.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSalvarMatricula.UseVisualStyleBackColor = true;
-            this.btnSalvarMatricula.Click += new System.EventHandler(this.btnSalvarMatricula_Click);
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.Location = new System.Drawing.Point(737, 442);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(70, 70);
+            this.btnSalvar.TabIndex = 8;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvarMatricula_Click);
             // 
             // pictureBox1
             // 
@@ -112,7 +116,7 @@
             this.clbInstrumentos.CheckOnClick = true;
             this.clbInstrumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clbInstrumentos.FormattingEnabled = true;
-            this.clbInstrumentos.Location = new System.Drawing.Point(11, 220);
+            this.clbInstrumentos.Location = new System.Drawing.Point(11, 239);
             this.clbInstrumentos.Name = "clbInstrumentos";
             this.clbInstrumentos.Size = new System.Drawing.Size(264, 123);
             this.clbInstrumentos.TabIndex = 3;
@@ -122,162 +126,206 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 197);
+            this.label1.Location = new System.Drawing.Point(12, 220);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "Instrumentos";
             // 
-            // dgv_Clase_Mat
+            // dgvClases
             // 
-            this.dgv_Clase_Mat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Clase_Mat.Location = new System.Drawing.Point(345, 220);
-            this.dgv_Clase_Mat.Name = "dgv_Clase_Mat";
-            this.dgv_Clase_Mat.Size = new System.Drawing.Size(498, 130);
-            this.dgv_Clase_Mat.TabIndex = 4;
+            this.dgvClases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClases.Location = new System.Drawing.Point(345, 239);
+            this.dgvClases.Name = "dgvClases";
+            this.dgvClases.Size = new System.Drawing.Size(498, 123);
+            this.dgvClases.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(341, 197);
+            this.label2.Location = new System.Drawing.Point(342, 220);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 21;
             this.label2.Text = "Clases";
             // 
-            // label3
+            // lblTipoPago
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 380);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 16);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Tipo de Pago";
+            this.lblTipoPago.AutoSize = true;
+            this.lblTipoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoPago.Location = new System.Drawing.Point(14, 392);
+            this.lblTipoPago.Name = "lblTipoPago";
+            this.lblTipoPago.Size = new System.Drawing.Size(103, 16);
+            this.lblTipoPago.TabIndex = 22;
+            this.lblTipoPago.Text = "Tipo de Pago";
             // 
-            // label4
+            // lblMonto
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(634, 374);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 16);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Monto";
+            this.lblMonto.AutoSize = true;
+            this.lblMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonto.Location = new System.Drawing.Point(635, 392);
+            this.lblMonto.Name = "lblMonto";
+            this.lblMonto.Size = new System.Drawing.Size(50, 16);
+            this.lblMonto.TabIndex = 23;
+            this.lblMonto.Text = "Monto";
             // 
-            // cbTipoPago
+            // cbxTipoPago
             // 
-            this.cbTipoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTipoPago.FormattingEnabled = true;
-            this.cbTipoPago.Location = new System.Drawing.Point(132, 372);
-            this.cbTipoPago.Name = "cbTipoPago";
-            this.cbTipoPago.Size = new System.Drawing.Size(121, 24);
-            this.cbTipoPago.TabIndex = 5;
+            this.cbxTipoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxTipoPago.FormattingEnabled = true;
+            this.cbxTipoPago.Location = new System.Drawing.Point(123, 389);
+            this.cbxTipoPago.Name = "cbxTipoPago";
+            this.cbxTipoPago.Size = new System.Drawing.Size(121, 24);
+            this.cbxTipoPago.TabIndex = 5;
             // 
-            // tbMontoMat
+            // tbxMonto
             // 
-            this.tbMontoMat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMontoMat.Location = new System.Drawing.Point(699, 372);
-            this.tbMontoMat.Name = "tbMontoMat";
-            this.tbMontoMat.Size = new System.Drawing.Size(127, 22);
-            this.tbMontoMat.TabIndex = 6;
+            this.tbxMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMonto.Location = new System.Drawing.Point(691, 389);
+            this.tbxMonto.Name = "tbxMonto";
+            this.tbxMonto.Size = new System.Drawing.Size(127, 22);
+            this.tbxMonto.TabIndex = 6;
             // 
-            // label5
+            // lblComentario
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 422);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 16);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Comentarios";
+            this.lblComentario.AutoSize = true;
+            this.lblComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComentario.Location = new System.Drawing.Point(13, 423);
+            this.lblComentario.Name = "lblComentario";
+            this.lblComentario.Size = new System.Drawing.Size(95, 16);
+            this.lblComentario.TabIndex = 26;
+            this.lblComentario.Text = "Comentarios";
             // 
-            // tbComentario
+            // tbxComentario
             // 
-            this.tbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbComentario.Location = new System.Drawing.Point(16, 446);
-            this.tbComentario.Multiline = true;
-            this.tbComentario.Name = "tbComentario";
-            this.tbComentario.Size = new System.Drawing.Size(430, 69);
-            this.tbComentario.TabIndex = 7;
+            this.tbxComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxComentario.Location = new System.Drawing.Point(16, 442);
+            this.tbxComentario.Multiline = true;
+            this.tbxComentario.Name = "tbxComentario";
+            this.tbxComentario.Size = new System.Drawing.Size(430, 69);
+            this.tbxComentario.TabIndex = 7;
             // 
-            // pb_Est
+            // pbxEstudiante
             // 
-            this.pb_Est.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_Est.Location = new System.Drawing.Point(706, 21);
-            this.pb_Est.Name = "pb_Est";
-            this.pb_Est.Size = new System.Drawing.Size(120, 137);
-            this.pb_Est.TabIndex = 28;
-            this.pb_Est.TabStop = false;
+            this.pbxEstudiante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbxEstudiante.Location = new System.Drawing.Point(723, 57);
+            this.pbxEstudiante.Name = "pbxEstudiante";
+            this.pbxEstudiante.Size = new System.Drawing.Size(120, 137);
+            this.pbxEstudiante.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbxEstudiante.TabIndex = 28;
+            this.pbxEstudiante.TabStop = false;
             // 
             // lblTipoEstudiante
             // 
             this.lblTipoEstudiante.AutoSize = true;
             this.lblTipoEstudiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoEstudiante.Location = new System.Drawing.Point(430, 71);
+            this.lblTipoEstudiante.Location = new System.Drawing.Point(437, 107);
             this.lblTipoEstudiante.Name = "lblTipoEstudiante";
             this.lblTipoEstudiante.Size = new System.Drawing.Size(43, 20);
             this.lblTipoEstudiante.TabIndex = 29;
             this.lblTipoEstudiante.Text = "Tipo";
             // 
-            // tbReferencia
+            // tbxReferencia
             // 
-            this.tbReferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReferencia.Location = new System.Drawing.Point(431, 372);
-            this.tbReferencia.Name = "tbReferencia";
-            this.tbReferencia.Size = new System.Drawing.Size(149, 22);
-            this.tbReferencia.TabIndex = 30;
+            this.tbxReferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxReferencia.Location = new System.Drawing.Point(413, 389);
+            this.tbxReferencia.Name = "tbxReferencia";
+            this.tbxReferencia.Size = new System.Drawing.Size(149, 22);
+            this.tbxReferencia.TabIndex = 30;
             // 
-            // label6
+            // lblReferencia
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(296, 375);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 16);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "No. Referencia";
+            this.lblReferencia.AutoSize = true;
+            this.lblReferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReferencia.Location = new System.Drawing.Point(295, 392);
+            this.lblReferencia.Name = "lblReferencia";
+            this.lblReferencia.Size = new System.Drawing.Size(112, 16);
+            this.lblReferencia.TabIndex = 31;
+            this.lblReferencia.Text = "No. Referencia";
             // 
             // errorProvider
             // 
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // lblPeriodo
+            // 
+            this.lblPeriodo.AutoSize = true;
+            this.lblPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeriodo.Location = new System.Drawing.Point(438, 25);
+            this.lblPeriodo.Name = "lblPeriodo";
+            this.lblPeriodo.Size = new System.Drawing.Size(63, 16);
+            this.lblPeriodo.TabIndex = 32;
+            this.lblPeriodo.Text = "Período";
+            // 
+            // cbxPeriodo
+            // 
+            this.cbxPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxPeriodo.FormattingEnabled = true;
+            this.cbxPeriodo.Location = new System.Drawing.Point(507, 22);
+            this.cbxPeriodo.Name = "cbxPeriodo";
+            this.cbxPeriodo.Size = new System.Drawing.Size(72, 24);
+            this.cbxPeriodo.TabIndex = 33;
+            this.cbxPeriodo.SelectedIndexChanged += new System.EventHandler(this.cbxPeriodo_SelectedIndexChanged);
+            // 
+            // lblAno
+            // 
+            this.lblAno.AutoSize = true;
+            this.lblAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAno.Location = new System.Drawing.Point(635, 25);
+            this.lblAno.Name = "lblAno";
+            this.lblAno.Size = new System.Drawing.Size(35, 16);
+            this.lblAno.TabIndex = 34;
+            this.lblAno.Text = "Año";
+            // 
+            // tbxAno
+            // 
+            this.tbxAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxAno.Location = new System.Drawing.Point(676, 22);
+            this.tbxAno.Name = "tbxAno";
+            this.tbxAno.Size = new System.Drawing.Size(92, 22);
+            this.tbxAno.TabIndex = 35;
+            this.tbxAno.TextChanged += new System.EventHandler(this.tbxAno_TextChanged);
+            // 
             // V_Matricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(868, 533);
-            this.Controls.Add(this.tbReferencia);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(868, 530);
+            this.Controls.Add(this.tbxAno);
+            this.Controls.Add(this.lblAno);
+            this.Controls.Add(this.cbxPeriodo);
+            this.Controls.Add(this.lblPeriodo);
+            this.Controls.Add(this.tbxReferencia);
+            this.Controls.Add(this.lblReferencia);
             this.Controls.Add(this.lblTipoEstudiante);
-            this.Controls.Add(this.pb_Est);
-            this.Controls.Add(this.tbComentario);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.tbMontoMat);
-            this.Controls.Add(this.cbTipoPago);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pbxEstudiante);
+            this.Controls.Add(this.tbxComentario);
+            this.Controls.Add(this.lblComentario);
+            this.Controls.Add(this.tbxMonto);
+            this.Controls.Add(this.cbxTipoPago);
+            this.Controls.Add(this.lblMonto);
+            this.Controls.Add(this.lblTipoPago);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgv_Clase_Mat);
+            this.Controls.Add(this.dgvClases);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.clbInstrumentos);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnSalvarMatricula);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblNombreEstudiante);
-            this.Controls.Add(this.dgvEst_Matric);
-            this.Controls.Add(this.tbxBuscarEst_Matric);
+            this.Controls.Add(this.dgvEstudiantes);
+            this.Controls.Add(this.tbxBuscarEstudiante);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "V_Matricula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matricula";
             this.Load += new System.EventHandler(this.V_Matricula_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEst_Matric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Clase_Mat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Est)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClases)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEstudiante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -285,25 +333,29 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox tbxBuscarEst_Matric;
-        private System.Windows.Forms.DataGridView dgvEst_Matric;
+        private System.Windows.Forms.TextBox tbxBuscarEstudiante;
+        private System.Windows.Forms.DataGridView dgvEstudiantes;
         private System.Windows.Forms.Label lblNombreEstudiante;
-        private System.Windows.Forms.Button btnSalvarMatricula;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckedListBox clbInstrumentos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgv_Clase_Mat;
+        private System.Windows.Forms.DataGridView dgvClases;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbTipoPago;
-        private System.Windows.Forms.TextBox tbMontoMat;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbComentario;
-        private System.Windows.Forms.PictureBox pb_Est;
+        private System.Windows.Forms.Label lblTipoPago;
+        private System.Windows.Forms.Label lblMonto;
+        private System.Windows.Forms.ComboBox cbxTipoPago;
+        private System.Windows.Forms.TextBox tbxMonto;
+        private System.Windows.Forms.Label lblComentario;
+        private System.Windows.Forms.TextBox tbxComentario;
+        private System.Windows.Forms.PictureBox pbxEstudiante;
         private System.Windows.Forms.Label lblTipoEstudiante;
-        private System.Windows.Forms.TextBox tbReferencia;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbxReferencia;
+        private System.Windows.Forms.Label lblReferencia;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.TextBox tbxAno;
+        private System.Windows.Forms.Label lblAno;
+        private System.Windows.Forms.ComboBox cbxPeriodo;
+        private System.Windows.Forms.Label lblPeriodo;
     }
 }
