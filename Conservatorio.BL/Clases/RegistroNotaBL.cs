@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
@@ -22,8 +23,8 @@ namespace Conservatorio.BL.Clases
 
         public List<Curso> ObtenerCursosAprobados(Estudiante estudiante)
         {
-            //TODO: dato quemado (70)
-            return _registroNotaDs.ObtenerRegistroNotas(x => x.Estudiante.IdPersona == estudiante.IdPersona && x.Nota > 70)
+            var notaMinima = int.Parse(ConfigurationManager.AppSettings["notaMinima"]);
+            return _registroNotaDs.ObtenerRegistroNotas(x => x.Estudiante.IdPersona == estudiante.IdPersona && x.Nota >= notaMinima)
                 .Select(x => x.Clase.Curso)
                 .ToList();
         }
