@@ -345,7 +345,7 @@ namespace Conservatorio.UI.Forms
                     TipoPago = cbxTipoPago.SelectedValue.ToString(),
                     Año = int.Parse(tbxAno.Text),
                     FechaPago = DateTime.Now,
-                    Monto = int.Parse(tbxMonto.Text),
+                    Monto = double.Parse(tbxMonto.Text),
                     Referencia = tbxReferencia.Text
                 };
 
@@ -357,6 +357,9 @@ namespace Conservatorio.UI.Forms
 
                 //salvar en PagoMatricula
                 pagoMatriculaBL.CrearPagoMatricula(pagoMatricula);
+
+                
+                Close();
             }
             catch (Exception ex)
             {

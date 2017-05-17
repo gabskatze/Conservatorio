@@ -1,15 +1,42 @@
 -Agregar talleres y cursos elementales					GABY
 -Arreglar TabIndex en todos los modulos					GABY
 -agregar AutoMapper							JC
--Modulo Matricula							JC
--Modulo Mensualidades							
+-Modulo Mensualidades							GABY
 -Modulo Notificaciones 							
--bugs con capturas de imagen (nombre del archivo y tamano)		
--agregar form registroNota con 3 notas y que calcule la nota final	
--arreglar fechaMatricula automatizada (en la ventana de pagos)		
+-bugs con capturas de imagen (nombre del archivo y tamano)		JC
+-agregar form registroNota con 3 notas y que calcule la nota final
+-arreglar campos monto y multa decimales	
 
 
 Tareas Realizadas:
--Nuevo control para asignar clases					JC
--Modulo clases (Agregar/Modificar/Eliminar & Validaciones BL)		JC
+
+
+
+**metodos obtenerestudiante, capture sin trycatch
+EVALUACION 
+Solfeo
+
+20% asistencia
+
+30 % progreso
+
+20% parcial 
+
+30% final
+
+Instrumento 
+20%asistencia
+, 
+programa 50%, 
+examen 30%
+
+Taller de conjunto 
+
+40% asistencia 
+
+20% actitud
+
+20% materiales
+
+20% presentaciones
 

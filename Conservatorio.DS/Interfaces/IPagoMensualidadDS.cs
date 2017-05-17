@@ -1,6 +1,9 @@
-﻿namespace Conservatorio.DS.Interfaces
+﻿using Conservatorio.DATOS;
+
+namespace Conservatorio.DS.Interfaces
 {
     public interface IPagoMensualidadDS
     {
+        void CrearPagoMensualidad(PagoMensualidad pagoMensualidad);
     }
 }

@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Mensualidad));
             this.tbxReferencia = new System.Windows.Forms.TextBox();
             this.lblReferencia = new System.Windows.Forms.Label();
             this.lblTipoEstudiante = new System.Windows.Forms.Label();
-            this.pb_Est = new System.Windows.Forms.PictureBox();
-            this.tbComentario = new System.Windows.Forms.TextBox();
+            this.pbxEstudiante = new System.Windows.Forms.PictureBox();
+            this.tbxComentario = new System.Windows.Forms.TextBox();
             this.lblComentarios = new System.Windows.Forms.Label();
-            this.tbMontoMens = new System.Windows.Forms.TextBox();
-            this.cbTipoPago = new System.Windows.Forms.ComboBox();
+            this.tbxMontoMens = new System.Windows.Forms.TextBox();
+            this.cbxTipoPago = new System.Windows.Forms.ComboBox();
             this.lblMensualidad = new System.Windows.Forms.Label();
             this.lblTipoPago = new System.Windows.Forms.Label();
             this.btnSalvarMensualidad = new System.Windows.Forms.Button();
@@ -47,12 +48,14 @@
             this.lblMes = new System.Windows.Forms.Label();
             this.cbxMes = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.lblTotalCal = new System.Windows.Forms.Label();
+            this.lblTotalCol = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbxMulta = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Est)).BeginInit();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEstudiante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEst_Mensualidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxReferencia
@@ -61,7 +64,7 @@
             this.tbxReferencia.Location = new System.Drawing.Point(610, 207);
             this.tbxReferencia.Name = "tbxReferencia";
             this.tbxReferencia.Size = new System.Drawing.Size(149, 22);
-            this.tbxReferencia.TabIndex = 48;
+            this.tbxReferencia.TabIndex = 4;
             // 
             // lblReferencia
             // 
@@ -83,22 +86,23 @@
             this.lblTipoEstudiante.TabIndex = 47;
             this.lblTipoEstudiante.Text = "Tipo";
             // 
-            // pb_Est
+            // pbxEstudiante
             // 
-            this.pb_Est.Location = new System.Drawing.Point(639, 18);
-            this.pb_Est.Name = "pb_Est";
-            this.pb_Est.Size = new System.Drawing.Size(120, 137);
-            this.pb_Est.TabIndex = 46;
-            this.pb_Est.TabStop = false;
+            this.pbxEstudiante.Location = new System.Drawing.Point(639, 18);
+            this.pbxEstudiante.Name = "pbxEstudiante";
+            this.pbxEstudiante.Size = new System.Drawing.Size(120, 137);
+            this.pbxEstudiante.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbxEstudiante.TabIndex = 46;
+            this.pbxEstudiante.TabStop = false;
             // 
-            // tbComentario
+            // tbxComentario
             // 
-            this.tbComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbComentario.Location = new System.Drawing.Point(18, 386);
-            this.tbComentario.Multiline = true;
-            this.tbComentario.Name = "tbComentario";
-            this.tbComentario.Size = new System.Drawing.Size(430, 69);
-            this.tbComentario.TabIndex = 39;
+            this.tbxComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxComentario.Location = new System.Drawing.Point(18, 386);
+            this.tbxComentario.Multiline = true;
+            this.tbxComentario.Name = "tbxComentario";
+            this.tbxComentario.Size = new System.Drawing.Size(430, 69);
+            this.tbxComentario.TabIndex = 7;
             // 
             // lblComentarios
             // 
@@ -110,22 +114,24 @@
             this.lblComentarios.TabIndex = 45;
             this.lblComentarios.Text = "Comentarios";
             // 
-            // tbMontoMens
+            // tbxMontoMens
             // 
-            this.tbMontoMens.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMontoMens.Location = new System.Drawing.Point(344, 273);
-            this.tbMontoMens.Name = "tbMontoMens";
-            this.tbMontoMens.Size = new System.Drawing.Size(121, 22);
-            this.tbMontoMens.TabIndex = 38;
+            this.tbxMontoMens.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMontoMens.Location = new System.Drawing.Point(344, 273);
+            this.tbxMontoMens.Name = "tbxMontoMens";
+            this.tbxMontoMens.Size = new System.Drawing.Size(121, 22);
+            this.tbxMontoMens.TabIndex = 6;
+            this.tbxMontoMens.Text = "0";
+            this.tbxMontoMens.TextChanged += new System.EventHandler(this.tbxMontoMens_TextChanged);
             // 
-            // cbTipoPago
+            // cbxTipoPago
             // 
-            this.cbTipoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTipoPago.FormattingEnabled = true;
-            this.cbTipoPago.Location = new System.Drawing.Point(344, 207);
-            this.cbTipoPago.Name = "cbTipoPago";
-            this.cbTipoPago.Size = new System.Drawing.Size(121, 24);
-            this.cbTipoPago.TabIndex = 37;
+            this.cbxTipoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxTipoPago.FormattingEnabled = true;
+            this.cbxTipoPago.Location = new System.Drawing.Point(344, 207);
+            this.cbxTipoPago.Name = "cbxTipoPago";
+            this.cbxTipoPago.Size = new System.Drawing.Size(121, 24);
+            this.cbxTipoPago.TabIndex = 3;
             // 
             // lblMensualidad
             // 
@@ -153,10 +159,11 @@
             this.btnSalvarMensualidad.Location = new System.Drawing.Point(665, 381);
             this.btnSalvarMensualidad.Name = "btnSalvarMensualidad";
             this.btnSalvarMensualidad.Size = new System.Drawing.Size(70, 70);
-            this.btnSalvarMensualidad.TabIndex = 40;
+            this.btnSalvarMensualidad.TabIndex = 8;
             this.btnSalvarMensualidad.Text = "Salvar";
             this.btnSalvarMensualidad.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvarMensualidad.UseVisualStyleBackColor = true;
+            this.btnSalvarMensualidad.Click += new System.EventHandler(this.btnSalvarMensualidad_Click);
             // 
             // lblNombreEstudiante
             // 
@@ -175,6 +182,7 @@
             this.dgvEst_Mensualidad.Name = "dgvEst_Mensualidad";
             this.dgvEst_Mensualidad.Size = new System.Drawing.Size(406, 135);
             this.dgvEst_Mensualidad.TabIndex = 33;
+            this.dgvEst_Mensualidad.DoubleClick += new System.EventHandler(this.dgvEst_Mensualidad_DoubleClick);
             // 
             // tbxBuscarEst_Mensualidad
             // 
@@ -182,7 +190,8 @@
             this.tbxBuscarEst_Mensualidad.Location = new System.Drawing.Point(59, 16);
             this.tbxBuscarEst_Mensualidad.Name = "tbxBuscarEst_Mensualidad";
             this.tbxBuscarEst_Mensualidad.Size = new System.Drawing.Size(217, 22);
-            this.tbxBuscarEst_Mensualidad.TabIndex = 32;
+            this.tbxBuscarEst_Mensualidad.TabIndex = 1;
+            this.tbxBuscarEst_Mensualidad.TextChanged += new System.EventHandler(this.tbxBuscarEst_Mensualidad_TextChanged);
             // 
             // label1
             // 
@@ -211,7 +220,7 @@
             this.cbxMes.Location = new System.Drawing.Point(55, 207);
             this.cbxMes.Name = "cbxMes";
             this.cbxMes.Size = new System.Drawing.Size(121, 24);
-            this.cbxMes.TabIndex = 55;
+            this.cbxMes.TabIndex = 2;
             // 
             // label7
             // 
@@ -223,15 +232,15 @@
             this.label7.TabIndex = 56;
             this.label7.Text = "Gran Total";
             // 
-            // lblTotalCal
+            // lblTotalCol
             // 
-            this.lblTotalCal.AutoSize = true;
-            this.lblTotalCal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCal.Location = new System.Drawing.Point(607, 276);
-            this.lblTotalCal.Name = "lblTotalCal";
-            this.lblTotalCal.Size = new System.Drawing.Size(63, 16);
-            this.lblTotalCal.TabIndex = 57;
-            this.lblTotalCal.Text = "colones";
+            this.lblTotalCol.AutoSize = true;
+            this.lblTotalCol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCol.Location = new System.Drawing.Point(607, 276);
+            this.lblTotalCol.Name = "lblTotalCol";
+            this.lblTotalCol.Size = new System.Drawing.Size(63, 16);
+            this.lblTotalCol.TabIndex = 57;
+            this.lblTotalCol.Text = "colones";
             // 
             // pictureBox1
             // 
@@ -249,16 +258,24 @@
             this.tbxMulta.Location = new System.Drawing.Point(55, 279);
             this.tbxMulta.Name = "tbxMulta";
             this.tbxMulta.Size = new System.Drawing.Size(127, 22);
-            this.tbxMulta.TabIndex = 59;
+            this.tbxMulta.TabIndex = 5;
+            this.tbxMulta.Text = "0";
+            this.tbxMulta.TextChanged += new System.EventHandler(this.tbxMulta_TextChanged);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
             // 
             // V_Mensualidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(797, 482);
             this.Controls.Add(this.tbxMulta);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblTotalCal);
+            this.Controls.Add(this.lblTotalCol);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbxMes);
             this.Controls.Add(this.lblMes);
@@ -266,11 +283,11 @@
             this.Controls.Add(this.tbxReferencia);
             this.Controls.Add(this.lblReferencia);
             this.Controls.Add(this.lblTipoEstudiante);
-            this.Controls.Add(this.pb_Est);
-            this.Controls.Add(this.tbComentario);
+            this.Controls.Add(this.pbxEstudiante);
+            this.Controls.Add(this.tbxComentario);
             this.Controls.Add(this.lblComentarios);
-            this.Controls.Add(this.tbMontoMens);
-            this.Controls.Add(this.cbTipoPago);
+            this.Controls.Add(this.tbxMontoMens);
+            this.Controls.Add(this.cbxTipoPago);
             this.Controls.Add(this.lblMensualidad);
             this.Controls.Add(this.lblTipoPago);
             this.Controls.Add(this.btnSalvarMensualidad);
@@ -282,9 +299,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pago Mensual";
             this.Load += new System.EventHandler(this.V_Mensualidad_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Est)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEstudiante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEst_Mensualidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,11 +313,11 @@
         private System.Windows.Forms.TextBox tbxReferencia;
         private System.Windows.Forms.Label lblReferencia;
         private System.Windows.Forms.Label lblTipoEstudiante;
-        private System.Windows.Forms.PictureBox pb_Est;
-        private System.Windows.Forms.TextBox tbComentario;
+        private System.Windows.Forms.PictureBox pbxEstudiante;
+        private System.Windows.Forms.TextBox tbxComentario;
         private System.Windows.Forms.Label lblComentarios;
-        private System.Windows.Forms.TextBox tbMontoMens;
-        private System.Windows.Forms.ComboBox cbTipoPago;
+        private System.Windows.Forms.TextBox tbxMontoMens;
+        private System.Windows.Forms.ComboBox cbxTipoPago;
         private System.Windows.Forms.Label lblMensualidad;
         private System.Windows.Forms.Label lblTipoPago;
         private System.Windows.Forms.Button btnSalvarMensualidad;
@@ -310,8 +328,9 @@
         private System.Windows.Forms.Label lblMes;
         private System.Windows.Forms.ComboBox cbxMes;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblTotalCal;
+        private System.Windows.Forms.Label lblTotalCol;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox tbxMulta;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

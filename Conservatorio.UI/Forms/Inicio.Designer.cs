@@ -41,6 +41,7 @@
             this.miMensualidad = new System.Windows.Forms.ToolStripMenuItem();
             this.miNotificaciones = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,12 +138,20 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miMantenimiento,
             this.miFacturacion,
-            this.miNotificaciones});
+            this.miNotificaciones,
+            this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1076, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
+            this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // Inicio
             // 
@@ -180,5 +189,6 @@
         private System.Windows.Forms.ToolStripMenuItem miMensualidad;
         private System.Windows.Forms.ToolStripMenuItem miNotificaciones;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
     }
 }

@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Clase.cs" />
     <Compile Include="Enums\DiasEnum.cs" />
+    <Compile Include="Enums\MesesEnum.cs" />
     <Compile Include="Enums\TipoEstudianteEnum.cs" />
     <Compile Include="Enums\TipoPagoEnum.cs" />
     <Compile Include="Helpers\DateTimeHelper.cs" />
