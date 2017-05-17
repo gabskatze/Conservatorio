@@ -183,9 +183,9 @@ namespace Conservatorio.UI.Forms
                     Comentario = tbxComentario.Text,
                     TipoPago = cbxTipoPago.SelectedValue.ToString(),
                     FechaPago = DateTime.Now,
-                    Monto = double.Parse(tbxMontoMens.Text),
+                    Monto = float.Parse(tbxMontoMens.Text),
                     Referencia = tbxReferencia.Text,
-                    Multa = double.Parse(tbxMulta.Text),
+                    Multa = float.Parse(tbxMulta.Text),
                     Mes = cbxMes.SelectedValue.ToString()                   
                 };
 

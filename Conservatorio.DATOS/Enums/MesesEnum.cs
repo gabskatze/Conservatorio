@@ -4,7 +4,7 @@ namespace Conservatorio.DATOS.Enums
 {
     public enum MesesEnum
     {
-        Enero,
+        //Enero,
         Febrero,
         Marzo,
         Abril,

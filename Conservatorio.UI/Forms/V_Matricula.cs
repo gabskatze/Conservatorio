@@ -345,7 +345,7 @@ namespace Conservatorio.UI.Forms
                     TipoPago = cbxTipoPago.SelectedValue.ToString(),
                     Año = int.Parse(tbxAno.Text),
                     FechaPago = DateTime.Now,
-                    Monto = double.Parse(tbxMonto.Text),
+                    Monto = float.Parse(tbxMonto.Text),
                     Referencia = tbxReferencia.Text
                 };
 

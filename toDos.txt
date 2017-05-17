@@ -5,7 +5,9 @@
 -Modulo Notificaciones 							
 -bugs con capturas de imagen (nombre del archivo y tamano)		JC
 -agregar form registroNota con 3 notas y que calcule la nota final
--arreglar campos monto y multa decimales	
+-arreglar campos monto y multa decimales
+-reportes: historial estudiante, clases profesor por periodo, clases profesor historial,
+cursos actuales por estudiante, aulas desocupadas por periodo, ingresos mensuales y por periodo	
 
 
 Tareas Realizadas:

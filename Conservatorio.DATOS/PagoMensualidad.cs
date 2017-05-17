@@ -5,8 +5,8 @@ namespace Conservatorio.DATOS
     public class PagoMensualidad
     {
         public virtual int IdPagoMensualidad { get; set; }
-        public virtual double Monto { get; set; }
-        public virtual double Multa { get; set; }
+        public virtual float Monto { get; set; }
+        public virtual float Multa { get; set; }
         public virtual DateTime FechaPago { get; set; }
         public virtual String Mes { get; set; }
         public virtual Estudiante Estudiante { get; set; }
