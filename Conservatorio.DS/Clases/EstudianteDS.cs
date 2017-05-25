@@ -58,5 +58,18 @@ namespace Conservatorio.DS.Clases
         {
             throw new NotImplementedException();
         }
+
+        public ContadorEstudiantes ObtenerContadorEstudiantes()
+        {
+            using (var conn = Conexion.EstablecerConexion())
+            {
+                var estudiantes = conn.Query<Estudiante>();
+                return new ContadorEstudiantes
+                {
+                    Activos = estudiantes.Count(x => x.Estado),
+                    Inactivos = estudiantes.Count(x => !x.Estado)
+                };
+            }
+        }
     }
 }

@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clase.cs" />
+    <Compile Include="ContadorEstudiantes.cs" />
     <Compile Include="Enums\DiasEnum.cs" />
     <Compile Include="Enums\MesesEnum.cs" />
     <Compile Include="Enums\TipoEstudianteEnum.cs" />

@@ -10,5 +10,6 @@ namespace Conservatorio.BL.Interfaces
         void EliminarEstudiante(Estudiante estudiante);
         List<Estudiante> ObtenerEstudiantes(string keyword, bool incluirInactivos = true);
         List<Estudiante> ObtenerEstudiantes();
+        ContadorEstudiantes ObtenerContadorEstudiantes();
     }
 }

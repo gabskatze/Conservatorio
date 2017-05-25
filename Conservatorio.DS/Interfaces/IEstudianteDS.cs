@@ -13,5 +13,6 @@ namespace Conservatorio.DS.Interfaces
         Estudiante ObtenerEstudiante(int idEstudiante);
         List<Estudiante> ObtenerEstudiantes(Expression<Func<Estudiante, bool>> exp);
         List<Estudiante> ObtenerEstudiantes();
+        ContadorEstudiantes ObtenerContadorEstudiantes();
     }
 }

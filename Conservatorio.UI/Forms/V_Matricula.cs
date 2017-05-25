@@ -47,12 +47,12 @@ namespace Conservatorio.UI.Forms
                 new Validador
                 {
                     Control = tbxAno,
-                    MetodoValidacion = (out string errorMsg) => !tbxAno.ValidarRequerido(out errorMsg) && tbxAno.ValidarEntero(out errorMsg)
+                    MetodoValidacion = (out string errorMsg) => !tbxAno.ValidarRequerido(out errorMsg) || !tbxAno.ValidarEntero(out errorMsg)
                 },
                 new Validador
                 {
                     Control = tbxMonto,
-                    MetodoValidacion = (out string errorMsg) => !tbxMonto.ValidarEntero(out errorMsg) && !tbxMonto.ValidarRequerido(out errorMsg)
+                    MetodoValidacion = (out string errorMsg) => !tbxMonto.ValidarRequerido(out errorMsg) || !tbxMonto.ValidarEntero(out errorMsg)
                 },
                 new Validador
                 {
@@ -358,7 +358,7 @@ namespace Conservatorio.UI.Forms
                 //salvar en PagoMatricula
                 pagoMatriculaBL.CrearPagoMatricula(pagoMatricula);
 
-                
+                this.MostrarMensaje("Estudiante matriculado con éxito!");
                 Close();
             }
             catch (Exception ex)

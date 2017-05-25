@@ -8,6 +8,7 @@ namespace Conservatorio.UI.Helpers
     {
         private const string MensajeError = "Ocurrió un error en la aplicación: {0}";
         private const string TituloVentanaError = "Error";
+        private const string TituloVentanaMensaje = "Atención!";
 
         private const string MensajeValidacion = "Error de validación: \n{0}";
 
@@ -22,6 +23,11 @@ namespace Conservatorio.UI.Helpers
             {
                 MessageBox.Show(string.Format(MensajeError, ex.Message), TituloVentanaError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public static void MostrarMensaje(this Form form, string mensaje)
+        {
+            MessageBox.Show(mensaje, TituloVentanaMensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

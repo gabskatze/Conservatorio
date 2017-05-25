@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.DS.Clases;
@@ -37,6 +38,11 @@ namespace Conservatorio.BL.Clases
         public void ModificarEstudiante(Estudiante estudiante)
         {
             _estudianteDs.ModificarEstudiante(estudiante);
+        }
+
+        public ContadorEstudiantes ObtenerContadorEstudiantes()
+        {
+            return _estudianteDs.ObtenerContadorEstudiantes();
         }
     }
 }

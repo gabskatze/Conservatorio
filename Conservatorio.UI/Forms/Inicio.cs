@@ -71,9 +71,15 @@ namespace Conservatorio.UI.Forms
             ActivateForm<V_Mensualidad>();
         }
 
-        private void miNotificaciones_Click(object sender, EventArgs e)
+
+        private void estudiantesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ActivateForm<V_Notificaciones>();
+            ActivateForm<V_HistorialEstudiantes>();
+        }
+
+        private void IngresosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActivateForm<V_Ingresos>();
         }
     }
 }

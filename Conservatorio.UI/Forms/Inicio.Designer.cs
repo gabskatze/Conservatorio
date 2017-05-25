@@ -39,9 +39,10 @@
             this.miFacturacion = new System.Windows.Forms.ToolStripMenuItem();
             this.miMatricula = new System.Windows.Forms.ToolStripMenuItem();
             this.miMensualidad = new System.Windows.Forms.ToolStripMenuItem();
-            this.miNotificaciones = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.IngresosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,20 +126,11 @@
             this.miMensualidad.Text = "Mensualidad";
             this.miMensualidad.Click += new System.EventHandler(this.miMensualidad_Click);
             // 
-            // miNotificaciones
-            // 
-            this.miNotificaciones.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.miNotificaciones.Name = "miNotificaciones";
-            this.miNotificaciones.Size = new System.Drawing.Size(105, 23);
-            this.miNotificaciones.Text = "Notificaciones";
-            this.miNotificaciones.Click += new System.EventHandler(this.miNotificaciones_Click);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miMantenimiento,
             this.miFacturacion,
-            this.miNotificaciones,
             this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -148,10 +140,27 @@
             // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.estudiantesToolStripMenuItem,
+            this.IngresosToolStripMenuItem});
             this.reportesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
             this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // estudiantesToolStripMenuItem
+            // 
+            this.estudiantesToolStripMenuItem.Name = "estudiantesToolStripMenuItem";
+            this.estudiantesToolStripMenuItem.Size = new System.Drawing.Size(202, 24);
+            this.estudiantesToolStripMenuItem.Text = "Historial Estudiantes";
+            this.estudiantesToolStripMenuItem.Click += new System.EventHandler(this.estudiantesToolStripMenuItem_Click);
+            // 
+            // IngresosToolStripMenuItem
+            // 
+            this.IngresosToolStripMenuItem.Name = "IngresosToolStripMenuItem";
+            this.IngresosToolStripMenuItem.Size = new System.Drawing.Size(202, 24);
+            this.IngresosToolStripMenuItem.Text = "Ingresos";
+            this.IngresosToolStripMenuItem.Click += new System.EventHandler(this.IngresosToolStripMenuItem_Click);
             // 
             // Inicio
             // 
@@ -187,8 +196,9 @@
         private System.Windows.Forms.ToolStripMenuItem miFacturacion;
         private System.Windows.Forms.ToolStripMenuItem miMatricula;
         private System.Windows.Forms.ToolStripMenuItem miMensualidad;
-        private System.Windows.Forms.ToolStripMenuItem miNotificaciones;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estudiantesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem IngresosToolStripMenuItem;
     }
 }

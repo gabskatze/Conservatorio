@@ -5,6 +5,7 @@ using Conservatorio.DS.Clases;
 using Conservatorio.DS.Interfaces;
 using System.Linq;
 using Conservatorio.DATOS.Helpers;
+using System;
 
 namespace Conservatorio.BL.Clases
 {
@@ -98,5 +99,9 @@ namespace Conservatorio.BL.Clases
             return _claseDs.ObtenerClases(x => x.Periodo == periodo && x.Ano == ano);
         }
 
+        public List<Clase> ObtenerClases(int periodo, int ano, string keyword)
+        {
+            return _claseDs.ObtenerClases(x => x.Periodo == periodo && x.Ano == ano && (x.Profesor.Nombre.Contains(keyword) || x.Curso.NombreCurso.Contains(keyword) || x.Dia.Contains(keyword)));
+        }
     }
 }
