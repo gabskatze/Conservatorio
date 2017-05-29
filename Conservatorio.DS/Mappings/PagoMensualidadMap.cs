@@ -15,6 +15,7 @@ namespace Conservatorio.DS.Mappings
             Map(x => x.Referencia);
             Map(x => x.Comentario);
             Map(x => x.TipoPago).Not.Nullable();
+            Map(x => x.Ano).Not.Nullable();
             References(x => x.Estudiante).Column("IdEstudiante");
 
 

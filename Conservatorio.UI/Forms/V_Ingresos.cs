@@ -16,5 +16,10 @@ namespace Conservatorio.UI.Forms
         {
             InitializeComponent();
         }
+
+        private void V_Ingresos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

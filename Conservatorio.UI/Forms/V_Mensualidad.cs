@@ -41,6 +41,8 @@ namespace Conservatorio.UI.Forms
                 CargarTipoPagos();
                 CargarMeses();
 
+                tbxAno.Text = DateTime.Now.Year.ToString();
+
             }
             catch (Exception ex)
             {
@@ -186,7 +188,8 @@ namespace Conservatorio.UI.Forms
                     Monto = float.Parse(tbxMontoMens.Text),
                     Referencia = tbxReferencia.Text,
                     Multa = float.Parse(tbxMulta.Text),
-                    Mes = cbxMes.SelectedValue.ToString()                   
+                    Mes = cbxMes.SelectedValue.ToString(),
+                    Ano = int.Parse(tbxAno.Text)                  
                 };
 
                 pagoMensualidadBL.CrearPagoMensualidad(pagoMensualidad);

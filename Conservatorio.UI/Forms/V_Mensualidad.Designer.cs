@@ -52,6 +52,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbxMulta = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tbxAno = new System.Windows.Forms.TextBox();
+            this.lblAno = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEstudiante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEst_Mensualidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -117,7 +119,7 @@
             // tbxMontoMens
             // 
             this.tbxMontoMens.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxMontoMens.Location = new System.Drawing.Point(344, 273);
+            this.tbxMontoMens.Location = new System.Drawing.Point(344, 288);
             this.tbxMontoMens.Name = "tbxMontoMens";
             this.tbxMontoMens.Size = new System.Drawing.Size(121, 22);
             this.tbxMontoMens.TabIndex = 6;
@@ -137,7 +139,7 @@
             // 
             this.lblMensualidad.AutoSize = true;
             this.lblMensualidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensualidad.Location = new System.Drawing.Point(251, 279);
+            this.lblMensualidad.Location = new System.Drawing.Point(251, 294);
             this.lblMensualidad.Name = "lblMensualidad";
             this.lblMensualidad.Size = new System.Drawing.Size(86, 16);
             this.lblMensualidad.TabIndex = 44;
@@ -197,7 +199,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 285);
+            this.label1.Location = new System.Drawing.Point(14, 300);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 52;
@@ -226,7 +228,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(497, 276);
+            this.label7.Location = new System.Drawing.Point(497, 291);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 16);
             this.label7.TabIndex = 56;
@@ -236,7 +238,7 @@
             // 
             this.lblTotalCol.AutoSize = true;
             this.lblTotalCol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCol.Location = new System.Drawing.Point(607, 276);
+            this.lblTotalCol.Location = new System.Drawing.Point(607, 291);
             this.lblTotalCol.Name = "lblTotalCol";
             this.lblTotalCol.Size = new System.Drawing.Size(63, 16);
             this.lblTotalCol.TabIndex = 57;
@@ -255,7 +257,7 @@
             // tbxMulta
             // 
             this.tbxMulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxMulta.Location = new System.Drawing.Point(55, 279);
+            this.tbxMulta.Location = new System.Drawing.Point(55, 294);
             this.tbxMulta.Name = "tbxMulta";
             this.tbxMulta.Size = new System.Drawing.Size(127, 22);
             this.tbxMulta.TabIndex = 5;
@@ -267,12 +269,33 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // tbxAno
+            // 
+            this.tbxAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxAno.Location = new System.Drawing.Point(56, 248);
+            this.tbxAno.Name = "tbxAno";
+            this.tbxAno.Size = new System.Drawing.Size(55, 22);
+            this.tbxAno.TabIndex = 59;
+            this.tbxAno.Text = "0";
+            // 
+            // lblAno
+            // 
+            this.lblAno.AutoSize = true;
+            this.lblAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAno.Location = new System.Drawing.Point(15, 254);
+            this.lblAno.Name = "lblAno";
+            this.lblAno.Size = new System.Drawing.Size(32, 16);
+            this.lblAno.TabIndex = 60;
+            this.lblAno.Text = "Año";
+            // 
             // V_Mensualidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(797, 482);
+            this.Controls.Add(this.tbxAno);
+            this.Controls.Add(this.lblAno);
             this.Controls.Add(this.tbxMulta);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTotalCol);
@@ -332,5 +355,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox tbxMulta;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.TextBox tbxAno;
+        private System.Windows.Forms.Label lblAno;
     }
 }

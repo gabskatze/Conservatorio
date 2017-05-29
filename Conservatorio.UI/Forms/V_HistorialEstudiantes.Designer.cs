@@ -157,6 +157,7 @@
             this.btnSalvarNota.Text = "Generar Reporte";
             this.btnSalvarNota.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvarNota.UseVisualStyleBackColor = true;
+            this.btnSalvarNota.Click += new System.EventHandler(this.btnSalvarNota_Click);
             // 
             // lblTotales
             // 

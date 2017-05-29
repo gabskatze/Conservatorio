@@ -1,5 +1,3 @@
-HISTORIAL ESTUDIANTES
-
 select p.Nombre, e.Tipo, cr.NombreCurso, rn.Nota, cr.Nivel, c.Periodo, c.Ano,   p.Estado
 from Estudiante e
 inner join Persona p 
@@ -12,7 +10,11 @@ inner join Curso cr
 on cr.IdCurso = c.IdCurso
 where e.IdEstudiante = 8;
 
-REPORTE INGRESOS
+select total = (select count(*) from Estudiante),
+		activos = (select count(*) from Estudiante e inner join Persona p on p.IdPersona = e.IdEstudiante where p.Estado = 1),
+		inactivos = (select count(*) from Estudiante e inner join Persona p on p.IdPersona = e.IdEstudiante where p.Estado = 0)
+;
+
 
 select p.IdPersona, p.Nombre, mat.matricula, men.mensualidad, men.multa
 from Estudiante e

@@ -84,5 +84,27 @@ namespace Conservatorio.UI.Forms
             lblTotal.Text = contadorEstudiantes.Totales.ToString();
         }
 
+        private Estudiante ObtenerEstudianteSeleccionado()
+        {
+            if (dgvEstudiantes.SelectedRows.Count == 0)
+            {
+                return null;
+            }
+
+            var selectedIndex = dgvEstudiantes.SelectedRows[0].Index;
+            return listaEstudiantes[selectedIndex];
+        }
+
+        private void btnSalvarNota_Click(object sender, EventArgs e)
+        {
+            var estudiante = ObtenerEstudianteSeleccionado();
+            if (estudiante == null)
+            {
+                return;
+            }
+
+            var vReporte = new V_ReporteEstudiantes(estudiante.IdPersona);
+            vReporte.Show();
+        }
     }
 }
