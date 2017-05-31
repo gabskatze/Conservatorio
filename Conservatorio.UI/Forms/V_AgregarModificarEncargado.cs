@@ -140,13 +140,7 @@ namespace Conservatorio.UI.Forms
                 Encargado.Telefono3 = tbxTelefono3.Text == "" ? (int?)null : int.Parse(tbxTelefono3.Text);
 
                 vAgregarModificarEstudiante.Encargado = Encargado;
-
-                // Guardar la imagen
-                var foto = pbxFoto.Image;
-                if (foto != null)
-                {
-                    foto.Save(ConfigurationManager.AppSettings["imagesFolder"] + Encargado.Imagen, ImageFormat.Png);
-                }
+                vAgregarModificarEstudiante.FotoEncargado = pbxFoto.Image;
 
                 Close();
             }

@@ -22,6 +22,8 @@ namespace Conservatorio.UI.Forms
         private readonly V_Estudiantes vEstudiantes;
 
         public Encargado Encargado { get; set; }
+        public Image FotoEncargado { get; set; }
+
         private Estudiante estudiante;
         
         private Capture _capture;
@@ -196,11 +198,6 @@ namespace Conservatorio.UI.Forms
                     estudiante = new Estudiante();
                 }
 
-                if (string.IsNullOrEmpty(estudiante.Imagen))
-                {
-                    estudiante.Imagen = Guid.NewGuid() + ".png";
-                }
-
                 estudiante.Nombre = tbxNombre.Text;
                 estudiante.Cedula = tbxCedula.Text == "" ? (int?)null : int.Parse(tbxCedula.Text);
                 estudiante.Direccion = tbxDireccion.Text;
@@ -215,6 +212,17 @@ namespace Conservatorio.UI.Forms
                 estudiante.Estado = rbtnActivo.Checked;
                 estudiante.Encargado = Encargado;
 
+                //Se crea un nuevo nombre para las imagenes solo si no existen
+                var foto = pbxFoto.Image;
+                if (foto != null && string.IsNullOrEmpty(estudiante.Imagen))
+                {
+                    estudiante.Imagen = Guid.NewGuid() + ".png";
+                }
+                if (Encargado != null && FotoEncargado != null && string.IsNullOrEmpty(Encargado.Imagen))
+                {
+                    Encargado.Imagen = Guid.NewGuid() + ".png";
+                }
+
                 if (estudiante.IdPersona == 0)
                 {
                     estudiantesBL.CrearEstudiante(estudiante);
@@ -224,11 +232,14 @@ namespace Conservatorio.UI.Forms
                     estudiantesBL.ModificarEstudiante(estudiante);
                 }
 
-                // Guardar la imagen
-                var foto = pbxFoto.Image;
+                // Guardar las imagenes
                 if (foto != null)
                 {
                     foto.Save(ConfigurationManager.AppSettings["imagesFolder"] + estudiante.Imagen, ImageFormat.Png);
+                }
+                if (Encargado != null && FotoEncargado != null)
+                {
+                    FotoEncargado.Save(ConfigurationManager.AppSettings["imagesFolder"] + Encargado.Imagen, ImageFormat.Png);
                 }
 
                 Close();

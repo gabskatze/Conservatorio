@@ -174,11 +174,6 @@ namespace Conservatorio.UI.Forms
                     profesor = new Profesor();
                 }
 
-                if (string.IsNullOrEmpty(profesor.Imagen))
-                {
-                    profesor.Imagen = Guid.NewGuid() + ".png";
-                }
-
                 profesor.Cedula = int.Parse(tbxCedula.Text);
                 profesor.Direccion = tbxDireccion.Text;
                 profesor.Email = tbxEmail.Text;
@@ -191,6 +186,13 @@ namespace Conservatorio.UI.Forms
                 profesor.Instrumentos = clbInstrumentos.CheckedItems.Cast<Instrumento>().ToList();
                 profesor.Estado = rbtnActivo.Checked;
 
+                //Se crea un nuevo nombre para la imagen solo si no existe
+                var foto = pbxFoto.Image;
+                if (foto != null && string.IsNullOrEmpty(profesor.Imagen))
+                {
+                    profesor.Imagen = Guid.NewGuid() + ".png";
+                }
+
                 if (profesor.IdPersona == 0)
                 {
                     profesorBL.CrearProfesor(profesor);
@@ -201,7 +203,6 @@ namespace Conservatorio.UI.Forms
                 }
 
                 // Guardar la imagen
-                var foto = pbxFoto.Image;
                 if (foto != null)
                 {
                     foto.Save(ConfigurationManager.AppSettings["imagesFolder"] + profesor.Imagen, ImageFormat.Png);
