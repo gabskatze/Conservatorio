@@ -1432,7 +1432,7 @@ namespace Conservatorio.UI.Reportes.ReportesDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Conservatorio.UI.Properties.Settings.Default.ReportesConnectionString;
+            this._connection.ConnectionString = global::Conservatorio.UI.Properties.Settings.Default.ConservatorioConnString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1617,7 +1617,7 @@ namespace Conservatorio.UI.Reportes.ReportesDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Conservatorio.UI.Properties.Settings.Default.ReportesConnectionString;
+            this._connection.ConnectionString = global::Conservatorio.UI.Properties.Settings.Default.ConservatorioConnString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

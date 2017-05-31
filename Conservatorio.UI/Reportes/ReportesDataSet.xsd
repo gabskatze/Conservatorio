@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ReportesConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ReportesConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Conservatorio.UI.Properties.Settings.GlobalReference.Default.ReportesConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConservatorioConnString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConservatorioConnString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Conservatorio.UI.Properties.Settings.GlobalReference.Default.ConservatorioConnString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ObtenerReporteEstudianteTableAdapter" GeneratorDataComponentClassName="ObtenerReporteEstudianteTableAdapter" Name="ObtenerReporteEstudiante" UserDataComponentName="ObtenerReporteEstudianteTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ReportesConnectionString (Settings)" DbObjectName="ConservatorioNHibernate.dbo.ObtenerReporteEstudiante" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConservatorioConnString (Settings)" DbObjectName="ConservatorioNHibernate.dbo.ObtenerReporteEstudiante" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.ObtenerReporteEstudiante</CommandText>
@@ -35,7 +35,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ObtenerReporteIngresosTableAdapter" GeneratorDataComponentClassName="ObtenerReporteIngresosTableAdapter" Name="ObtenerReporteIngresos" UserDataComponentName="ObtenerReporteIngresosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ReportesConnectionString (Settings)" DbObjectName="ConservatorioNHibernate.dbo.ObtenerReporteIngresos" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConservatorioConnString (Settings)" DbObjectName="ConservatorioNHibernate.dbo.ObtenerReporteIngresos" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.ObtenerReporteIngresos</CommandText>

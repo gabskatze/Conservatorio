@@ -26,11 +26,11 @@ namespace Conservatorio.UI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JRUDIN-LAPTOP;Initial Catalog=ConservatorioNHibernate;Persist Securit" +
-            "y Info=True;User ID=sa;Password=.")]
-        public string ReportesConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=ConservatorioNHibernate;Persist Security Info" +
+            "=True;User ID=sa;Password=.")]
+        public string ConservatorioConnString {
             get {
-                return ((string)(this["ReportesConnectionString"]));
+                return ((string)(this["ConservatorioConnString"]));
             }
         }
     }

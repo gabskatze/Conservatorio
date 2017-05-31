@@ -20,7 +20,7 @@ namespace Conservatorio.DS
         {
             get
             {
-                return System.Configuration.ConfigurationManager.ConnectionStrings["Conservatorio"].ConnectionString;
+                return System.Configuration.ConfigurationManager.ConnectionStrings["Conservatorio.UI.Properties.Settings.ConservatorioConnString"].ConnectionString;
             }
         }
 
