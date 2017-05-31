@@ -242,6 +242,7 @@
             this.Name = "V_AgregarModificarEncargado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Encargado";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.V_AgregarModificarEncargado_FormClosing);
             this.Load += new System.EventHandler(this.V_AgregarModificarEncargado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).EndInit();

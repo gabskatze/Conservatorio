@@ -1,12 +1,10 @@
 -Agregar talleres y cursos elementales no modificar			GABY
 -Arreglar TabIndex en todos los modulos					GABY
 -agregar AutoMapper							JC
--**metodos obtenerestudiante, capture sin trycatch	
--bugs con capturas de imagen (nombre del archivo y tamano)		JC
+-**metodos obtenerestudiante	
 -bug modulo agregar clase 9-10am
 -calcular multas modulo mensualidad
 -validacion para boton eliminar en cursos ya matriculados y modulo clases
-
 -reportes`: 
 	historial estudiante*
 	ingresos*	
@@ -17,4 +15,5 @@
 
 
 
-
+DONE:
+-bugs con capturas de imagen (nombre del archivo y tamano)		JC

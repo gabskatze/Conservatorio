@@ -256,6 +256,23 @@ namespace Conservatorio.UI.Forms
             }
         }
 
+        private void V_AgregarModificarProfesor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                if (CaptureInProgress)
+                {
+                    Application.Idle -= ProcessFrame;
+                    CameraCapture.Dispose();
+                    CameraCapture = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                this.MostrarError(ex);
+            }
+        }
+
         #endregion
     }
 }

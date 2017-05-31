@@ -115,43 +115,6 @@ namespace Conservatorio.UI.Forms
             }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!ValidateChildren())
-                {
-                    return;
-                }
-
-                if (Encargado == null)
-                {
-                    Encargado = new Encargado
-                    {
-                        Estado = true
-                    };
-                }
-
-                Encargado.Nombre = tbxNombre.Text;
-                Encargado.Parentesco = tbxParentesco.Text;
-                Encargado.Email = tbxEmail.Text;
-                Encargado.Telefono1 = int.Parse(tbxTelefono1.Text);
-                Encargado.Telefono2 = tbxTelefono2.Text == "" ? (int?)null : int.Parse(tbxTelefono2.Text);
-                Encargado.Telefono3 = tbxTelefono3.Text == "" ? (int?)null : int.Parse(tbxTelefono3.Text);
-
-                vAgregarModificarEstudiante.Encargado = Encargado;
-                vAgregarModificarEstudiante.FotoEncargado = pbxFoto.Image;
-
-                Close();
-            }
-            catch (Exception ex)
-            {
-                this.MostrarError(ex);
-            }
-        }
-
-        #endregion
-
         private void btnSeleccionarImagen_Click(object sender, EventArgs e)
         {
             try
@@ -190,5 +153,60 @@ namespace Conservatorio.UI.Forms
                 this.MostrarError(ex);
             }
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!ValidateChildren())
+                {
+                    return;
+                }
+
+                if (Encargado == null)
+                {
+                    Encargado = new Encargado
+                    {
+                        Estado = true
+                    };
+                }
+
+                Encargado.Nombre = tbxNombre.Text;
+                Encargado.Parentesco = tbxParentesco.Text;
+                Encargado.Email = tbxEmail.Text;
+                Encargado.Telefono1 = int.Parse(tbxTelefono1.Text);
+                Encargado.Telefono2 = tbxTelefono2.Text == "" ? (int?)null : int.Parse(tbxTelefono2.Text);
+                Encargado.Telefono3 = tbxTelefono3.Text == "" ? (int?)null : int.Parse(tbxTelefono3.Text);
+
+                vAgregarModificarEstudiante.Encargado = Encargado;
+                vAgregarModificarEstudiante.FotoEncargado = pbxFoto.Image;
+
+                Close();
+            }
+            catch (Exception ex)
+            {
+                this.MostrarError(ex);
+            }
+        }
+
+        private void V_AgregarModificarEncargado_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                if (CaptureInProgress)
+                {
+                    Application.Idle -= ProcessFrame;
+                    CameraCapture.Dispose();
+                    CameraCapture = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                this.MostrarError(ex);
+            }
+        }
+
+        #endregion
+
     }
 }

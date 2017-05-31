@@ -410,6 +410,7 @@
             this.Name = "V_AgregarModificarEstudiante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Estudiante";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.V_AgregarModificarEstudiante_FormClosing);
             this.Load += new System.EventHandler(this.V_AgregarModificarEstudiante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).EndInit();

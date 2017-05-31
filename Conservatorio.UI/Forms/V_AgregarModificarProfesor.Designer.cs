@@ -377,6 +377,7 @@ namespace Conservatorio.UI.Forms
             this.Name = "V_AgregarModificarProfesor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Profesor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.V_AgregarModificarProfesor_FormClosing);
             this.Load += new System.EventHandler(this.V_AgregarProfesor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).EndInit();
