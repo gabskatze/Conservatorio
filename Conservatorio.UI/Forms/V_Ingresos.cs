@@ -77,10 +77,9 @@ namespace Conservatorio.UI.Forms
             var ano = int.Parse(tbxAno.Text);
             var periodo = rbtnPeriodo.Checked ? (int?)cbxPeriodo.SelectedItem : null;
             var mes = rbtnMes.Checked ? cbxMes.SelectedValue.ToString() : null;
-            //var vIngresos = new V_ReporteIngreso(ano, periodo, mes);
-            //vIngresos.Show();
+
+            var vIngresos = new V_ReporteIngresos(ano, periodo, mes);
+            vIngresos.Show();
         }
-
-
     }
 }

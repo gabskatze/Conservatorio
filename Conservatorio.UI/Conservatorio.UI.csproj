@@ -48,6 +48,8 @@
       <HintPath>..\packages\EmguCV.3.1.0.1\lib\net30\Emgu.CV.World.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenTK.1.1.2225.0\lib\net20\OpenTK.dll</HintPath>
       <Private>True</Private>
@@ -59,6 +61,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -92,6 +95,18 @@
     </Compile>
     <Compile Include="Forms\V_RegistroNota.Designer.cs">
       <DependentUpon>V_RegistroNota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\V_ReporteEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\V_ReporteEstudiante.Designer.cs">
+      <DependentUpon>V_ReporteEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\V_ReporteIngresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\V_ReporteIngresos.Designer.cs">
+      <DependentUpon>V_ReporteIngresos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormValidation\ControlExtensions.cs" />
     <Compile Include="FormModels\ClaseModel.cs" />
@@ -194,6 +209,14 @@
       <DependentUpon>V_AgregarModificarEncargado.cs</DependentUpon>
     </Compile>
     <Compile Include="FormValidation\Validador.cs" />
+    <Compile Include="Reportes\ReportesDataSet.cs">
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +265,12 @@
     <EmbeddedResource Include="Forms\V_RegistroNota.resx">
       <DependentUpon>V_RegistroNota.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\V_ReporteEstudiante.resx">
+      <DependentUpon>V_ReporteEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\V_ReporteIngresos.resx">
+      <DependentUpon>V_ReporteIngresos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -257,6 +286,8 @@
     <EmbeddedResource Include="Forms\V_AgregarModificarEncargado.resx">
       <DependentUpon>V_AgregarModificarEncargado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteEstudiante.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteIngresos.rdlc" />
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -268,6 +299,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\ReportesDataSet.xsc">
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportesDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportesDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ReportesDataSet.xss">
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
