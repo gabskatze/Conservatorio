@@ -361,7 +361,7 @@
             this.pbxFoto.Location = new System.Drawing.Point(501, 175);
             this.pbxFoto.Name = "pbxFoto";
             this.pbxFoto.Size = new System.Drawing.Size(145, 145);
-            this.pbxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxFoto.TabIndex = 74;
             this.pbxFoto.TabStop = false;
             // 

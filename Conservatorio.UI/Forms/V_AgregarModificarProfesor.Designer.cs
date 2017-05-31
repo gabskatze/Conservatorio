@@ -287,7 +287,7 @@ namespace Conservatorio.UI.Forms
             this.pbxFoto.Location = new System.Drawing.Point(501, 234);
             this.pbxFoto.Name = "pbxFoto";
             this.pbxFoto.Size = new System.Drawing.Size(145, 145);
-            this.pbxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxFoto.TabIndex = 65;
             this.pbxFoto.TabStop = false;
             // 

@@ -11,6 +11,7 @@ using Conservatorio.DATOS;
 using Conservatorio.UI.FormValidation;
 using Conservatorio.UI.Helpers;
 using Emgu.CV;
+using Emgu.CV.CvEnum;
 
 namespace Conservatorio.UI.Forms
 {
@@ -26,7 +27,13 @@ namespace Conservatorio.UI.Forms
         {
             get
             {
-                return _capture ?? (_capture = new Capture());
+                if (_capture == null)
+                {
+                    _capture = new Capture();
+                    _capture.SetCaptureProperty(CapProp.FrameHeight, 145);
+                    _capture.SetCaptureProperty(CapProp.FrameWidth, 145);
+                }
+                return _capture;
             }
             set { _capture = value; }
         } 
@@ -99,6 +106,7 @@ namespace Conservatorio.UI.Forms
         private void ProcessFrame(object sender, EventArgs arg)
         {
             var image = CameraCapture.QueryFrame().Bitmap;
+            image.RotateFlip(RotateFlipType.RotateNoneFlipX);
             pbxFoto.Image = image;
         }
 
