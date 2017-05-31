@@ -37,10 +37,10 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTotales = new System.Windows.Forms.Label();
             this.lblInactivo = new System.Windows.Forms.Label();
             this.lblActivo = new System.Windows.Forms.Label();
             this.btnSalvarNota = new System.Windows.Forms.Button();
-            this.lblTotales = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).BeginInit();
             this.panel1.SuspendLayout();
@@ -127,6 +127,16 @@
             this.panel1.Size = new System.Drawing.Size(209, 122);
             this.panel1.TabIndex = 70;
             // 
+            // lblTotales
+            // 
+            this.lblTotales.AutoSize = true;
+            this.lblTotales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotales.Location = new System.Drawing.Point(3, 87);
+            this.lblTotales.Name = "lblTotales";
+            this.lblTotales.Size = new System.Drawing.Size(48, 16);
+            this.lblTotales.TabIndex = 72;
+            this.lblTotales.Text = "Total:";
+            // 
             // lblInactivo
             // 
             this.lblInactivo.AutoSize = true;
@@ -158,16 +168,6 @@
             this.btnSalvarNota.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvarNota.UseVisualStyleBackColor = true;
             this.btnSalvarNota.Click += new System.EventHandler(this.btnSalvarNota_Click);
-            // 
-            // lblTotales
-            // 
-            this.lblTotales.AutoSize = true;
-            this.lblTotales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotales.Location = new System.Drawing.Point(3, 87);
-            this.lblTotales.Name = "lblTotales";
-            this.lblTotales.Size = new System.Drawing.Size(48, 16);
-            this.lblTotales.TabIndex = 72;
-            this.lblTotales.Text = "Total:";
             // 
             // V_HistorialEstudiantes
             // 

@@ -34,14 +34,18 @@
             this.cbxMes = new System.Windows.Forms.ComboBox();
             this.lblMes = new System.Windows.Forms.Label();
             this.cbxPeriodo = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSalvarNota = new System.Windows.Forms.Button();
+            this.lblPeriodo = new System.Windows.Forms.Label();
+            this.btnGenerarReporte = new System.Windows.Forms.Button();
+            this.rbtnMes = new System.Windows.Forms.RadioButton();
+            this.rbtnPeriodo = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbxAno
             // 
             this.tbxAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAno.Location = new System.Drawing.Point(299, 49);
+            this.tbxAno.Location = new System.Drawing.Point(90, 100);
             this.tbxAno.Name = "tbxAno";
             this.tbxAno.Size = new System.Drawing.Size(55, 22);
             this.tbxAno.TabIndex = 63;
@@ -51,7 +55,7 @@
             // 
             this.lblAno.AutoSize = true;
             this.lblAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAno.Location = new System.Drawing.Point(242, 55);
+            this.lblAno.Location = new System.Drawing.Point(22, 106);
             this.lblAno.Name = "lblAno";
             this.lblAno.Size = new System.Drawing.Size(32, 16);
             this.lblAno.TabIndex = 64;
@@ -61,7 +65,7 @@
             // 
             this.cbxMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMes.FormattingEnabled = true;
-            this.cbxMes.Location = new System.Drawing.Point(64, 47);
+            this.cbxMes.Location = new System.Drawing.Point(90, 142);
             this.cbxMes.Name = "cbxMes";
             this.cbxMes.Size = new System.Drawing.Size(121, 24);
             this.cbxMes.TabIndex = 61;
@@ -70,7 +74,7 @@
             // 
             this.lblMes.AutoSize = true;
             this.lblMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMes.Location = new System.Drawing.Point(24, 55);
+            this.lblMes.Location = new System.Drawing.Point(22, 150);
             this.lblMes.Name = "lblMes";
             this.lblMes.Size = new System.Drawing.Size(34, 16);
             this.lblMes.TabIndex = 62;
@@ -80,39 +84,77 @@
             // 
             this.cbxPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPeriodo.FormattingEnabled = true;
-            this.cbxPeriodo.Location = new System.Drawing.Point(494, 47);
+            this.cbxPeriodo.Location = new System.Drawing.Point(90, 180);
             this.cbxPeriodo.Name = "cbxPeriodo";
             this.cbxPeriodo.Size = new System.Drawing.Size(72, 24);
             this.cbxPeriodo.TabIndex = 66;
+            this.cbxPeriodo.Visible = false;
             // 
-            // label1
+            // lblPeriodo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(419, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
-            this.label1.TabIndex = 67;
-            this.label1.Text = "Periodo";
+            this.lblPeriodo.AutoSize = true;
+            this.lblPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeriodo.Location = new System.Drawing.Point(22, 188);
+            this.lblPeriodo.Name = "lblPeriodo";
+            this.lblPeriodo.Size = new System.Drawing.Size(56, 16);
+            this.lblPeriodo.TabIndex = 67;
+            this.lblPeriodo.Text = "Periodo";
+            this.lblPeriodo.Visible = false;
             // 
-            // btnSalvarNota
+            // btnGenerarReporte
             // 
-            this.btnSalvarNota.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarNota.Image")));
-            this.btnSalvarNota.Location = new System.Drawing.Point(276, 125);
-            this.btnSalvarNota.Name = "btnSalvarNota";
-            this.btnSalvarNota.Size = new System.Drawing.Size(88, 84);
-            this.btnSalvarNota.TabIndex = 68;
-            this.btnSalvarNota.Text = "Generar Reporte";
-            this.btnSalvarNota.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSalvarNota.UseVisualStyleBackColor = true;
+            this.btnGenerarReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarReporte.Image")));
+            this.btnGenerarReporte.Location = new System.Drawing.Point(287, 142);
+            this.btnGenerarReporte.Name = "btnGenerarReporte";
+            this.btnGenerarReporte.Size = new System.Drawing.Size(90, 85);
+            this.btnGenerarReporte.TabIndex = 68;
+            this.btnGenerarReporte.Text = "Generar Reporte";
+            this.btnGenerarReporte.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGenerarReporte.UseVisualStyleBackColor = true;
+            this.btnGenerarReporte.Click += new System.EventHandler(this.btnGenerarReporte_Click);
+            // 
+            // rbtnMes
+            // 
+            this.rbtnMes.AutoSize = true;
+            this.rbtnMes.Checked = true;
+            this.rbtnMes.Location = new System.Drawing.Point(34, 21);
+            this.rbtnMes.Name = "rbtnMes";
+            this.rbtnMes.Size = new System.Drawing.Size(45, 17);
+            this.rbtnMes.TabIndex = 69;
+            this.rbtnMes.TabStop = true;
+            this.rbtnMes.Text = "Mes";
+            this.rbtnMes.UseVisualStyleBackColor = true;
+            this.rbtnMes.CheckedChanged += new System.EventHandler(this.rbtnMes_CheckedChanged);
+            // 
+            // rbtnPeriodo
+            // 
+            this.rbtnPeriodo.AutoSize = true;
+            this.rbtnPeriodo.Location = new System.Drawing.Point(149, 21);
+            this.rbtnPeriodo.Name = "rbtnPeriodo";
+            this.rbtnPeriodo.Size = new System.Drawing.Size(61, 17);
+            this.rbtnPeriodo.TabIndex = 70;
+            this.rbtnPeriodo.Text = "Periodo";
+            this.rbtnPeriodo.UseVisualStyleBackColor = true;
+            this.rbtnPeriodo.CheckedChanged += new System.EventHandler(this.rbtnPeriodo_CheckedChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.rbtnMes);
+            this.panel1.Controls.Add(this.rbtnPeriodo);
+            this.panel1.Location = new System.Drawing.Point(125, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(252, 58);
+            this.panel1.TabIndex = 71;
             // 
             // V_Ingresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 252);
-            this.Controls.Add(this.btnSalvarNota);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(462, 292);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnGenerarReporte);
+            this.Controls.Add(this.lblPeriodo);
             this.Controls.Add(this.cbxPeriodo);
             this.Controls.Add(this.tbxAno);
             this.Controls.Add(this.lblAno);
@@ -123,6 +165,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresos";
             this.Load += new System.EventHandler(this.V_Ingresos_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,7 +179,10 @@
         private System.Windows.Forms.ComboBox cbxMes;
         private System.Windows.Forms.Label lblMes;
         private System.Windows.Forms.ComboBox cbxPeriodo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSalvarNota;
+        private System.Windows.Forms.Label lblPeriodo;
+        private System.Windows.Forms.Button btnGenerarReporte;
+        private System.Windows.Forms.RadioButton rbtnMes;
+        private System.Windows.Forms.RadioButton rbtnPeriodo;
+        private System.Windows.Forms.Panel panel1;
     }
 }

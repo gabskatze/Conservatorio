@@ -103,8 +103,8 @@ namespace Conservatorio.UI.Forms
                 return;
             }
 
-            var vReporte = new V_ReporteEstudiantes(estudiante.IdPersona);
-            vReporte.Show();
+            //var vReporteEstudiante = new V_ReporteEstudiante(estudiante.IdPersona);
+            //vReporteEstudiante.Show();
         }
     }
 }
