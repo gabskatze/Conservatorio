@@ -8,5 +8,7 @@ namespace Conservatorio.BL.Interfaces
         void CrearInstrumento(Instrumento nuevoInstrumento);
         List<Instrumento> ObtenerInstrumentos(string keyword);
         List<Instrumento> ObtenerInstrumentos();
+
+        void ModificarInstrumento(Instrumento instrumento);
     }
 }

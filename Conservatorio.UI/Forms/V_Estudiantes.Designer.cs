@@ -101,7 +101,7 @@
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(70, 70);
             this.btnBorrar.TabIndex = 5;
-            this.btnBorrar.Text = "Eliminar";
+            this.btnBorrar.Text = "Inactivar";
             this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);

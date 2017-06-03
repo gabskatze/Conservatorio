@@ -1,15 +1,15 @@
 -Agregar talleres y cursos elementales no modificar			GABY
 -Arreglar TabIndex en todos los modulos					GABY
 -agregar AutoMapper							JC
--**metodos obtenerestudiante	
--bug modulo agregar clase 9-10am
--calcular multas modulo mensualidad
--validacion para boton eliminar en cursos ya matriculados y modulo clases
--reportes`: 
+-**metodos obtenerestudiante						JC
+-bug modulo agregar clase 9-10am					JC
+-calcular multas modulo mensualidad					JC/GABY
+-validacion para boton eliminar en cursos ya matriculados y modulo clases JC/GABY
+-reportes`: 								GABY
 	historial estudiante*
 	ingresos*	
 
--RegistroNota: revisar validaciones y campo de año
+-RegistroNota: revisar validaciones y campo de año			GABY
 
 
 

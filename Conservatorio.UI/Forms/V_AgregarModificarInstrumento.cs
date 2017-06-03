@@ -9,18 +9,20 @@ using Conservatorio.UI.Helpers;
 
 namespace Conservatorio.UI.Forms
 {
-    public partial class V_AgregarInstrumento : Form
+    public partial class V_AgregarModificarInstrumento : Form
     {
         private readonly IInstrumentoBL instrumentoBL;
         private readonly V_Instrumentos vInst;
+        private Instrumento instrumento;
 
-        public V_AgregarInstrumento(V_Instrumentos vInstrumentos)
+        public V_AgregarModificarInstrumento(V_Instrumentos vInstrumentos, Instrumento instrumento = null)
         {
             InitializeComponent();
             ConfigurarValidacion();
 
             instrumentoBL = CapaLogica.InstrumentoBl;
             vInst = vInstrumentos;
+            this.instrumento = instrumento;
         }
 
         private void ConfigurarValidacion()
@@ -48,11 +50,20 @@ namespace Conservatorio.UI.Forms
                     return;
                 }
 
-                var nuevoInstrumento = new Instrumento
+                if (instrumento == null)
                 {
-                    NombreInstrumento = tbxNombreInst.Text
-                };
-                instrumentoBL.CrearInstrumento(nuevoInstrumento);
+                    instrumento = new Instrumento();
+                }
+                instrumento.NombreInstrumento = tbxNombreInst.Text;
+
+                if (instrumento.IdInstrumento == 0)
+                {
+                    instrumentoBL.CrearInstrumento(instrumento);
+                }
+                else
+                {
+                    instrumentoBL.ModificarInstrumento(instrumento);
+                }
 
                 Close();
                 vInst.RefrescarInstrumentos();
@@ -65,5 +76,24 @@ namespace Conservatorio.UI.Forms
 
         #endregion
 
+        private void V_AgregarModificarInstrumento_Load(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Text = instrumento == null ? "Agregar Instrumento" : "Modificar Instrumento";
+
+                if (instrumento == null)
+                {
+                    return;
+                }
+
+                tbxNombreInst.Text = instrumento.NombreInstrumento;                
+            }
+            catch (Exception ex)
+            {
+                this.MostrarError(ex);
+            }
+        }
     }
 }

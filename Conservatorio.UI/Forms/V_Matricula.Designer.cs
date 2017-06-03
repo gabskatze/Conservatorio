@@ -95,7 +95,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(737, 442);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(70, 70);
-            this.btnSalvar.TabIndex = 8;
+            this.btnSalvar.TabIndex = 9;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -185,7 +185,7 @@
             this.tbxMonto.Location = new System.Drawing.Point(691, 389);
             this.tbxMonto.Name = "tbxMonto";
             this.tbxMonto.Size = new System.Drawing.Size(127, 22);
-            this.tbxMonto.TabIndex = 6;
+            this.tbxMonto.TabIndex = 7;
             // 
             // lblComentario
             // 
@@ -204,7 +204,7 @@
             this.tbxComentario.Multiline = true;
             this.tbxComentario.Name = "tbxComentario";
             this.tbxComentario.Size = new System.Drawing.Size(430, 69);
-            this.tbxComentario.TabIndex = 7;
+            this.tbxComentario.TabIndex = 8;
             // 
             // pbxEstudiante
             // 
@@ -232,7 +232,7 @@
             this.tbxReferencia.Location = new System.Drawing.Point(413, 389);
             this.tbxReferencia.Name = "tbxReferencia";
             this.tbxReferencia.Size = new System.Drawing.Size(149, 22);
-            this.tbxReferencia.TabIndex = 30;
+            this.tbxReferencia.TabIndex = 6;
             // 
             // lblReferencia
             // 
@@ -266,7 +266,7 @@
             this.cbxPeriodo.Location = new System.Drawing.Point(507, 22);
             this.cbxPeriodo.Name = "cbxPeriodo";
             this.cbxPeriodo.Size = new System.Drawing.Size(72, 24);
-            this.cbxPeriodo.TabIndex = 33;
+            this.cbxPeriodo.TabIndex = 3;
             this.cbxPeriodo.SelectedIndexChanged += new System.EventHandler(this.cbxPeriodo_SelectedIndexChanged);
             // 
             // lblAno
@@ -285,7 +285,7 @@
             this.tbxAno.Location = new System.Drawing.Point(676, 22);
             this.tbxAno.Name = "tbxAno";
             this.tbxAno.Size = new System.Drawing.Size(92, 22);
-            this.tbxAno.TabIndex = 35;
+            this.tbxAno.TabIndex = 4;
             this.tbxAno.TextChanged += new System.EventHandler(this.tbxAno_TextChanged);
             // 
             // V_Matricula

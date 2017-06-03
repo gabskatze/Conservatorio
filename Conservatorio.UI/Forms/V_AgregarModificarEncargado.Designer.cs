@@ -69,7 +69,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(577, 213);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(70, 70);
-            this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.TabIndex = 9;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -184,7 +184,7 @@
             this.btnSeleccionarImagen.Location = new System.Drawing.Point(461, 87);
             this.btnSeleccionarImagen.Name = "btnSeleccionarImagen";
             this.btnSeleccionarImagen.Size = new System.Drawing.Size(65, 65);
-            this.btnSeleccionarImagen.TabIndex = 79;
+            this.btnSeleccionarImagen.TabIndex = 7;
             this.btnSeleccionarImagen.Text = "Buscar";
             this.btnSeleccionarImagen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSeleccionarImagen.UseVisualStyleBackColor = true;
@@ -196,7 +196,7 @@
             this.btnCapturar.Location = new System.Drawing.Point(701, 87);
             this.btnCapturar.Name = "btnCapturar";
             this.btnCapturar.Size = new System.Drawing.Size(65, 65);
-            this.btnCapturar.TabIndex = 78;
+            this.btnCapturar.TabIndex = 8;
             this.btnCapturar.Text = "Capturar";
             this.btnCapturar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCapturar.UseVisualStyleBackColor = true;
@@ -221,7 +221,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(803, 308);
+            this.ClientSize = new System.Drawing.Size(803, 316);
             this.Controls.Add(this.btnSeleccionarImagen);
             this.Controls.Add(this.btnCapturar);
             this.Controls.Add(this.pbxFoto);

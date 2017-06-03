@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Conservatorio.BL.Interfaces;
 using Conservatorio.DATOS;
 using Conservatorio.DS.Clases;
@@ -44,6 +45,17 @@ namespace Conservatorio.BL.Clases
         public List<Instrumento> ObtenerInstrumentos()
         {
             return _instrumentoDs.ObtenerInstrumentos();
+        }
+
+        public void ModificarInstrumento(Instrumento instrumento)
+        {
+            // Modificar los cursos para el instrumento
+            for (var i = 0; i < instrumento.Cursos.Count; i++)
+            {
+                instrumento.Cursos[i].NombreCurso = instrumento.NombreInstrumento + " " + (i + 1);
+            }
+
+            _instrumentoDs.ModificarInstrumento(instrumento);
         }
     }
 }

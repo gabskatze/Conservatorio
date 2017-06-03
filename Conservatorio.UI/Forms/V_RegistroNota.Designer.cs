@@ -63,7 +63,7 @@
             this.tbxNotaFinal.Location = new System.Drawing.Point(137, 110);
             this.tbxNotaFinal.Name = "tbxNotaFinal";
             this.tbxNotaFinal.Size = new System.Drawing.Size(65, 30);
-            this.tbxNotaFinal.TabIndex = 38;
+            this.tbxNotaFinal.TabIndex = 7;
             // 
             // lblEstudiantes
             // 
@@ -91,7 +91,7 @@
             this.btnSalvarNota.Location = new System.Drawing.Point(81, 163);
             this.btnSalvarNota.Name = "btnSalvarNota";
             this.btnSalvarNota.Size = new System.Drawing.Size(70, 70);
-            this.btnSalvarNota.TabIndex = 40;
+            this.btnSalvarNota.TabIndex = 8;
             this.btnSalvarNota.Text = "Salvar";
             this.btnSalvarNota.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvarNota.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             this.dgvEstudiantes.Location = new System.Drawing.Point(38, 282);
             this.dgvEstudiantes.Name = "dgvEstudiantes";
             this.dgvEstudiantes.Size = new System.Drawing.Size(406, 135);
-            this.dgvEstudiantes.TabIndex = 33;
+            this.dgvEstudiantes.TabIndex = 6;
             this.dgvEstudiantes.DoubleClick += new System.EventHandler(this.dgvEstudiantes_DoubleClick);
             // 
             // tbxBuscarClases
@@ -112,7 +112,7 @@
             this.tbxBuscarClases.Location = new System.Drawing.Point(184, 65);
             this.tbxBuscarClases.Name = "tbxBuscarClases";
             this.tbxBuscarClases.Size = new System.Drawing.Size(258, 22);
-            this.tbxBuscarClases.TabIndex = 32;
+            this.tbxBuscarClases.TabIndex = 3;
             this.tbxBuscarClases.TextChanged += new System.EventHandler(this.tbxBuscarClases_TextChanged);
             // 
             // lblNotaFinal
@@ -131,7 +131,7 @@
             this.dgvClases.Location = new System.Drawing.Point(38, 95);
             this.dgvClases.Name = "dgvClases";
             this.dgvClases.Size = new System.Drawing.Size(406, 135);
-            this.dgvClases.TabIndex = 53;
+            this.dgvClases.TabIndex = 4;
             this.dgvClases.DoubleClick += new System.EventHandler(this.dgvClases_DoubleClick);
             // 
             // lblCurso
@@ -170,7 +170,7 @@
             this.cbxPeriodo.Location = new System.Drawing.Point(367, 24);
             this.cbxPeriodo.Name = "cbxPeriodo";
             this.cbxPeriodo.Size = new System.Drawing.Size(77, 21);
-            this.cbxPeriodo.TabIndex = 57;
+            this.cbxPeriodo.TabIndex = 1;
             this.cbxPeriodo.SelectedIndexChanged += new System.EventHandler(this.cbxPeriodo_SelectedIndexChanged);
             // 
             // label2
@@ -212,7 +212,7 @@
             this.tbxBuscarEstudiantes.Location = new System.Drawing.Point(171, 254);
             this.tbxBuscarEstudiantes.Name = "tbxBuscarEstudiantes";
             this.tbxBuscarEstudiantes.Size = new System.Drawing.Size(273, 22);
-            this.tbxBuscarEstudiantes.TabIndex = 61;
+            this.tbxBuscarEstudiantes.TabIndex = 5;
             this.tbxBuscarEstudiantes.TextChanged += new System.EventHandler(this.tbxBuscarEstudiantes_TextChanged);
             // 
             // lblClases
@@ -232,7 +232,7 @@
             this.tbxAno.Name = "tbxAno";
             this.tbxAno.Size = new System.Drawing.Size(61, 22);
             this.tbxAno.TabIndex = 64;
-            this.tbxAno.Text = "0";
+            this.tbxAno.Text = "2";
             this.tbxAno.TextChanged += new System.EventHandler(this.tbxAno_TextChanged);
             // 
             // errorProvider

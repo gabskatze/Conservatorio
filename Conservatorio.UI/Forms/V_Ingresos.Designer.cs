@@ -48,7 +48,7 @@
             this.tbxAno.Location = new System.Drawing.Point(90, 100);
             this.tbxAno.Name = "tbxAno";
             this.tbxAno.Size = new System.Drawing.Size(55, 22);
-            this.tbxAno.TabIndex = 63;
+            this.tbxAno.TabIndex = 3;
             this.tbxAno.Text = "0";
             // 
             // lblAno
@@ -68,7 +68,7 @@
             this.cbxMes.Location = new System.Drawing.Point(90, 142);
             this.cbxMes.Name = "cbxMes";
             this.cbxMes.Size = new System.Drawing.Size(121, 24);
-            this.cbxMes.TabIndex = 61;
+            this.cbxMes.TabIndex = 4;
             // 
             // lblMes
             // 
@@ -87,7 +87,7 @@
             this.cbxPeriodo.Location = new System.Drawing.Point(90, 180);
             this.cbxPeriodo.Name = "cbxPeriodo";
             this.cbxPeriodo.Size = new System.Drawing.Size(72, 24);
-            this.cbxPeriodo.TabIndex = 66;
+            this.cbxPeriodo.TabIndex = 5;
             this.cbxPeriodo.Visible = false;
             // 
             // lblPeriodo
@@ -107,7 +107,7 @@
             this.btnGenerarReporte.Location = new System.Drawing.Point(287, 142);
             this.btnGenerarReporte.Name = "btnGenerarReporte";
             this.btnGenerarReporte.Size = new System.Drawing.Size(90, 85);
-            this.btnGenerarReporte.TabIndex = 68;
+            this.btnGenerarReporte.TabIndex = 6;
             this.btnGenerarReporte.Text = "Generar Reporte";
             this.btnGenerarReporte.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGenerarReporte.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             this.rbtnMes.Location = new System.Drawing.Point(34, 21);
             this.rbtnMes.Name = "rbtnMes";
             this.rbtnMes.Size = new System.Drawing.Size(45, 17);
-            this.rbtnMes.TabIndex = 69;
+            this.rbtnMes.TabIndex = 1;
             this.rbtnMes.TabStop = true;
             this.rbtnMes.Text = "Mes";
             this.rbtnMes.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@
             this.rbtnPeriodo.Location = new System.Drawing.Point(149, 21);
             this.rbtnPeriodo.Name = "rbtnPeriodo";
             this.rbtnPeriodo.Size = new System.Drawing.Size(61, 17);
-            this.rbtnPeriodo.TabIndex = 70;
+            this.rbtnPeriodo.TabIndex = 2;
             this.rbtnPeriodo.Text = "Periodo";
             this.rbtnPeriodo.UseVisualStyleBackColor = true;
             this.rbtnPeriodo.CheckedChanged += new System.EventHandler(this.rbtnPeriodo_CheckedChanged);

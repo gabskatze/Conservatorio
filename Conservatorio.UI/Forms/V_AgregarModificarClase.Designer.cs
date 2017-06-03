@@ -77,7 +77,7 @@
             this.cbxCursos.Location = new System.Drawing.Point(100, 72);
             this.cbxCursos.Name = "cbxCursos";
             this.cbxCursos.Size = new System.Drawing.Size(222, 24);
-            this.cbxCursos.TabIndex = 2;
+            this.cbxCursos.TabIndex = 3;
             // 
             // cbxProfesores
             // 
@@ -86,7 +86,7 @@
             this.cbxProfesores.Location = new System.Drawing.Point(94, 117);
             this.cbxProfesores.Name = "cbxProfesores";
             this.cbxProfesores.Size = new System.Drawing.Size(228, 24);
-            this.cbxProfesores.TabIndex = 3;
+            this.cbxProfesores.TabIndex = 5;
             this.cbxProfesores.SelectedIndexChanged += new System.EventHandler(this.cbxProfesores_SelectedIndexChanged);
             // 
             // btnSalvar
@@ -137,7 +137,7 @@
             this.tbxAula.Location = new System.Drawing.Point(476, 114);
             this.tbxAula.Name = "tbxAula";
             this.tbxAula.Size = new System.Drawing.Size(80, 22);
-            this.tbxAula.TabIndex = 7;
+            this.tbxAula.TabIndex = 6;
             this.tbxAula.TextChanged += new System.EventHandler(this.tbxAula_TextChanged);
             // 
             // errorProvider
@@ -161,7 +161,7 @@
             this.tbxAno.Location = new System.Drawing.Point(476, 72);
             this.tbxAno.Name = "tbxAno";
             this.tbxAno.Size = new System.Drawing.Size(80, 22);
-            this.tbxAno.TabIndex = 18;
+            this.tbxAno.TabIndex = 4;
             this.tbxAno.TextChanged += new System.EventHandler(this.tbxAno_TextChanged);
             // 
             // lblAno
@@ -181,7 +181,7 @@
             this.cbxPeriodo.Location = new System.Drawing.Point(500, 27);
             this.cbxPeriodo.Name = "cbxPeriodo";
             this.cbxPeriodo.Size = new System.Drawing.Size(56, 24);
-            this.cbxPeriodo.TabIndex = 20;
+            this.cbxPeriodo.TabIndex = 2;
             this.cbxPeriodo.SelectedIndexChanged += new System.EventHandler(this.cbxPeriodo_SelectedIndexChanged);
             // 
             // dgvHorario
@@ -198,7 +198,7 @@
             this.dgvHorario.ReadOnly = true;
             this.dgvHorario.RowHeadersVisible = false;
             this.dgvHorario.Size = new System.Drawing.Size(678, 251);
-            this.dgvHorario.TabIndex = 21;
+            this.dgvHorario.TabIndex = 7;
             // 
             // V_AgregarModificarClase
             // 

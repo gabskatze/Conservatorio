@@ -72,7 +72,7 @@ namespace Conservatorio.UI.Forms
             this.btnAgregarProf.Location = new System.Drawing.Point(657, 422);
             this.btnAgregarProf.Name = "btnAgregarProf";
             this.btnAgregarProf.Size = new System.Drawing.Size(70, 70);
-            this.btnAgregarProf.TabIndex = 12;
+            this.btnAgregarProf.TabIndex = 15;
             this.btnAgregarProf.Text = "Salvar";
             this.btnAgregarProf.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarProf.UseVisualStyleBackColor = true;
@@ -84,7 +84,7 @@ namespace Conservatorio.UI.Forms
             this.tbxTelefono3.Location = new System.Drawing.Point(91, 341);
             this.tbxTelefono3.Name = "tbxTelefono3";
             this.tbxTelefono3.Size = new System.Drawing.Size(166, 22);
-            this.tbxTelefono3.TabIndex = 11;
+            this.tbxTelefono3.TabIndex = 10;
             // 
             // tbxTelefono2
             // 
@@ -92,7 +92,7 @@ namespace Conservatorio.UI.Forms
             this.tbxTelefono2.Location = new System.Drawing.Point(91, 300);
             this.tbxTelefono2.Name = "tbxTelefono2";
             this.tbxTelefono2.Size = new System.Drawing.Size(166, 22);
-            this.tbxTelefono2.TabIndex = 10;
+            this.tbxTelefono2.TabIndex = 9;
             // 
             // tbxTelefono1
             // 
@@ -100,7 +100,7 @@ namespace Conservatorio.UI.Forms
             this.tbxTelefono1.Location = new System.Drawing.Point(91, 260);
             this.tbxTelefono1.Name = "tbxTelefono1";
             this.tbxTelefono1.Size = new System.Drawing.Size(166, 22);
-            this.tbxTelefono1.TabIndex = 9;
+            this.tbxTelefono1.TabIndex = 8;
             // 
             // tbxEmail
             // 
@@ -108,7 +108,7 @@ namespace Conservatorio.UI.Forms
             this.tbxEmail.Location = new System.Drawing.Point(61, 210);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(210, 22);
-            this.tbxEmail.TabIndex = 8;
+            this.tbxEmail.TabIndex = 7;
             // 
             // tbxOcupacion
             // 
@@ -116,7 +116,7 @@ namespace Conservatorio.UI.Forms
             this.tbxOcupacion.Location = new System.Drawing.Point(92, 160);
             this.tbxOcupacion.Name = "tbxOcupacion";
             this.tbxOcupacion.Size = new System.Drawing.Size(275, 22);
-            this.tbxOcupacion.TabIndex = 4;
+            this.tbxOcupacion.TabIndex = 6;
             // 
             // tbxDireccion
             // 
@@ -125,7 +125,7 @@ namespace Conservatorio.UI.Forms
             this.tbxDireccion.Multiline = true;
             this.tbxDireccion.Name = "tbxDireccion";
             this.tbxDireccion.Size = new System.Drawing.Size(283, 82);
-            this.tbxDireccion.TabIndex = 5;
+            this.tbxDireccion.TabIndex = 11;
             // 
             // tbxCedula
             // 
@@ -262,7 +262,7 @@ namespace Conservatorio.UI.Forms
             this.clbInstrumentos.Location = new System.Drawing.Point(511, 71);
             this.clbInstrumentos.Name = "clbInstrumentos";
             this.clbInstrumentos.Size = new System.Drawing.Size(252, 140);
-            this.clbInstrumentos.TabIndex = 7;
+            this.clbInstrumentos.TabIndex = 12;
             // 
             // errorProvider
             // 
@@ -275,7 +275,7 @@ namespace Conservatorio.UI.Forms
             this.btnCapturar.Location = new System.Drawing.Point(662, 298);
             this.btnCapturar.Name = "btnCapturar";
             this.btnCapturar.Size = new System.Drawing.Size(65, 65);
-            this.btnCapturar.TabIndex = 66;
+            this.btnCapturar.TabIndex = 14;
             this.btnCapturar.Text = "Capturar";
             this.btnCapturar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCapturar.UseVisualStyleBackColor = true;
@@ -297,7 +297,7 @@ namespace Conservatorio.UI.Forms
             this.btnSeleccionarImagen.Location = new System.Drawing.Point(422, 298);
             this.btnSeleccionarImagen.Name = "btnSeleccionarImagen";
             this.btnSeleccionarImagen.Size = new System.Drawing.Size(65, 65);
-            this.btnSeleccionarImagen.TabIndex = 67;
+            this.btnSeleccionarImagen.TabIndex = 13;
             this.btnSeleccionarImagen.Text = "Buscar";
             this.btnSeleccionarImagen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSeleccionarImagen.UseVisualStyleBackColor = true;
@@ -325,7 +325,7 @@ namespace Conservatorio.UI.Forms
             this.rbtnActivo.Location = new System.Drawing.Point(91, 118);
             this.rbtnActivo.Name = "rbtnActivo";
             this.rbtnActivo.Size = new System.Drawing.Size(55, 17);
-            this.rbtnActivo.TabIndex = 69;
+            this.rbtnActivo.TabIndex = 4;
             this.rbtnActivo.TabStop = true;
             this.rbtnActivo.Text = "Activo";
             this.rbtnActivo.UseVisualStyleBackColor = true;
@@ -336,7 +336,7 @@ namespace Conservatorio.UI.Forms
             this.rbtnInactivo.Location = new System.Drawing.Point(163, 118);
             this.rbtnInactivo.Name = "rbtnInactivo";
             this.rbtnInactivo.Size = new System.Drawing.Size(63, 17);
-            this.rbtnInactivo.TabIndex = 70;
+            this.rbtnInactivo.TabIndex = 5;
             this.rbtnInactivo.Text = "Inactivo";
             this.rbtnInactivo.UseVisualStyleBackColor = true;
             // 

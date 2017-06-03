@@ -81,7 +81,7 @@
             this.dgvEstudiantes.Location = new System.Drawing.Point(23, 58);
             this.dgvEstudiantes.Name = "dgvEstudiantes";
             this.dgvEstudiantes.Size = new System.Drawing.Size(406, 135);
-            this.dgvEstudiantes.TabIndex = 63;
+            this.dgvEstudiantes.TabIndex = 2;
             // 
             // lblActivos
             // 
@@ -163,7 +163,7 @@
             this.btnSalvarNota.Location = new System.Drawing.Point(327, 219);
             this.btnSalvarNota.Name = "btnSalvarNota";
             this.btnSalvarNota.Size = new System.Drawing.Size(88, 84);
-            this.btnSalvarNota.TabIndex = 2;
+            this.btnSalvarNota.TabIndex = 3;
             this.btnSalvarNota.Text = "Generar Reporte";
             this.btnSalvarNota.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvarNota.UseVisualStyleBackColor = true;

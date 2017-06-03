@@ -30,13 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportesDataSet = new Conservatorio.UI.Reportes.ReportesDataSet();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_ReporteEstudiante));
             this.obtenerReporteEstudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportesDataSet = new Conservatorio.UI.Reportes.ReportesDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.obtenerReporteEstudianteTableAdapter = new Conservatorio.UI.Reportes.ReportesDataSetTableAdapters.ObtenerReporteEstudianteTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obtenerReporteEstudianteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // obtenerReporteEstudianteBindingSource
+            // 
+            this.obtenerReporteEstudianteBindingSource.DataMember = "ObtenerReporteEstudiante";
+            this.obtenerReporteEstudianteBindingSource.DataSource = this.reportesDataSet;
+            // 
+            // reportesDataSet
+            // 
+            this.reportesDataSet.DataSetName = "ReportesDataSet";
+            this.reportesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -46,18 +57,8 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Conservatorio.UI.Reportes.ReporteEstudiante.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(13, 13);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(707, 415);
+            this.reportViewer1.Size = new System.Drawing.Size(742, 449);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // reportesDataSet
-            // 
-            this.reportesDataSet.DataSetName = "ReportesDataSet";
-            this.reportesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // obtenerReporteEstudianteBindingSource
-            // 
-            this.obtenerReporteEstudianteBindingSource.DataMember = "ObtenerReporteEstudiante";
-            this.obtenerReporteEstudianteBindingSource.DataSource = this.reportesDataSet;
             // 
             // obtenerReporteEstudianteTableAdapter
             // 
@@ -67,13 +68,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 461);
+            this.ClientSize = new System.Drawing.Size(777, 489);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "V_ReporteEstudiante";
-            this.Text = "V_ReporteEstudiante";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Certificación de notas";
             this.Load += new System.EventHandler(this.V_ReporteEstudiante_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obtenerReporteEstudianteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

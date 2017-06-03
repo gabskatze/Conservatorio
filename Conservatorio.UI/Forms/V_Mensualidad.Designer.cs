@@ -66,7 +66,7 @@
             this.tbxReferencia.Location = new System.Drawing.Point(610, 207);
             this.tbxReferencia.Name = "tbxReferencia";
             this.tbxReferencia.Size = new System.Drawing.Size(149, 22);
-            this.tbxReferencia.TabIndex = 4;
+            this.tbxReferencia.TabIndex = 5;
             // 
             // lblReferencia
             // 
@@ -104,7 +104,7 @@
             this.tbxComentario.Multiline = true;
             this.tbxComentario.Name = "tbxComentario";
             this.tbxComentario.Size = new System.Drawing.Size(430, 69);
-            this.tbxComentario.TabIndex = 7;
+            this.tbxComentario.TabIndex = 9;
             // 
             // lblComentarios
             // 
@@ -122,7 +122,7 @@
             this.tbxMontoMens.Location = new System.Drawing.Point(344, 288);
             this.tbxMontoMens.Name = "tbxMontoMens";
             this.tbxMontoMens.Size = new System.Drawing.Size(121, 22);
-            this.tbxMontoMens.TabIndex = 6;
+            this.tbxMontoMens.TabIndex = 8;
             this.tbxMontoMens.Text = "0";
             this.tbxMontoMens.TextChanged += new System.EventHandler(this.tbxMontoMens_TextChanged);
             // 
@@ -133,7 +133,7 @@
             this.cbxTipoPago.Location = new System.Drawing.Point(344, 207);
             this.cbxTipoPago.Name = "cbxTipoPago";
             this.cbxTipoPago.Size = new System.Drawing.Size(121, 24);
-            this.cbxTipoPago.TabIndex = 3;
+            this.cbxTipoPago.TabIndex = 4;
             // 
             // lblMensualidad
             // 
@@ -161,7 +161,7 @@
             this.btnSalvarMensualidad.Location = new System.Drawing.Point(665, 381);
             this.btnSalvarMensualidad.Name = "btnSalvarMensualidad";
             this.btnSalvarMensualidad.Size = new System.Drawing.Size(70, 70);
-            this.btnSalvarMensualidad.TabIndex = 8;
+            this.btnSalvarMensualidad.TabIndex = 10;
             this.btnSalvarMensualidad.Text = "Salvar";
             this.btnSalvarMensualidad.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvarMensualidad.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@
             this.dgvEst_Mensualidad.Location = new System.Drawing.Point(14, 44);
             this.dgvEst_Mensualidad.Name = "dgvEst_Mensualidad";
             this.dgvEst_Mensualidad.Size = new System.Drawing.Size(406, 135);
-            this.dgvEst_Mensualidad.TabIndex = 33;
+            this.dgvEst_Mensualidad.TabIndex = 2;
             this.dgvEst_Mensualidad.DoubleClick += new System.EventHandler(this.dgvEst_Mensualidad_DoubleClick);
             // 
             // tbxBuscarEst_Mensualidad
@@ -222,7 +222,7 @@
             this.cbxMes.Location = new System.Drawing.Point(55, 207);
             this.cbxMes.Name = "cbxMes";
             this.cbxMes.Size = new System.Drawing.Size(121, 24);
-            this.cbxMes.TabIndex = 2;
+            this.cbxMes.TabIndex = 3;
             // 
             // label7
             // 
@@ -260,7 +260,7 @@
             this.tbxMulta.Location = new System.Drawing.Point(55, 294);
             this.tbxMulta.Name = "tbxMulta";
             this.tbxMulta.Size = new System.Drawing.Size(127, 22);
-            this.tbxMulta.TabIndex = 5;
+            this.tbxMulta.TabIndex = 7;
             this.tbxMulta.Text = "0";
             this.tbxMulta.TextChanged += new System.EventHandler(this.tbxMulta_TextChanged);
             // 
@@ -275,7 +275,7 @@
             this.tbxAno.Location = new System.Drawing.Point(56, 248);
             this.tbxAno.Name = "tbxAno";
             this.tbxAno.Size = new System.Drawing.Size(55, 22);
-            this.tbxAno.TabIndex = 59;
+            this.tbxAno.TabIndex = 6;
             this.tbxAno.Text = "0";
             // 
             // lblAno

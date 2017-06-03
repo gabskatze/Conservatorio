@@ -1,6 +1,6 @@
 ﻿namespace Conservatorio.UI.Forms
 {
-    partial class V_AgregarInstrumento
+    partial class V_AgregarModificarInstrumento
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_AgregarInstrumento));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_AgregarModificarInstrumento));
             this.btnAgregarInst = new System.Windows.Forms.Button();
             this.lblNombreInst = new System.Windows.Forms.Label();
             this.tbxNombreInst = new System.Windows.Forms.TextBox();
@@ -41,7 +41,7 @@
             // 
             this.btnAgregarInst.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarInst.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarInst.Image")));
-            this.btnAgregarInst.Location = new System.Drawing.Point(180, 152);
+            this.btnAgregarInst.Location = new System.Drawing.Point(168, 156);
             this.btnAgregarInst.Name = "btnAgregarInst";
             this.btnAgregarInst.Size = new System.Drawing.Size(70, 70);
             this.btnAgregarInst.TabIndex = 2;
@@ -73,7 +73,7 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
-            // V_AgregarInstrumento
+            // V_AgregarModificarInstrumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -83,9 +83,10 @@
             this.Controls.Add(this.lblNombreInst);
             this.Controls.Add(this.btnAgregarInst);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "V_AgregarInstrumento";
+            this.Name = "V_AgregarModificarInstrumento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Instrumento";
+            this.Load += new System.EventHandler(this.V_AgregarModificarInstrumento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

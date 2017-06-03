@@ -30,13 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportesDataSet = new Conservatorio.UI.Reportes.ReportesDataSet();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_ReporteIngresos));
             this.obtenerReporteIngresosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportesDataSet = new Conservatorio.UI.Reportes.ReportesDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.obtenerReporteIngresosTableAdapter = new Conservatorio.UI.Reportes.ReportesDataSetTableAdapters.ObtenerReporteIngresosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obtenerReporteIngresosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // obtenerReporteIngresosBindingSource
+            // 
+            this.obtenerReporteIngresosBindingSource.DataMember = "ObtenerReporteIngresos";
+            this.obtenerReporteIngresosBindingSource.DataSource = this.reportesDataSet;
+            // 
+            // reportesDataSet
+            // 
+            this.reportesDataSet.DataSetName = "ReportesDataSet";
+            this.reportesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -46,18 +57,8 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Conservatorio.UI.Reportes.ReporteIngresos.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(13, 13);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(656, 417);
+            this.reportViewer1.Size = new System.Drawing.Size(743, 538);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // reportesDataSet
-            // 
-            this.reportesDataSet.DataSetName = "ReportesDataSet";
-            this.reportesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // obtenerReporteIngresosBindingSource
-            // 
-            this.obtenerReporteIngresosBindingSource.DataMember = "ObtenerReporteIngresos";
-            this.obtenerReporteIngresosBindingSource.DataSource = this.reportesDataSet;
             // 
             // obtenerReporteIngresosTableAdapter
             // 
@@ -67,13 +68,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 442);
+            this.ClientSize = new System.Drawing.Size(777, 575);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "V_ReporteIngresos";
-            this.Text = "V_ReporteIngresos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Reporte de Ingresos";
             this.Load += new System.EventHandler(this.V_ReporteIngresos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obtenerReporteIngresosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -179,7 +179,7 @@
             this.tbxDireccion.Multiline = true;
             this.tbxDireccion.Name = "tbxDireccion";
             this.tbxDireccion.Size = new System.Drawing.Size(291, 72);
-            this.tbxDireccion.TabIndex = 3;
+            this.tbxDireccion.TabIndex = 13;
             // 
             // tbxOcupacion
             // 
@@ -187,7 +187,7 @@
             this.tbxOcupacion.Location = new System.Drawing.Point(96, 160);
             this.tbxOcupacion.Name = "tbxOcupacion";
             this.tbxOcupacion.Size = new System.Drawing.Size(282, 23);
-            this.tbxOcupacion.TabIndex = 4;
+            this.tbxOcupacion.TabIndex = 8;
             // 
             // tbxEmail
             // 
@@ -195,7 +195,7 @@
             this.tbxEmail.Location = new System.Drawing.Point(62, 210);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(239, 23);
-            this.tbxEmail.TabIndex = 6;
+            this.tbxEmail.TabIndex = 9;
             // 
             // tbxTel1
             // 
@@ -203,7 +203,7 @@
             this.tbxTel1.Location = new System.Drawing.Point(96, 260);
             this.tbxTel1.Name = "tbxTel1";
             this.tbxTel1.Size = new System.Drawing.Size(166, 23);
-            this.tbxTel1.TabIndex = 8;
+            this.tbxTel1.TabIndex = 10;
             // 
             // tbxTel2
             // 
@@ -211,7 +211,7 @@
             this.tbxTel2.Location = new System.Drawing.Point(96, 300);
             this.tbxTel2.Name = "tbxTel2";
             this.tbxTel2.Size = new System.Drawing.Size(166, 23);
-            this.tbxTel2.TabIndex = 9;
+            this.tbxTel2.TabIndex = 11;
             // 
             // tbxTel3
             // 
@@ -219,7 +219,7 @@
             this.tbxTel3.Location = new System.Drawing.Point(96, 341);
             this.tbxTel3.Name = "tbxTel3";
             this.tbxTel3.Size = new System.Drawing.Size(166, 23);
-            this.tbxTel3.TabIndex = 10;
+            this.tbxTel3.TabIndex = 12;
             // 
             // btnSalvar
             // 
@@ -228,7 +228,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(682, 392);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(70, 70);
-            this.btnSalvar.TabIndex = 12;
+            this.btnSalvar.TabIndex = 17;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -242,7 +242,7 @@
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(181, 71);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(197, 23);
-            this.dtpFechaNacimiento.TabIndex = 5;
+            this.dtpFechaNacimiento.TabIndex = 3;
             // 
             // cbxTipo
             // 
@@ -251,7 +251,7 @@
             this.cbxTipo.Location = new System.Drawing.Point(465, 73);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(142, 24);
-            this.cbxTipo.TabIndex = 7;
+            this.cbxTipo.TabIndex = 4;
             // 
             // lblTipo
             // 
@@ -270,7 +270,7 @@
             this.btnEncargado.Location = new System.Drawing.Point(465, 391);
             this.btnEncargado.Name = "btnEncargado";
             this.btnEncargado.Size = new System.Drawing.Size(70, 70);
-            this.btnEncargado.TabIndex = 23;
+            this.btnEncargado.TabIndex = 16;
             this.btnEncargado.Text = "Encargado";
             this.btnEncargado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEncargado.UseVisualStyleBackColor = true;
@@ -292,7 +292,7 @@
             this.tbxGradoAcademico.Location = new System.Drawing.Point(550, 115);
             this.tbxGradoAcademico.Name = "tbxGradoAcademico";
             this.tbxGradoAcademico.Size = new System.Drawing.Size(202, 23);
-            this.tbxGradoAcademico.TabIndex = 11;
+            this.tbxGradoAcademico.TabIndex = 7;
             // 
             // errorProvider
             // 
@@ -305,7 +305,7 @@
             this.rbtnInactivo.Location = new System.Drawing.Point(163, 118);
             this.rbtnInactivo.Name = "rbtnInactivo";
             this.rbtnInactivo.Size = new System.Drawing.Size(63, 17);
-            this.rbtnInactivo.TabIndex = 73;
+            this.rbtnInactivo.TabIndex = 6;
             this.rbtnInactivo.Text = "Inactivo";
             this.rbtnInactivo.UseVisualStyleBackColor = true;
             // 
@@ -316,7 +316,7 @@
             this.rbtnActivo.Location = new System.Drawing.Point(91, 118);
             this.rbtnActivo.Name = "rbtnActivo";
             this.rbtnActivo.Size = new System.Drawing.Size(55, 17);
-            this.rbtnActivo.TabIndex = 72;
+            this.rbtnActivo.TabIndex = 5;
             this.rbtnActivo.TabStop = true;
             this.rbtnActivo.Text = "Activo";
             this.rbtnActivo.UseVisualStyleBackColor = true;
@@ -337,7 +337,7 @@
             this.btnSeleccionarImagen.Location = new System.Drawing.Point(422, 239);
             this.btnSeleccionarImagen.Name = "btnSeleccionarImagen";
             this.btnSeleccionarImagen.Size = new System.Drawing.Size(65, 65);
-            this.btnSeleccionarImagen.TabIndex = 76;
+            this.btnSeleccionarImagen.TabIndex = 14;
             this.btnSeleccionarImagen.Text = "Buscar";
             this.btnSeleccionarImagen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSeleccionarImagen.UseVisualStyleBackColor = true;
@@ -349,7 +349,7 @@
             this.btnCapturar.Location = new System.Drawing.Point(662, 239);
             this.btnCapturar.Name = "btnCapturar";
             this.btnCapturar.Size = new System.Drawing.Size(65, 65);
-            this.btnCapturar.TabIndex = 75;
+            this.btnCapturar.TabIndex = 15;
             this.btnCapturar.Text = "Capturar";
             this.btnCapturar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCapturar.UseVisualStyleBackColor = true;

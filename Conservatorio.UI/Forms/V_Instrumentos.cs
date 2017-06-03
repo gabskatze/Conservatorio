@@ -5,12 +5,15 @@ using System.Linq;
 using System.Windows.Forms;
 using Conservatorio.BL;
 using Conservatorio.UI.Helpers;
+using Conservatorio.DATOS;
+using System.Collections.Generic;
 
 namespace Conservatorio.UI.Forms
 {
     public partial class V_Instrumentos : Form
     {
         private readonly IInstrumentoBL instrumentosBL;
+        private List<Instrumento> listaInstrumentos;
 
         public V_Instrumentos()
         {
@@ -21,12 +24,23 @@ namespace Conservatorio.UI.Forms
         public void RefrescarInstrumentos()
         {
             var keyword = tbxBuscar.Text;
-            var list = instrumentosBL.ObtenerInstrumentos(keyword);
-            dgvInstrumentos.DataSource = list.Select(x => new InstrumentoModel
+            listaInstrumentos = instrumentosBL.ObtenerInstrumentos(keyword);
+            dgvInstrumentos.DataSource = listaInstrumentos.Select(x => new InstrumentoModel
             {
                 IdInstrumento = x.IdInstrumento,
                 NombreInstrumento = x.NombreInstrumento
             }).ToList();
+        }
+
+        private Instrumento ObtenerInstrumentoSeleccionado()
+        {
+            if (dgvInstrumentos.SelectedRows.Count == 0)
+            {
+                return null;
+            }
+
+            var selectedIndex = dgvInstrumentos.SelectedRows[0].Index;
+            return listaInstrumentos[selectedIndex];
         }
 
         #region Action Events
@@ -35,7 +49,7 @@ namespace Conservatorio.UI.Forms
         {
             try
             {
-                Form f = new V_AgregarInstrumento(this);
+                Form f = new V_AgregarModificarInstrumento(this);
                 f.ShowDialog();
             }
             catch (Exception ex)
@@ -69,6 +83,24 @@ namespace Conservatorio.UI.Forms
         }
 
         #endregion
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var instrumentoSeleccionado = ObtenerInstrumentoSeleccionado();
+                if (instrumentoSeleccionado == null)
+                {
+                    return;
+                }
+                Form f = new V_AgregarModificarInstrumento(this, instrumentoSeleccionado);
+                f.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                this.MostrarError(ex);
+            }
+        }
     }
     
 }
