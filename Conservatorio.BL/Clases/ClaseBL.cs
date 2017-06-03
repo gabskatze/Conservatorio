@@ -24,8 +24,8 @@ namespace Conservatorio.BL.Clases
 
             var clasesMismoDia = _claseDs.ObtenerClases(x => x.Periodo == clase.Periodo && x.Ano == clase.Ano && x.Dia == clase.Dia);
             var clasesMismoTiempo = clasesMismoDia
-                .Where(x => !(DateTimeHelper.FromString(clase.HoraFinal) < DateTimeHelper.FromString(x.HoraInicio)) && 
-                            !(DateTimeHelper.FromString(clase.HoraInicio) > DateTimeHelper.FromString(x.HoraFinal)))
+                .Where(x => !(DateTimeHelper.FromString(clase.HoraFinal) <= DateTimeHelper.FromString(x.HoraInicio)) && 
+                            !(DateTimeHelper.FromString(clase.HoraInicio) >= DateTimeHelper.FromString(x.HoraFinal)))
                 .ToList();
 
             var mismaAula = clasesMismoTiempo.Where(x => x.Aula == clase.Aula);
