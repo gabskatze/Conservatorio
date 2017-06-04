@@ -33,7 +33,7 @@ namespace Conservatorio.UI.Forms
             try
             {
                 CargarPeriodos();
-                //tbxAno.Text = DateTime.Now.Year.ToString();
+                tbxAno.Text = DateTime.Now.Year.ToString();
                 RefrescarClases();
                 
 

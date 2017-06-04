@@ -232,7 +232,6 @@
             this.tbxAno.Name = "tbxAno";
             this.tbxAno.Size = new System.Drawing.Size(61, 22);
             this.tbxAno.TabIndex = 64;
-            this.tbxAno.Text = "2";
             this.tbxAno.TextChanged += new System.EventHandler(this.tbxAno_TextChanged);
             // 
             // errorProvider
