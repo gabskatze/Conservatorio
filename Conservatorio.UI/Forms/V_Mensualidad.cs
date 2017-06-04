@@ -58,7 +58,12 @@ namespace Conservatorio.UI.Forms
                 new Validador
                 {
                     Control = tbxMontoMens,
-                    MetodoValidacion = (out string errorMsg) => !tbxMontoMens.ValidarEntero(out errorMsg)
+                    MetodoValidacion = (out string errorMsg) => !tbxMontoMens.ValidarRequerido(out errorMsg) || !tbxMontoMens.ValidarEntero(out errorMsg)
+                },
+                new Validador
+                {
+                    Control = tbxReferencia,
+                    MetodoValidacion = (out string errorMsg) => !tbxReferencia.ValidarRequerido(out errorMsg)
                 },
                 new Validador
                 {
