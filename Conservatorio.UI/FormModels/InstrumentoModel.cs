@@ -4,5 +4,6 @@
     {
         public int IdInstrumento { get; set; }
         public string NombreInstrumento { get; set; }
+        public string Tipo { get; set; }
     }
 }

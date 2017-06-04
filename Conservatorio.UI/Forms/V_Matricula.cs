@@ -101,7 +101,7 @@ namespace Conservatorio.UI.Forms
             var ano = int.Parse(tbxAno.Text);
             var periodo = (int)cbxPeriodo.SelectedItem;
 
-            listaClases = claseBL.ObtenerClases(periodo, ano);
+            listaClases = claseBL.ObtenerClasesConCupo(periodo, ano);
         }
 
         private void CargarPeriodos()

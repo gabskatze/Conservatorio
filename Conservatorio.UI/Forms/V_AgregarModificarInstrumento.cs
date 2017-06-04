@@ -55,6 +55,7 @@ namespace Conservatorio.UI.Forms
                     instrumento = new Instrumento();
                 }
                 instrumento.NombreInstrumento = tbxNombreInst.Text;
+                instrumento.Individual = rbtnIndividual.Checked;
 
                 if (instrumento.IdInstrumento == 0)
                 {
@@ -88,7 +89,9 @@ namespace Conservatorio.UI.Forms
                     return;
                 }
 
-                tbxNombreInst.Text = instrumento.NombreInstrumento;                
+                tbxNombreInst.Text = instrumento.NombreInstrumento;
+                rbtnIndividual.Checked = instrumento.Individual;
+                rbtnGrupal.Checked = !instrumento.Individual;
             }
             catch (Exception ex)
             {

@@ -12,6 +12,7 @@ namespace Conservatorio.BL.Interfaces
         List<Clase> ObtenerClasesDisponibles(List<Clase> clasesDelPeriodo, List<Instrumento> instrumentos, List<Curso> cursosAprobados);
         List<Clase> ObtenerClases(int periodo, int ano, Profesor profesor, int aula);
         List<Clase> ObtenerClases(int periodo, int ano);
+        List<Clase> ObtenerClasesConCupo(int periodo, int ano);
         List<Clase> ObtenerClases(int periodo, int ano, string keyword);
     }
 }

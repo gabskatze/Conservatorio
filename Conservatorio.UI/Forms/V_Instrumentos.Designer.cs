@@ -68,7 +68,7 @@
             this.dgvInstrumentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInstrumentos.Location = new System.Drawing.Point(71, 56);
             this.dgvInstrumentos.Name = "dgvInstrumentos";
-            this.dgvInstrumentos.Size = new System.Drawing.Size(292, 283);
+            this.dgvInstrumentos.Size = new System.Drawing.Size(377, 283);
             this.dgvInstrumentos.TabIndex = 2;
             // 
             // pictureBox1
@@ -85,7 +85,7 @@
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.Location = new System.Drawing.Point(293, 371);
+            this.btnModificar.Location = new System.Drawing.Point(378, 371);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(70, 70);
             this.btnModificar.TabIndex = 19;
@@ -98,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 453);
+            this.ClientSize = new System.Drawing.Size(492, 458);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbxBuscar);

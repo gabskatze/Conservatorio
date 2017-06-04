@@ -34,6 +34,8 @@
             this.lblNombreInst = new System.Windows.Forms.Label();
             this.tbxNombreInst = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.rbtnIndividual = new System.Windows.Forms.RadioButton();
+            this.rbtnGrupal = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +46,7 @@
             this.btnAgregarInst.Location = new System.Drawing.Point(168, 156);
             this.btnAgregarInst.Name = "btnAgregarInst";
             this.btnAgregarInst.Size = new System.Drawing.Size(70, 70);
-            this.btnAgregarInst.TabIndex = 2;
+            this.btnAgregarInst.TabIndex = 4;
             this.btnAgregarInst.Text = "Salvar";
             this.btnAgregarInst.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarInst.UseVisualStyleBackColor = true;
@@ -54,7 +56,7 @@
             // 
             this.lblNombreInst.AutoSize = true;
             this.lblNombreInst.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreInst.Location = new System.Drawing.Point(61, 86);
+            this.lblNombreInst.Location = new System.Drawing.Point(61, 50);
             this.lblNombreInst.Name = "lblNombreInst";
             this.lblNombreInst.Size = new System.Drawing.Size(60, 16);
             this.lblNombreInst.TabIndex = 2;
@@ -63,7 +65,7 @@
             // tbxNombreInst
             // 
             this.tbxNombreInst.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxNombreInst.Location = new System.Drawing.Point(136, 86);
+            this.tbxNombreInst.Location = new System.Drawing.Point(136, 50);
             this.tbxNombreInst.Name = "tbxNombreInst";
             this.tbxNombreInst.Size = new System.Drawing.Size(198, 22);
             this.tbxNombreInst.TabIndex = 1;
@@ -73,12 +75,36 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // rbtnIndividual
+            // 
+            this.rbtnIndividual.AutoSize = true;
+            this.rbtnIndividual.Checked = true;
+            this.rbtnIndividual.Location = new System.Drawing.Point(64, 107);
+            this.rbtnIndividual.Name = "rbtnIndividual";
+            this.rbtnIndividual.Size = new System.Drawing.Size(70, 17);
+            this.rbtnIndividual.TabIndex = 2;
+            this.rbtnIndividual.TabStop = true;
+            this.rbtnIndividual.Text = "Individual";
+            this.rbtnIndividual.UseVisualStyleBackColor = true;
+            // 
+            // rbtnGrupal
+            // 
+            this.rbtnGrupal.AutoSize = true;
+            this.rbtnGrupal.Location = new System.Drawing.Point(278, 107);
+            this.rbtnGrupal.Name = "rbtnGrupal";
+            this.rbtnGrupal.Size = new System.Drawing.Size(56, 17);
+            this.rbtnGrupal.TabIndex = 3;
+            this.rbtnGrupal.Text = "Grupal";
+            this.rbtnGrupal.UseVisualStyleBackColor = true;
+            // 
             // V_AgregarModificarInstrumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(403, 265);
+            this.Controls.Add(this.rbtnGrupal);
+            this.Controls.Add(this.rbtnIndividual);
             this.Controls.Add(this.tbxNombreInst);
             this.Controls.Add(this.lblNombreInst);
             this.Controls.Add(this.btnAgregarInst);
@@ -99,5 +125,7 @@
         private System.Windows.Forms.Label lblNombreInst;
         private System.Windows.Forms.TextBox tbxNombreInst;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.RadioButton rbtnGrupal;
+        private System.Windows.Forms.RadioButton rbtnIndividual;
     }
 }

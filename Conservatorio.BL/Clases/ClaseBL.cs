@@ -12,6 +12,7 @@ namespace Conservatorio.BL.Clases
     public class ClaseBL : IClaseBL
     {
         private readonly IClaseDS _claseDs = new ClaseDS();
+        private readonly IRegistroNotaDS _RegistroNotaDs = new RegistroNotaDS();
 
         internal ClaseBL()
         {
@@ -102,6 +103,12 @@ namespace Conservatorio.BL.Clases
         public List<Clase> ObtenerClases(int periodo, int ano, string keyword)
         {
             return _claseDs.ObtenerClases(x => x.Periodo == periodo && x.Ano == ano && (x.Profesor.Nombre.Contains(keyword) || x.Curso.NombreCurso.Contains(keyword) || x.Dia.Contains(keyword)));
+        }
+
+        public List<Clase> ObtenerClasesConCupo(int periodo, int ano)
+        {
+            var clasesMatriculadas = _RegistroNotaDs.ObtenerRegistroNotas(x => x.Clase.Periodo == periodo && x.Clase.Ano == ano).Select(x => x.Clase.IdClase);
+            return _claseDs.ObtenerClases(x => x.Periodo == periodo && x.Ano == ano && (!x.Curso.Instrumento.Individual || !clasesMatriculadas.Contains(x.IdClase)));
         }
     }
 }

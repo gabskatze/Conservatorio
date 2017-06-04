@@ -28,7 +28,8 @@ namespace Conservatorio.UI.Forms
             dgvInstrumentos.DataSource = listaInstrumentos.Select(x => new InstrumentoModel
             {
                 IdInstrumento = x.IdInstrumento,
-                NombreInstrumento = x.NombreInstrumento
+                NombreInstrumento = x.NombreInstrumento,
+                Tipo = x.Individual ? "Individual" : "Grupal"
             }).ToList();
         }
 
