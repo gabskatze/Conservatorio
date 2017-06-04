@@ -70,6 +70,12 @@ namespace Conservatorio.BL.Clases
 
         public void EliminarClase(Clase clase)
         {
+            List<string> mensajes;
+            if (!ValidarEliminarClase(clase, out mensajes))
+            {
+                throw new ValidacionException(mensajes);
+            }
+
             _claseDs.EliminarClase(clase);
         }
 
@@ -109,6 +115,21 @@ namespace Conservatorio.BL.Clases
         {
             var clasesMatriculadas = _RegistroNotaDs.ObtenerRegistroNotas(x => x.Clase.Periodo == periodo && x.Clase.Ano == ano).Select(x => x.Clase.IdClase);
             return _claseDs.ObtenerClases(x => x.Periodo == periodo && x.Ano == ano && (!x.Curso.Instrumento.Individual || !clasesMatriculadas.Contains(x.IdClase)));
+        }
+
+        private bool ValidarEliminarClase(Clase clase, out List<string> msjs)
+        {
+            var result = true;
+            msjs = new List<string>();
+
+            var registroNotas = _RegistroNotaDs.ObtenerRegistroNotas(x => x.Clase.IdClase == clase.IdClase);
+            if (registroNotas.Any())
+            {
+                result = false;
+                msjs.Add("La clase ya tiene estudiante(s) matriculado(s).");
+            }
+            
+            return result;
         }
     }
 }
