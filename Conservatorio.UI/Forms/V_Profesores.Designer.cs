@@ -116,6 +116,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProfesores);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "V_Profesores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profesores";

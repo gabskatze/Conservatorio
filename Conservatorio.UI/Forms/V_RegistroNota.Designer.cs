@@ -259,6 +259,7 @@
             this.Controls.Add(this.dgvEstudiantes);
             this.Controls.Add(this.tbxBuscarClases);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "V_RegistroNota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Notas";

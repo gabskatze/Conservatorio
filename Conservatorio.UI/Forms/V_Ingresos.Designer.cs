@@ -161,6 +161,7 @@
             this.Controls.Add(this.cbxMes);
             this.Controls.Add(this.lblMes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "V_Ingresos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresos";

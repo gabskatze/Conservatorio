@@ -127,6 +127,7 @@
             this.Controls.Add(this.cbxInstrumento);
             this.Controls.Add(this.lblInstrumento);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "V_Cursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cursos";

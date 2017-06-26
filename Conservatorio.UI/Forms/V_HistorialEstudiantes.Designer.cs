@@ -181,6 +181,7 @@
             this.Controls.Add(this.lblEstudiantes);
             this.Controls.Add(this.dgvEstudiantes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "V_HistorialEstudiantes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historial de Estudiantes";

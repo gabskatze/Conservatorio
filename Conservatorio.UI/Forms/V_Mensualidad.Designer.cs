@@ -318,6 +318,7 @@
             this.Controls.Add(this.dgvEst_Mensualidad);
             this.Controls.Add(this.tbxBuscarEst_Mensualidad);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "V_Mensualidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pago Mensual";

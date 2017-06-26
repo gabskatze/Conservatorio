@@ -221,6 +221,7 @@
             this.Controls.Add(this.lblProfesor);
             this.Controls.Add(this.lblCurso);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "V_AgregarModificarClase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asignación de Clase";

@@ -109,6 +109,7 @@
             this.Controls.Add(this.lblNombreInst);
             this.Controls.Add(this.btnAgregarInst);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "V_AgregarModificarInstrumento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Instrumento";

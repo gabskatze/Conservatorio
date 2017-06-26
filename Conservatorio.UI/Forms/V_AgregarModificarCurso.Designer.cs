@@ -153,6 +153,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnGuardar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "V_AgregarModificarCurso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cursos";
