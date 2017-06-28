@@ -105,7 +105,15 @@ namespace Conservatorio.UI.Forms
 
         private void ProcessFrame(object sender, EventArgs arg)
         {
-            var image = CameraCapture.QueryFrame().Bitmap;
+            var queryFrame = CameraCapture.QueryFrame();
+            if (queryFrame == null)
+            {
+                this.MostrarMensaje("No hay cámara disponible.");
+                btnCapturar.PerformClick();
+                return;
+            }
+
+            var image = queryFrame.Bitmap;
             image.RotateFlip(RotateFlipType.RotateNoneFlipX);
             pbxFoto.Image = image;
         }
