@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Configuration;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Conservatorio.BL;
@@ -157,9 +154,7 @@ namespace Conservatorio.UI.Forms
 
                 if (!string.IsNullOrEmpty(profesor.Imagen))
                 {
-                    var bytes = File.ReadAllBytes(ConfigurationManager.AppSettings["imagesFolder"] + profesor.Imagen);
-                    var ms = new MemoryStream(bytes);
-                    pbxFoto.Image = Image.FromStream(ms);
+                    pbxFoto.Image = SharedFolderHelper.GetImage(profesor.Imagen);
                 }
             }
             catch (Exception ex)
@@ -213,7 +208,7 @@ namespace Conservatorio.UI.Forms
                 // Guardar la imagen
                 if (foto != null)
                 {
-                    foto.Save(ConfigurationManager.AppSettings["imagesFolder"] + profesor.Imagen, ImageFormat.Png);
+                    SharedFolderHelper.Save(foto, profesor.Imagen);
                 }
 
                 Close();

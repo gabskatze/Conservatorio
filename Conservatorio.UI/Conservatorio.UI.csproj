@@ -196,6 +196,8 @@
     <Compile Include="FormValidation\Validation.cs" />
     <Compile Include="Helpers\DataTableHelper.cs" />
     <Compile Include="Helpers\FormExtensions.cs" />
+    <Compile Include="Helpers\NetworkConnection.cs" />
+    <Compile Include="Helpers\SharedFolderHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\V_AgregarModificarEncargado.cs">

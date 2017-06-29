@@ -1,10 +1,7 @@
 ﻿using Conservatorio.DATOS;
 using Conservatorio.UI.FormValidation;
 using System;
-using System.Configuration;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
 using System.Windows.Forms;
 using Conservatorio.UI.Helpers;
 using Emgu.CV;
@@ -112,9 +109,7 @@ namespace Conservatorio.UI.Forms
 
                 if (!string.IsNullOrEmpty(Encargado.Imagen))
                 {
-                    var bytes = File.ReadAllBytes(ConfigurationManager.AppSettings["imagesFolder"] + Encargado.Imagen);
-                    var ms = new MemoryStream(bytes);
-                    pbxFoto.Image = Image.FromStream(ms);
+                    pbxFoto.Image = SharedFolderHelper.GetImage(Encargado.Imagen);
                 }
             }
             catch (Exception ex)

@@ -26,8 +26,8 @@ namespace Conservatorio.UI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=ConservatorioNHibernate;Integrated Security=Y" +
-            "es")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=ConservatorioNHibernate;Persist Security Info" +
+            "=True;User ID=ConserUser;Password=ConserUser")]
         public string ConservatorioConnString {
             get {
                 return ((string)(this["ConservatorioConnString"]));
