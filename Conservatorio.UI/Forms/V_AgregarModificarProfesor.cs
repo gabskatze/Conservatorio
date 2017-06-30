@@ -177,7 +177,7 @@ namespace Conservatorio.UI.Forms
                     profesor = new Profesor();
                 }
 
-                profesor.Cedula = int.Parse(tbxCedula.Text);
+                profesor.Cedula = long.Parse(tbxCedula.Text);
                 profesor.Direccion = tbxDireccion.Text;
                 profesor.Email = tbxEmail.Text;
                 profesor.FechaNacimiento = dtpFechaNacimiento.Value;

@@ -202,7 +202,7 @@ namespace Conservatorio.UI.Forms
                 }
 
                 estudiante.Nombre = tbxNombre.Text;
-                estudiante.Cedula = tbxCedula.Text == "" ? (int?)null : int.Parse(tbxCedula.Text);
+                estudiante.Cedula = tbxCedula.Text == "" ? (long?)null : long.Parse(tbxCedula.Text);
                 estudiante.Direccion = tbxDireccion.Text;
                 estudiante.Email = tbxEmail.Text;
                 estudiante.FechaNacimiento = dtpFechaNacimiento.Value;

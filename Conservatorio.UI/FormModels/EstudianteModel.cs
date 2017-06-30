@@ -6,7 +6,7 @@ namespace Conservatorio.UI.FormModels
     {
         public int IdEstudiante { get; set; }
         public string Nombre { get; set; }
-        public int? Cedula { get; set; }
+        public long? Cedula { get; set; }
         public string Estado { get; set; }
         public string Email { get; set; }
         public string Direccion { get; set; }
