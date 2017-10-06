@@ -21,9 +21,9 @@ namespace Conservatorio.UI.FormValidation
             var esValido = true;
             msg = null;
 
-            int n;
+            long n;
             var value = control.Text;
-            if (!string.IsNullOrEmpty(value) && !int.TryParse(value, out n))
+            if (!string.IsNullOrEmpty(value) && !long.TryParse(value, out n))
             {
                 esValido = false;
                 msg = "El campo debe ser un numero";
