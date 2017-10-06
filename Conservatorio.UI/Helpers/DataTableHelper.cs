@@ -23,7 +23,7 @@ namespace Conservatorio.UI.Helpers
             }
 
             // Agregar informacion
-            for (var i = 8; i < 20; i++)
+            for (var i = 8; i < 21; i++)
             {
                 var now = DateTime.Now;
                 var horaInicio = new DateTime(now.Year, now.Month, now.Day, i, 0, 0);
